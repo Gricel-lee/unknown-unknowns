@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "Server Load",
+    "description": "The most likely explanation. Higher load on a server (CPU, memory, I/O) directly impacts latency. Multimodality suggests distinct load levels \u2013 e.g., idle, moderate, high. This is the most common source of performance variation in servers.",
+    "relatedTo": [
+      "Time of Day",
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Time of Day",
+    "description": "Server performance often varies predictably with time of day due to scheduled tasks (backups, maintenance), increased user activity, or other background processes. Multimodal latency could correspond to different times of day with different activity levels.",
+    "relatedTo": [
+      "Server Load",
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Network Congestion",
+    "description": "Network latency between the controller and servers, or between the servers themselves, will impact flip response times. Multiple distinct congestion levels could explain multimodal latency.",
+    "relatedTo": [
+      "Server Load",
+      "Geographic Location"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Virtualization Overhead",
+    "description": "If the servers are virtualized (e.g., using VMs or containers), the hypervisor introduces overhead.  This overhead can vary due to resource contention with other VMs/containers on the same host. Different VM configurations or host load could lead to multimodal behavior.",
+    "relatedTo": [
+      "Server Load",
+      "Resource Allocation"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Resource Allocation (CPU/Memory)",
+    "description": "How CPU and memory are allocated to the servers affects performance.  Limited resources or contention with other processes can increase latency.  Different allocation configurations could cause multiple latency modes.",
+    "relatedTo": [
+      "Server Load",
+      "Virtualization Overhead"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Coin Flip Implementation",
+    "description": "The way the 'coin flip' is implemented on each server might have different latencies.  For example, one server might use a cryptographically secure random number generator (slower) while the other uses a faster, less secure approach. The implementation details may be subtly different due to server configuration.",
+    "relatedTo": []
+  },
+  {
+    "id": 7,
+    "name": "Background Processes",
+    "description": "Other processes running on the servers (logging, monitoring, etc.) can intermittently consume resources and increase latency. The specific set of running processes might vary, creating multiple latency peaks.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Storage I/O",
+    "description": "Disk I/O operations (reading/writing logs, temporary files) can introduce latency spikes. Multimodality might be due to different I/O patterns.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Geographic Location",
+    "description": "If the servers are geographically separated, network latency will be higher and more variable. Different network paths and routing policies can create distinct latency modes.",
+    "relatedTo": [
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Server Hardware Differences",
+    "description": "Subtle differences in CPU speed, memory, or network cards between the two servers can result in different baseline latencies and potentially multiple modes.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "Operating System Differences",
+    "description": "Different operating system versions or configurations on the two servers could affect performance.  Kernel versions, scheduler settings, or network stack implementations may vary.",
+    "relatedTo": []
+  },
+  {
+    "id": 12,
+    "name": "Interference from other Network Traffic",
+    "description": "Traffic from other applications on the same network segment can interfere with the communication between the controller and servers.",
+    "relatedTo": [
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Firewall/Security Policies",
+    "description": "Firewall rules or security policies might introduce variable latency due to inspection or filtering of network traffic.",
+    "relatedTo": [
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Power Saving Modes",
+    "description": "If the servers are configured with power saving modes, they may dynamically adjust CPU frequency or voltage, leading to latency variations.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Controller Load",
+    "description": "If the controller itself is overloaded, it can introduce latency in sending requests to the servers.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  }
+]

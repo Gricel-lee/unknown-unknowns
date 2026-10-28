@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Market Volatility",
+    "description": "Increased volatility often leads to rapid changes in technical indicators, triggering the need for immediate action and potentially favoring a normal mode analysis.",
+    "relatedTo": [
+      "Market Volatility"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Trading Volume",
+    "description": "Higher volume can quickly trigger technical analysis signals, pushing the system towards a more reactive mode.",
+    "relatedTo": [
+      "Trading Volume"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Order Book Dynamics",
+    "description": "A rapidly changing order book can trigger quick technical analysis and signal a need for immediate response.",
+    "relatedTo": [
+      "Order Book Dynamics"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "News Events",
+    "description": "Major news releases (economic, political, industry-specific) can influence market sentiment and trigger rapid technical analysis.",
+    "relatedTo": [
+      "News Events"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Economic Indicators",
+    "description": "Changes in key indicators like GDP growth, inflation, or unemployment can significantly impact market behavior, leading to rapid analysis.",
+    "relatedTo": [
+      "Economic Indicators"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Time of Day",
+    "description": "Market activity often varies throughout the day, which can influence the timing of technical analysis and the system's response.",
+    "relatedTo": [
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Specific Instrument Correlation",
+    "description": "The underlying assets being analyzed may be experiencing unusual correlations, triggering a quick response.",
+    "relatedTo": [
+      "Instrument Correlation"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "System Load/Resource Constraints",
+    "description": "High load on the system can cause delays in analysis and responses, potentially shifting towards a less efficient mode.",
+    "relatedTo": [
+      "System Load/Resource Constraints"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Data Quality Issues",
+    "description": "Inconsistent or corrupted data within the data feeds can lead to unreliable signals, triggering a re-evaluation of the initial analysis.",
+    "relatedTo": [
+      "Data Quality Issues"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Regulatory Changes",
+    "description": "New regulations can profoundly impact market behavior, often prompting immediate responses.",
+    "relatedTo": [
+      "Regulatory Changes"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "System Architecture Changes",
+    "description": "Changes to the underlying architecture, like updates to data pipelines, can affect the speed and accuracy of the analysis.",
+    "relatedTo": [
+      "System Architecture Changes"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "User Behavior Patterns",
+    "description": "Individual trader's reaction to a particular signal, especially in early moments, can influence the overall system\u2019s response.",
+    "relatedTo": [
+      "User Behavior Patterns"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "External Event Triggering",
+    "description": "A sudden external event (e.g., a flash crash) can rapidly shift market conditions, necessitating immediate action.",
+    "relatedTo": [
+      "External Event Triggering"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Data Pipeline Latency",
+    "description": "Slow data pipeline speed between the raw data sources and the analysis model results in delays, affecting the speed of the results.",
+    "relatedTo": [
+      "Data Pipeline Latency"
+    ]
+  }
+]

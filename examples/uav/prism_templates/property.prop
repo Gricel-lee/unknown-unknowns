@@ -1,0 +1,2 @@
+// minimum expected mission time until all waypoints are visited; the controller's reward
+R{"time"}min=? [ F stop ]

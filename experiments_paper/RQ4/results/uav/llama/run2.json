@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Image Quality",
+    "description": "Variations in image brightness, contrast, and noise can affect the analysis time.",
+    "relatedTo": [
+      "Camera Settings",
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Camera Settings",
+    "description": "Different camera settings (e.g., resolution, frame rate) can impact analysis time.",
+    "relatedTo": [
+      "Image Quality",
+      "Onboard Processing Power"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lighting Conditions",
+    "description": "Different lighting conditions (e.g., day/night, shadows) can affect image quality and analysis time.",
+    "relatedTo": [
+      "Image Quality",
+      "Atmospheric Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Atmospheric Conditions",
+    "description": "Weather conditions (e.g., fog, haze) can impact image quality and analysis time.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Air Density"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Air Density",
+    "description": "Changes in air density can affect image quality and analysis time, particularly at high altitudes.",
+    "relatedTo": [
+      "Atmospheric Conditions",
+      "Temperature"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Temperature",
+    "description": "Variations in temperature can impact camera performance and analysis time.",
+    "relatedTo": [
+      "Air Density",
+      "Humidity"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Humidity",
+    "description": "Changes in humidity can affect camera performance and analysis time.",
+    "relatedTo": [
+      "Temperature",
+      "Barometric Pressure"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Barometric Pressure",
+    "description": "Changes in barometric pressure can impact camera performance and analysis time.",
+    "relatedTo": [
+      "Humidity",
+      "Air Pressure"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Air Pressure",
+    "description": "Changes in air pressure can affect image quality and analysis time.",
+    "relatedTo": [
+      "Barometric Pressure",
+      "Wind Speed"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Wind Speed",
+    "description": "Changes in wind speed can impact image quality and analysis time.",
+    "relatedTo": [
+      "Air Pressure",
+      "Surface Roughness"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Surface Roughness",
+    "description": "Variations in surface roughness can affect image quality and analysis time.",
+    "relatedTo": [
+      "Wind Speed",
+      "Object Size"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Object Size",
+    "description": "Size and complexity of objects in the scene can impact analysis time.",
+    "relatedTo": [
+      "Surface Roughness",
+      "Object Orientation"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Object Orientation",
+    "description": "Orientation of objects in the scene can affect analysis time.",
+    "relatedTo": [
+      "Object Size",
+      "Object Shape"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Object Shape",
+    "description": "Shape and complexity of objects in the scene can impact analysis time.",
+    "relatedTo": [
+      "Object Orientation",
+      "Scene Complexity"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Scene Complexity",
+    "description": "Variations in scene complexity (e.g., clutter, noise) can affect analysis time.",
+    "relatedTo": [
+      "Object Shape",
+      "Background Clutter"
+    ]
+  }
+]

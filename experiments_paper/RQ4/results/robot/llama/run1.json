@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Tire Tread Depth",
+    "description": "Worn-out tires can increase travel time due to reduced traction.",
+    "relatedTo": [
+      "Weather, Route Conditions"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Weather (Rain or Muddy Conditions)",
+    "description": "Adverse weather conditions can slow down the robot's travel time.",
+    "relatedTo": [
+      "Tire Tread Depth, Soil Moisture"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Soil Moisture Content",
+    "description": "Varying soil moisture can affect the robot's traction and travel time.",
+    "relatedTo": [
+      "Weather, Crop Type"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Crop Type and Maturity",
+    "description": "Different crop types and growth stages can impact the robot's travel time.",
+    "relatedTo": [
+      "Soil Moisture Content, Weather"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Obstacles (e.g., Debris, Holes, Weeds)",
+    "description": "Unexpected obstacles can increase travel time.",
+    "relatedTo": [
+      "Route Conditions, Soil Moisture Content"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Route Conditions (e.g., Smoothness, Camber)",
+    "description": "Uneven or damaged paths can slow down the robot.",
+    "relatedTo": [
+      "Tire Tread Depth, Obstacles"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Battery Age and Health",
+    "description": "Older or degraded batteries can reduce the robot's travel time.",
+    "relatedTo": [
+      "Charging Efficiency, Power Consumption"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Charging Efficiency",
+    "description": "Inefficient charging can impact the robot's travel time.",
+    "relatedTo": [
+      "Battery Age and Health, Power Consumption"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Power Consumption Patterns",
+    "description": "Varying power consumption can affect the robot's travel time.",
+    "relatedTo": [
+      "Battery Age and Health, Charging Efficiency"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Route Selection Strategy",
+    "description": "The current route selection algorithm may not be optimal.",
+    "relatedTo": [
+      "Path 1, Path 2"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Sensor Quality and Calibration",
+    "description": "Poor sensor performance or calibration can lead to inaccurate travel time predictions.",
+    "relatedTo": [
+      "On-Board Cameras, Navigation"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Navigation System",
+    "description": "Inaccurate navigation can lead to longer travel times.",
+    "relatedTo": [
+      "Sensor Quality and Calibration, Route Selection Strategy"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Weight and Balance of the Robot",
+    "description": "Changes in weight or balance can impact the robot's travel time.",
+    "relatedTo": [
+      "Battery Age and Health, Power Consumption"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Maintenance Schedule and History",
+    "description": "Inadequate or delayed maintenance can impact the robot's performance.",
+    "relatedTo": [
+      "Tire Tread Depth, Obstacles"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Operator-Related Factors (e.g., Training, Experience)",
+    "description": "Human error or differences in operator behavior can affect the robot's travel time.",
+    "relatedTo": [
+      "Route Selection Strategy, Sensor Quality and Calibration"
+    ]
+  }
+]

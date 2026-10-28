@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture Levels",
+    "description": "Variations in soil moisture can significantly impact robot movement and stability, leading to slower travel times or erratic paths.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Terrain Analysis"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Weed Density",
+    "description": "Dense weed growth can cause obstacles and require more precise navigation, increasing travel time.",
+    "relatedTo": [
+      "Weed Detection",
+      "Terrain Analysis"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Crop Density & Variety",
+    "description": "The density and variety of crops within the field can influence the robot's path \u2013 some areas may require more turns or deviation than others.",
+    "relatedTo": [
+      "Crop Types",
+      "Field Layout"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Sun Angle & Light Intensity",
+    "description": "Changes in sun angle and intensity affect the robot's visual perception and possibly its path choice, potentially impacting travel time.",
+    "relatedTo": [
+      "Visual Perception",
+      "Path Planning"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Obstacle Presence (Wind, Animals, etc.)",
+    "description": "Even subtle wind or animal movement can cause the robot to veer off course, affecting travel time.",
+    "relatedTo": [
+      "Obstacle Detection",
+      "Terrain Analysis"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Slope & Terrain Variation",
+    "description": "Steeper slopes and uneven terrain require more precise control and can cause faster travel.",
+    "relatedTo": [
+      "Terrain Analysis",
+      "Robot Control"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Rain/Snowfall Conditions",
+    "description": "Reduced visibility and potential for slippery surfaces can affect sensor performance and route choices.",
+    "relatedTo": [
+      "Sensor Performance",
+      "Navigation"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Lighting Conditions (Color & Intensity)",
+    "description": "Changes in lighting can affect the robot's visual interpretation of the field, potentially altering the path.",
+    "relatedTo": [
+      "Visual Perception",
+      "Path Planning"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Weather Patterns (Wind Gusts)",
+    "description": "Strong wind gusts can alter the robot\u2019s path unexpectedly, requiring adjustments.",
+    "relatedTo": [
+      "Wind"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Robot Calibration/Accuracy",
+    "description": "Inaccurate sensor readings or mapping can lead to incorrect route choices and increased travel time.",
+    "relatedTo": [
+      "Sensor Data",
+      "Mapping"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Path Selection Bias",
+    "description": "The controller might be systematically favoring one route (Path 1 or 2) even when the multimodal data suggests a different optimal path.",
+    "relatedTo": [
+      "Route Choice",
+      "Controller Logic"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "GPS Signal Strength & Interference",
+    "description": "Weak GPS signals or interference can hinder accurate positioning and route tracking.",
+    "relatedTo": [
+      "GPS Data",
+      "Navigation"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Robotic Speed & Gait",
+    "description": "A variable speed or gait pattern could be contributing to the multimodal data.",
+    "relatedTo": [
+      "Robot Movement",
+      "Path Planning"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Camera Shake",
+    "description": "Camera movement can introduce noise to sensor data and alter the robot\u2019s path.",
+    "relatedTo": [
+      "Sensor Data",
+      "Path Planning"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Dynamic Field Conditions (Changes in slope/surface)",
+    "description": "The field itself is not static; it\u2019s changing, affecting the optimal route.",
+    "relatedTo": [
+      "Field Layout",
+      "Terrain Analysis"
+    ]
+  }
+]

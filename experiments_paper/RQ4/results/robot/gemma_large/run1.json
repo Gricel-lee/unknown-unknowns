@@ -1,0 +1,120 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "Path 2 (grass path) is likely heavily affected by soil moisture. Wet soil significantly increases resistance, slowing the robot down.  High variance in moisture levels (due to irrigation, rainfall, field drainage) would create distinct time groups. Path 1, being a track, is less affected. This is the most probable cause given the context.",
+    "relatedTo": [
+      "Rainfall",
+      "Time of Day",
+      "Irrigation"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Rainfall",
+    "description": "Directly contributes to soil moisture and can also impact the robot's traction and visibility (camera performance). Recent rainfall would likely create a slow-time group in Path 2.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Crop Row Irregularities",
+    "description": "Path 2 runs between crop rows. Variations in row straightness, gaps, or plant density directly impact robot navigability and speed.  These could cause time variations and the formation of groups - for example, times are very different if the robot keeps hitting plants. ",
+    "relatedTo": [
+      "Plant Growth Stage"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day",
+    "description": "Affects both routes through lighting conditions (impacting camera performance) and potentially dew/frost forming on Path 2.  Early morning dew would slow Path 2, while harsh sunlight might affect cameras on Path 1.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Rainfall",
+      "Temperature"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Robot Battery Level (Starting)",
+    "description": "A lower starting battery level may cause the robot to operate at a slower, more conservative speed to conserve energy, affecting travel time on both paths.",
+    "relatedTo": []
+  },
+  {
+    "id": 6,
+    "name": "Obstacle Density (Path 2)",
+    "description": "While the robot is designed to navigate obstacles, a higher density of small obstacles (weeds, debris) in Path 2 would increase travel time and contribute to multimodal distributions.  This is separate from large obstacles which would likely trigger replanning.",
+    "relatedTo": [
+      "Plant Growth Stage"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Path 1 Track Condition",
+    "description": "The track (Path 1) may have varying surface conditions - ruts, loose stones, patches of mud, or recently tilled sections. These variations, though less extreme than the effect on Path 2, could still create distinct travel time clusters.",
+    "relatedTo": [
+      "Rainfall"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Plant Growth Stage",
+    "description": "As crops grow, they can obstruct Path 2 more, increasing travel time.  Early stages might be clear, then times increase as the plants mature.  Also impacts obstacle density.",
+    "relatedTo": [
+      "Obstacle Density (Path 2)",
+      "Crop Row Irregularities"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Temperature",
+    "description": "Temperature can affect battery performance (lower temps = reduced capacity) and potentially affect the viscosity of soil (affecting Path 2).",
+    "relatedTo": [
+      "Robot Battery Level (Starting)",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Wind Speed",
+    "description": "High wind could affect the robot's stability and ability to maintain a straight line, particularly on Path 2, leading to increased travel times and variance.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "Robot Speed Setting",
+    "description": "The robot might have different speed settings that are sometimes automatically chosen or manually adjusted. Changes in settings would lead to different average travel times.",
+    "relatedTo": []
+  },
+  {
+    "id": 12,
+    "name": "Load/Payload",
+    "description": "If the robot sometimes carries a payload (e.g., collected samples), this would increase travel time and potentially create distinct time groups.",
+    "relatedTo": []
+  },
+  {
+    "id": 13,
+    "name": "Camera Calibration Drift",
+    "description": "Drift in camera calibration could affect path following accuracy, especially on Path 2, introducing variations in travel time.",
+    "relatedTo": [
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Insect Activity",
+    "description": "A large swarm of insects could briefly obstruct camera vision leading to pauses and increased travel time (less likely but possible)",
+    "relatedTo": []
+  },
+  {
+    "id": 15,
+    "name": "Irrigation Schedule",
+    "description": "Specific irrigation events could dramatically affect soil moisture in a localized way, creating noticeable differences in Path 2 travel times.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Rainfall"
+    ]
+  }
+]

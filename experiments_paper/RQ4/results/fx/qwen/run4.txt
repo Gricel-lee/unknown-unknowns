@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Market Conditions", "description": "Variations in market conditions, such as volatility, liquidity, and trends, can significantly impact the time taken for technical analysis and fundamental analysis.", "relatedTo": ["Volume Changes", "Market Sentiment", "Trading Volume"]},
+    {"id": 2, "name": "Volume Changes", "description": "Fluctuations in trading volume can affect the time required for analysis, as more data points are needed for both technical and fundamental analysis.", "relatedTo": ["Market Conditions", "Trading Hours", "Time of Day"]},
+    {"id": 3, "name": "Trading Hours", "description": "The time of day or trading session can affect the availability of data, impacting the analysis time.", "relatedTo": ["Volume Changes", "Market Conditions", "Time of Day"]},
+    {"id": 4, "name": "Time of Day", "description": "The time of day can influence the availability and accuracy of data, affecting the analysis time.", "relatedTo": ["Trading Hours", "Market Conditions", "Volume Changes"]},
+    {"id": 5, "name": "Market Sentiment", "description": "The overall sentiment of the market can affect the time needed for analysis, especially in volatile markets where more data might be required for analysis.", "relatedTo": ["Market Conditions", "Volume Changes"]},
+    {"id": 6, "name": "Holiday Calendar", "description": "Public holidays or market closures can cause anomalies in the analysis time, as data availability might be impacted.", "relatedTo": ["Market Conditions", "Trading Hours"]},
+    {"id": 7, "name": "News Events", "description": "Breaking news or significant events can affect the market and increase the time needed for analysis as they require immediate attention.", "relatedTo": ["Market Conditions", "Market Sentiment"]},
+    {"id": 8, "name": "Data Quality", "description": "The quality and availability of market data can vary, affecting the time taken for analysis.", "relatedTo": ["Market Conditions", "Volume Changes"]},
+    {"id": 9, "name": "Technical System Load", "description": "The load on the technical system can affect the processing time for analysis, especially during high-demand periods.", "relatedTo": ["Volume Changes", "Market Conditions"]},
+    {"id": 10, "name": "Network Latency", "description": "Network issues can slow down data retrieval and processing, impacting the analysis time.", "relatedTo": ["Technical System Load", "Volume Changes"]},
+    {"id": 11, "name": "Algorithm Efficiency", "description": "The efficiency of the algorithms used in the analysis can vary, affecting the time taken.", "relatedTo": ["Technical System Load", "Volume Changes"]},
+    {"id": 12, "name": "Data Availability", "description": "The availability of relevant data sources can vary, affecting the analysis time, especially for fundamental analysis.", "relatedTo": ["Market Conditions", "Volume Changes"]},
+    {"id": 13, "name": "User Interactions", "description": "The interactions with the system by traders or administrators can affect the analysis time, especially if they require manual intervention.", "relatedTo": ["Technical System Load", "Market Conditions"]},
+    {"id": 14, "name": "Resource Allocation", "description": "The allocation of computational resources can impact the processing time, especially during peak usage times.", "relatedTo": ["Technical System Load", "Volume Changes"]},
+    {"id": 15, "name": "Historical Data Availability", "description": "The availability of historical data can vary, affecting the accuracy and time taken for analysis, particularly for fundamental analysis.", "relatedTo": ["Market Conditions", "Data Quality"]}
+]
+```

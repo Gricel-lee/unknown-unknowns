@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "name": "Camera Resolution",
+    "description": "Different camera resolutions may affect the processing time of the onboard classifier or the human operator's analysis.",
+    "relatedTo": [
+      "Image Size",
+      "Onboard Classifier Accuracy"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Image Size",
+    "description": "Large images may take longer to process or transmit, leading to multimodal distribution.",
+    "relatedTo": [
+      "Camera Resolution",
+      "Onboard Classifier Accuracy"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Onboard Classifier Accuracy",
+    "description": "Variations in the onboard classifier's accuracy may lead to different analysis times.",
+    "relatedTo": [
+      "Camera Resolution",
+      "Image Size"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Human Operator Expertise",
+    "description": "Differences in human operator expertise may lead to variations in analysis times.",
+    "relatedTo": [
+      "Task Difficulty"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Task Difficulty",
+    "description": "Tasks requiring more complex analysis or decision-making may take longer, leading to multimodal distribution.",
+    "relatedTo": [
+      "Human Operator Expertise",
+      "Onboard Classifier Accuracy"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Network Bandwidth",
+    "description": "Variations in network bandwidth may affect the transmission time of images and analysis results.",
+    "relatedTo": [
+      "Image Size",
+      "Onboard Classifier Accuracy"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "UAV Speed",
+    "description": "Faster or slower UAV speeds may affect the time available for analysis at each waypoint.",
+    "relatedTo": [
+      "Waypoint Distance"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Waypoint Distance",
+    "description": "Longer or shorter distances between waypoints may affect the time available for analysis.",
+    "relatedTo": [
+      "UAV Speed"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Environmental Conditions",
+    "description": "Weather conditions, lighting, or other environmental factors may affect image quality and analysis time.",
+    "relatedTo": [
+      "Image Size",
+      "Onboard Classifier Accuracy"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Time of Day",
+    "description": "Variations in the time of day may affect human operator workload or UAV performance.",
+    "relatedTo": [
+      "Human Operator Expertise",
+      "UAV Speed"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Battery Level",
+    "description": "Lower or higher battery levels may affect UAV performance or analysis time.",
+    "relatedTo": [
+      "UAV Speed"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Onboard System Load",
+    "description": "High or low onboard system load may affect analysis time or UAV performance.",
+    "relatedTo": [
+      "UAV Speed",
+      "Battery Level"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Image Compression",
+    "description": "Different image compression settings may affect analysis time or image quality.",
+    "relatedTo": [
+      "Image Size",
+      "Onboard Classifier Accuracy"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Human Operator Workload",
+    "description": "High or low human operator workload may affect analysis time or accuracy.",
+    "relatedTo": [
+      "Human Operator Expertise",
+      "Task Difficulty"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "UAV Type",
+    "description": "Different UAV types may have varying performance characteristics affecting analysis time or accuracy.",
+    "relatedTo": [
+      "UAV Speed",
+      "Battery Level"
+    ]
+  }
+]

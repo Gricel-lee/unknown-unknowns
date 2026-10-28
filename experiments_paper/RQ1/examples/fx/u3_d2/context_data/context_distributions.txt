@@ -1,0 +1,35 @@
+# RQ1 variant of fx: 3 relevant variable(s) ['volatile', 'news', 'disk_busy'], difficulty 2 (shift = 7.5 std)
+# Distractors (no effect): ['z1', 'z2']
+# Format: {env:<volatile,news,disk_busy,z1,z2>, <output>_mean:<m>, <output>_std:<s>, ...}
+{env:00000, technical_mean:7.92, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:00001, technical_mean:7.92, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:00010, technical_mean:7.92, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:00011, technical_mean:7.92, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:00100, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:00101, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:00110, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:00111, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:01000, technical_mean:7.92, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:01001, technical_mean:7.92, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:01010, technical_mean:7.92, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:01011, technical_mean:7.92, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:01100, technical_mean:12.645, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}
+{env:01101, technical_mean:12.645, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}
+{env:01110, technical_mean:12.645, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}
+{env:01111, technical_mean:12.645, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}
+{env:10000, technical_mean:12.645, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:10001, technical_mean:12.645, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:10010, technical_mean:12.645, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:10011, technical_mean:12.645, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:10100, technical_mean:17.37, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:10101, technical_mean:17.37, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:10110, technical_mean:17.37, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:10111, technical_mean:17.37, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:11000, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:11001, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:11010, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:11011, technical_mean:12.645, technical_std:0.63, fundamental_mean:21.15, fundamental_std:1.06}
+{env:11100, technical_mean:17.37, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}
+{env:11101, technical_mean:17.37, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}
+{env:11110, technical_mean:17.37, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}
+{env:11111, technical_mean:17.37, technical_std:0.63, fundamental_mean:29.1, fundamental_std:1.06}

@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "name": "Currency Pair",
+    "description": "Different currency pairs exhibit varying degrees of volatility and responsiveness to different analysis techniques. Some pairs might be better suited to technical analysis (showing distinct, repeatable patterns) while others are driven more by fundamentals. This is the most likely explanation for distinct analysis time groupings.",
+    "relatedTo": [
+      "Market Volatility",
+      "Time of Day",
+      "News Cycle"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Market Volatility",
+    "description": "Higher volatility generally leads to more complex technical patterns (and therefore longer technical analysis times) or necessitates a more thorough fundamental review (extended fundamental analysis). Distinct volatility regimes could create distinct analysis time groups.",
+    "relatedTo": [
+      "Currency Pair",
+      "Time of Day",
+      "News Cycle"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Data Feed Quality",
+    "description": "The accuracy and completeness of the incoming data significantly impact both analysis types. Different data sources, or temporary issues with a data feed, can cause analysis to take significantly longer or result in the analysis being restarted, creating multiple time modes.",
+    "relatedTo": [
+      "Trading Platform",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Trading Platform",
+    "description": "The specific trading platform used might have different performance characteristics for running different analysis modules.  Some platforms may be optimized for fundamental data processing while others excel at technical analysis.",
+    "relatedTo": [
+      "Data Feed Quality",
+      "System Load"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Time of Day",
+    "description": "Trading volume and volatility change throughout the day. Overlapping market sessions (e.g., London and New York) can create different patterns and analysis demands, impacting times.  The 'quality' of data (updates, accuracy) may also change.",
+    "relatedTo": [
+      "Market Volatility",
+      "Currency Pair",
+      "News Cycle"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "News Cycle",
+    "description": "Major economic news releases (e.g., interest rate decisions, employment reports) drastically impact market behaviour. This may either speed up fundamental analysis (focused review on the event) or significantly lengthen technical analysis as patterns are disrupted and re-form.",
+    "relatedTo": [
+      "Market Volatility",
+      "Currency Pair",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Analyst/Algorithm Configuration",
+    "description": "Different configurations of the technical/fundamental analysis algorithms themselves (e.g., number of indicators, lookback periods, weightings) could result in different execution times, even for the same data.",
+    "relatedTo": [
+      "System Load"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "System Load",
+    "description": "High system load (CPU, memory, network) can slow down all computations. Peaks in system load, possibly correlated with other workflows running or external factors, could explain distinct time groups.",
+    "relatedTo": [
+      "Trading Platform",
+      "Analyst/Algorithm Configuration"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Order Book Depth",
+    "description": "The depth of the order book can affect the speed of technical analysis, particularly those algorithms that rely on price levels and volume.  A deeper, more liquid order book might offer more discernible patterns.",
+    "relatedTo": [
+      "Currency Pair"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Data Latency",
+    "description": "Delay in receiving data (different from feed *quality*) will slow down analysis. This might vary based on the data source or network congestion.",
+    "relatedTo": [
+      "Data Feed Quality",
+      "Trading Platform"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Weekend/Holiday Effects",
+    "description": "Trading behaviour changes significantly around weekends and holidays, leading to different market dynamics and potentially different analysis timings.",
+    "relatedTo": [
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Trader Intervention (Manual Override)",
+    "description": "If the trader can manually trigger or adjust the analysis, this creates variability in the total time taken. The trader may manually intervene more often in certain situations.",
+    "relatedTo": []
+  },
+  {
+    "id": 13,
+    "name": "Error Rate of Analysis",
+    "description": "If the analysis frequently fails and restarts, leading to longer total times.  The error rate could itself be dependent on some external factor.",
+    "relatedTo": [
+      "Data Feed Quality"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Specific Economic Indicators",
+    "description": "Certain economic indicators have a stronger impact on specific currency pairs or analysis types. For example, interest rate announcements heavily influence fundamental analysis.",
+    "relatedTo": [
+      "Currency Pair",
+      "News Cycle"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Time Since Last Major Event",
+    "description": "The recency of a significant market event could impact the 'noise' in the data, affecting the analysis time for both fundamental and technical approaches.",
+    "relatedTo": [
+      "News Cycle"
+    ]
+  }
+]

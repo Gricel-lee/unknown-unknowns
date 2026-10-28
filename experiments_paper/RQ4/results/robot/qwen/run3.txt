@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Weather Conditions", "description": "Can affect visibility and speed, especially in rainy or foggy conditions.", "relatedTo": ["Visibility"]},
+    {"id": 2, "name": "Visibility", "description": "Weather conditions and dust can reduce visibility, impacting the robot's ability to navigate.", "relatedTo": ["Weather Conditions"]},
+    {"id": 3, "name": "Plant Growth", "description": "Growth of crops, particularly in Path 2, can change the route's condition and affect travel time.", "relatedTo": []},
+    {"id": 4, "name": "Soil Moisture", "description": "High moisture can lead to muddy conditions, especially affecting Path 2.", "relatedTo": ["Plant Growth"]},
+    {"id": 5, "name": "Traffic Patterns", "description": "Other machinery or animals might use the paths, causing delays.", "relatedTo": []},
+    {"id": 6, "name": "Battery Level", "description": "Affects the robot's speed and maneuverability, though this is usually a constant factor.", "relatedTo": []},
+    {"id": 7, "name": "Camera Calibration", "description": "Poor calibration might lead to wrong route choices or increased processing time.", "relatedTo": []},
+    {"id": 8, "name": "Sensor Sensitivity", "description": "Changes in sensor sensitivity can lead to inaccurate route selection.", "relatedTo": []},
+    {"id": 9, "name": "Field Elevation", "description": "Variations in elevation can impact travel time, especially on Path 1.", "relatedTo": []},
+    {"id": 10, "name": "Grass Condition", "description": "Overgrown or uneven grass in Path 2 can slow down the robot.", "relatedTo": ["Plant Growth"]},
+    {"id": 11, "name": "Traffic Light Status", "description": "If Path 2 has a controlled access point, traffic light status can delay travel.", "relatedTo": []},
+    {"id": 12, "name": "Sensor Noise", "description": "External noise can interfere with the robot's sensors, affecting its decision-making.", "relatedTo": []},
+    {"id": 13, "name": "Machine Learning Model Accuracy", "description": "If the model used to predict travel times is not accurate, it might choose suboptimal paths.", "relatedTo": []},
+    {"id": 14, "name": "Daytime", "description": "Travel time can vary depending on the time of day, with potential traffic and visibility changes.", "relatedTo": ["Weather Conditions"]},
+    {"id": 15, "name": "Maintenance Records", "description": "Past maintenance or repairs on the paths can affect their current condition.", "relatedTo": []}
+]
+```

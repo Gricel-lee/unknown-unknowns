@@ -1,0 +1,88 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Weather Conditions",
+    "description": "Rain, snow, fog, or extreme lighting can significantly impact image quality, leading to increased analysis time.",
+    "relatedTo": ["Weather Conditions"]
+  },
+  {
+    "id": 2,
+    "name": "Sensor Noise",
+    "description": "Noise from sensors (e.g., GPS, IMU, barometric) can degrade image data, requiring more processing and analysis.",
+    "relatedTo": ["Sensor Noise"]
+  },
+  {
+    "id": 3,
+    "name": "Altitude/Elevation",
+    "description": "Higher altitudes introduce more complex atmospheric effects, requiring more processing and potentially different classification strategies.",
+    "relatedTo": ["Altitude/Elevation"]
+  },
+  {
+    "id": 4,
+    "name": "Visual Obstructions",
+    "description": "Buildings, trees, or other objects obstructing the view can complicate image analysis.",
+    "relatedTo": ["Visual Obstructions"]
+  },
+  {
+    "id": 5,
+    "name": "Camera Calibration Issues",
+    "description": "Inaccurate camera calibration can introduce systematic biases that affect image quality and classification.",
+    "relatedTo": ["Camera Calibration Issues"]
+  },
+  {
+    "id": 6,
+    "name": "Image Resolution",
+    "description": "Higher resolution images naturally take longer to process.",
+    "relatedTo": ["Image Resolution"]
+  },
+  {
+    "id": 7,
+    "name": "Image Content Complexity",
+    "description": "Highly complex scenes (many objects, moving elements) require more detailed analysis and potentially more complex classification.",
+    "relatedTo": ["Image Content Complexity"]
+  },
+  {
+    "id": 8,
+    "name": "Data Bandwidth",
+    "description": "Transferring large images and processing data can be a bottleneck.",
+    "relatedTo": ["Data Bandwidth"]
+  },
+  {
+    "id": 9,
+    "name": "Processing Power",
+    "description": "The UAV's onboard processing capabilities limit the speed of analysis.",
+    "relatedTo": ["Processing Power"]
+  },
+  {
+    "id": 10,
+    "name": "Data Storage",
+    "description": "Storing large images can take a significant amount of time.",
+    "relatedTo": ["Data Storage"]
+  },
+  {
+    "id": 11,
+    "name": "Software/Algorithm Limitations",
+    "description": "The current image classifier or controller might struggle with certain image characteristics or data distributions.",
+    "relatedTo": ["Software/Algorithm Limitations"]
+  },
+  {
+    "id": 12,
+    "name": "System Configuration",
+    "description": "Incorrect system settings (e.g., thresholding, filtering) can introduce biases.",
+    "relatedTo": ["System Configuration"]
+  },
+  {
+    "id": 13,
+    "name": "Data Preprocessing Steps",
+    "description": "The initial data preprocessing steps (e.g., noise reduction, color correction) can influence the final analysis results.",
+    "relatedTo": ["Data Preprocessing Steps"]
+  },
+  {
+    "id": 14,
+    "name": "Temporal Variations (If applicable)",
+    "description": "If multiple images are taken at different times, there could be shifts in image characteristics that affect analysis.",
+    "relatedTo": ["Temporal Variations"]
+  }
+]
+```

@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "Network Bandwidth",
+    "description": "The available network bandwidth can significantly impact the analysis time. If the network is congested, it may take longer to fetch and process market data.",
+    "relatedTo": [
+      "Server Load",
+      "Database Query Time"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Server Load",
+    "description": "A high server load can lead to slower analysis times, especially if the server is struggling to handle multiple requests simultaneously.",
+    "relatedTo": [
+      "Network Bandwidth",
+      "Database Query Time"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Database Query Time",
+    "description": "Slow database query times can also contribute to longer analysis times, especially if the database is heavily loaded or the queries are complex.",
+    "relatedTo": [
+      "Network Bandwidth",
+      "Server Load"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Data Volume",
+    "description": "A large volume of market data can increase the time it takes to fetch and process the data, leading to multimodal behavior.",
+    "relatedTo": [
+      "Network Bandwidth",
+      "Server Load"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Data Complexity",
+    "description": "Complex market data can be more time-consuming to analyze, leading to multimodal behavior.",
+    "relatedTo": [
+      "Data Volume"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Trader Experience",
+    "description": "Less experienced traders may require more time to analyze market data, leading to multimodal behavior.",
+    "relatedTo": [
+      "Analysis Mode",
+      "Trader Training"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Analysis Mode",
+    "description": "The choice of analysis mode (technical or fundamental) can also impact the analysis time, with technical analysis potentially being faster.",
+    "relatedTo": [
+      "Trader Experience",
+      "Analysis Algorithm"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Analysis Algorithm",
+    "description": "Different analysis algorithms can have varying execution times, leading to multimodal behavior.",
+    "relatedTo": [
+      "Analysis Mode",
+      "Data Complexity"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Trader Training",
+    "description": "Traders with more training may be more efficient in their analysis, leading to multimodal behavior.",
+    "relatedTo": [
+      "Trader Experience",
+      "Analysis Algorithm"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Time of Day",
+    "description": "The time of day can impact the analysis time, with certain times of day being busier or more volatile.",
+    "relatedTo": [
+      "Market Volatility",
+      "Trader Experience"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Market Volatility",
+    "description": "Higher market volatility can increase the time it takes to analyze market data, leading to multimodal behavior.",
+    "relatedTo": [
+      "Time of Day",
+      "Data Complexity"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "System Updates",
+    "description": "System updates or maintenance can impact the analysis time, leading to multimodal behavior.",
+    "relatedTo": [
+      "Server Load",
+      "Database Query Time"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Human Error",
+    "description": "Human error, such as incorrect data entry or analysis, can lead to longer analysis times, contributing to multimodal behavior.",
+    "relatedTo": [
+      "Trader Experience",
+      "Analysis Algorithm"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Software Bugs",
+    "description": "Software bugs or glitches can also impact the analysis time, leading to multimodal behavior.",
+    "relatedTo": [
+      "System Updates",
+      "Analysis Algorithm"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Environmental Factors",
+    "description": "Environmental factors, such as power outages or natural disasters, can impact the analysis time, leading to multimodal behavior.",
+    "relatedTo": [
+      "System Updates",
+      "Server Load"
+    ]
+  }
+]

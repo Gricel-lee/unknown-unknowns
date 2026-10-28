@@ -1,0 +1,1 @@
+I would like the controller of my distributed consensus protocol, which decides which of two servers performs the next step, to invoke online (web) services helping it to estimate (1) the current load of each server and (2) the current network congestion between the controller and each server, as the controller doesn't measure these itself. Can you recommend any such services?

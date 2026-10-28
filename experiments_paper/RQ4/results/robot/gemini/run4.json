@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "High moisture levels from rain or irrigation turn Path 2 (grass) muddy, causing wheel slip and dramatic speed reduction. Path 1 (outer track) may remain firmer. This creates a distinct split between 'dry, high-traction' days (fast) and 'wet, low-traction' days (slow), highly explaining multimodality.",
+    "relatedTo": [
+      "Active Precipitation",
+      "Tire Wear and Pressure",
+      "Path Degradation (Ruts/Potholes)"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Lighting Conditions",
+    "description": "As the robot navigates via on-board cameras, lighting changes (daylight vs. twilight vs. night) directly affect visual odometry processing. Low light or glare causes the system to reduce speed for safety, creating distinct speed modes aligned with diurnal cycles.",
+    "relatedTo": [
+      "Shadow Patterns",
+      "Camera Lens Contamination"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Crop Growth Stage",
+    "description": "As crops grow over the season, they encroach upon Path 2. Early-stage crops allow unimpeded travel, while late-stage, overhanging crops trigger frequent obstacle-avoidance slowdowns, yielding a bimodal distribution between early and late season runs.",
+    "relatedTo": [
+      "Path Maintenance (Grass Height)",
+      "Wind Speed (Crop Sway)"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Obstacle Presence (Machinery/Humans)",
+    "description": "Path 1 (outer edge) is likely shared with farm workers and larger machinery (tractors). When active, the robot must stop or slow down. This creates a binary travel-time split between 'clear path' and 'obstructed path' runs.",
+    "relatedTo": [
+      "Path Degradation (Ruts/Potholes)"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Path Maintenance (Grass Height)",
+    "description": "Path 2 is a grass path. If recently mowed, the robot experiences low rolling resistance. If overgrown, the grass creates physical drag and visually obscures the path, leading to two distinct travel-time profiles based on the maintenance schedule.",
+    "relatedTo": [
+      "Crop Growth Stage",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Battery State of Charge (SoC)",
+    "description": "Agricultural robots often have discrete battery management states. Below a specific threshold (e.g., 20%), the controller may trigger a 'turtle' or eco-mode that caps the maximum motor output, introducing a distinct group of slower run times.",
+    "relatedTo": [
+      "Ambient Temperature (Thermal Throttling)"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Active Precipitation",
+    "description": "Rain, mist, or heavy fog physically blocks camera visibility and triggers safety protocols that force the robot to travel at a crawl. It also leads to water droplets on the lens, causing persistent slow performance during and shortly after rainfall.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Camera Lens Contamination"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Camera Lens Contamination",
+    "description": "Dust, mud splashes, or pollen can coat the camera lenses. Visual navigation systems will either operate at full speed (clean lens) or fall back to a ultra-cautious 'dirty lens' backup mode characterized by frequent stops to recalculate positions.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Active Precipitation"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Wind Speed (Crop Sway)",
+    "description": "On Path 2, high winds cause crops to sway into the robot's visual path. The on-board cameras and safety algorithms can misinterpret these moving crops as dynamic obstacles, leading to a stop-and-go behavior that does not occur on calm days.",
+    "relatedTo": [
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Robot Payload Weight",
+    "description": "If the robot carries variable payloads (e.g., carrying harvested crops, soil samples, or water for spraying), the travel times will cluster into two modes: 'empty/lightweight' (fast acceleration and speed) and 'fully loaded' (slower speed, higher inertia).",
+    "relatedTo": [
+      "Battery State of Charge (SoC)",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Path Degradation (Ruts/Potholes)",
+    "description": "Heavy agricultural machinery can leave deep ruts on Path 1, especially after rain. These ruts remain until graded, forcing the robot into a permanent slower speed mode on Path 1 for weeks at a time, creating distinct pre- and post-degradation time clusters.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Obstacle Presence (Machinery/Humans)"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Shadow Patterns",
+    "description": "On sunny days, tall crop rows cast harsh, high-contrast shadows across Path 2. This confuses camera-based edge-detection algorithms, causing the robot to slow down to resolve paths, whereas overcast days provide diffuse lighting and smooth navigation.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Ambient Temperature (Thermal Throttling)",
+    "description": "Extreme hot weather can cause the robot's processors or drive motors to overheat, triggering thermal throttling to prevent hardware damage. This results in a distinct class of slow runs during peak afternoon heat in summer.",
+    "relatedTo": [
+      "Battery State of Charge (SoC)"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Tire Wear and Pressure",
+    "description": "Under-inflated or worn tires significantly increase wheel slip on both grass and dirt. Maintenance intervals create a step-change (bimodal shift) in performance before and after tire servicing.",
+    "relatedTo": [
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Network Latency",
+    "description": "If visual processing or path planning is offloaded to an edge server via cellular or Wi-Fi, poor network coverage zones (or high network load) will cause the robot to halt and wait for telemetry, causing high, discretized delays.",
+    "relatedTo": []
+  }
+]

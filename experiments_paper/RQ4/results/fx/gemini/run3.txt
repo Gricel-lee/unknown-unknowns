@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Cache Hit vs. Miss (Data Access Mode)",
+    "description": "If the required market data or technical indicators are cached in memory, execution is near-instantaneous. A cache miss forces a database query or external API call. This creates a sharp bimodal distribution in execution times (microseconds vs. milliseconds/seconds) for both analysis modes.",
+    "relatedTo": ["Dynamic Historical Lookback Window", "External API Throttling and Rate Limiting"]
+  },
+  {
+    "id": 2,
+    "name": "External API Throttling and Rate Limiting",
+    "description": "External financial data feeds impose rate limits. When limits are exceeded, client SDKs or APIs trigger fixed-duration backoff sleeps (e.g., 1s, 2s, 5s) or queuing, introducing highly distinct, quantized latency peaks in both TA and FA workflow steps.",
+    "relatedTo": ["Cache Hit vs. Miss (Data Access Mode)", "Failed Request Retry Cycles"]
+  },
+  {
+    "id": 3,
+    "name": "Market Volatility and Trading Session",
+    "description": "High-volatility windows (e.g., the London/New York session overlap) generate massive volumes of order book updates and tick data. Processing these dense datasets in Technical Analysis takes significantly longer than analyzing quiet, low-volume trading sessions (e.g., Sydney/Asian session).",
+    "relatedTo": ["Currency Pair Liquidity (Majors vs. Exotics)", "Concurrency and Shared Queue Contention"]
+  },
+  {
+    "id": 4,
+    "name": "Fundamental Data Source Type",
+    "description": "Fundamental Analysis execution times split based on data payload complexity: processing simple structured numeric calendars (fast mode) vs. parsing long-form unstructured central bank reports/news feeds using NLP algorithms (slow mode).",
+    "relatedTo": ["NLP Model Selection for Sentiment Analysis", "Economic Calendar Event Density"]
+  },
+  {
+    "id": 5,
+    "name": "Dynamic Historical Lookback Window",
+    "description": "Technical Analysis algorithms may dynamically expand their lookback window (e.g., from 1 day of 1-minute ticks to 30 days of ticks) when market regimes are unstable, grouping computation runtimes into distinct classes based on the data volume processed.",
+    "relatedTo": ["Cache Hit vs. Miss (Data Access Mode)", "Market Volatility and Trading Session"]
+  },
+  {
+    "id": 6,
+    "name": "Network Routing and Server Geolocation",
+    "description": "The trade workflow might route data requests to different geographically distributed liquidity provider servers or broker API endpoints depending on the asset, leading to discrete network latency bands (e.g., 5ms for local, 120ms for trans-Atlantic).",
+    "relatedTo": ["Data Feed Connection Protocol (REST vs. WebSocket)"]
+  },
+  {
+    "id": 7,
+    "name": "Concurrency and Shared Queue Contention",
+    "description": "When multiple instances of the workflow run simultaneously, they compete for shared system resources (CPU cores, database connections, locks). High-concurrency runs experience queuing delays, forming a slower runtime cluster compared to isolated runs.",
+    "relatedTo": ["Market Volatility and Trading Session", "Virtual Machine Resource Throttling (Noisy Neighbors)"]
+  },
+  {
+    "id": 8,
+    "name": "Currency Pair Liquidity (Majors vs. Exotics)",
+    "description": "Major currency pairs have highly dense, continuous tick data requiring extensive computation in Technical Analysis. Exotic pairs are highly illiquid with sparse data points, resulting in much faster calculation passes and distinct multimodal performance bands based on asset class.",
+    "relatedTo": ["Market Volatility and Trading Session"]
+  },
+  {
+    "id": 9,
+    "name": "Failed Request Retry Cycles",
+    "description": "Network drops or transient broker API failures trigger retry loops with static timeout configurations (e.g., retry after 1000ms). This delays workflow finalization by exact multiples of the retry interval, causing distinct peaks in the latency logs.",
+    "relatedTo": ["External API Throttling and Rate Limiting", "Network Routing and Server Geolocation"]
+  },
+  {
+    "id": 10,
+    "name": "NLP Model Selection for Sentiment Analysis",
+    "description": "Depending on the text source size during Fundamental Analysis, the system might swap between a lightweight keyword-matching algorithm (near-instant) and a deep-learning Transformer model (highly compute-intensive), leading to two distinct runtime modes.",
+    "relatedTo": ["Fundamental Data Source Type"]
+  },
+  {
+    "id": 11,
+    "name": "Virtual Machine Resource Throttling (Noisy Neighbors)",
+    "description": "If the workflow runs on shared cloud infrastructure (e.g., burstable VM instances like AWS t3), performance is highly bimodal depending on whether CPU credits are available or if other tenants are causing resource starvation.",
+    "relatedTo": ["Concurrency and Shared Queue Contention"]
+  },
+  {
+    "id": 12,
+    "name": "Data Feed Connection Protocol (REST vs. WebSocket)",
+    "description": "Requests made using on-demand REST API polling require a TCP handshake and security negotiation overhead, whereas reuse of an active, warm WebSocket connection skips this. This differences in protocol overhead yield distinct, visible latency steps.",
+    "relatedTo": ["Network Routing and Server Geolocation"]
+  },
+  {
+    "id": 13,
+    "name": "Garbage Collection (GC) and Memory Management",
+    "description": "During high-frequency runs, memory allocations trigger JVM or runtime Garbage Collection pauses. Runs interrupted by 'Stop-the-World' GC events form a distinct latency group compared to runs that execute uninterrupted.",
+    "relatedTo": ["Concurrency and Shared Queue Contention"]
+  },
+  {
+    "id": 14,
+    "name": "Economic Calendar Event Density",
+    "description": "During heavy macroeconomic release days (e.g., FOMC or Non-Farm Payroll releases), the fundamental analysis workflow must process dozens of overlapping data feeds and news bulletins sequentially, dragging execution time into a different scale.",
+    "relatedTo": ["Fundamental Data Source Type", "NLP Model Selection for Sentiment Analysis"]
+  },
+  {
+    "id": 15,
+    "name": "Algorithm Convergence Iterations",
+    "description": "Certain advanced Technical Analysis indicators (e.g., volatile fitting, optimization loops, or neural network inference passes) run iteratively. If they converge early, they finish rapidly; otherwise, they run to the maximum iteration limit, establishing two distinct runtime peaks.",
+    "relatedTo": ["Dynamic Historical Lookback Window"]
+  }
+]
+```

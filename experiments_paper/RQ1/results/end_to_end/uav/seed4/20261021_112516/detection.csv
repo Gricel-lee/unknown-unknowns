@@ -1,0 +1,31 @@
+iteration,known_vars,bin,output,unimodal,p_value
+1,,(all),operator,False,0.0
+1,,(all),onboard,False,0.0
+2,low_light,low_light=0,operator,False,0.0
+2,low_light,low_light=0,onboard,True,0.7035
+2,low_light,low_light=1,operator,False,0.0
+2,low_light,low_light=1,onboard,True,0.9769
+3,low_light operator_busy,"low_light=0, operator_busy=0",operator,False,0.0
+3,low_light operator_busy,"low_light=0, operator_busy=0",onboard,True,0.8358
+3,low_light operator_busy,"low_light=0, operator_busy=1",operator,False,0.0023
+3,low_light operator_busy,"low_light=0, operator_busy=1",onboard,True,0.9542
+3,low_light operator_busy,"low_light=1, operator_busy=0",operator,False,0.0
+3,low_light operator_busy,"low_light=1, operator_busy=0",onboard,True,0.9901
+3,low_light operator_busy,"low_light=1, operator_busy=1",operator,True,0.0746
+3,low_light operator_busy,"low_light=1, operator_busy=1",onboard,True,0.758
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=0, signal_noise=0",operator,True,0.9904
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=0, signal_noise=0",onboard,True,0.6535
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=0, signal_noise=1",operator,True,0.8912
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=0, signal_noise=1",onboard,True,0.8942
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=1, signal_noise=0",operator,True,0.9797
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=1, signal_noise=0",onboard,True,0.4989
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=1, signal_noise=1",operator,True,0.3107
+4,low_light operator_busy signal_noise,"low_light=0, operator_busy=1, signal_noise=1",onboard,True,0.9697
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=0, signal_noise=0",operator,True,0.6929
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=0, signal_noise=0",onboard,True,0.8183
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=0, signal_noise=1",operator,True,0.9817
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=0, signal_noise=1",onboard,True,0.5787
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=1, signal_noise=0",operator,True,0.6591
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=1, signal_noise=0",onboard,True,0.6932
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=1, signal_noise=1",operator,True,0.9912
+4,low_light operator_busy signal_noise,"low_light=1, operator_busy=1, signal_noise=1",onboard,True,0.7503

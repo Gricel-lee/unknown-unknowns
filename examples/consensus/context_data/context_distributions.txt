@@ -1,0 +1,16 @@
+# Normal distribution of the latency (ms) of one coin flip on each server, for each
+# (busy, remote, congested) combination.
+# Format: {env:<combination>, server1_mean:<m>, server1_std:<s>, server2_mean:<m>, server2_std:<s>}
+#
+# server1 mean = 10 + 20*busy + 10*congested     (busy: many processes on server 1)
+# server2 mean = 12 + 25*remote + 10*congested   (remote: server 2 in a far data centre)
+# The faster server depends on the environment, so a controller that knows the hidden
+# variables can pick the faster server per environment.
+{env:000, server1_mean:10, server1_std:2, server2_mean:12, server2_std:2}
+{env:001, server1_mean:20, server1_std:2, server2_mean:22, server2_std:2}
+{env:010, server1_mean:10, server1_std:2, server2_mean:37, server2_std:2}
+{env:011, server1_mean:20, server1_std:2, server2_mean:47, server2_std:2}
+{env:100, server1_mean:30, server1_std:2, server2_mean:12, server2_std:2}
+{env:101, server1_mean:40, server1_std:2, server2_mean:22, server2_std:2}
+{env:110, server1_mean:30, server1_std:2, server2_mean:37, server2_std:2}
+{env:111, server1_mean:40, server1_std:2, server2_mean:47, server2_std:2}

@@ -1,0 +1,50 @@
+mdp
+
+// Template with 1 unknown variable u1 (u1=light), with values 0/1.
+// The constants below have no value; the controller fills them in.
+
+// --- probabilities (filled by the controller) -----
+// pX = probability of light=X
+const double p0 = 0.373; // env_id=1
+const double p1 = 0.627; // env_id=2
+
+// --- rewards (filled by the controller) -----
+// cA_X = cost of taking actionA when light=X
+const double c1_0 = 25.045285325702125;
+const double c1_1 = 39.74980146102729;
+const double c2_0 = 30.959187678293304;
+const double c2_1 = 31.636566229157324;
+
+// --- readable views of the environment (derived from env_id) -----
+formula env_set = env_id != 0;
+formula u1      = (env_id=2) ? 1 : 0;
+
+module environment
+  env_id : [0..2] init 0; // 0 = not set, 1..2 = set
+
+  // sample the environment once, at the start
+  [] env_id=0 -> p0 : (env_id'=1)
+               + p1 : (env_id'=2);
+endmodule
+
+module agent
+  s : [0..1] init 0;      // 0 = start, 1 = end of journey
+  action : [0..2] init 0; // 0 = none yet, 1 = action1, 2 = action2
+
+  // nondeterministic choice once the environment is known
+  [action1] s=0 & env_set -> 1 : (s'=1) & (action'=1);
+  [action2] s=0 & env_set -> 1 : (s'=1) & (action'=2);
+
+  // absorbing end state (avoids deadlock warnings)
+  [done] s=1 -> 1 : true;
+endmodule
+
+rewards "cost"
+  [action1] env_id=1 : c1_0;
+  [action1] env_id=2 : c1_1;
+
+  [action2] env_id=1 : c2_0;
+  [action2] env_id=2 : c2_1;
+endrewards
+
+label "end" = s=1;

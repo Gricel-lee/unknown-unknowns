@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "High moisture turns the grass path (Path 2) into mud, causing high wheel slip and drastically increasing travel times, while the hard outer track (Path 1) remains relatively stable. This creates distinct 'dry/fast' and 'wet/slow' travel time groups.",
+    "relatedTo": [
+      "Precipitation",
+      "Grass Height",
+      "Path Surface Degradation"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Time of Day",
+    "description": "The sun's angle changes throughout the day. Low sun angles (morning/evening) create long, harsh shadows from crop rows on Path 2 and severe glare on Path 1, confusing the camera-based navigation and causing it to default to a slower, cautious speed.",
+    "relatedTo": [
+      "Cloud Cover",
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Crop Growth Stage",
+    "description": "In early stages, Path 2 is clear and wide open. In late stages, mature, overgrown crops hang into Path 2, physically obstructing the robot or occluding the cameras. This results in distinct seasonal travel-time clusters.",
+    "relatedTo": [
+      "Time of Day",
+      "GNSS Signal Quality",
+      "Wind-Induced Crop Motion"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Precipitation",
+    "description": "Active rain, fog, or heavy dew directly degrades camera visibility and lenses. It also immediately affects surface traction, generating a distinct 'poor weather' slow travel speed group.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Camera Lens Cleanliness",
+      "Cloud Cover"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Camera Lens Cleanliness",
+    "description": "Dust from the dry outer track (Path 1) or mud splashes from Path 2 can accumulate on camera lenses. If visual clarity drops below a threshold, the robot operates in a slow 'safe mode' or experiences frequent stops.",
+    "relatedTo": [
+      "Precipitation",
+      "Soil Moisture",
+      "Tractor Activity"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Grass Height",
+    "description": "Unmowed, high grass on Path 2 increases physical rolling resistance and can trigger false-positive obstacle detections, creating distinct travel speed states depending on the farm's mowing schedule.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Wind-Induced Crop Motion"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Battery State of Charge",
+    "description": "When battery levels drop below a critical threshold, the robot may enter an eco/power-saving mode with capped motor speeds, or experience lower voltage output, creating a distinct slow-speed profile.",
+    "relatedTo": [
+      "Ambient Temperature",
+      "Payload Weight"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Ambient Temperature",
+    "description": "On hot days, the robot's onboard navigation computer or electric motors may suffer from thermal throttling to prevent damage. This leads to distinct slow journeys during peak afternoon heat.",
+    "relatedTo": [
+      "Battery State of Charge"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "GNSS Signal Quality",
+    "description": "When traveling between tall crops (Path 2), GNSS/GPS signals can suffer from multipath interference or shadowing. This forces the robot to rely on slower, camera-only visual odometry navigation.",
+    "relatedTo": [
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Presence of Obstacles",
+    "description": "The presence of humans, animals, or misplaced tools forces the robot to halt or execute slow evasion maneuvers. This creates a binary travel time distribution: uninterrupted vs. obstructed.",
+    "relatedTo": [
+      "Tractor Activity"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Tractor Activity",
+    "description": "Active farming machinery on Path 1 (the outer track) can block the robot's way entirely or generate massive dust clouds that blind the camera navigation system, causing sudden stops.",
+    "relatedTo": [
+      "Presence of Obstacles",
+      "Camera Lens Cleanliness"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Payload Weight",
+    "description": "Carrying heavy payloads (e.g., payloads of harvested crops, water tanks, or heavy sensor arrays) increases weight, significantly slowing down travel on the soft grass of Path 2 compared to the hard track of Path 1.",
+    "relatedTo": [
+      "Battery State of Charge"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Cloud Cover",
+    "description": "Diffuse lighting from overcast skies is ideal for cameras. Shifting clouds on partly cloudy days create rapid contrast changes and moving shadows that confuse optical-flow algorithms, leading to sporadic deceleration.",
+    "relatedTo": [
+      "Time of Day",
+      "Precipitation"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Wind-Induced Crop Motion",
+    "description": "Strong winds cause crop leaves on Path 2 to sway rapidly into and out of the camera's field of view. This visual noise triggers false-positive collision avoidance and frequent braking.",
+    "relatedTo": [
+      "Crop Growth Stage",
+      "Grass Height"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Path Surface Degradation",
+    "description": "Heavy rain or heavy tractor usage can create deep ruts or potholes on the outer track (Path 1). The robot's vertical accelerometer readings may trigger automatic speed reductions to prevent structural damage.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Precipitation"
+    ]
+  }
+]

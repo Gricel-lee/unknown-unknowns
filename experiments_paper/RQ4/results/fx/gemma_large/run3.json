@@ -1,0 +1,120 @@
+[
+  {
+    "id": 1,
+    "name": "Volatility Level",
+    "description": "High market volatility likely increases the time for *both* analyses, but might disproportionately affect technical analysis which relies on recent price action. Different volatility regimes could create distinct execution time clusters. This is highly likely as FX trading is inherently tied to volatility.",
+    "relatedTo": [
+      "Trading Volume",
+      "Time of Day",
+      "News Events"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Trading Volume",
+    "description": "Higher trading volume implies more data for technical analysis, potentially extending its runtime. Fundamental analysis might also take longer as more recent economic data becomes available, though to a lesser degree.  Distinct volume 'bands' can lead to different analysis times.",
+    "relatedTo": [
+      "Volatility Level",
+      "Time of Day",
+      "News Events"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Currency Pair",
+    "description": "Different currency pairs exhibit differing levels of market efficiency, data availability, and complexity (e.g., EUR/USD vs. USD/TRY). This directly impacts the required data processing and complexity of both analysis types, explaining potential multimodal distributions.",
+    "relatedTo": [
+      "Volatility Level",
+      "Trading Volume"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "News Events",
+    "description": "Major economic news releases (e.g., interest rate decisions, employment reports) significantly impact volatility and trading volume. Analyses performed *during* or *immediately after* such events will likely have different timings than those performed in calmer periods.",
+    "relatedTo": [
+      "Volatility Level",
+      "Trading Volume",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Time of Day",
+    "description": "Trading sessions overlap and liquidity varies throughout the day.  Overlap between major trading centres (London, New York) generally leads to higher volume & volatility.  Different times will show different timing patterns.",
+    "relatedTo": [
+      "Trading Volume",
+      "Volatility Level"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Data Feed Latency",
+    "description": "Variations in the latency of the data feeds providing price and economic data can significantly impact analysis times.  Sporadic delays or outages would introduce noticeable timing differences.",
+    "relatedTo": []
+  },
+  {
+    "id": 7,
+    "name": "Server Load / System Resource Usage",
+    "description": "High system load on the servers performing the analysis (CPU, memory, network) will naturally slow down processing. Shared resource contention can introduce timing variations, particularly noticeable with complex calculations.",
+    "relatedTo": []
+  },
+  {
+    "id": 8,
+    "name": "Specific Technical Indicator Configuration",
+    "description": "Different configurations of technical indicators (e.g., moving average lengths, RSI periods) can affect the computation time. A range of configurations in use could explain multimodal behavior.",
+    "relatedTo": []
+  },
+  {
+    "id": 9,
+    "name": "Fundamental Data Release Frequency",
+    "description": "The frequency of fundamental data releases varies (e.g., daily, weekly, monthly). Analyses performed near major data release dates might take longer due to increased data processing.",
+    "relatedTo": [
+      "News Events"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Data Quality",
+    "description": "Errors or inconsistencies in the incoming data (e.g., missing values, outliers) require error handling and potentially data cleansing, adding to analysis time. Variations in data quality could contribute to multimodal distributions.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "Algorithm Version",
+    "description": "If different versions of the technical or fundamental analysis algorithms are deployed (even temporarily during updates), this could explain timing differences.  Changes in algorithm efficiency would be reflected in runtimes.",
+    "relatedTo": []
+  },
+  {
+    "id": 12,
+    "name": "Broker/Exchange Connectivity",
+    "description": "Temporary connectivity issues to the broker or exchange providing the price data can lead to delays in fetching data and impact analysis time.",
+    "relatedTo": [
+      "Data Feed Latency"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Weekend/Holiday Effects",
+    "description": "Reduced liquidity and trading volume during weekends or holidays can impact analysis times, particularly for technical indicators that rely on historical data.",
+    "relatedTo": [
+      "Trading Volume",
+      "Volatility Level",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Order Book Depth",
+    "description": "The depth of the order book (number of buy and sell orders at different price levels) impacts the complexity of some technical analyses, particularly those based on order flow. Shallow order books might lead to faster analysis.",
+    "relatedTo": [
+      "Trading Volume"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Trader Intervention (Rare)",
+    "description": "Though an automated system, occasional manual overrides or adjustments by the trader (e.g., forcing a re-analysis) could introduce timing anomalies, though this is less likely.",
+    "relatedTo": []
+  }
+]

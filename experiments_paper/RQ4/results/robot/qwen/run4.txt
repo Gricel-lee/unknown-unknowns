@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Time of Day", "description": "The time of day can significantly affect travel time due to varying light conditions, temperature, and humidity.", "relatedTo": ["Weather Conditions"]},
+    {"id": 2, "name": "Weather Conditions", "description": "Rain, wind, and temperature can all impact travel time. For example, wet grass can slow down the robot.", "relatedTo": ["Obstacles"]},
+    {"id": 3, "name": "Obstacles", "description": "Objects such as fallen branches, rocks, or loose soil can block Path 2, increasing travel time.", "relatedTo": ["Grass Condition"]},
+    {"id": 4, "name": "Grass Condition", "description": "The state of the grass, including height and density, can affect the robot's speed on Path 2.", "relatedTo": ["Obstacles"]},
+    {"id": 5, "name": "Vehicle Load", "description": "The robot's payload can affect its speed, especially on Path 2 if it's more uneven.", "relatedTo": ["Energy Consumption"]},
+    {"id": 6, "name": "Energy Consumption", "description": "The battery level of the robot can impact its speed, especially on the longer Path 1.", "relatedTo": ["Vehicle Load"]},
+    {"id": 7, "name": "Traffic Congestion", "description": "Other robots or vehicles in the field can slow down travel, especially if multiple robots share Path 1.", "relatedTo": ["Route Choice"]},
+    {"id": 8, "name": "Route Choice", "description": "The controller's choice of route can be influenced by recent travel times, potentially leading to bias in the data.", "relatedTo": ["Algorithm Bias"]},
+    {"id": 9, "name": "Algorithm Bias", "description": "The algorithm used to select the route may have biases based on historical data, leading to suboptimal choices.", "relatedTo": ["Controller's Decision"]},
+    {"id": 10, "name": "Controller's Decision", "description": "The human or system controller making the decision on which path to take can be influenced by current conditions.", "relatedTo": ["Algorithm Bias"]},
+    {"id": 11, "name": "Soil Moisture", "description": "Changes in soil moisture can affect the traction and speed of the robot, especially on Path 2.", "relatedTo": ["Weather Conditions"]},
+    {"id": 12, "name": "Sensor Performance", "description": "Dust or debris on the robot's cameras can affect its ability to navigate, leading to slower travel times.", "relatedTo": ["Environmental Contamination"]},
+    {"id": 13, "name": "Environmental Contamination", "description": "Dirt, dust, or other contaminants can affect the robot's sensors and overall performance.", "relatedTo": ["Sensor Performance"]},
+    {"id": 14, "name": "Plant Stage", "description": "The stage of the crops can affect the grass height and condition, impacting travel time on Path 2.", "relatedTo": ["Grass Condition"]},
+    {"id": 15, "name": "Sunlight Intensity", "description": "The intensity of sunlight can affect the robot's camera performance and navigation, especially in certain times of the day.", "relatedTo": ["Time of Day"]}
+]
+```

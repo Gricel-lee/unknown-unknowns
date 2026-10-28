@@ -1,0 +1,63 @@
+mdp
+
+// Template with 2 unknown variables u1, u2 (u1=light, u2=wet), each with values 0/1.
+// The constants below have no value; the controller fills them in.
+
+// --- probabilities (filled by the controller) -----
+// pXY = probability of light=X, wet=Y
+const double p00 = 0.193; // env_id=1
+const double p10 = 0.415; // env_id=2
+const double p01 = 0.18; // env_id=3
+const double p11 = 0.212; // env_id=4
+
+// --- rewards (filled by the controller) -----
+// cA_XY = cost of taking actionA when light=X, wet=Y
+const double c1_00 = 28.396668228091514;
+const double c1_10 = 42.18073021477557;
+const double c1_01 = 21.451858102584612;
+const double c1_11 = 34.99114375911438;
+const double c2_00 = 27.03186961704894;
+const double c2_10 = 28.964223050746597;
+const double c2_01 = 35.17014537729421;
+const double c2_11 = 36.86780405481986;
+
+// --- readable views of the environment (derived from env_id) -----
+formula env_set = env_id != 0;
+formula u1      = (env_id=2 | env_id=4) ? 1 : 0;
+formula u2      = (env_id>=3) ? 1 : 0;
+
+module environment
+  env_id : [0..4] init 0; // 0 = not set, 1..4 = set
+
+  // sample the environment once, at the start
+  [] env_id=0 -> p00 : (env_id'=1)
+               + p10 : (env_id'=2)
+               + p01 : (env_id'=3)
+               + p11 : (env_id'=4);
+endmodule
+
+module agent
+  s : [0..1] init 0;      // 0 = start, 1 = end of journey
+  action : [0..2] init 0; // 0 = none yet, 1 = action1, 2 = action2
+
+  // nondeterministic choice once the environment is known
+  [action1] s=0 & env_set -> 1 : (s'=1) & (action'=1);
+  [action2] s=0 & env_set -> 1 : (s'=1) & (action'=2);
+
+  // absorbing end state (avoids deadlock warnings)
+  [done] s=1 -> 1 : true;
+endmodule
+
+rewards "cost"
+  [action1] env_id=1 : c1_00;
+  [action1] env_id=2 : c1_10;
+  [action1] env_id=3 : c1_01;
+  [action1] env_id=4 : c1_11;
+
+  [action2] env_id=1 : c2_00;
+  [action2] env_id=2 : c2_10;
+  [action2] env_id=3 : c2_01;
+  [action2] env_id=4 : c2_11;
+endrewards
+
+label "end" = s=1;

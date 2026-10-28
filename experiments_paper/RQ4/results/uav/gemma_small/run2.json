@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "Weather Conditions",
+    "description": "Rain, snow, fog, or extreme lighting conditions can significantly degrade image quality, leading to inaccurate analysis.",
+    "relatedTo": [
+      "Weather"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sensor Noise",
+    "description": "Sensor noise in the camera or LiDAR can introduce random variations in the image data, invalidating the classification.",
+    "relatedTo": [
+      "Camera",
+      "LiDAR"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Altitude/Air Density",
+    "description": "Changes in altitude or air density can affect image sharpness and introduce distortions.",
+    "relatedTo": [
+      "UAV Altitude",
+      "Air Density"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Visual Obstructions",
+    "description": "Trees, buildings, or other objects obstructing the view can create a 'blind spot' for the classifier.",
+    "relatedTo": [
+      "UAV Environment"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Image Resolution/Data Rate",
+    "description": "Lower image resolution or data rates can lead to less detailed data and poorer classification accuracy.",
+    "relatedTo": [
+      "Image Quality"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Camera Calibration Issues",
+    "description": "Inaccurate camera calibration can lead to incorrect image reconstruction and classification.",
+    "relatedTo": [
+      "Camera"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Motion Blur",
+    "description": "Moving objects or the UAV itself can create blurriness and reduce the effectiveness of the analysis.",
+    "relatedTo": [
+      "UAV Motion"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Shadows",
+    "description": "Shadows can create inconsistencies and bias in the image data, particularly in areas with complex lighting.",
+    "relatedTo": [
+      "Camera Lighting"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Dynamic Range",
+    "description": "Extreme differences in brightness levels in an image can create challenges for the classifier.",
+    "relatedTo": [
+      "Image Data"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Object Recognition Algorithm",
+    "description": "The underlying object recognition algorithm itself might be less accurate for certain types of objects.",
+    "relatedTo": [
+      "Onboard Classifier"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Data Collection Bias",
+    "description": "The data collected may not be representative of the full range of scenarios the UAV will encounter.",
+    "relatedTo": [
+      "Data Volume"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Lighting Conditions Variations (Time of Day)",
+    "description": "Changes in sunlight intensity and color across the flight path can affect image quality.",
+    "relatedTo": [
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "GPS Signal Strength",
+    "description": "Weak GPS signals can cause image reconstruction errors.",
+    "relatedTo": [
+      "UAV Tracking"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Atmospheric Conditions (Humidity)",
+    "description": "Humidity can slightly alter image contrast and color.",
+    "relatedTo": [
+      "Atmospheric Data"
+    ]
+  }
+]

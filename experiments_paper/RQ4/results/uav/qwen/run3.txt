@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Lighting Conditions", "description": "Varies the visibility of objects in the images, affecting the speed and accuracy of both human and onboard analysis.", "relatedTo": ["Sensor Quality"]},
+    {"id": 2, "name": "Sensor Quality", "description": "The quality of the camera or imaging sensor affects the clarity of the images, impacting the time taken to analyze them.", "relatedTo": ["Lighting Conditions"]},
+    {"id": 3, "name": "Weather Conditions", "description": "Changes in weather, such as clouds, fog, or rain, can affect the visibility of the waypoints and the clarity of the images taken.", "relatedTo": ["Lighting Conditions"]},
+    {"id": 4, "name": "Distance to Waypoint", "description": "Images taken from closer distances may be clearer and easier to analyze, reducing the time required for analysis.", "relatedTo": []},
+    {"id": 5, "name": "Image Resolution", "description": "Higher resolution images take longer to process, both by the human operator and the onboard classifier.", "relatedTo": ["Sensor Quality"]},
+    {"id": 6, "name": "Object Complexity", "description": "The complexity of the objects in the images (e.g., whether they are distinct or part of a larger scene) affects the time needed for analysis.", "relatedTo": []},
+    {"id": 7, "name": "UAV Speed", "description": "The speed at which the UAV travels between waypoints can affect the quality of the images and the time available for analysis at each waypoint.", "relatedTo": []},
+    {"id": 8, "name": "UAV Attitude", "description": "The orientation of the UAV can affect the angle of the images and the quality of the view of the waypoints, impacting the analysis time.", "relatedTo": []},
+    {"id": 9, "name": "Battery Life", "description": "The remaining battery life of the UAV can affect its speed and stability, indirectly impacting the time to take and analyze images.", "relatedTo": []},
+    {"id": 10, "name": "UAV Software Version", "description": "Different versions of the UAV software may have different performance in terms of image capture and analysis speed.", "relatedTo": []},
+    {"id": 11, "name": "Human Fatigue", "description": "If a human operator is involved, their level of fatigue can affect their speed and accuracy in analyzing images.", "relatedTo": []},
+    {"id": 12, "name": "UAV Health", "description": "The health of the UAV, including any potential issues with the sensors or imaging equipment, can affect the quality and clarity of the images.", "relatedTo": ["Sensor Quality"]},
+    {"id": 13, "name": "Mission Complexity", "description": "More complex missions with more waypoints may require more time for analysis due to the increased number of images to be processed.", "relatedTo": []},
+    {"id": 14, "name": "Mission Urgency", "description": "The urgency of the mission can affect the time available for analysis, potentially leading to rushed or incomplete analysis.", "relatedTo": []},
+    {"id": 15, "name": "Time of Day", "description": "The time of day can affect lighting conditions and the visibility of waypoints, impacting the time required for analysis.", "relatedTo": ["Lighting Conditions"]}
+]
+```

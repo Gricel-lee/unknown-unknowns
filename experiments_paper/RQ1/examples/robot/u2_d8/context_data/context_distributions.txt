@@ -1,0 +1,35 @@
+# RQ1 variant of robot: 2 relevant variable(s) ['light', 'busy'], difficulty 8 (shift = 2.5 std)
+# Distractors (no effect): ['wet', 'z1', 'z2']
+# Format: {env:<light,wet,busy,z1,z2>, <output>_mean:<m>, <output>_std:<s>, ...}
+{env:00000, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:00001, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:00010, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:00011, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:00100, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:00101, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:00110, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:00111, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:01000, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:01001, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:01010, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:01011, path1_mean:26.0, path1_std:1.0, path2_mean:25.0, path2_std:1.0}
+{env:01100, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:01101, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:01110, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:01111, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:10000, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:10001, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:10010, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:10011, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:10100, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}
+{env:10101, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}
+{env:10110, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}
+{env:10111, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}
+{env:11000, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:11001, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:11010, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:11011, path1_mean:28.5, path1_std:1.0, path2_mean:27.5, path2_std:1.0}
+{env:11100, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}
+{env:11101, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}
+{env:11110, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}
+{env:11111, path1_mean:31.0, path1_std:1.0, path2_mean:30.0, path2_std:1.0}

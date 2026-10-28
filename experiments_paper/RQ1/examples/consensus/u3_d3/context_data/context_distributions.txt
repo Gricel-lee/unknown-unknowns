@@ -1,0 +1,35 @@
+# RQ1 variant of consensus: 3 relevant variable(s) ['busy', 'remote', 'congested'], difficulty 3 (shift = 5.0 std)
+# Distractors (no effect): ['z1', 'z2']
+# Format: {env:<busy,remote,congested,z1,z2>, <output>_mean:<m>, <output>_std:<s>, ...}
+{env:00000, server1_mean:10.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:00001, server1_mean:10.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:00010, server1_mean:10.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:00011, server1_mean:10.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:00100, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:00101, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:00110, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:00111, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:01000, server1_mean:10.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:01001, server1_mean:10.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:01010, server1_mean:10.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:01011, server1_mean:10.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:01100, server1_mean:20.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}
+{env:01101, server1_mean:20.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}
+{env:01110, server1_mean:20.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}
+{env:01111, server1_mean:20.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}
+{env:10000, server1_mean:20.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:10001, server1_mean:20.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:10010, server1_mean:20.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:10011, server1_mean:20.0, server1_std:2.0, server2_mean:12.0, server2_std:2.0}
+{env:10100, server1_mean:30.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:10101, server1_mean:30.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:10110, server1_mean:30.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:10111, server1_mean:30.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:11000, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:11001, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:11010, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:11011, server1_mean:20.0, server1_std:2.0, server2_mean:22.0, server2_std:2.0}
+{env:11100, server1_mean:30.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}
+{env:11101, server1_mean:30.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}
+{env:11110, server1_mean:30.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}
+{env:11111, server1_mean:30.0, server1_std:2.0, server2_mean:32.0, server2_std:2.0}

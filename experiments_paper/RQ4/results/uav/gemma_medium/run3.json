@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "Operator Fatigue/Attention Levels",
+    "description": "Human operators\u2019 attentiveness and fatigue levels will dramatically affect their analysis time.  Fatigue leads to slower processing, misinterpretations, and ultimately, longer review times. This is *very* likely to be a significant contributor given the existing multimodal distribution.",
+    "relatedTo": [
+      "Operator Experience",
+      "Time of Day",
+      "Task Complexity"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Image Quality Variations (Lighting, Weather)",
+    "description": "Changes in lighting conditions (sun glare, shadows, overcast) and weather (rain, fog, haze) significantly impact the quality of images, making them harder to analyze.  Poor image quality directly influences the time needed to resolve ambiguities and might trigger more complex operator analysis.",
+    "relatedTo": [
+      "Image Classification Accuracy",
+      "Operator Expertise",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Operator Experience/Training",
+    "description": "Operators with varying levels of experience and specific training will naturally exhibit different speeds and approaches to image analysis. More experienced operators may be quicker at identifying anomalies or require less detailed scrutiny.",
+    "relatedTo": [
+      "Operator Fatigue",
+      "Task Complexity",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day/Operational Phase",
+    "description": "Operator alertness and cognitive performance varies throughout the day, and mission phase.  Analyzing images during peak operational hours (e.g., late morning) might lead to increased scrutiny and longer times compared to less active periods.",
+    "relatedTo": [
+      "Operator Fatigue",
+      "Task Complexity"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Task Complexity (Object Type, Scene Detail)",
+    "description": "Images depicting more complex scenes or containing objects that are difficult to identify or differentiate will require longer analysis times, regardless of the analyst\u2019s skill.  The subjective 'difficulty' of the task contributes to variation.",
+    "relatedTo": [
+      "Operator Experience",
+      "Image Quality Variations",
+      "Image Classification Accuracy"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Onboard Classifier Confidence Levels",
+    "description": "The UAV's classifier may output confidence scores. If the confidence is low, the operator is likely to spend more time scrutinizing the image, leading to longer analysis times. The multimodal distribution suggests that the onboard classifier's confidence is variable.",
+    "relatedTo": [
+      "Image Quality Variations",
+      "Operator Experience"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "UAV Camera Calibration/Performance",
+    "description": "Variations in camera calibration (focus, distortion) and sensor performance can introduce image artifacts that complicate analysis, especially for the onboard classifier.",
+    "relatedTo": [
+      "Image Quality Variations"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Operator Preferences/Workflow",
+    "description": "Operators might have differing preferences on how they approach image analysis. Some might prefer a more conservative approach (sending everything to the operator) while others are more comfortable with the onboard classifier.",
+    "relatedTo": [
+      "Operator Experience",
+      "Task Complexity"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Network Latency/Connectivity",
+    "description": "Although not directly image analysis time, network latency could impact the responsiveness of the system and operator interaction, possibly leading to a perceived delay.  This could also contribute to frustration and slower operation.",
+    "relatedTo": [
+      "Operator Experience"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Operator Mental State (Stress/Distraction)",
+    "description": "Operator stress or distractions can significantly impact their ability to focus and analyze images efficiently.  This can be highly variable.",
+    "relatedTo": [
+      "Operator Fatigue",
+      "Task Complexity"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Image Resolution",
+    "description": "Lower image resolution requires more detailed examination and therefore increased analysis time.  This interacts with image quality.",
+    "relatedTo": [
+      "Image Quality Variations"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Operator Task Load",
+    "description": "If the operator is simultaneously handling multiple tasks, their analysis time will be affected.",
+    "relatedTo": [
+      "Operator Fatigue",
+      "Task Complexity"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Waypoint Type",
+    "description": "The type of the waypoint itself (e.g., densely populated area vs. open field) may influence the types of objects and scenes seen, and therefore the complexity of analysis needed.",
+    "relatedTo": [
+      "Task Complexity"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Operator\u2019s Familiarity with the Scene",
+    "description": "If the operator is familiar with the area being imaged (e.g., has previous data), they may be quicker to identify relevant objects/anomalies.",
+    "relatedTo": [
+      "Operator Experience",
+      "Task Complexity"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "System Load (UAV Processing)",
+    "description": "The computational load on the UAV's onboard systems while performing image processing can introduce latency, indirectly affecting the operator\u2019s decision-making.",
+    "relatedTo": [
+      "Onboard Classifier Confidence Levels"
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Market Volatility",
+    "description": "Increased market volatility can significantly influence the technical analysis and fundamental analysis, leading to inconsistencies and delays.",
+    "relatedTo": [
+      "Market Volatility"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Trading Volume",
+    "description": "High or low trading volume can cause fluctuations in technical analysis and fundamental analysis results, disrupting the workflow.",
+    "relatedTo": [
+      "Trading Volume"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "News Events",
+    "description": "Significant news releases (economic, political, or market-related) can impact sentiment and catalyst the technical and fundamental analysis.",
+    "relatedTo": [
+      "News Events"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Order Book Dynamics",
+    "description": "Changes in order book activity \u2013 buy and sell pressure \u2013 can influence technical analysis, particularly in key price levels.",
+    "relatedTo": [
+      "Order Book Dynamics"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Volatility of Underlying Assets",
+    "description": "If the underlying assets analyzed are highly volatile, the technical analysis can be affected disproportionately, leading to delays.",
+    "relatedTo": [
+      "Underlying Assets"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Calendar Effects",
+    "description": "Specific calendar days (e.g., holidays) can impact investor behavior and market sentiment, leading to temporary inconsistencies in the analysis.",
+    "relatedTo": [
+      "Calendar Effects"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Time of Day",
+    "description": "The time of day can influence market activity and investor psychology, potentially creating temporary inconsistencies in the data.",
+    "relatedTo": [
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "System Load/Resource Constraints",
+    "description": "Underlying system load or resource constraints could cause brief errors or delays in the data processing, impacting the quality of the analysis.",
+    "relatedTo": [
+      "System Load/Resource Constraints"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Data Processing Errors",
+    "description": "Errors or inconsistencies in the data sources or processing pipelines, even if unintentional, can introduce noise and cause inconsistencies.",
+    "relatedTo": [
+      "Data Processing Errors"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Backtesting Results (if applicable)",
+    "description": "If the underlying models are being backtested, the results may introduce patterns that are not directly attributable to any external factors.",
+    "relatedTo": [
+      "Backtesting Results"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Data Quality Issues",
+    "description": "Poor data quality (e.g., incomplete records, incorrect values) can affect the accuracy of the analysis.",
+    "relatedTo": [
+      "Data Quality Issues"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Model Drift",
+    "description": "The model may have drift with the data, causing it to react differently to new information. This can lead to unexpected results.",
+    "relatedTo": [
+      "Model Drift"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "External Data Dependencies",
+    "description": "The model may be reliant on external data feeds, and unexpected changes in these feeds can disrupt the workflow.",
+    "relatedTo": [
+      "External Data Dependencies"
+    ]
+  }
+]

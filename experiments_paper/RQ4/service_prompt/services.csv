@@ -1,0 +1,5 @@
+case,model_version,date,prompt,response
+robot,gemini-3.5-flash,2026-10-25,case_studies_prompts/robot_prompt.txt,responses/robot.md
+consensus,gemini-3.5-flash,2026-10-25,case_studies_prompts/consensus_prompt.txt,responses/consensus.md
+fx,gemini-3.5-flash,2026-10-25,case_studies_prompts/fx_prompt.txt,responses/fx.md
+uav,gemini-3.5-flash,2026-10-25,case_studies_prompts/uav_prompt.txt,responses/uav.md

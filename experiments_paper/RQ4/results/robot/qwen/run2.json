@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "name": "Time of Day",
+    "description": "Different times of the day may affect the visibility for the on-board cameras, such as early morning or late afternoon when shadows are longer, reducing the speed.",
+    "relatedTo": []
+  },
+  {
+    "id": 2,
+    "name": "Weather Conditions",
+    "description": "Rain, dust, or fog can severely impact camera visibility and sensor accuracy, leading to slower travel times.",
+    "relatedTo": [
+      "Time of Day",
+      "Visibility"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Visibility",
+    "description": "The quality of visibility can vary based on weather and lighting, affecting the robot's ability to navigate accurately.",
+    "relatedTo": [
+      "Time of Day",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Grass Height on Path 2",
+    "description": "Taller grass can obstruct the cameras and sensors, causing the robot to slow down to avoid obstacles or to adjust its path.",
+    "relatedTo": [
+      "Path Choice"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Soil Condition",
+    "description": "Wet or uneven soil can slow the robot down, especially if it's not designed for rough terrain.",
+    "relatedTo": [
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Insect Presence",
+    "description": "Insects on the camera lens can temporarily disrupt vision, causing delays.",
+    "relatedTo": []
+  },
+  {
+    "id": 7,
+    "name": "Sensor Cleanliness",
+    "description": "Dust or debris accumulation on the sensors can reduce their effectiveness, impacting navigation.",
+    "relatedTo": [
+      "Insect Presence"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Crop Row Width",
+    "description": "Variable width of crop rows can affect the robot's path and travel time, especially if it needs to adjust its path frequently.",
+    "relatedTo": []
+  },
+  {
+    "id": 9,
+    "name": "Track Conditions on Path 1",
+    "description": "Conditions such as cracks, potholes, or loose stones on the track can slow down the robot's travel.",
+    "relatedTo": [
+      "Soil Condition"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Battery Level",
+    "description": "Lower battery levels can affect the robot's performance, leading to slower travel times, particularly if the system is heavily reliant on power-intensive processes like constant sensor checks.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "Obstacles",
+    "description": "Unexpected obstacles such as fallen branches or equipment can force the robot to navigate around them, increasing travel time.",
+    "relatedTo": []
+  },
+  {
+    "id": 12,
+    "name": "Sensor Accuracy",
+    "description": "Sensor inaccuracies can lead to inefficient navigation, causing the robot to backtrack or slow down.",
+    "relatedTo": [
+      "Sensor Cleanliness"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Communication Signal Strength",
+    "description": "Poor signal strength can affect the robot's ability to receive instructions or updates, leading to delays.",
+    "relatedTo": []
+  },
+  {
+    "id": 14,
+    "name": "Traffic Conditions",
+    "description": "If multiple robots or humans are in the field, it can affect the speed of travel on Path 2.",
+    "relatedTo": []
+  },
+  {
+    "id": 15,
+    "name": "System Load",
+    "description": "Higher system load can slow down the processing speed, affecting the robot's ability to make decisions and navigate efficiently.",
+    "relatedTo": []
+  }
+]

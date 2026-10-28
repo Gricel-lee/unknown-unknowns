@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Lock Contention on Shared Counter",
+    "description": "Since the protocol relies on a shared counter, both servers must read and modify this state. If the synchronization mechanism (e.g., distributed locks, mutexes, or database transactions) is contested, it creates a bimodal distribution: a fast path when the lock is acquired immediately, and a slow path when a server must block and wait for the lock to release.",
+    "relatedTo": ["Thread Pool Contention & Context Switching", "Database/Storage Write I/O Bottlenecks"]
+  },
+  {
+    "id": 2,
+    "name": "Entropy Pool Starvation",
+    "description": "Coin-flip operations rely heavily on random number generation (RNG). If the servers use blocking system-level RNG (like /dev/random on Linux) to generate secure flips, they will experience a sudden latency spike when the system's entropy pool depletes, waiting for environmental noise to refill it.",
+    "relatedTo": ["CPU Frequency Scaling & Sleep States", "OS Page Faults & Swap Space Usage"]
+  },
+  {
+    "id": 3,
+    "name": "Network TCP Retransmissions & Packet Loss",
+    "description": "In distributed environments, network packets occasionally drop. Standard TCP recovery features (like Retransmission Timeout - RTO) introduce sharp, predictable latency steps (typically 200ms, 1s, etc.), causing a distinct high-latency mode alongside the normal sub-millisecond execution mode.",
+    "relatedTo": ["Network Cross-Traffic & Congestion", "TLS Session Resumption vs Full Handshake"]
+  },
+  {
+    "id": 4,
+    "name": "Garbage Collection Pauses",
+    "description": "If the servers run on a managed runtime (such as Java, Go, or .NET), periodic Garbage Collection (GC) pauses occur. This leads to distinct multimodal bands: normal execution latency, minor GC pauses, and occasional major/stop-the-world GC pauses.",
+    "relatedTo": ["Thread Pool Contention & Context Switching", "OS Page Faults & Swap Space Usage", "Runtime JIT Compilation & Warm-up"]
+  },
+  {
+    "id": 5,
+    "name": "Virtualization & Noisy Neighbors",
+    "description": "If the servers are virtual machines hosted on shared physical hardware (cloud environments), CPU steal time occurs when other VMs on the same hypervisor burst in activity. This shifts server processing times into distinct slower modes depending on external host-level workloads.",
+    "relatedTo": ["Network Cross-Traffic & Congestion", "CPU Frequency Scaling & Sleep States"]
+  },
+  {
+    "id": 6,
+    "name": "Database/Storage Write I/O Bottlenecks",
+    "description": "If coin-flip outcomes and counter states are persisted to disk for fault tolerance, write latencies will vary dramatically depending on whether the write hits an in-memory buffer cache, an SSD write cache, or triggers a physical disk flush (fsync).",
+    "relatedTo": ["Lock Contention on Shared Counter", "Periodic Background System Tasks"]
+  },
+  {
+    "id": 7,
+    "name": "CPU Frequency Scaling & Sleep States",
+    "description": "To save energy, modern CPUs enter low-power sleep states (C-states) and scale down core frequencies (P-states). If the controller selects one server less frequently, that server may fall asleep, introducing a deterministic 'wake-up' delay (transition latency) for its next coin flip.",
+    "relatedTo": ["Power Delivery & Thermal Throttling", "Virtualization & Noisy Neighbors"]
+  },
+  {
+    "id": 8,
+    "name": "Network Cross-Traffic & Congestion",
+    "description": "Shared networking infrastructure (switches, routers) experiences bursty congestion from unrelated workloads. This queuing delay manifests as discrete, higher latency bands during periods of high network utilization.",
+    "relatedTo": ["Network TCP Retransmissions & Packet Loss", "Virtualization & Noisy Neighbors"]
+  },
+  {
+    "id": 9,
+    "name": "Thread Pool Contention & Context Switching",
+    "description": "If the server application handles other client requests concurrently, high thread utilization leads to queue delays in the execution pools and excessive operating system context switching overhead, creating distinct, slower operational states.",
+    "relatedTo": ["Lock Contention on Shared Counter", "Garbage Collection Pauses", "Periodic Background System Tasks"]
+  },
+  {
+    "id": 10,
+    "name": "Asymmetric Server Hardware",
+    "description": "Server 1 and Server 2 might be running on different CPU generations, clock speeds, or VM sizes. This hardware asymmetry would cause Server 1's fast mode to align with a completely different latency band than Server 2's fast mode, explaining server-specific multimodality.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "TLS Session Resumption vs Full Handshake",
+    "description": "If connection security is enforced between the controller and servers, a full TLS handshake requires multiple round-trips (slow mode), whereas session resumption (session tickets/IDs) allows subsequent coin-flip requests to bypass this overhead (fast mode).",
+    "relatedTo": ["Network TCP Retransmissions & Packet Loss"]
+  },
+  {
+    "id": 12,
+    "name": "Runtime JIT Compilation & Warm-up",
+    "description": "For JIT-compiled runtimes, cold code paths (methods executed for the first time in a while) are interpreted slowly. Once the runtime identifies them as hot paths, they are compiled into optimized native code, splitting performance into clear cold/warm modes.",
+    "relatedTo": ["Garbage Collection Pauses"]
+  },
+  {
+    "id": 13,
+    "name": "OS Page Faults & Swap Space Usage",
+    "description": "If system memory usage is near capacity, parts of the coin-flipping process or runtime may be paged out to disk swap space. Accessing these cold memory regions triggers page faults that require slow disk access, contrasting with rapid RAM access.",
+    "relatedTo": ["Garbage Collection Pauses", "Database/Storage Write I/O Bottlenecks"]
+  },
+  {
+    "id": 14,
+    "name": "Periodic Background System Tasks",
+    "description": "Operating system tasks such as cron jobs, log rotations, security scanning agents, or monitoring metric collections execute at periodic intervals. When active, they steal CPU cycles and disk bandwidth, shifting coin-flip execution times.",
+    "relatedTo": ["Database/Storage Write I/O Bottlenecks", "Thread Pool Contention & Context Switching"]
+  },
+  {
+    "id": 15,
+    "name": "Power Delivery & Thermal Throttling",
+    "description": "Under sustained, high-intensity consensus rounds, server CPUs can heat up past thermal thresholds. The hardware mitigates this by throttling core frequencies down, resulting in a transition from a high-performance latency band to a throttled slow band.",
+    "relatedTo": ["CPU Frequency Scaling & Sleep States"]
+  }
+]
+```

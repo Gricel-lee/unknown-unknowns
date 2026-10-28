@@ -1,0 +1,85 @@
+mdp
+
+// SHARED COIN WITH TWO SERVERS (simplified from the PRISM consensus/coin2 benchmark [AH90])
+// Two servers must agree on a coin outcome. A shared counter starts in the middle; each
+// round we ask ONE server to flip its coin (heads +1, tails -1). The servers agree when the
+// counter reaches either end. Each flip has a latency (ms) that depends on the environment,
+// so the controller decides which server to ask, minimising the expected total latency.
+//
+// Example with all values filled in, for testing in PRISM.
+// Unknown variables u1=busy, u2=remote, u3=congested, each with values 0/1:
+//   busy      : many processes running on server 1 -> server 1 is 20 ms slower
+//   remote    : server 2 sits in a remote data centre -> server 2 is 25 ms slower
+//   congested : the network between the servers is congested -> both are 10 ms slower
+// Latency of one flip: server 1 = 10 + 20*busy + 10*congested
+//                      server 2 = 12 + 25*remote + 10*congested
+//
+// Property:  R{"latency"}min=? [ F "agreed" ]   -> 70 (best server per environment)
+// Always asking server 1 (the faster on average) would cost 88.
+
+const int K = 2; // agreement: the counter must move K steps away from the middle
+
+// --- probabilities -----
+// pXYZ = probability of busy=X, remote=Y, congested=Z
+const double p000 = 0.20; // env_id=1
+const double p100 = 0.15; // env_id=2
+const double p010 = 0.15; // env_id=3
+const double p110 = 0.10; // env_id=4
+const double p001 = 0.15; // env_id=5
+const double p101 = 0.10; // env_id=6
+const double p011 = 0.10; // env_id=7
+const double p111 = 0.05; // env_id=8
+
+// --- rewards -----
+// cA_XYZ = latency (ms) of a flip on server A when busy=X, remote=Y, congested=Z
+const double c1_000 = 10;  const double c2_000 = 12;  // server 1 faster
+const double c1_100 = 30;  const double c2_100 = 12;  // server 2 faster (server 1 busy)
+const double c1_010 = 10;  const double c2_010 = 37;  // server 1 faster (server 2 remote)
+const double c1_110 = 30;  const double c2_110 = 37;  // server 1 faster
+const double c1_001 = 20;  const double c2_001 = 22;  // server 1 faster
+const double c1_101 = 40;  const double c2_101 = 22;  // server 2 faster (server 1 busy)
+const double c1_011 = 20;  const double c2_011 = 47;  // server 1 faster
+const double c1_111 = 40;  const double c2_111 = 47;  // server 1 faster
+
+// --- readable views of the environment (derived from env_id) -----
+formula env_set   = env_id != 0;
+formula busy      = (env_id=2 | env_id=4 | env_id=6 | env_id=8) ? 1 : 0;
+formula remote    = (env_id=3 | env_id=4 | env_id=7 | env_id=8) ? 1 : 0;
+formula congested = (env_id>=5) ? 1 : 0;
+
+module environment
+  env_id : [0..8] init 0; // 0 = not set, 1..8 = set
+
+  // sample the environment once, at the start
+  [] env_id=0 -> p000 : (env_id'=1) + p100 : (env_id'=2)
+               + p010 : (env_id'=3) + p110 : (env_id'=4)
+               + p001 : (env_id'=5) + p101 : (env_id'=6)
+               + p011 : (env_id'=7) + p111 : (env_id'=8);
+endmodule
+
+formula agreed = counter=0 | counter=2*K;
+
+module shared_coin
+  counter : [0..2*K] init K; // K = undecided middle, 0 = agree tails, 2K = agree heads
+
+  // nondeterministic choice: which server flips next (each coin is fair)
+  [flip1] env_set & !agreed -> 0.5 : (counter'=counter+1) + 0.5 : (counter'=counter-1);
+  [flip2] env_set & !agreed -> 0.5 : (counter'=counter+1) + 0.5 : (counter'=counter-1);
+
+  // absorbing once the servers agree (avoids deadlock warnings)
+  [done] agreed -> 1 : true;
+endmodule
+
+rewards "latency"
+  [flip1] env_id=1 : c1_000;  [flip1] env_id=2 : c1_100;
+  [flip1] env_id=3 : c1_010;  [flip1] env_id=4 : c1_110;
+  [flip1] env_id=5 : c1_001;  [flip1] env_id=6 : c1_101;
+  [flip1] env_id=7 : c1_011;  [flip1] env_id=8 : c1_111;
+
+  [flip2] env_id=1 : c2_000;  [flip2] env_id=2 : c2_100;
+  [flip2] env_id=3 : c2_010;  [flip2] env_id=4 : c2_110;
+  [flip2] env_id=5 : c2_001;  [flip2] env_id=6 : c2_101;
+  [flip2] env_id=7 : c2_011;  [flip2] env_id=8 : c2_111;
+endrewards
+
+label "agreed" = agreed;

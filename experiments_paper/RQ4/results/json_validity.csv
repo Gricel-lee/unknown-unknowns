@@ -1,0 +1,7 @@
+llm,answers,valid,corrected,discarded,valid_percent
+gemini,20,20,0,0,100.0
+gemma_large,20,20,0,0,100.0
+gemma_medium,20,20,0,0,100.0
+gemma_small,20,11,9,0,55.0
+llama,20,20,0,0,100.0
+qwen,20,19,1,0,95.0

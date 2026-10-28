@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Market Volatility", "description": "Higher market volatility can cause the system to pause or execute more frequently, leading to varied times for analyses.", "relatedTo": ["System Load", "Order Volume"]},
+    {"id": 2, "name": "System Load", "description": "The load on the system can affect its processing time, causing longer analysis times during periods of high demand.", "relatedTo": ["Market Volatility", "Order Volume"]},
+    {"id": 3, "name": "Order Volume", "description": "Higher order volume can overwhelm the system, causing delays in analysis and execution.", "relatedTo": ["Market Volatility", "System Load"]},
+    {"id": 4, "name": "Time of Day", "description": "Certain times of day may see increased trading activity, leading to longer wait times for analysis due to higher demand.", "relatedTo": ["Market Volatility"]},
+    {"id": 5, "name": "Day of the Week", "description": "Trading patterns can vary by day, with some days seeing more activity than others, affecting analysis times.", "relatedTo": ["Time of Day"]},
+    {"id": 6, "name": "Server Latency", "description": "Latency issues can significantly impact the system's performance, especially during high-load periods.", "relatedTo": ["System Load"]},
+    {"id": 7, "name": "Network Traffic", "description": "High network traffic can slow down data retrieval and processing, affecting the analysis times.", "relatedTo": ["Server Latency"]},
+    {"id": 8, "name": "Software Updates", "description": "Periodic software updates can introduce changes that affect the system's performance, leading to unexpected delays.", "relatedTo": ["System Load"]},
+    {"id": 9, "name": "Hardware Failure", "description": "Occasional hardware failures can cause significant downtime, impacting the system's ability to process analyses.", "relatedTo": ["Server Latency"]},
+    {"id": 10, "name": "Energy Cost Management", "description": "During periods of high energy cost, the system might be throttled, leading to slower performance.", "relatedTo": []},
+    {"id": 11, "name": "Cutover Periods", "description": "Periods when the system is transitioning to new configurations can cause disruptions and delays.", "relatedTo": []},
+    {"id": 12, "name": "Resource Allocation", "description": "How resources are allocated can impact the system's performance, especially during high demand times.", "relatedTo": ["System Load"]},
+    {"id": 13, "name": "Maintenance Windows", "description": "Scheduled maintenance can temporarily reduce system performance, affecting analysis times.", "relatedTo": []},
+    {"id": 14, "name": "User Interface Performance", "description": "Performance issues with the user interface can indirectly affect the system, as issues are often logged there first.", "relatedTo": []},
+    {"id": 15, "name": "Data Processing Queue", "description": "The queue for processing data can back up during high load, causing delays in analysis.", "relatedTo": ["System Load", "Order Volume"]}
+]
+```

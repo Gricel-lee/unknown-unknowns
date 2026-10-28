@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "Image Complexity",
+    "description": "Highly complex images (e.g., many objects, cluttered scenes, low contrast) are more likely to cause both human and onboard classifier failures, leading to distinct, longer analysis times. This is the most likely driver as analysis difficulty fundamentally impacts performance.  We'd expect multiple groups \u2013 'easy', 'medium', 'hard' images.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Object Density",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Object Class",
+    "description": "The onboard classifier might perform significantly better on certain object classes than others (e.g., easily identifiable vehicles vs. subtle environmental changes). Human analysts might also struggle with specific classes.  Different classes will result in differing analysis times, causing modality.",
+    "relatedTo": [
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lighting Conditions",
+    "description": "Poor or variable lighting (e.g., shadows, glare, low light) degrades image quality, impacting both human and classifier performance.  Distinct modes could correspond to 'good lighting', 'moderate shadows', and 'low light'.",
+    "relatedTo": [
+      "Image Complexity",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Distance to Waypoint",
+    "description": "UAV altitude/distance at the waypoint could impact image quality (blur, resolution) and thus analysis time.  Higher altitudes lead to lower resolution and potentially more errors.",
+    "relatedTo": [
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Image Resolution",
+    "description": "If resolution is not constant, lower resolution images are easier (and faster) to analyse but provide less detail, potentially leading to a different mode. Conversely, high resolution may expose more detail and increase analysis time.",
+    "relatedTo": [
+      "Distance to Waypoint",
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Weather Conditions",
+    "description": "Rain, fog, or snow reduce visibility and image quality, increasing analysis time or causing failure. Separate modes could represent clear, overcast, and rainy conditions.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Onboard Classifier Confidence Threshold",
+    "description": "If the classifier has a confidence threshold, images falling just below it will be sent to the human. This creates a distinct mode around the threshold.",
+    "relatedTo": []
+  },
+  {
+    "id": 8,
+    "name": "Human Analyst Fatigue/Attention",
+    "description": "Human performance isn't consistent. Analyst fatigue or distraction could lead to slower or less accurate analysis, creating variability. Though hard to model directly, it's plausible.",
+    "relatedTo": []
+  },
+  {
+    "id": 9,
+    "name": "Waypoint Type/Environment",
+    "description": "Different environments (e.g., urban vs. rural, forest vs. open field) present different challenges for image analysis.  Rural scenes might have low object density, while urban scenes are cluttered.",
+    "relatedTo": [
+      "Image Complexity",
+      "Object Class"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "UAV Orientation/Angle",
+    "description": "The angle of the camera relative to the ground or object can affect image perspective and ease of analysis. Extreme angles can distort images.",
+    "relatedTo": [
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Image Noise",
+    "description": "Sensor noise, particularly in low light, affects image quality and analysis time. Different noise levels could contribute to distinct modes.",
+    "relatedTo": [
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Communication Bandwidth",
+    "description": "If communication bandwidth fluctuates, it can affect the time it takes to transmit images to the operator, creating a delay and influencing the observed time. This is less likely to directly cause *analysis* failure, but *total time* differences.",
+    "relatedTo": []
+  },
+  {
+    "id": 13,
+    "name": "Time of Day",
+    "description": "Correlated to lighting, but potentially has independent effects.  Early morning or late evening light could create specific challenges.",
+    "relatedTo": [
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Target Object Size",
+    "description": "Smaller targets are harder to detect, both for humans and classifiers. This may create a group of slower/failed analyses for smaller objects.",
+    "relatedTo": [
+      "Image Complexity",
+      "Object Class"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "GPS Accuracy at Waypoint",
+    "description": "Poor GPS accuracy could lead to images not being centered on the intended target, making analysis harder.  Less likely to cause distinct *modes* than the above.",
+    "relatedTo": []
+  }
+]

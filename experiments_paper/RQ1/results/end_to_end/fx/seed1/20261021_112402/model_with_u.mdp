@@ -1,0 +1,171 @@
+mdp
+
+// FX TRADING WORKFLOW as an MDP (adapted from the annotated FXWorkflow model, MonoGenerator 2017)
+// At the start the system DECIDES (nondeterministically, instead of with probability x) between
+//   - the expert mode: Market watch (OP1) -> Technical analysis (OP2), or
+//   - the normal mode: Fundamental analysis (OP4),
+// and then follows the original workflow: place order (OP5) or alarm (OP3), notify trader (OP6).
+// The time of each analysis depends on the environment, so the controller picks the mode that
+// minimises the expected time to finish the workflow.
+//
+// Template with 3 unknown variables u1, u2, u3 (u1=disk_busy, u2=volatile, u3=news), each with values 0/1.
+// The constants below have no value; the controller fills them in.
+//
+// Property:  R{"time"}min=? [ F "done" ]
+
+// --- probabilities (filled by the controller) -----
+// pXYZ = probability of disk_busy=X, volatile=Y, news=Z
+const double p000 = 0.239; // env_id=1
+const double p100 = 0.222; // env_id=2
+const double p010 = 0.08; // env_id=3
+const double p110 = 0.116; // env_id=4
+const double p001 = 0.096; // env_id=5
+const double p101 = 0.093; // env_id=6
+const double p011 = 0.046; // env_id=7
+const double p111 = 0.108; // env_id=8
+
+// --- rewards (filled by the controller) -----
+// c1_XYZ = time of the technical analysis (OP2), c2_XYZ = time of the fundamental analysis (OP4), when disk_busy=X, volatile=Y, news=Z
+const double c1_000 = 7.941774365795316;
+const double c1_100 = 23.85145308898242;
+const double c1_010 = 26.495846020418924;
+const double c1_110 = 79.92974216126652;
+const double c1_001 = 7.933044671293236;
+const double c1_101 = 23.848111065639063;
+const double c1_011 = 26.049377327998947;
+const double c1_111 = 79.16688720391186;
+const double c2_000 = 13.203967255882104;
+const double c2_100 = 39.62577744878747;
+const double c2_010 = 13.21807819876544;
+const double c2_110 = 39.52435780702477;
+const double c2_001 = 32.72731738823788;
+const double c2_101 = 99.16720384767571;
+const double c2_011 = 33.46996941479356;
+const double c2_111 = 99.3671577832343;
+
+// --- the rest of the original workflow (unchanged) -----
+const double y1=0.75;   // technical result -> place order
+const double y2=0.22;   // technical result -> market watch again (otherwise alarm)
+const double z1=0.6;    // fundamental result -> place order
+const double z2=0.35;   // fundamental result -> back to the start (otherwise fundamental again)
+
+const double ps11=0.999; const double ps12=0.999; const double z11=0.999; const double z12=1-z11;
+const double ps21=0.999; const double ps22=0.999; const double z21=0.999; const double z22=1-z21;
+const double ps31=0.999; const double ps32=0.999; const double z31=0.999; const double z32=1-z31;
+const double ps41=0.999; const double ps42=0.999; const double z41=0.999; const double z42=1-z41;
+const double ps51=0.999; const double ps52=0.999; const double z51=0.999; const double z52=1-z51;
+const double ps61=0.999; const double ps62=0.999; const double z61=0.999; const double z62=1-z61;
+
+const double time1 = 3;     // market watch
+const double time3 = 2;     // alarm
+const double time5 = 3.5;   // place order
+const double time6 = 1.2;   // notify trader
+
+const int INITSTATE = 0;
+const int OP1 = 1;  // market watch
+const int OP2 = 2;  // technical analysis
+const int OP3 = 3;  // alarm
+const int OP4 = 4;  // fundamental analysis
+const int OP5 = 5;  // place order
+const int OP6 = 6;  // notify trader
+const int TA_RESULT = 7;
+const int FA_RESULT = 8;
+const int WF_FAIL = 9;
+const int WF_SUCC = 10;
+
+// --- readable views of the environment (derived from env_id) -----
+formula env_set = env_id != 0;
+formula u1      = (env_id=2 | env_id=4 | env_id=6 | env_id=8) ? 1 : 0;
+formula u2      = (env_id=3 | env_id=4 | env_id=7 | env_id=8) ? 1 : 0;
+formula u3      = (env_id=5 | env_id=6 | env_id=7 | env_id=8) ? 1 : 0;
+
+module environment
+  env_id : [0..8] init 0; // 0 = not set, 1..8 = set
+
+  // sample the environment once, at the start
+  [] env_id=0 -> p000 : (env_id'=1)
+               + p100 : (env_id'=2)
+               + p010 : (env_id'=3)
+               + p110 : (env_id'=4)
+               + p001 : (env_id'=5)
+               + p101 : (env_id'=6)
+               + p011 : (env_id'=7)
+               + p111 : (env_id'=8);
+endmodule
+
+module fx
+  op1 : [0..2] init 0;
+  op2 : [0..2] init 0;
+  op3 : [0..2] init 0;
+  op4 : [0..2] init 0;
+  op5 : [0..2] init 0;
+  op6 : [0..2] init 0;
+  state : [0..10] init 0;
+
+  // ** the decision: expert mode (market watch, OP1) or normal mode (fundamental analysis, OP4)
+  [marketwatch]  state=INITSTATE & env_set -> (state'=OP1);
+  [fundanalysis] state=INITSTATE & env_set -> (state'=OP4);
+
+  // technical analysis result
+  [taResult] state=TA_RESULT -> y2:(state'=OP1) + y1:(state'=OP5) + (1-y1-y2):(state'=OP3);
+  // fundamental analysis result (back to the start = decide again)
+  [faResult] state=FA_RESULT -> z2:(state'=INITSTATE) + z1:(state'=OP5) + (1-z1-z2):(state'=OP4);
+  // end of the workflow
+  [success] state=WF_SUCC -> (state'=WF_SUCC);
+  [failure] state=WF_FAIL -> (state'=WF_FAIL);
+
+  // each operation: pick one of two implementations, which then succeeds or fails (WF_FAIL)
+  [choice1] state=OP1 & op1=0 -> z11:(op1'=1) + z12:(op1'=2);
+  [op11]    state=OP1 & op1=1 -> ps11:(state'=OP2)&(op1'=0) + (1-ps11):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+  [op12]    state=OP1 & op1=2 -> ps12:(state'=OP2)&(op1'=0) + (1-ps12):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+
+  [choice2] state=OP2 & op2=0 -> z21:(op2'=1) + z22:(op2'=2);
+  [op21]    state=OP2 & op2=1 -> ps21:(state'=TA_RESULT)&(op2'=0) + (1-ps21):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+  [op22]    state=OP2 & op2=2 -> ps22:(state'=TA_RESULT)&(op2'=0) + (1-ps22):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+
+  [choice3] state=OP3 & op3=0 -> z31:(op3'=1) + z32:(op3'=2);
+  [op31]    state=OP3 & op3=1 -> ps31:(state'=OP6)&(op3'=0) + (1-ps31):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+  [op32]    state=OP3 & op3=2 -> ps32:(state'=OP6)&(op3'=0) + (1-ps32):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+
+  [choice4] state=OP4 & op4=0 -> z41:(op4'=1) + z42:(op4'=2);
+  [op41]    state=OP4 & op4=1 -> ps41:(state'=FA_RESULT)&(op4'=0) + (1-ps41):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+  [op42]    state=OP4 & op4=2 -> ps42:(state'=FA_RESULT)&(op4'=0) + (1-ps42):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+
+  [choice5] state=OP5 & op5=0 -> z51:(op5'=1) + z52:(op5'=2);
+  [op51]    state=OP5 & op5=1 -> ps51:(state'=OP6)&(op5'=0) + (1-ps51):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+  [op52]    state=OP5 & op5=2 -> ps52:(state'=OP6)&(op5'=0) + (1-ps52):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+
+  [choice6] state=OP6 & op6=0 -> z61:(op6'=1) + z62:(op6'=2);
+  [op61]    state=OP6 & op6=1 -> ps61:(state'=WF_SUCC)&(op6'=0) + (1-ps61):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+  [op62]    state=OP6 & op6=2 -> ps62:(state'=WF_SUCC)&(op6'=0) + (1-ps62):(state'=WF_FAIL)&(op1'=0)&(op2'=0)&(op3'=0)&(op4'=0)&(op5'=0)&(op6'=0);
+endmodule
+
+label "done" = state=WF_SUCC | state=WF_FAIL;
+
+// time of each operation, counted once per execution (on the action that runs it)
+rewards "time"
+  [op11] true : time1;  [op12] true : time1;    // market watch
+  [op31] true : time3;  [op32] true : time3;    // alarm
+  [op51] true : time5;  [op52] true : time5;    // place order
+  [op61] true : time6;  [op62] true : time6;    // notify trader
+
+  // technical analysis (OP2): depends on the environment
+  [op21] env_id=1 : c1_000;  [op22] env_id=1 : c1_000;
+  [op21] env_id=2 : c1_100;  [op22] env_id=2 : c1_100;
+  [op21] env_id=3 : c1_010;  [op22] env_id=3 : c1_010;
+  [op21] env_id=4 : c1_110;  [op22] env_id=4 : c1_110;
+  [op21] env_id=5 : c1_001;  [op22] env_id=5 : c1_001;
+  [op21] env_id=6 : c1_101;  [op22] env_id=6 : c1_101;
+  [op21] env_id=7 : c1_011;  [op22] env_id=7 : c1_011;
+  [op21] env_id=8 : c1_111;  [op22] env_id=8 : c1_111;
+
+  // fundamental analysis (OP4): depends on the environment
+  [op41] env_id=1 : c2_000;  [op42] env_id=1 : c2_000;
+  [op41] env_id=2 : c2_100;  [op42] env_id=2 : c2_100;
+  [op41] env_id=3 : c2_010;  [op42] env_id=3 : c2_010;
+  [op41] env_id=4 : c2_110;  [op42] env_id=4 : c2_110;
+  [op41] env_id=5 : c2_001;  [op42] env_id=5 : c2_001;
+  [op41] env_id=6 : c2_101;  [op42] env_id=6 : c2_101;
+  [op41] env_id=7 : c2_011;  [op42] env_id=7 : c2_011;
+  [op41] env_id=8 : c2_111;  [op42] env_id=8 : c2_111;
+endrewards

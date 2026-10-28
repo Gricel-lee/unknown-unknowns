@@ -1,0 +1,31 @@
+iteration,known_vars,bin,output,unimodal,p_value
+1,,(all),path1,False,0.0
+1,,(all),path2,True,0.4898
+2,light,light=0,path1,False,0.0
+2,light,light=0,path2,False,0.0
+2,light,light=1,path1,False,0.0
+2,light,light=1,path2,False,0.0049
+3,light wet,"light=0, wet=0",path1,False,0.0
+3,light wet,"light=0, wet=0",path2,False,0.0044
+3,light wet,"light=0, wet=1",path1,False,0.0
+3,light wet,"light=0, wet=1",path2,False,0.0
+3,light wet,"light=1, wet=0",path1,False,0.0
+3,light wet,"light=1, wet=0",path2,False,0.0001
+3,light wet,"light=1, wet=1",path1,False,0.0056
+3,light wet,"light=1, wet=1",path2,False,0.0
+4,light wet busy,"light=0, wet=0, busy=0",path1,True,0.7362
+4,light wet busy,"light=0, wet=0, busy=0",path2,True,0.8333
+4,light wet busy,"light=0, wet=0, busy=1",path1,True,0.7831
+4,light wet busy,"light=0, wet=0, busy=1",path2,True,0.8963
+4,light wet busy,"light=0, wet=1, busy=0",path1,True,0.9914
+4,light wet busy,"light=0, wet=1, busy=0",path2,True,0.9904
+4,light wet busy,"light=0, wet=1, busy=1",path1,True,0.5647
+4,light wet busy,"light=0, wet=1, busy=1",path2,True,0.7574
+4,light wet busy,"light=1, wet=0, busy=0",path1,True,0.9727
+4,light wet busy,"light=1, wet=0, busy=0",path2,True,0.79
+4,light wet busy,"light=1, wet=0, busy=1",path1,True,0.9961
+4,light wet busy,"light=1, wet=0, busy=1",path2,True,0.92
+4,light wet busy,"light=1, wet=1, busy=0",path1,True,0.9105
+4,light wet busy,"light=1, wet=1, busy=0",path2,True,0.7772
+4,light wet busy,"light=1, wet=1, busy=1",path1,True,0.6357
+4,light wet busy,"light=1, wet=1, busy=1",path2,True,0.8753

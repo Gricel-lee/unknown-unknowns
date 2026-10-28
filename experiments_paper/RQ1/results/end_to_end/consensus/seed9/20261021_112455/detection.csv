@@ -1,0 +1,31 @@
+iteration,known_vars,bin,output,unimodal,p_value
+1,,(all),server1,False,0.0
+1,,(all),server2,False,0.0
+2,busy,busy=0,server1,False,0.0
+2,busy,busy=0,server2,False,0.0
+2,busy,busy=1,server1,False,0.0
+2,busy,busy=1,server2,False,0.0
+3,busy remote,"busy=0, remote=0",server1,False,0.0
+3,busy remote,"busy=0, remote=0",server2,False,0.0
+3,busy remote,"busy=0, remote=1",server1,False,0.0
+3,busy remote,"busy=0, remote=1",server2,False,0.0
+3,busy remote,"busy=1, remote=0",server1,False,0.0
+3,busy remote,"busy=1, remote=0",server2,False,0.0
+3,busy remote,"busy=1, remote=1",server1,True,0.1231
+3,busy remote,"busy=1, remote=1",server2,False,0.004
+4,busy remote congested,"busy=0, remote=0, congested=0",server1,True,0.9525
+4,busy remote congested,"busy=0, remote=0, congested=0",server2,True,0.7255
+4,busy remote congested,"busy=0, remote=0, congested=1",server1,True,0.9735
+4,busy remote congested,"busy=0, remote=0, congested=1",server2,True,0.4688
+4,busy remote congested,"busy=0, remote=1, congested=0",server1,True,0.8839
+4,busy remote congested,"busy=0, remote=1, congested=0",server2,True,0.4247
+4,busy remote congested,"busy=0, remote=1, congested=1",server1,True,0.9364
+4,busy remote congested,"busy=0, remote=1, congested=1",server2,True,0.876
+4,busy remote congested,"busy=1, remote=0, congested=0",server1,True,0.9119
+4,busy remote congested,"busy=1, remote=0, congested=0",server2,True,0.9196
+4,busy remote congested,"busy=1, remote=0, congested=1",server1,True,0.9638
+4,busy remote congested,"busy=1, remote=0, congested=1",server2,True,0.7128
+4,busy remote congested,"busy=1, remote=1, congested=0",server1,True,0.846
+4,busy remote congested,"busy=1, remote=1, congested=0",server2,True,0.7134
+4,busy remote congested,"busy=1, remote=1, congested=1",server1,True,0.9583
+4,busy remote congested,"busy=1, remote=1, congested=1",server2,True,0.9858

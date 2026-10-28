@@ -1,0 +1,139 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "Water content in the soil affects the robot's traction and speed. High moisture can slow the robot down, while low moisture can cause it to speed up.",
+    "relatedTo": [
+      "Crop Type",
+      "Crop Maturity"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Crop Type",
+    "description": "Different crops have varying heights, densities, and growth patterns, which can affect the robot's ability to navigate and maintain speed.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Crop Maturity",
+    "description": "As crops mature, their growth patterns and densities change, which can impact the robot's travel time.",
+    "relatedTo": [
+      "Crop Type",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Weather Conditions",
+    "description": "Rain, wind, and sunshine can all affect the robot's travel time, especially when navigating between crop rows.",
+    "relatedTo": [
+      "Crop Type",
+      "Crop Maturity",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Robot Speed",
+    "description": "The robot's speed setting can impact travel time, with higher speeds increasing the likelihood of encountering obstacles and reducing accuracy.",
+    "relatedTo": [
+      "Navigation System",
+      "Sensor Accuracy"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Navigation System",
+    "description": "The accuracy and reliability of the robot's navigation system can affect travel time, especially when encountering unexpected obstacles.",
+    "relatedTo": [
+      "Robot Speed",
+      "Sensor Accuracy"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sensor Accuracy",
+    "description": "The accuracy of the robot's sensors, such as cameras and lidar, can impact travel time, especially in areas with high levels of vegetation or debris.",
+    "relatedTo": [
+      "Navigation System",
+      "Robot Speed"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Obstacle Presence",
+    "description": "The presence and type of obstacles, such as rocks or weeds, can slow the robot down or cause it to change course.",
+    "relatedTo": [
+      "Crop Type",
+      "Crop Maturity",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Route Congestion",
+    "description": "The number of robots or other vehicles traveling on the same route can increase travel time and reduce efficiency.",
+    "relatedTo": [
+      "Robot Speed",
+      "Navigation System"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Battery Life",
+    "description": "The robot's battery life can impact travel time, especially if the robot needs to stop to recharge or replace batteries.",
+    "relatedTo": [
+      "Robot Speed",
+      "Navigation System"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Mechanical Issues",
+    "description": "Mechanical problems with the robot's wheels, motors, or other components can slow it down or cause it to malfunction.",
+    "relatedTo": [
+      "Robot Speed",
+      "Navigation System"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "User Intervention",
+    "description": "Human intervention, such as manual correction or control, can impact travel time and efficiency.",
+    "relatedTo": [
+      "Robot Speed",
+      "Navigation System"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Time of Day",
+    "description": "The time of day can impact travel time, especially if the robot needs to avoid peak sun hours or nighttime operations.",
+    "relatedTo": [
+      "Weather Conditions",
+      "Crop Type"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Seasonal Changes",
+    "description": "Seasonal changes, such as winter snow or summer heat, can impact travel time and efficiency.",
+    "relatedTo": [
+      "Weather Conditions",
+      "Crop Type"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Robot Maintenance",
+    "description": "Regular maintenance, such as cleaning or software updates, can impact travel time and efficiency.",
+    "relatedTo": [
+      "Mechanical Issues",
+      "User Intervention"
+    ]
+  }
+]

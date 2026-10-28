@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "name": "Image Complexity",
+    "description": "More complex images (e.g., high detail, cluttered scenes) likely take longer to analyse *both* by the human and the classifier. This is the most likely explanation for distinct groups \u2013 images falling into different complexity levels. The classifier might struggle with complex features, while the human needs more time to parse them.  A strong initial factor to investigate.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Target Size",
+      "Object Density"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Target Size/Scale",
+    "description": "Smaller targets in images, or objects viewed from further away, might lead to longer processing times for both the classifier (feature detection) and the human (identification). Different size ranges will create separate timing groups.  This is closely linked to image complexity.",
+    "relatedTo": [
+      "Image Complexity",
+      "Distance to Target"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lighting Conditions",
+    "description": "Poor lighting (low light, glare, shadows) can significantly impact image quality and analysis time.  A classifier might misidentify features, requiring re-analysis. Humans similarly struggle with poor images.  Different lighting scenarios (e.g., direct sunlight, overcast, twilight) could be distinct groups.",
+    "relatedTo": [
+      "Image Complexity",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Object Density",
+    "description": "The number of objects within the image. More objects means more computation for the classifier and more effort for the human analyst to review. Sparse images vs. crowded images would likely have different processing times.",
+    "relatedTo": [
+      "Image Complexity",
+      "Target Size"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Object Class",
+    "description": "The *type* of object being imaged. The onboard classifier may be better trained to recognize certain objects than others, creating distinct performance groups. Humans may also have varying expertise with different object types.",
+    "relatedTo": []
+  },
+  {
+    "id": 6,
+    "name": "Image Angle/Viewpoint",
+    "description": "The angle at which the image is taken. Certain viewpoints may obscure features, making object recognition harder for both systems. Orthographic vs. oblique views will lead to differences.",
+    "relatedTo": [
+      "Target Size"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Altitude/Distance to Target",
+    "description": "The UAV's altitude influences image resolution and target size. Higher altitudes mean lower resolution/smaller targets, increasing analysis time.  Correlated to Target Size.",
+    "relatedTo": [
+      "Target Size",
+      "Image Quality"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Weather Conditions",
+    "description": "Rain, fog, snow, or haze can degrade image quality and introduce noise, affecting both classification and human analysis.  This is related to lighting but represents an atmospheric effect.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Image Quality"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Classifier Confidence Threshold",
+    "description": "The onboard classifier might have an internal confidence threshold. Images where the classifier is near the threshold could trigger re-analysis, creating a distinct group. This is a system parameter.",
+    "relatedTo": []
+  },
+  {
+    "id": 10,
+    "name": "Human Operator Fatigue",
+    "description": "The human analyst's alertness and concentration level can fluctuate over time, affecting analysis speed. This could create a time-dependent grouping.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "UAV Vibration/Motion Blur",
+    "description": "Excessive vibration during flight, or rapid UAV movements, can cause motion blur, decreasing image quality and increasing analysis time.",
+    "relatedTo": [
+      "Image Quality"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Background Clutter",
+    "description": "A complex background can make it harder to distinguish the target object, increasing processing time for both the classifier and the human.",
+    "relatedTo": [
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Image Resolution",
+    "description": "While potentially controlled, variations in the achieved image resolution (due to sensor settings or focus) can influence analysis time. Higher resolution = more data.",
+    "relatedTo": [
+      "Image Quality",
+      "Target Size"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Time of Day",
+    "description": "Changing sunlight angles throughout the day influence image quality. Similar to lighting, but tied to time.",
+    "relatedTo": [
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "GPS Accuracy/Waypoint Precision",
+    "description": "If the UAV doesn't accurately reach the waypoints, images might be slightly off-angle or have unexpected framing, affecting analysis.",
+    "relatedTo": [
+      "Image Angle/Viewpoint"
+    ]
+  }
+]

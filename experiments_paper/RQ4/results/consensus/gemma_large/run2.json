@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "name": "Server Load",
+    "description": "Varying load on either server (CPU, memory, I/O) impacts coin flip latency. Higher load consistently increases latency, potentially creating distinct latency groups. This is the most likely explanation as server load is a common performance bottleneck.",
+    "relatedTo": [
+      "Network Congestion",
+      "Virtualization Overhead"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Network Congestion",
+    "description": "Fluctuations in network congestion between the controller and each server, or between the servers themselves (if they communicate directly for consensus), will introduce latency variations. Different congestion levels cause different latency groups. Highly probable.",
+    "relatedTo": [
+      "Server Load",
+      "Virtualization Overhead",
+      "Geographic Proximity"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Virtualization Overhead",
+    "description": "If the servers are virtualized, the hypervisor schedule introduces unpredictable latency spikes. Contention for resources on the hypervisor host can form distinct latency modes. Common in cloud environments.",
+    "relatedTo": [
+      "Server Load",
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Background Processes",
+    "description": "Other processes running on the servers consuming resources can directly affect coin flip latency. Scheduled tasks (e.g. backups, logging) will create predictable latency spikes. Medium likelihood.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Coin Flip Implementation Differences",
+    "description": "The 'coin flip' may not be a simple random number generator. If each server uses a different implementation (e.g., hardware RNG vs. software PRNG) or different seeding mechanisms, they may exhibit systematic differences in timing.",
+    "relatedTo": []
+  },
+  {
+    "id": 6,
+    "name": "Geographic Proximity",
+    "description": "If servers are geographically distant, increased propagation delay contributes to latency and variations in network conditions can cause differing latency profiles. Especially if the controller isn\u2019t optimally placed.",
+    "relatedTo": [
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Storage I/O",
+    "description": "If the coin flip requires access to disk (even for logging), storage performance variability (SSD vs. HDD, RAID level, other I/O) can create latency groups.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Time of Day Effects",
+    "description": "System load often varies by time of day (e.g., higher during business hours). This can manifest as different latency distributions at different times.",
+    "relatedTo": [
+      "Server Load",
+      "Background Processes"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Kernel Version/Updates",
+    "description": "Kernel updates or different kernel versions on the servers could introduce performance differences and altered scheduling behavior. Less probable without other evidence.",
+    "relatedTo": []
+  },
+  {
+    "id": 10,
+    "name": "Hardware Differences",
+    "description": "Subtle differences in hardware (CPU speed, memory speed) between the servers, even if they appear identical, can contribute to latency variations. Less likely if servers are provisioned identically.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "Energy Saving Modes",
+    "description": "CPU frequency scaling or other power-saving modes can dynamically alter server performance and thus latency. Potentially causes distinct modes.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Caching Effects",
+    "description": "Differences in caching behaviour on each server could cause different latencies for the same operation. Less likely to be the primary cause, but could contribute.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Firewall/Security Scans",
+    "description": "Periodic firewall checks or security scans on one server but not the other create temporary latency spikes.",
+    "relatedTo": [
+      "Background Processes"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "DNS Resolution",
+    "description": "Inconsistent DNS resolution times for server addresses can introduce variation. Usually small but could contribute to observed differences.",
+    "relatedTo": [
+      "Network Congestion"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Cosmic Rays/Hardware Errors",
+    "description": "Rare hardware errors caused by cosmic rays or other environmental factors could introduce occasional spikes. Very low probability but should be considered for critical systems.",
+    "relatedTo": []
+  }
+]

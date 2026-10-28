@@ -1,0 +1,6 @@
+You are assisting the engineers of a self-adaptive system.
+System: two servers run a randomised consensus protocol based on a shared coin. A shared counter starts in the middle; in each round, a controller asks one of the two servers to flip its coin (heads moves the counter up, tails moves it down), and the servers agree when the counter reaches either end. The controller chooses which server flips the next coin, minimising the expected total latency until the servers agree.
+Observation: the logged latencies of the coin flips of Server 1 and Server 2 are multimodal, i.e., they form several distinct groups that the current model cannot explain.
+No environmental or operational factor is currently part of the model.
+Task: list up to 15 environmental or operational factors that could explain this, ranked by how likely they are.
+Return JSON: [{"id": <rank>, "name": "...", "description": "what it is and why it has this rank", "relatedTo": ["names of other listed factors it may be correlated with"]}]

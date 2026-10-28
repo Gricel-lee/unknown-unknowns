@@ -1,0 +1,133 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture and Mud",
+    "description": "Rain makes soil and grass muddy, causing wheel slippage and slower speeds. This creates a distinct high-travel-time mode during or after wet weather, especially on the grass of Path 2.",
+    "relatedTo": [
+      "Precipitation",
+      "Path Maintenance",
+      "Route Surface Degradation"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Crop Growth Stage",
+    "description": "As crops grow taller, they can overhang Path 2, partially blocking the camera's field of view. This forces the robot to navigate more cautiously (slower) or trigger false obstacle detections compared to early-season clear paths.",
+    "relatedTo": [
+      "Path Maintenance",
+      "Harsh Shadows",
+      "GNSS Signal Quality"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Time of Day and Sun Position",
+    "description": "Camera navigation is highly sensitive to lighting. Low sun angles (dawn/dusk) cause direct glare or long shadows, while night requires active lighting. These distinct lighting states create discrete travel-time profiles due to varying image processing delays.",
+    "relatedTo": [
+      "Harsh Shadows"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Path Maintenance and Grass Height",
+    "description": "On Path 2, tall, unmown grass increases rolling resistance and wheel slip, and can obscure ground-level obstacles. Travel times will cluster into two distinct modes: 'recently mown' (fast) and 'overgrown' (slow).",
+    "relatedTo": [
+      "Crop Growth Stage",
+      "Soil Moisture and Mud"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Farm Traffic and Obstacles",
+    "description": "Path 1 (outer edge) is likely shared with human workers, tractors, or support vehicles. The presence of these obstacles causes the robot to stop, wait, or slow down, creating a multi-modal distribution (clear path vs. obstructed path).",
+    "relatedTo": [
+      "Route Surface Degradation"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Precipitation",
+    "description": "Active rain or heavy fog directly degrades camera visibility (water droplets on the lens) and triggers safety-focused speed reductions in the navigation controller.",
+    "relatedTo": [
+      "Soil Moisture and Mud",
+      "Sensor Degradation"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Harsh Shadows and Contrast",
+    "description": "Strong, direct sunlight creates high-contrast shadows (especially on Path 2 under crop canopies). Vision algorithms often misidentify these shadows as physical obstacles, causing sudden decelerations and path-revalidation maneuvers.",
+    "relatedTo": [
+      "Time of Day and Sun Position",
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Battery State of Charge and Health",
+    "description": "The robot's controller may implement a 'low-power' or 'eco' mode that caps maximum motor output when the battery drops below a certain threshold, leading to a bimodal speed distribution.",
+    "relatedTo": [
+      "Ambient and Motor Temperature",
+      "Robot Payload"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Ambient and Motor Temperature",
+    "description": "Extreme heat triggers thermal throttling of the onboard computers or drive motors to prevent damage, while extreme cold reduces battery efficiency. Both lead to distinct slow-travel modes.",
+    "relatedTo": [
+      "Battery State of Charge and Health"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sensor Degradation",
+    "description": "Dust, mud splashes, or pollen accumulating on the camera lenses over time reduces image contrast. This causes the navigation system to default to a slower, high-confidence processing mode until the lenses are cleaned.",
+    "relatedTo": [
+      "Precipitation",
+      "Soil Moisture and Mud"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "GNSS Signal Quality",
+    "description": "If the camera-based navigation is aided by GNSS, signal multipath or loss (e.g., under a dense canopy on Path 2 or near trees on Path 1) forces the robot to switch to slower, dead-reckoning safety modes.",
+    "relatedTo": [
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Wind Speed and Crop Sway",
+    "description": "High winds cause crops on Path 2 to sway into the robot's path dynamically. The vision system perceives this dynamic movement as transient obstacles, resulting in intermittent braking.",
+    "relatedTo": [
+      "Crop Growth Stage",
+      "Precipitation"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Route Surface Degradation",
+    "description": "Potholes, ruts from heavy machinery, or loose gravel on Path 1 can emerge over the season. This causes high-vibration travel, forcing the robot's internal IMU safety limits to slow down the vehicle.",
+    "relatedTo": [
+      "Soil Moisture and Mud",
+      "Farm Traffic"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Robot Payload",
+    "description": "If the robot carries variable payloads (e.g., carrying tools, full/empty water tanks for spraying, or collected samples), the added mass slows acceleration and speed, especially when climbing inclines.",
+    "relatedTo": [
+      "Battery State of Charge and Health"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Tire Wear and Inflation Pressure",
+    "description": "Gradual loss of tire pressure or tread wear decreases traction on grass and dirt, leading to higher slippage rates that accumulate into distinct, longer travel times before maintenance events.",
+    "relatedTo": [
+      "Soil Moisture and Mud"
+    ]
+  }
+]

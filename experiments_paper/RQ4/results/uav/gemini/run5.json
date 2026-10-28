@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Network Signal Strength and Bandwidth",
+    "description": "Represents the quality of the wireless link between the UAV and the ground control station. This is ranked first because end-to-end human analysis includes image transmission time; drops in bandwidth or signal strength directly shift the transmission times into distinct, highly separated multimodal peaks.",
+    "relatedTo": [
+      "Network Handover and Link Type",
+      "Communication Protocol and Packet Loss"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dynamic CPU/GPU Frequency Scaling",
+    "description": "The onboard compute hardware dynamically adjusting its clock speed (DVFS) due to workload variations or OS policies. This is ranked second because it creates highly distinct, discrete processor performance states, yielding a bimodal or multimodal distribution of classification times for the onboard classifier.",
+    "relatedTo": [
+      "Battery State of Charge and Power Modes",
+      "Hardware Thermal Throttling"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Human Operator Multi-tasking and Distraction",
+    "description": "The operational state of the human operator who may be supervising multiple UAVs or performing secondary tasks. This is ranked third as it creates a classic bimodal response time profile: a 'fast' peak when the operator is immediately available, and a 'slow' peak when the operator must switch context.",
+    "relatedTo": [
+      "Operator Skill Level"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Onboard Resource Contention",
+    "description": "Competition for CPU, GPU, or RAM between the image classifier and other critical flight processes (e.g., path planning, flight control loops, or data logging). It ranks high because operating-system thread scheduling can cause sudden, discrete jumps in classification latency when concurrent tasks are triggered.",
+    "relatedTo": [
+      "Dynamic CPU/GPU Frequency Scaling"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Target Clutter and Scene Complexity",
+    "description": "The visual complexity of the environment at a waypoint (e.g., dense urban vs. empty desert). This is ranked fifth because cluttered scenes require longer human scanning times and dramatically increase the execution time of post-processing steps (like Non-Maximum Suppression) in object detection algorithms.",
+    "relatedTo": [
+      "UAV Altitude and Field of View",
+      "Environmental Visibility and Weather"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Network Handover and Link Type",
+    "description": "The active communication infrastructure (e.g., switching between direct RF Line-of-Sight, cellular LTE, or satellite links) during the mission. This is ranked sixth because transitioning between these communication modes introduces major, step-function changes in baseline latency and bandwidth.",
+    "relatedTo": [
+      "Network Signal Strength and Bandwidth",
+      "Communication Protocol and Packet Loss"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Hardware Thermal Throttling",
+    "description": "The onboard processor reducing its performance state to prevent overheating, especially during long missions or in warm weather. This is ranked seventh because thermal limits trigger discrete lower-performance hardware modes, slowing down the onboard classifier significantly and predictably.",
+    "relatedTo": [
+      "Dynamic CPU/GPU Frequency Scaling"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dynamic Resolution and Camera Settings",
+    "description": "Adjustments to image resolution or compression settings (e.g., capturing raw high-resolution images at specific points of interest versus low-resolution at others). This is ranked eighth because processing twice the pixel volume results in a distinct, separate cluster of execution and transmission times.",
+    "relatedTo": [
+      "UAV Altitude and Field of View"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Battery State of Charge and Power Modes",
+    "description": "Low-battery mitigation policies where the UAV firmware limits compute power once the battery drops below critical thresholds. This is ranked ninth because it forces the onboard computer into a lower power state, causing classification times to shift to a distinct, slower mode late in the mission.",
+    "relatedTo": [
+      "Dynamic CPU/GPU Frequency Scaling",
+      "Hardware Thermal Throttling"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Operator Skill Level",
+    "description": "The difference in efficiency, experience, and speed between individual human operators working in shifts. This is ranked tenth because different operators have distinct average analytical speeds, leading to distinct peaks in human analysis time depending on who is on duty.",
+    "relatedTo": [
+      "Human Operator Multi-tasking and Distraction"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Environmental Visibility and Weather",
+    "description": "Atmospheric conditions like fog, rain, glare, or low light. This is ranked eleventh because degraded visibility requires the human operator to zoom in, pan, or apply filters (extending time), and may trigger different confidence thresholds on the onboard classifier.",
+    "relatedTo": [
+      "Target Clutter and Scene Complexity",
+      "Time of Day and Illumination"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Classifier Early-Exit and Algorithmic Structure",
+    "description": "The use of dynamic deep learning models or cascade classifiers that terminate inference early if confidence thresholds are met quickly on 'easy' images. This is ranked twelfth because it naturally splits execution times into discrete 'fast-path' and 'slow-path' (full evaluation) groups.",
+    "relatedTo": [
+      "Target Clutter and Scene Complexity"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Communication Protocol and Packet Loss",
+    "description": "The behavior of transmission protocols (e.g., TCP vs. UDP). High packet loss rates trigger discrete retransmission and back-off delays, creating stepped, multimodal increases in the time it takes for a human to receive the image.",
+    "relatedTo": [
+      "Network Signal Strength and Bandwidth",
+      "Network Handover and Link Type"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Time of Day and Illumination",
+    "description": "Changes in natural lighting that force the payload camera to switch between day (RGB) mode and night (Infrared) mode. This is ranked fourteenth because the switch in modes changes the image bit-depth or format, altering both the transmission time and the onboard preprocessing execution paths.",
+    "relatedTo": [
+      "Environmental Visibility and Weather"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "UAV Altitude and Field of View",
+    "description": "The altitude profile of the UAV at different waypoints. This is ranked fifteenth because higher altitudes yield a larger field of view containing more background features, slightly increasing both human scanning times and the number of candidate regions evaluated by the classifier.",
+    "relatedTo": [
+      "Target Clutter and Scene Complexity",
+      "Dynamic Resolution and Camera Settings"
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "problem": "uav",
+  "epsilon": 0.05,
+  "bins": 10,
+  "permutations": 200,
+  "ctree_alpha": 0.01,
+  "seed": 6,
+  "identifier": "mi",
+  "samples": 1000,
+  "alpha": 0.05,
+  "m_max": 3,
+  "n_min": 10,
+  "known_variables": [
+    "low_light",
+    "operator_busy",
+    "signal_noise"
+  ],
+  "stop_reason": "the costs are unimodal in every bin of the known variables",
+  "reward_without_u": 595.1364997563235,
+  "reward_with_u": 566.6195320538649,
+  "policy_without_u": [
+    "onboard"
+  ],
+  "policy_with_u": [
+    "ask_operator",
+    "ask_operator",
+    "onboard",
+    "ask_operator",
+    "onboard",
+    "ask_operator",
+    "onboard",
+    "onboard"
+  ]
+}

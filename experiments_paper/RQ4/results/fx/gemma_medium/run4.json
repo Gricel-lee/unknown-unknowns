@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "name": "Market Volatility",
+    "description": "Periods of high market volatility create more complex and unpredictable price movements. This necessitates more sophisticated and computationally intensive technical analysis (increased lookback periods, more indicators) to identify patterns and potential trading signals.  Fundamental analysis may also be affected as economic data releases are more impactful during volatile periods, generating more complex interpretations. ",
+    "relatedTo": [
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Data Feed Latency",
+    "description": "The delay between a market event occurring and the system receiving the data (from exchanges, news feeds, etc.) can drastically affect the timing of analysis.  Higher latency allows more complex technical calculations to be performed repeatedly on slightly outdated data, leading to longer analysis times. This often correlates directly with market volatility.",
+    "relatedTo": [
+      "1",
+      "3",
+      "5"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Server Load & Hardware Performance",
+    "description": "The server running the analysis components may be experiencing high load due to other trading activity or system processes. This will cause processing times to increase.  Hardware performance (CPU, memory, disk I/O) directly impacts the speed of the analysis algorithms.  A bottleneck here would manifest as variations in execution time.",
+    "relatedTo": [
+      "1",
+      "2",
+      "6"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Algorithm Complexity & Tuning",
+    "description": "The specific technical and fundamental analysis algorithms used, and how they are tuned (parameters, thresholds), can have a huge impact. If the algorithms are overly complex or poorly optimized, or if parameters are not well-suited to the current market conditions, execution times will vary. It\u2019s likely the model isn\u2019t capturing the subtle adjustments made to algorithms during the run.",
+    "relatedTo": [
+      "1",
+      "2",
+      "7",
+      "8"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "News Feed Volume & Processing",
+    "description": "The volume of news releases and the speed at which the system processes and interprets this news data can be a significant factor in fundamental analysis times.  Real-time news processing, sentiment analysis, and correlating it with economic indicators are computationally intensive.",
+    "relatedTo": [
+      "1",
+      "2"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Database Performance",
+    "description": "If the analysis relies heavily on database queries to retrieve historical data or economic indicators, database performance bottlenecks will directly translate to longer analysis times. This can be tied to the data feed latency.",
+    "relatedTo": [
+      "2",
+      "3",
+      "7"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Time of Day / Trading Session",
+    "description": "Market activity and volatility often change throughout the trading day.  For example, volatility may be higher during certain news announcements or during the overlap of major market sessions.  This affects the analysis requirements. ",
+    "relatedTo": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Data Quality Issues (Missing/Incorrect Data)",
+    "description": "If the system encounters missing or incorrect data from any source (exchange feeds, news feeds, economic databases), it may need to spend extra time handling these errors or attempting to impute values, thereby increasing analysis times.  This is a critical cause of unpredictable results.",
+    "relatedTo": [
+      "2",
+      "3",
+      "6"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Algorithm Versioning & Updates",
+    "description": "Changes in the technical and fundamental analysis algorithms themselves (even minor updates) can affect performance. If different versions are running concurrently or if the system is transitioning between versions during a run, this could contribute to variability.",
+    "relatedTo": [
+      "4",
+      "7"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Network Congestion",
+    "description": "Network issues between the trading system and external data providers can introduce delays and packet loss, impacting the timeliness of data received and increasing processing times.",
+    "relatedTo": [
+      "2",
+      "3"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Order Execution Latency (Related but distinct)",
+    "description": "While not directly analysis time, high order execution latency (time taken to submit and fill an order) could influence the *choice* of analysis mode. If order latency is high, a faster, simpler analysis might be chosen, but this selection can lead to incorrect trading decisions.",
+    "relatedTo": [
+      "1",
+      "2",
+      "4"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Concurrent Analysis Tasks",
+    "description": "If multiple analysis tasks are running concurrently (perhaps due to multiple traders or different strategies), resource contention can slow down the system.  The model likely doesn't account for this.",
+    "relatedTo": [
+      "3",
+      "6"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Economic Calendar Event Timing",
+    "description": "The exact time of major economic data releases (e.g., GDP, inflation) can heavily influence the market and the type of analysis needed. Event-driven analysis can be particularly computationally intensive.",
+    "relatedTo": [
+      "1",
+      "5"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "System Clock Drift",
+    "description": "Even small discrepancies between the system clock and the external clocks of data providers can introduce delays in data processing, especially if timestamps are used for correlation.",
+    "relatedTo": [
+      "2",
+      "6"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Software Bug/Unexpected Computation",
+    "description": "A previously unknown bug in the analysis algorithms or related software can cause unexpected delays or errors. This would be a less frequent cause but needs to be considered.",
+    "relatedTo": [
+      "4",
+      "7"
+    ]
+  }
+]

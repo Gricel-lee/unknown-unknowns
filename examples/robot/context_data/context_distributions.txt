@@ -1,0 +1,15 @@
+# Normal distribution of the travel cost of each path for each (light, wet, busy) combination.
+# Format: {env:<combination>, path1_mean:<m>, path1_std:<s>, path2_mean:<m>, path2_std:<s>}
+#
+# path1 mean = 26 + 14*light - 7*wet + 4.5*busy
+# path2 mean = 25 +  2*light + 8*wet + 4*busy
+# Path 2 is cheaper when the ground is dry (wet=0) and path 1 when it is wet, so a
+# controller that knows the hidden variables can pick the cheaper path per environment.
+{env:000, path1_mean:26,   path1_std:1.0, path2_mean:25, path2_std:1.0}
+{env:001, path1_mean:30.5, path1_std:0.8, path2_mean:29, path2_std:1.2}
+{env:010, path1_mean:19,   path1_std:1.2, path2_mean:33, path2_std:0.8}
+{env:011, path1_mean:23.5, path1_std:1.0, path2_mean:37, path2_std:1.0}
+{env:100, path1_mean:40,   path1_std:1.0, path2_mean:27, path2_std:1.0}
+{env:101, path1_mean:44.5, path1_std:0.8, path2_mean:31, path2_std:1.2}
+{env:110, path1_mean:33,   path1_std:1.2, path2_mean:35, path2_std:0.8}
+{env:111, path1_mean:37.5, path1_std:1.0, path2_mean:39, path2_std:1.0}

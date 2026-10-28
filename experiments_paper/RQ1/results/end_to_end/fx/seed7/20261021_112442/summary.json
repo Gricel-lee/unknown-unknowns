@@ -1,0 +1,34 @@
+{
+  "problem": "fx",
+  "epsilon": 0.05,
+  "bins": 10,
+  "permutations": 200,
+  "ctree_alpha": 0.01,
+  "seed": 7,
+  "identifier": "mi",
+  "samples": 1000,
+  "alpha": 0.05,
+  "m_max": 3,
+  "n_min": 10,
+  "known_variables": [
+    "disk_busy",
+    "volatile",
+    "news"
+  ],
+  "stop_reason": "the costs are unimodal in every bin of the known variables",
+  "reward_without_u": 46.54853423408451,
+  "reward_with_u": 41.118306941968434,
+  "policy_without_u": [
+    "marketwatch"
+  ],
+  "policy_with_u": [
+    "marketwatch",
+    "marketwatch",
+    "fundanalysis",
+    "fundanalysis",
+    "marketwatch",
+    "marketwatch",
+    "marketwatch",
+    "marketwatch"
+  ]
+}

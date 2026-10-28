@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "Camera Resolution",
+    "description": "The resolution of the camera can affect the processing time of the onboard classifier, as higher resolutions require more processing power.",
+    "relatedTo": [
+      "Onboard Computation Power",
+      "Image Size"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Onboard Computation Power",
+    "description": "The processing power of the onboard computer can affect the time it takes to analyze an image, as more powerful computers can process images faster.",
+    "relatedTo": [
+      "Camera Resolution",
+      "Operating System"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Operating System",
+    "description": "The operating system used on the onboard computer can affect the processing time of the onboard classifier, as different OS's can have different overheads and inefficiencies.",
+    "relatedTo": [
+      "Onboard Computation Power"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Network Bandwidth",
+    "description": "The bandwidth of the network used to transmit images to the human operator can affect the time it takes to analyze an image, as slower networks can increase the time it takes to transmit images.",
+    "relatedTo": [
+      "Human Operator Location",
+      "Data Transfer Protocol"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Human Operator Location",
+    "description": "The location of the human operator can affect the time it takes to analyze an image, as images may need to be transmitted over longer distances to reach the operator.",
+    "relatedTo": [
+      "Network Bandwidth",
+      "Data Transfer Protocol"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Data Transfer Protocol",
+    "description": "The protocol used to transfer images to the human operator can affect the time it takes to analyze an image, as different protocols can have different overheads and inefficiencies.",
+    "relatedTo": [
+      "Network Bandwidth",
+      "Human Operator Location"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Weather Conditions",
+    "description": "Weather conditions such as fog, haze, or high winds can affect the quality of the images taken by the UAV, leading to longer processing times.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "UAV Speed"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Lighting Conditions",
+    "description": "The lighting conditions at the waypoint can affect the quality of the images taken by the UAV, leading to longer processing times.",
+    "relatedTo": [
+      "Weather Conditions",
+      "UAV Speed"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "UAV Speed",
+    "description": "The speed of the UAV can affect the time it takes to reach the next waypoint, leading to longer processing times if the UAV is moving slowly.",
+    "relatedTo": [
+      "Weather Conditions",
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Image Size",
+    "description": "The size of the image can affect the processing time of the onboard classifier, as larger images require more processing power.",
+    "relatedTo": [
+      "Camera Resolution",
+      "Onboard Computation Power"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Battery Life",
+    "description": "The battery life of the UAV can affect the time it can spend at each waypoint, leading to longer processing times if the battery runs out.",
+    "relatedTo": [
+      "UAV Speed",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Sensor Quality",
+    "description": "The quality of the sensors used on the UAV can affect the quality of the images taken, leading to longer processing times.",
+    "relatedTo": [
+      "Camera Resolution",
+      "Onboard Computation Power"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Human Operator Experience",
+    "description": "The experience of the human operator can affect the time it takes to analyze an image, as more experienced operators may be able to analyze images faster.",
+    "relatedTo": [
+      "Data Transfer Protocol",
+      "Network Bandwidth"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "UAV Maintenance",
+    "description": "The maintenance history of the UAV can affect the performance of the onboard computer and sensors, leading to longer processing times.",
+    "relatedTo": [
+      "Onboard Computation Power",
+      "Sensor Quality"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Software Updates",
+    "description": "The software updates applied to the onboard computer and classifier can affect the processing time of the onboard classifier, as newer software may be more efficient.",
+    "relatedTo": [
+      "Onboard Computation Power",
+      "Operating System"
+    ]
+  }
+]

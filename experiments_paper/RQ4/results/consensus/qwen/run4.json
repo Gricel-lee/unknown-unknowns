@@ -1,0 +1,125 @@
+[
+  {
+    "id": 1,
+    "name": "Temperature Fluctuations",
+    "description": "Temperature changes can affect the hardware performance and thus the timing of the coin flip operations. Higher temperatures can lead to slower responses or longer latencies.",
+    "relatedTo": [
+      "Power Supply Stability"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Power Supply Stability",
+    "description": "Power supply issues, such as voltage fluctuations, can introduce noise and affect the timing of the coin flips. Unstable power can lead to intermittent operation and longer latencies.",
+    "relatedTo": [
+      "Temperature Fluctuations"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Network Latency",
+    "description": "Network conditions can introduce varying delays in communication between the controller and the servers. High network latency can cause delays in receiving the coin flip results, leading to longer observed latencies.",
+    "relatedTo": [
+      "Server Load",
+      "Environmental Noise"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Server Load",
+    "description": "The load on the servers can affect their performance. During periods of high load, the servers may take longer to process the coin flip requests, leading to increased latencies.",
+    "relatedTo": [
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Environmental Noise",
+    "description": "External noise sources, such as electromagnetic interference, can interfere with the servers' operations, causing unexpected delays in the coin flip processes.",
+    "relatedTo": [
+      "Temperature Fluctuations"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Disk I/O Activity",
+    "description": "High disk I/O activity can slow down the servers, leading to longer latencies in coin flip operations. Disk operations can compete with CPU and network operations, leading to performance degradation.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Memory Pressure",
+    "description": "Memory pressure can affect the servers' performance, causing delays in executing the coin flip operations. Memory issues can lead to more frequent context switches and slower processing times.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "CPU Usage",
+    "description": "High CPU usage can affect the performance of the coin flip operations. Busy CPUs may take longer to process requests, leading to increased latencies.",
+    "relatedTo": [
+      "Server Load",
+      "Disk I/O Activity"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Cache Misses",
+    "description": "Cache misses can slow down the servers by forcing them to access slower memory, leading to longer latencies in coin flip operations. Cache performance can be heavily dependent on the current workload.",
+    "relatedTo": [
+      "Memory Pressure",
+      "Server Load"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Software Conflicts",
+    "description": "Software conflicts or incompatibilities can cause unexpected delays in the execution of the coin flip operations. These conflicts may be related to specific software versions or configurations.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Clock Drift",
+    "description": "Clock drift can affect the timing of the coin flip operations, especially if the servers are not perfectly synchronized. Clock differences can lead to inconsistencies in the timing of the operations.",
+    "relatedTo": [
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Firmware Updates",
+    "description": "Firmware updates can introduce changes in how hardware components operate, potentially affecting the timing of the coin flip operations. Incomplete or poorly implemented updates can cause unexpected delays.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Hardware Failure",
+    "description": "Hardware failures or degraded performance can introduce unexpected delays in the coin flip operations. Hardware issues can cause intermittent or prolonged latencies.",
+    "relatedTo": [
+      "Temperature Fluctuations"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Software Bugs",
+    "description": "Software bugs can cause unexpected delays in the execution of the coin flip operations. Bugs may be related to specific software versions or configurations, leading to inconsistent behavior.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "User-Generated Load",
+    "description": "User-generated load can affect the performance of the servers, leading to longer latencies in the coin flip operations. Increased user activity can compete with system operations, causing delays.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  }
+]

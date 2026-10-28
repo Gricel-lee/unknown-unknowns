@@ -1,0 +1,60 @@
+iteration 1: adding busy (mi)
+iteration 2: adding remote (mi)
+iteration 3: adding congested (mi)
+Known variables: ['busy', 'remote', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 88.85 without the unknown unknowns, 69.77 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed0/20261021_112356
+iteration 1: adding remote (mi)
+iteration 2: adding busy (mi)
+iteration 3: adding congested (mi)
+Known variables: ['remote', 'busy', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 89.75 without the unknown unknowns, 71.53 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed1/20261021_112402
+iteration 1: adding remote (mi)
+iteration 2: adding busy (mi)
+iteration 3: adding congested (mi)
+Known variables: ['remote', 'busy', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 87.44 without the unknown unknowns, 69.6 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed2/20261021_112409
+iteration 1: adding busy (mi)
+iteration 2: adding remote (mi)
+iteration 3: adding congested (mi)
+Known variables: ['busy', 'remote', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 86.72 without the unknown unknowns, 68.59 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed3/20261021_112415
+iteration 1: adding remote (mi)
+iteration 2: adding busy (mi)
+iteration 3: adding congested (mi)
+Known variables: ['remote', 'busy', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 90.44 without the unknown unknowns, 71.13 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed4/20261021_112422
+iteration 1: adding remote (mi)
+iteration 2: adding busy (mi)
+iteration 3: adding congested (mi)
+Known variables: ['remote', 'busy', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 86.26 without the unknown unknowns, 69.8 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed5/20261021_112429
+iteration 1: adding busy (mi)
+iteration 2: adding remote (mi)
+iteration 3: adding congested (mi)
+Known variables: ['busy', 'remote', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 88 without the unknown unknowns, 70.78 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed6/20261021_112435
+iteration 1: adding busy (mi)
+iteration 2: adding remote (mi)
+iteration 3: adding congested (mi)
+Known variables: ['busy', 'remote', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 87.42 without the unknown unknowns, 69.68 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed7/20261021_112442
+iteration 1: adding remote (mi)
+iteration 2: adding busy (mi)
+iteration 3: adding congested (mi)
+Known variables: ['remote', 'busy', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 84.64 without the unknown unknowns, 66.61 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed8/20261021_112448
+iteration 1: adding busy (mi)
+iteration 2: adding remote (mi)
+iteration 3: adding congested (mi)
+Known variables: ['busy', 'remote', 'congested'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 88.68 without the unknown unknowns, 69.98 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/consensus/seed9/20261021_112455

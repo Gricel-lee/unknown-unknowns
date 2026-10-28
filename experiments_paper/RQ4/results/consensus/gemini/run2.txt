@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Network Packet Retransmission (TCP timeouts)",
+    "description": "If network packets carrying coin-flip commands or responses are lost, TCP retransmission timers trigger. This introduces highly discrete delay steps (typically starting at 200ms or 1s minimum retransmission timeout - RTO), splitting the latency distribution into distinct, widely separated bands.",
+    "relatedTo": ["Network Routing Path Variations", "Request Inter-arrival Burstiness (Queueing)"]
+  },
+  {
+    "id": 2,
+    "name": "Garbage Collection (GC) Pauses",
+    "description": "If the servers run on runtimes with automatic memory management (e.g., Java, Go, .NET), periodic stop-the-world GC pauses occur. This creates a highly distinct bimodal or multimodal distribution: a dominant fast mode (no GC) and one or more slow modes corresponding to different types of GC cycles.",
+    "relatedTo": ["Co-located Workload / Noisy Neighbors", "Memory Page Faulting and Swap Usage"]
+  },
+  {
+    "id": 3,
+    "name": "Co-located Workload / Noisy Neighbors",
+    "description": "In cloud environments or shared servers, other processes running on the same hardware can periodically saturate the CPU, disk, or memory bus. This shifts the target system's latency from a baseline mode to higher latency modes depending on whether the host is currently experiencing a resource spike.",
+    "relatedTo": ["Virtualization Hypervisor Scheduling (CPU Steal)", "OS Context Switching and Thread Starvation"]
+  },
+  {
+    "id": 4,
+    "name": "Entropy Source Depletion (RNG blocking)",
+    "description": "Because this is a randomized consensus protocol, servers need random numbers to 'flip' the coin. If they rely on blocking system entropy pools (e.g., /dev/random on Linux) rather than pseudo-random generators, the call will block and wait for system entropy to accumulate, causing massive, discrete latency steps.",
+    "relatedTo": ["Cryptographic Hardware Acceleration Availability"]
+  },
+  {
+    "id": 5,
+    "name": "CPU Frequency Scaling and C-States",
+    "description": "Modern processors transition to lower-power sleep states (C-states) or reduce clock speed (P-states) when idle. If coin flips are infrequent, a server must wake up from these states, adding a consistent 'wake-up' delay to the first request in a burst, resulting in distinct idle vs. active latency modes.",
+    "relatedTo": ["Request Inter-arrival Burstiness (Queueing)"]
+  },
+  {
+    "id": 6,
+    "name": "Shared State Lock Contention",
+    "description": "The protocol relies on a shared counter. If the mechanism to update this counter (e.g., a shared database, a distributed lock manager, or an in-memory lock) experiences high contention, threads will queue. Latencies will cluster into distinct modes representing 'no-wait' vs. 'queued' states.",
+    "relatedTo": ["Disk I/O Sync Bottlenecks (Logging)", "Request Inter-arrival Burstiness (Queueing)"]
+  },
+  {
+    "id": 7,
+    "name": "Network Routing Path Variations",
+    "description": "Dynamic routing protocols or multi-path routing (like ECMP in data centers) can route network packets between the controller and servers over different physical paths. This creates distinct, stable latency modes corresponding directly to the physical distance/hop-count of the paths.",
+    "relatedTo": ["Network Packet Retransmission (TCP timeouts)", "Geographic Distribution of Servers"]
+  },
+  {
+    "id": 8,
+    "name": "Virtualization Hypervisor Scheduling (CPU Steal)",
+    "description": "When running in virtual machines, the hypervisor schedules virtual CPUs onto physical cores. If the hypervisor delays scheduling the VM (recorded as 'steal time'), the execution of the coin flip is frozen, introducing artificial, discrete delays into the latency metrics.",
+    "relatedTo": ["Co-located Workload / Noisy Neighbors", "CPU Frequency Scaling and C-States"]
+  },
+  {
+    "id": 9,
+    "name": "JIT Compilation and Tiered Warmup",
+    "description": "Just-In-Time (JIT) compilers compile bytecode to native code in tiers. The first few flips run in interpreted mode (slow mode), intermediate runs trigger C1/baseline compilation (medium mode), and hot paths trigger heavily optimized C2 compilation (fast mode), creating a classic multimodal warmup profile.",
+    "relatedTo": ["Request Inter-arrival Burstiness (Queueing)"]
+  },
+  {
+    "id": 10,
+    "name": "Geographic Distribution of Servers",
+    "description": "If Server 1 and Server 2 are located in different availability zones, regions, or physical racks relative to the controller, they will have different baseline network round-trip times (RTTs). This presents as a multimodal latency distribution when looking at the combined system view.",
+    "relatedTo": ["Network Routing Path Variations"]
+  },
+  {
+    "id": 11,
+    "name": "OS Context Switching and Thread Starvation",
+    "description": "Under high load, OS thread schedulers must context-switch between active threads. The latency of a coin flip will show a distinct mode when it can be processed immediately on an available core versus when it must wait in the OS run queue.",
+    "relatedTo": ["Co-located Workload / Noisy Neighbors", "Request Inter-arrival Burstiness (Queueing)"]
+  },
+  {
+    "id": 12,
+    "name": "Disk I/O Sync Bottlenecks (Logging)",
+    "description": "If every coin flip or counter update is logged synchronously to disk for persistence/auditability, latency is bound by disk I/O. Due to file system caching and flushing mechanisms (like dirty page flushes every few seconds), latencies will be split into fast (buffered in RAM) and slow (blocked on physical disk write) modes.",
+    "relatedTo": ["Shared State Lock Contention", "Memory Page Faulting and Swap Usage"]
+  },
+  {
+    "id": 13,
+    "name": "Memory Page Faulting and Swap Usage",
+    "description": "If the physical memory of a server is exhausted, parts of the process memory are moved to swap space on disk. A coin flip requiring access to swapped-out pages will trigger a major page fault, adding milliseconds of disk-read latency compared to nanosecond RAM access.",
+    "relatedTo": ["Garbage Collection (GC) Pauses", "Disk I/O Sync Bottlenecks (Logging)"]
+  },
+  {
+    "id": 14,
+    "name": "Cryptographic Hardware Acceleration Availability",
+    "description": "If the 'coin' uses cryptographic random generation, servers might offload this to hardware security modules (HSM) or CPU-specific instructions (e.g., RDRAND). If the hardware instruction queue is saturated, the system falls back to a software implementation, creating two distinct latency tiers.",
+    "relatedTo": ["Entropy Source Depletion (RNG blocking)"]
+  },
+  {
+    "id": 15,
+    "name": "Request Inter-arrival Burstiness (Queueing)",
+    "description": "The rate at which the controller requests coin flips impacts queueing at the server level. Bursty traffic creates distinct latency groups: requests arriving when the server queue is empty (processed instantly) vs. requests arriving at the back of a burst queue (experiencing compounding queue delay).",
+    "relatedTo": ["OS Context Switching and Thread Starvation", "Shared State Lock Contention"]
+  }
+]

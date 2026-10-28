@@ -1,0 +1,14 @@
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+LLM & Valid JSON & recall@5 & recall@10 & Diversity\\
+\midrule
+Gemini & 100\% & 0.55 & 0.67 & 0.64\\
+Gemma 27B & 100\% & 0.52 & 0.63 & 0.40\\
+Llama 8B & 100\% & 0.27 & 0.38 & 0.72\\
+Qwen 7B & 95\% & 0.35 & 0.52 & 0.61\\
+Gemma 4B & 100\% & 0.37 & 0.43 & 0.51\\
+Gemma 1B & 55\% & 0.33 & 0.48 & 0.53\\
+\midrule
+\multicolumn{4}{@{}l}{Diversity between LLMs (mean over all pairs)} & 0.74\\
+\bottomrule
+\end{tabular}

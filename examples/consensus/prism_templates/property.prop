@@ -1,0 +1,2 @@
+// minimum expected total latency until the servers agree; the controller's reward
+R{"latency"}min=? [ F "agreed" ]

@@ -1,0 +1,7 @@
+llm,runs,recall@5,recall@10,jaccard_within,valid_json_percent
+gemini,20,0.55,0.667,0.356,100.0
+gemma_large,20,0.517,0.633,0.605,100.0
+llama,20,0.267,0.383,0.284,100.0
+qwen,20,0.35,0.517,0.388,95.0
+gemma_medium,20,0.367,0.433,0.489,100.0
+gemma_small,20,0.333,0.483,0.469,55.0

@@ -1,0 +1,59 @@
+mdp
+
+// SHARED COIN WITH TWO SERVERS (simplified from the PRISM consensus/coin2 benchmark [AH90])
+// Two servers must agree on a coin outcome. A shared counter starts in the middle; each
+// round we ask ONE server to flip its coin (heads +1, tails -1). The servers agree when the
+// counter reaches either end. Each flip has a latency (ms) that depends on the environment,
+// so the controller decides which server to ask, minimising the expected total latency.
+//
+// Template with 1 unknown variable u1 (e.g. busy), with values 0/1.
+// The constants below have no value; the controller fills them in.
+
+const int K = 2; // agreement: the counter must move K steps away from the middle
+
+// --- probabilities (filled by the controller) -----
+// pX = probability of u1=X
+const double p0; // env_id=1
+const double p1; // env_id=2
+
+// --- rewards (filled by the controller) -----
+// cA_X = latency of a flip on server A when u1=X
+const double c1_0;
+const double c1_1;
+const double c2_0;
+const double c2_1;
+
+// --- readable views of the environment (derived from env_id) -----
+formula env_set = env_id != 0;
+formula u1      = (env_id=2) ? 1 : 0;
+
+module environment
+  env_id : [0..2] init 0; // 0 = not set, 1..2 = set
+
+  // sample the environment once, at the start
+  [] env_id=0 -> p0 : (env_id'=1)
+               + p1 : (env_id'=2);
+endmodule
+
+formula agreed = counter=0 | counter=2*K;
+
+module shared_coin
+  counter : [0..2*K] init K; // K = undecided middle, 0 = agree tails, 2K = agree heads
+
+  // nondeterministic choice: which server flips next (each coin is fair)
+  [flip1] env_set & !agreed -> 0.5 : (counter'=counter+1) + 0.5 : (counter'=counter-1);
+  [flip2] env_set & !agreed -> 0.5 : (counter'=counter+1) + 0.5 : (counter'=counter-1);
+
+  // absorbing once the servers agree (avoids deadlock warnings)
+  [done] agreed -> 1 : true;
+endmodule
+
+rewards "latency"
+  [flip1] env_id=1 : c1_0;
+  [flip1] env_id=2 : c1_1;
+
+  [flip2] env_id=1 : c2_0;
+  [flip2] env_id=2 : c2_1;
+endrewards
+
+label "agreed" = agreed;

@@ -1,0 +1,16 @@
+# Normal distribution of the time to analyse one image by the human operator (including
+# sending it over the radio link) and by the UAV's onboard classifier, for each
+# (operator_busy, signal_noise, low_light) combination.
+# Format: {env:<combination>, operator_mean:<m>, operator_std:<s>, onboard_mean:<m>, onboard_std:<s>}
+#
+# operator mean = 8 + 22*operator_busy + 15*signal_noise   (busy operator, noisy radio link)
+# onboard mean  = 14 + 31*low_light                         (dusk / heavy cloud)
+# std = 10% of the mean. Who should analyse the images depends on the environment.
+{env:000, operator_mean:8, operator_std:0.8, onboard_mean:14, onboard_std:1.4}
+{env:001, operator_mean:8, operator_std:0.8, onboard_mean:45, onboard_std:4.5}
+{env:010, operator_mean:23, operator_std:2.3, onboard_mean:14, onboard_std:1.4}
+{env:011, operator_mean:23, operator_std:2.3, onboard_mean:45, onboard_std:4.5}
+{env:100, operator_mean:30, operator_std:3.0, onboard_mean:14, onboard_std:1.4}
+{env:101, operator_mean:30, operator_std:3.0, onboard_mean:45, onboard_std:4.5}
+{env:110, operator_mean:45, operator_std:4.5, onboard_mean:14, onboard_std:1.4}
+{env:111, operator_mean:45, operator_std:4.5, onboard_mean:45, onboard_std:4.5}

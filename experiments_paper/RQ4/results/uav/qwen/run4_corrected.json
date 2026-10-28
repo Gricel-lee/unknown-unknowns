@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Sensor Quality",
+    "description": "The quality of the sensor on the UAV can significantly affect the clarity and detail of the captured images, impacting both the human analysis time and the onboard classifier's performance.",
+    "relatedTo": [
+      "Sensor Maintenance"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Lighting Conditions",
+    "description": "Variations in lighting conditions (e.g., time of day, weather, shadows) can affect the clarity and color accuracy of images, leading to longer analysis times.",
+    "relatedTo": [
+      "Environmental Factors"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Image Complexity",
+    "description": "Complexity of the scene in the images (e.g., presence of many objects, clutter) can make analysis more difficult, leading to longer analysis times for both human operators and onboard classifiers.",
+    "relatedTo": [
+      "Environmental Factors",
+      "Sensor Quality"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Environmental Factors",
+    "description": "Environmental conditions such as dust, smoke, or glare can obscure the images, making them harder to analyze. This can vary significantly between different mission locations.",
+    "relatedTo": [
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Operational Factors",
+    "description": "Operational factors, such as the UAV's speed or altitude, can affect the resolution and clarity of the images. Higher speed or lower altitude might result in better image quality.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Sensor Maintenance"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sensor Maintenance",
+    "description": "The condition of the sensors can degrade over time, leading to a decrease in image quality and an increase in analysis times. Regular maintenance can help mitigate this.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Operational Factors"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Battery Life",
+    "description": "The battery life of the UAV can impact its ability to fly at optimal speed or altitude, potentially affecting image quality and analysis times. A low battery might also reduce the onboard classifier's performance.",
+    "relatedTo": [
+      "Operational Factors"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Human Operator Fatigue",
+    "description": "Fatigue can affect the accuracy and speed of human operators, leading to longer analysis times. This is more likely to be an issue during longer missions.",
+    "relatedTo": [
+      "Operational Factors"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Onboard Classifier Software Version",
+    "description": "The version of the onboard classifier software can affect its performance. Older or less efficient versions might require more time to analyze images accurately.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Network Latency",
+    "description": "If the UAV is sending images to a human operator for analysis, network latency can delay the process. This is more relevant for missions where human analysis is required.",
+    "relatedTo": [
+      "Human Operator Fatigue"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Image Compression",
+    "description": "The compression level of the images can affect the quality and analysis time. Higher compression might reduce file size but can degrade image quality.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Sensor Maintenance"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Weather Conditions",
+    "description": "Weather can significantly affect image quality, especially in terms of visibility and clarity. Rain, fog, or haze can obscure the images, making them harder to analyze.",
+    "relatedTo": [
+      "Environmental Factors"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Ground Station Configuration",
+    "description": "The configuration of the ground station (e.g., network settings, processing power) can affect the speed and efficiency of image processing and analysis.",
+    "relatedTo": [
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Mission Urgency",
+    "description": "The urgency of the mission can affect the decision-making process, with more urgent missions potentially receiving higher priority and thus more thorough analysis.",
+    "relatedTo": [
+      "Human Operator Fatigue",
+      "Operational Factors"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Data Storage Availability",
+    "description": "The availability of storage space for images and analysis results can affect the system's ability to process and store data efficiently. Limited storage might force the UAV to wait before taking new images.",
+    "relatedTo": [
+      "Battery Life"
+    ]
+  }
+]

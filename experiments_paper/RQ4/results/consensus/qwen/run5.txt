@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Server Load", "description": "The load on each server affects the responsiveness and timing of the coin flip. Higher load could delay the response, leading to a longer latency.", "relatedTo": []},
+    {"id": 2, "name": "Network Latency", "description": "The network path between the controller and the servers can introduce variable latencies. Uneven network conditions could result in multimodal latency patterns.", "relatedTo": ["Server Load"]},
+    {"id": 3, "name": "Clock Synchronization", "description": "Differences in clock synchronization between servers can cause discrepancies in timing, especially if the servers are geographically distant.", "relatedTo": []},
+    {"id": 4, "name": "Power Supply Stability", "description": "Variations in power supply stability can affect the performance of the servers, leading to inconsistent latencies.", "relatedTo": ["Server Load"]},
+    {"id": 5, "name": "Thermal Conditions", "description": "Temperature changes can impact the performance of hardware components, potentially leading to variations in processing speed and response time.", "relatedTo": ["Power Supply Stability"]},
+    {"id": 6, "name": "Software Version Differences", "description": "If different versions of the software are running on each server, this can introduce variability in how the consensus protocol is executed.", "relatedTo": []},
+    {"id": 7, "name": "Cache Usage", "description": "Cache usage patterns can differ between servers, leading to varying latencies. This is especially true if the shared coin protocol relies heavily on cache hits.", "relatedTo": []},
+    {"id": 8, "name": "Disk I/O Performance", "description": "If the servers need to access disk I/O for the shared coin mechanism, differences in disk performance could cause multimodal latencies.", "relatedTo": ["Server Load", "Clock Synchronization"]},
+    {"id": 9, "name": "Memory Bandwidth", "description": "Memory bandwidth differences can affect the speed at which data is processed, leading to varying latencies.", "relatedTo": ["Server Load"]},
+    {"id": 10, "name": "Interference from Other Processes", "description": "Other processes running on the servers could be interfering with the coin flip mechanism, leading to unpredictable latencies.", "relatedTo": ["Server Load", "Clock Synchronization"]},
+    {"id": 11, "name": "Hardware Differences", "description": "Differences in hardware components between the two servers could lead to variations in performance and latency.", "relatedTo": ["Power Supply Stability", "Thermal Conditions"]},
+    {"id": 12, "name": "Network Congestion", "description": "Network congestion can introduce variability in latency, especially if the network path is shared with other traffic.", "relatedTo": ["Network Latency"]},
+    {"id": 13, "name": "Load Balancer Configuration", "description": "If a load balancer is used, its configuration could affect the distribution of requests and thus the observed latencies.", "relatedTo": ["Server Load"]},
+    {"id": 14, "name": "Operating System Configuration", "description": "Different configurations of the operating system could lead to variations in how the servers handle tasks and respond to requests.", "relatedTo": ["Server Load", "Software Version Differences"]},
+    {"id": 15, "name": "External Interference", "description": "External factors such as power outages, environmental disturbances, or other external systems could affect the servers, leading to inconsistent latencies.", "relatedTo": ["Power Supply Stability", "Thermal Conditions"]}
+]
+```

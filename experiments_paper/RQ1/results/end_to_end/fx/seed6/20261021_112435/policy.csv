@@ -1,0 +1,10 @@
+model,environment,action
+without_u,(all),marketwatch
+with_u,"disk_busy=0, volatile=0, news=0",marketwatch
+with_u,"disk_busy=1, volatile=0, news=0",marketwatch
+with_u,"disk_busy=0, volatile=1, news=0",fundanalysis
+with_u,"disk_busy=1, volatile=1, news=0",fundanalysis
+with_u,"disk_busy=0, volatile=0, news=1",marketwatch
+with_u,"disk_busy=1, volatile=0, news=1",marketwatch
+with_u,"disk_busy=0, volatile=1, news=1",marketwatch
+with_u,"disk_busy=1, volatile=1, news=1",marketwatch

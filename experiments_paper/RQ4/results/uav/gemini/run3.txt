@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Network Connection State",
+    "description": "The communication link type (e.g., Satellite, LTE, or Direct RF) used to transmit images to the human operator. Different links have vastly different, discrete bandwidth and latency profiles, creating distinct modes in the human analysis time (which includes transmission delay).",
+    "relatedTo": ["Network Packet Loss", "Image Resolution and Compression"]
+  },
+  {
+    "id": 2,
+    "name": "Concurrent Onboard Compute Load",
+    "description": "The CPU/GPU utilization by other critical UAV subsystems (e.g., SLAM, path planning, or collision avoidance). When these high-priority tasks run concurrently, onboard classification times fall into a significantly slower performance bracket.",
+    "relatedTo": ["Onboard Thermal and Power Throttling", "Battery State and Power Mode"]
+  },
+  {
+    "id": 3,
+    "name": "Operator Availability and Workload",
+    "description": "The queueing state of the human operator. If the operator is managing multiple UAVs or tasks, response times will cluster into distinct 'busy' (long queue wait) and 'idle' (instant response) modes.",
+    "relatedTo": ["Operator Experience Level", "Operator Shift and Fatigue"]
+  },
+  {
+    "id": 4,
+    "name": "Image Resolution and Compression",
+    "description": "Dynamic changes in image quality settings based on distance or bandwidth. Higher resolution images take significantly longer to transmit to humans and process onboard, creating step-like changes in overall analysis times.",
+    "relatedTo": ["Network Connection State", "Camera Sensor Mode"]
+  },
+  {
+    "id": 5,
+    "name": "Classifier Cascade and Early Exiting",
+    "description": "The use of an adaptive onboard neural network with early-exit branches. 'Easy' images exit at shallow layers (fast mode), while 'hard' or ambiguous images propagate to deeper layers (slow mode), inherently causing a multimodal distribution.",
+    "relatedTo": ["Scene and Target Complexity", "Environmental Lighting and Visibility"]
+  },
+  {
+    "id": 6,
+    "name": "Environmental Lighting and Visibility",
+    "description": "Diurnal cycles (day vs. night) or weather (fog, heavy clouds). Poor lighting increases human inspection time and forces onboard classifiers to run enhancement pre-processing or handle low-confidence edge cases.",
+    "relatedTo": ["Camera Sensor Mode", "Scene and Target Complexity", "UAV Vibration and Motion Blur"]
+  },
+  {
+    "id": 7,
+    "name": "Network Packet Loss",
+    "description": "Discrete retransmission timeouts caused by interference or physical obstacles blocking the line of sight. This adds fixed, step-like delays (e.g., TCP timeout intervals) to the human transmission loop.",
+    "relatedTo": ["Network Connection State"]
+  },
+  {
+    "id": 8,
+    "name": "Scene and Target Complexity",
+    "description": "The visual density of the waypoint environment (e.g., dense urban vs. open desert). Complex scenes with many distractor objects increase human cognitive search time and slow down onboard region-proposal algorithms.",
+    "relatedTo": ["Classifier Cascade and Early Exiting", "Environmental Lighting and Visibility"]
+  },
+  {
+    "id": 9,
+    "name": "Onboard Thermal and Power Throttling",
+    "description": "Hardware safety features that downclock the onboard companion computer when thresholds are reached. This forces the processor into discrete, lower-frequency performance states, slowing down classification.",
+    "relatedTo": ["Concurrent Onboard Compute Load", "Battery State and Power Mode"]
+  },
+  {
+    "id": 10,
+    "name": "Operator Experience Level",
+    "description": "Differences in proficiency between human operators (e.g., expert vs. novice). This groups human analysis times into distinct clusters depending on who is currently on duty.",
+    "relatedTo": ["Operator Availability and Workload", "Operator Shift and Fatigue"]
+  },
+  {
+    "id": 11,
+    "name": "Camera Sensor Mode",
+    "description": "Switching between different sensor payloads (e.g., standard RGB vs. Thermal/Infrared). Thermal images have different dimensions and require distinct processing pipelines and human interpretation speeds.",
+    "relatedTo": ["Image Resolution and Compression", "Environmental Lighting and Visibility"]
+  },
+  {
+    "id": 12,
+    "name": "Operator Shift and Fatigue",
+    "description": "The circadian rhythm and shift progression of the human operators. Response times are significantly slower during night shifts or at the very end of long shifts, creating distinct performance bands.",
+    "relatedTo": ["Operator Availability and Workload", "Operator Experience Level"]
+  },
+  {
+    "id": 13,
+    "name": "Battery State and Power Mode",
+    "description": "The UAV's active power-saving profile. At low battery levels, the system may switch the onboard computer to a low-power mode, discretely increasing onboard processing latency.",
+    "relatedTo": ["Concurrent Onboard Compute Load", "Onboard Thermal and Power Throttling"]
+  },
+  {
+    "id": 14,
+    "name": "UAV Vibration and Motion Blur",
+    "description": "Wind gusts causing UAV instability, resulting in blurred images. Blur triggers onboard image-rejection/deblurring algorithms or forces human operators to request retakes, causing bi-modal spikes.",
+    "relatedTo": ["Environmental Lighting and Visibility"]
+  },
+  {
+    "id": 15,
+    "name": "Ground Station Hardware Specifications",
+    "description": "Variations in the hardware performance of different ground control stations (e.g., field laptops vs. high-performance operations room terminals) used to decode and render images for the human operator.",
+    "relatedTo": ["Operator Availability and Workload"]
+  }
+]
+```

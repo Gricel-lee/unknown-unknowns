@@ -1,0 +1,10 @@
+model,environment,action
+without_u,(all),flip1
+with_u,"busy=0, remote=0, congested=0",flip1
+with_u,"busy=1, remote=0, congested=0",flip2
+with_u,"busy=0, remote=1, congested=0",flip1
+with_u,"busy=1, remote=1, congested=0",flip1
+with_u,"busy=0, remote=0, congested=1",flip1
+with_u,"busy=1, remote=0, congested=1",flip2
+with_u,"busy=0, remote=1, congested=1",flip1
+with_u,"busy=1, remote=1, congested=1",flip1

@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Weather Conditions",
+    "description": "Rain, snow, fog, or extreme lighting conditions can significantly affect image quality and contrast, impacting the accuracy of image classification.",
+    "relatedTo": [
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Image Resolution",
+    "description": "Higher resolution images necessitate more processing power and time, especially for the classifier.",
+    "relatedTo": [
+      "Image Resolution"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Sensor Noise",
+    "description": "Noise in the sensor data itself (e.g., from a camera) can introduce errors and require more image processing.",
+    "relatedTo": [
+      "Sensor Noise"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Camera Calibration Issues",
+    "description": "Inaccurate camera calibration can lead to misinterpretations of the scene and increased analysis time.",
+    "relatedTo": [
+      "Camera Calibration"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Aircraft Motion/Turbulence",
+    "description": "Movement and turbulence can create erratic patterns in the images, making classification difficult.",
+    "relatedTo": [
+      "Aircraft Motion/Turbulence"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Lighting Conditions (Time of Day)",
+    "description": "Changes in sunlight or shadow cast by the environment can drastically alter the images' appearance, affecting the classifier's performance.",
+    "relatedTo": [
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Scene Complexity",
+    "description": "Highly complex scenes with many objects and intricate details increase the computational burden and analysis time.",
+    "relatedTo": [
+      "Scene Complexity"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Object Density/Movement",
+    "description": "A high density of objects or objects moving quickly can create a complex and demanding image analysis.",
+    "relatedTo": [
+      "Object Density/Movement"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "GPS Signal Strength/Interference",
+    "description": "Weak or unreliable GPS signals can introduce inaccuracies in the position data used for image analysis.",
+    "relatedTo": [
+      "GPS Signal Strength/Interference"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Weather Conditions (Atmospheric Effects)",
+    "description": "Atmospheric conditions (e.g., haze, precipitation) can scatter light and alter the image's color and contrast, requiring more processing.",
+    "relatedTo": [
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Image Data Compression",
+    "description": "Lossy compression methods can introduce artifacts or degrade image quality, impacting the classifier's ability to extract meaningful features.",
+    "relatedTo": [
+      "Image Data Compression"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Aircraft Altitude",
+    "description": "Higher altitudes may result in atmospheric distortions, affecting the image quality.",
+    "relatedTo": [
+      "Aircraft Altitude"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Data Preprocessing Artifacts",
+    "description": "Incomplete or inconsistent data preprocessing steps can introduce errors and bias.",
+    "relatedTo": [
+      "Data Preprocessing"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Computational Resources (UAV's Processing Power)",
+    "description": "The UAV's onboard processor may have limitations on the complexity and speed of image processing",
+    "relatedTo": [
+      "Computational Resources"
+    ]
+  }
+]

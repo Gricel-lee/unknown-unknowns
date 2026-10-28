@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Currency Pair",
+    "description": "Different currency pairs exhibit varying levels of volatility and complexity. Technical analysis might be more reliable for some pairs (e.g., EUR/USD) while fundamental analysis is better suited for others (e.g., emerging market currencies). This is the most likely driver of modality.",
+    "relatedTo": [
+      "Market Volatility",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Market Volatility",
+    "description": "High volatility generally favours technical analysis as price movements are rapid and less predictable by fundamentals. Low volatility might make fundamental analysis more effective. Different volatility 'regimes' could explain distinct timing groups.",
+    "relatedTo": [
+      "Currency Pair",
+      "Time of Day",
+      "News Events"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "News Events",
+    "description": "Major economic announcements (e.g., interest rate decisions, GDP releases) significantly impact currency values.  These events might trigger vastly different execution times for *both* analysis types, creating distinct groups.  The effect would be different for technical vs. fundamental depending on the event type and how quickly it's priced in.",
+    "relatedTo": [
+      "Market Volatility",
+      "Time of Day",
+      "Currency Pair"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day",
+    "description": "Trading sessions overlap and liquidity changes throughout the day.  Asian, European, and North American sessions have different characteristics, influencing both analysis types.  Fundamental data release schedules also vary.",
+    "relatedTo": [
+      "Currency Pair",
+      "Market Volatility",
+      "News Events"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Data Feed Quality",
+    "description": "The accuracy and timeliness of the data feeds used for both analyses is crucial. Poor data quality can significantly increase processing time or lead to incorrect results, creating differing execution times.",
+    "relatedTo": []
+  },
+  {
+    "id": 6,
+    "name": "Trader's Risk Tolerance",
+    "description": "The chosen risk tolerance may implicitly bias the selection towards certain currency pairs or analysis types. This isn't a *direct* factor in processing time, but it influences the overall workflow and observed times.",
+    "relatedTo": []
+  },
+  {
+    "id": 7,
+    "name": "System Load",
+    "description": "The overall load on the server(s) running the workflow. Higher load will increase processing times for both analysis types, potentially creating distinct groups if load varies significantly.",
+    "relatedTo": []
+  },
+  {
+    "id": 8,
+    "name": "Algorithm Version",
+    "description": "Updates or changes to the technical or fundamental analysis algorithms could result in different performance characteristics and processing times, especially if versions are deployed at different times.",
+    "relatedTo": []
+  },
+  {
+    "id": 9,
+    "name": "Order Book Depth",
+    "description": "The depth of the order book affects the effectiveness of technical indicators. Thinly traded pairs may provide misleading signals, affecting technical analysis time.",
+    "relatedTo": [
+      "Currency Pair",
+      "Market Volatility"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Economic Calendar Density",
+    "description": "If multiple significant economic releases are scheduled close together, fundamental analysis might become particularly complex and time-consuming.",
+    "relatedTo": [
+      "News Events",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Data Source (Fundamental)",
+    "description": "Different providers of fundamental economic data may have varying update frequencies and methodologies, impacting analysis time. A switch in providers could create a new modality.",
+    "relatedTo": [
+      "Data Feed Quality"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Technical Indicator Configuration",
+    "description": "Different configurations of technical indicators (e.g. moving average lengths) will affect their computational cost and perceived reliability, influencing execution time. The controller may be dynamically adjusting these.",
+    "relatedTo": []
+  },
+  {
+    "id": 13,
+    "name": "Holidays / Market Closures",
+    "description": "Market closures or holidays can significantly impact liquidity and volatility, leading to unusual analysis times, particularly for fundamental analysis that relies on historical data.",
+    "relatedTo": [
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Trader Intervention",
+    "description": "If the trader occasionally overrides the automatic mode selection or makes manual adjustments, it could introduce timing variations not captured by the current model.",
+    "relatedTo": [
+      "Trader's Risk Tolerance"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Specific News Source",
+    "description": "The source of news information used by the fundamental analysis. Some sources might deliver data faster or more reliably, creating time differences.",
+    "relatedTo": [
+      "News Events",
+      "Data Feed Quality"
+    ]
+  }
+]

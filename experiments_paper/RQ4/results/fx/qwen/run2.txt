@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Market Volatility", "description": "High market volatility can cause frequent and rapid changes in currency values, leading to multiple analysis times as the system waits for stable conditions to conduct a thorough analysis.", "relatedTo": []},
+    {"id": 2, "name": "Holiday Closures", "description": "Certain global holidays can affect the liquidity and price movements of currencies, potentially leading to varied analysis times during normal and expert modes.", "relatedTo": ["Market Volatility"]},
+    {"id": 3, "name": "Network Latency", "description": "Network issues can significantly impact the speed of data retrieval, causing delays that could lead to multimodal analysis times.", "relatedTo": []},
+    {"id": 4, "name": "Data Load Volume", "description": "During times of high data load, the system may experience delays in processing, resulting in multiple analysis times.", "relatedTo": ["Network Latency"]},
+    {"id": 5, "name": "System Performance", "description": "Variations in the system's performance can cause different analysis times. For example, if the system is under heavy load, analysis might take longer.", "relatedTo": ["Network Latency", "Data Load Volume"]},
+    {"id": 6, "name": "Time of Day", "description": "Different times of the day can affect market conditions, leading to different analysis times. For instance, markets might be more active during business hours.", "relatedTo": ["Market Volatility"]},
+    {"id": 7, "name": "API Response Time", "description": "The response time from external APIs can vary, affecting the overall analysis time. This is particularly relevant for real-time data retrieval.", "relatedTo": ["Network Latency", "Data Load Volume"]},
+    {"id": 8, "name": "Historical Data Availability", "description": "The availability of historical data can impact analysis times, especially if the system needs to backfill data for a new or less traded currency.", "relatedTo": []},
+    {"id": 9, "name": "User Activity", "description": "The number of users accessing the system can affect the analysis times, as more users can lead to increased load and slower response times.", "relatedTo": ["Data Load Volume", "System Performance"]},
+    {"id": 10, "name": "Server Load Balancing", "description": "How effectively the system balances server loads can influence analysis times, particularly if there are peaks and troughs in demand.", "relatedTo": ["System Performance"]},
+    {"id": 11, "name": "Data Caching Strategies", "description": "Ineffective caching can lead to repeated data fetches, increasing analysis times. Caching strategies can vary and affect different modes differently.", "relatedTo": ["Data Load Volume", "API Response Time"]},
+    {"id": 12, "name": "Algorithm Complexity", "description": "The complexity of the algorithms used in different modes can lead to varying analysis times. Expert mode might be more complex and thus slower.", "relatedTo": ["System Performance", "Data Load Volume"]},
+    {"id": 13, "name": "Error Handling and Retry Mechanisms", "description": "How the system handles errors and retries can impact analysis times. More robust mechanisms might lead to longer analysis times.", "relatedTo": ["Network Latency", "API Response Time"]},
+    {"id": 14, "name": "Currency Pair Popularity", "description": "Some currency pairs might be more popular, leading to higher demand and thus longer analysis times.", "relatedTo": ["User Activity", "Market Volatility"]},
+    {"id": 15, "name": "Load Testing and Stress Testing", "description": "The results of load and stress testing can affect how the system performs under various conditions, potentially leading to multimodal analysis times.", "relatedTo": ["System Performance", "Data Load Volume"]}
+]
+```

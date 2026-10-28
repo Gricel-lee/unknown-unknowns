@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Network Latency",
+    "description": "Increased network latency between the servers significantly increases the time taken for the counter to reach consensus. This is a primary driver of the multimodal behavior.",
+    "relatedTo": [
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Server Processing Power",
+    "description": "The processing power of the servers directly impacts the speed of coin flips and the overall latency.  More powerful servers can handle the operations more efficiently.",
+    "relatedTo": [
+      "Server Processing Power"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Data Distribution",
+    "description": "The way the data is distributed across the servers influences the distribution of coin flips. Uneven data distribution can lead to more variability and multimodal behavior.",
+    "relatedTo": [
+      "Data Distribution"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Server Hardware Configuration",
+    "description": "Differences in the hardware used for the servers (CPU, memory, network card) can impact the processing speed and overall latency.",
+    "relatedTo": [
+      "Server Hardware Configuration"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Network Topology",
+    "description": "The specific network topology (routing, congestion) can introduce latency spikes that skew the coin flip distribution.",
+    "relatedTo": [
+      "Network Topology"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "System Load",
+    "description": "Higher overall system load increases the probability of individual servers experiencing delays, contributing to the multimodal behavior.",
+    "relatedTo": [
+      "System Load"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Cache Misses",
+    "description": "Cache misses can introduce significant delays, impacting the speed of the coin flip process. This is particularly relevant when coin flips are delayed.",
+    "relatedTo": [
+      "Cache Misses"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Synchronization Overhead",
+    "description": "The overhead associated with coordinating the coin flip decisions across multiple servers can significantly impact latency.",
+    "relatedTo": [
+      "Synchronization Overhead"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Coin Flip Algorithm Specifics",
+    "description": "The algorithm used for coin flip decisions, particularly the probability distribution, might be inherently prone to multimodal behavior.",
+    "relatedTo": [
+      "Coin Flip Algorithm"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Queueing/Buffering",
+    "description": "The system might be experiencing queues or buffering bottlenecks that delay the flow of data between servers.",
+    "relatedTo": [
+      "Queueing/Buffering"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Resource Contention",
+    "description": "Other processes or threads on the servers may be competing for resources, which can indirectly affect the coin flip decisions.",
+    "relatedTo": [
+      "Resource Contention"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Timestamp Synchronization",
+    "description": "Inconsistent timestamps across the servers can introduce delays and skew the coin flip results.",
+    "relatedTo": [
+      "Timestamp Synchronization"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Data Volume",
+    "description": "Larger data volumes can naturally lead to more variations in the data, which could be amplified by the coin flip process.",
+    "relatedTo": [
+      "Data Volume"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "System Configuration",
+    "description": "Specific configuration settings within the system (e.g., number of servers, buffer sizes) can have a subtle but influential effect.",
+    "relatedTo": [
+      "System Configuration"
+    ]
+  }
+]

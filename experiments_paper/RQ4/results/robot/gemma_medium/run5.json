@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "Soil moisture significantly affects the traction and surface resistance on both paths. Path 2 (grass) will be more affected by varying moisture levels than Path 1 (track), leading to drastically different travel times. High moisture slows the robot, while dry conditions can cause slippage on the grass.  This is a highly likely factor due to its direct influence on locomotion.",
+    "relatedTo": [
+      "Path 2",
+      "Surface Conditions"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Surface Conditions (Roughness/Obstacles)",
+    "description": "The grass path (Path 2) is inherently more variable in terms of surface roughness, including small stones, uneven patches, and possibly weeds. These will dramatically increase travel time compared to the relatively smooth track (Path 1).  This is linked to soil moisture and vegetation density.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Vegetation Density",
+      "Path 2"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Vegetation Density",
+    "description": "The density of the grass in Path 2 directly impacts the robot's ability to move.  Thicker grass slows the robot, especially if it encounters obstacles within the grass. Path 1, being a track, has a consistent, lower density.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Surface Conditions",
+      "Path 2"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day (Sunlight/Temperature)",
+    "description": "Sunlight intensity and temperature affect the robot's traction.  Hot, dry conditions on the grass may create uneven surfaces and make it more prone to slippage.  Shadows on the track could slightly alter the surface temperature. This is less impactful than the others, but still relevant.",
+    "relatedTo": [
+      "Surface Conditions",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Robot Speed Settings",
+    "description": "The robot's controller may be using different speed settings for each path based on a default strategy. This could be a simple difference, or a more sophisticated one.  This is a controlled parameter that could explain the multimodal behavior.",
+    "relatedTo": [
+      "Controller Strategy"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Battery Level",
+    "description": "As the battery drains, the robot's motors may reduce speed, influencing travel time. This effect is likely amplified on the grass path due to increased energy consumption from overcoming resistance.",
+    "relatedTo": [
+      "Controller Strategy"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Wind Speed/Direction",
+    "description": "Wind can affect the robot's movement, particularly on the open grass path, potentially causing instability and increased travel time.  The track is more sheltered.",
+    "relatedTo": [
+      "Surface Conditions"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Slope/Terrain Gradient",
+    "description": "The slope of the field varies across both paths.  The grass path may have steeper sections, increasing travel time, especially if the robot isn\u2019t optimized for incline. ",
+    "relatedTo": [
+      "Surface Conditions"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Vegetation Type (Grass Species)",
+    "description": "Different grass species have varying densities, stiffness, and frictional properties. This will affect the robot's traction on the grass path. ",
+    "relatedTo": [
+      "Vegetation Density",
+      "Surface Conditions"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Robot Wheel Slip",
+    "description": "The degree of wheel slip is influenced by surface conditions and speed, significantly impacting travel time, especially on the grass path.  Increased slip reduces efficiency.",
+    "relatedTo": [
+      "Surface Conditions",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Operator Intervention (Manual Override)",
+    "description": "If operators are occasionally overriding the controller's path selection (e.g., for a specific inspection), this could introduce inconsistent travel times.  This is an operational factor, not an environmental one.",
+    "relatedTo": [
+      "Controller Strategy"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Robot Load",
+    "description": "The amount of payload (sensors, etc.) carried by the robot could influence its speed and maneuverability, particularly affecting its performance on the grass path.",
+    "relatedTo": [
+      "Controller Strategy"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Rainfall/Recent Rainfall",
+    "description": "Recent rainfall will drastically increase soil moisture and surface slipperiness, significantly increasing travel time on the grass path. ",
+    "relatedTo": [
+      "Soil Moisture",
+      "Surface Conditions"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Path Length Variation",
+    "description": "The actual distance between the charging station and inspection point may vary slightly due to field irregularities, introducing variability in travel time estimates.",
+    "relatedTo": [
+      "Controller Strategy"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Robot Localization Accuracy",
+    "description": "Inaccurate localization (position determination) could lead to incorrect path selection and, consequently, variable travel times.  If the robot consistently misjudges its location, it might choose a less optimal path.",
+    "relatedTo": [
+      "Controller Strategy"
+    ]
+  }
+]

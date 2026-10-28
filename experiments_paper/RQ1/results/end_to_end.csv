@@ -1,0 +1,5 @@
+case,runs,all_found,cost_without,cost_with,gain_percent
+robot,10,10,31.43,28.31,9.9
+consensus,10,10,87.82,69.75,20.6
+fx,10,10,46.49,40.89,12.1
+uav,10,10,595.47,566.8,4.8

@@ -1,0 +1,129 @@
+[
+  {
+    "id": 1,
+    "name": "Network Link Quality",
+    "description": "The bandwidth and latency of the UAV-to-ground station link can switch between discrete states (e.g., high-speed 5G, standard LTE, or low-throughput satellite/radio). This directly creates distinct, multimodal transmission delays in the human analysis pipeline.",
+    "relatedTo": [
+      "Communication Distance",
+      "Image Resolution"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Image Scene Complexity",
+    "description": "Scenes are often categorized into distinct types (e.g., empty sea, rural fields, or dense urban areas). Urban scenes require longer human scanning and trigger more region-proposals/longer execution paths in onboard classifiers, creating clear performance clusters.",
+    "relatedTo": [
+      "Target Density",
+      "UAV Altitude"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Operator Cognitive Load",
+    "description": "A human operator might be dedicated to one UAV (fast response) or multi-tasking across several systems (queuing delay). This queuing behavior creates a highly distinct bimodal distribution in human analysis times.",
+    "relatedTo": [
+      "Operator Experience",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Hardware Thermal State",
+    "description": "Onboard computers in UAVs often experience step-down CPU/GPU throttling to prevent overheating. This creates two distinct execution speeds for the onboard classifier: unthrottled (fast) and throttled (slow).",
+    "relatedTo": [
+      "UAV Battery Level"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Lighting and Visibility",
+    "description": "Distinct periods (bright daylight, dusk, and night) require different processing. Low-light conditions require humans to squint/adjust images, and onboard systems may activate computational-heavy enhancement algorithms (e.g., denoising), creating distinct time groupings.",
+    "relatedTo": [
+      "Weather Conditions",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Communication Distance",
+    "description": "As the UAV moves between waypoints, its distance to the ground station changes. The signal-to-noise ratio drops at threshold distances, forcing the transmission protocol to step down to lower, discrete modulation schemes, causing sudden jumps in transfer times.",
+    "relatedTo": [
+      "Network Link Quality"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Target Density",
+    "description": "The number of candidate objects in an image. Onboard classifiers (like YOLO with post-processing non-maximum suppression) and human operators scale their search time based on whether there are zero, few, or many target objects, creating discrete time peaks.",
+    "relatedTo": [
+      "Image Scene Complexity"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Weather Conditions",
+    "description": "Adverse weather (such as rain, fog, or snow) degrades image contrast. It forces humans to spend extra time verifying details and can trigger alternative, heavy pre-processing pipelines onboard to clear up the image.",
+    "relatedTo": [
+      "Lighting and Visibility",
+      "Wind-Induced Motion Blur"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "UAV Altitude",
+    "description": "Flight altitude profiles (e.g., low-altitude scouting vs. high-altitude transit) dictate the ground sample distance. High-altitude images contain massive fields of view (slow to process/analyze), whereas low-altitude images focus on small, clear targets (fast).",
+    "relatedTo": [
+      "Image Scene Complexity",
+      "Camera Zoom Level"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Operator Experience",
+    "description": "The mission control pool may consist of expert operators (who make rapid, near-instant decisions) and novice operators in training (who are slower and double-check decisions), leading to a bimodal split in human times.",
+    "relatedTo": [
+      "Operator Cognitive Load"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Image Resolution",
+    "description": "The system may dynamically scale resolution (e.g., 4K down to 1080p) to cope with low link quality. High-res images take significantly longer to transmit to humans and take longer for onboard convolutional networks to process than low-res images.",
+    "relatedTo": [
+      "Network Link Quality"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Wind-Induced Motion Blur",
+    "description": "High wind gusts cause camera gimbal vibrations, resulting in blurred images. Blurry images require longer human inspection to decipher and may fail onboard classification, forcing retakes and adding discrete blocks of wait time.",
+    "relatedTo": [
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "UAV Battery Level",
+    "description": "To preserve remaining flight time, the UAV's power management system may trigger a low-power mode when battery drops below a threshold (e.g., 20%), underclocking the onboard inference hardware and slowing down processing.",
+    "relatedTo": [
+      "Hardware Thermal State"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Time of Day",
+    "description": "Circadian rhythm changes during long missions (e.g., night shifts) introduce human operator fatigue. This causes slower, more variable human response times during late-night and early-morning shifts compared to daytime shifts.",
+    "relatedTo": [
+      "Lighting and Visibility",
+      "Operator Cognitive Load"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Camera Zoom Level",
+    "description": "Discrete camera zoom configurations (e.g., 1x optical vs 10x digital) change the amount of clutter in the frame. Higher zoom isolates targets (making them easier and faster to classify by both human and machine), while wide views are slower to process.",
+    "relatedTo": [
+      "UAV Altitude"
+    ]
+  }
+]

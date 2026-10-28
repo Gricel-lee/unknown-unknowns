@@ -1,0 +1,115 @@
+[
+  {
+    "id": 1,
+    "name": "Terrain Slope",
+    "description": "Steeper slopes increase travel time due to more friction and slower speed.",
+    "relatedTo": [
+      "Terrain"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Field Density",
+    "description": "Higher density of plants increases the complexity of the path and reduces the distance covered.",
+    "relatedTo": [
+      "Field",
+      "Crop Rows"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Wind Speed",
+    "description": "Strong winds can create unpredictable paths, slowing down navigation and increasing travel time.",
+    "relatedTo": [
+      "Navigation"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Sun Angle",
+    "description": "Changes in sun angle can alter the path's visual features, impacting the robot's trajectory.",
+    "relatedTo": [
+      "Navigation"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Soil Composition",
+    "description": "Soil composition (texture, moisture content) influences friction and can affect stability, impacting travel time.",
+    "relatedTo": [
+      "Terrain"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Vegetation Type",
+    "description": "Different vegetation types have varying roughness and can affect the robot's stability.",
+    "relatedTo": [
+      "Terrain"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Path Width",
+    "description": "Narrower paths require more precise maneuvering and increase travel time.",
+    "relatedTo": [
+      "Path"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Obstacle Type",
+    "description": "The presence of obstacles (rocks, uneven ground) will significantly impact the route selection and necessitate more maneuvers.",
+    "relatedTo": [
+      "Terrain"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Lighting Conditions",
+    "description": "Changes in lighting affect visual perception and can influence path selection.",
+    "relatedTo": [
+      "Navigation"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sensor Noise",
+    "description": "Sensor noise can introduce errors and uncertainties in the robot\u2019s perception, leading to suboptimal routes.",
+    "relatedTo": [
+      "Navigation"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Robot Speed",
+    "description": "Variable speed affects the robot's ability to react to changes and maneuver efficiently.",
+    "relatedTo": [
+      "Navigation"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Weather Conditions",
+    "description": "Rain, snow, or fog can reduce visibility and increase friction, requiring adjustments to the path.",
+    "relatedTo": [
+      "Navigation"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Robot Capabilities",
+    "description": "The robot's own sensor capabilities, processing power, and control system influence how it can handle varying conditions.",
+    "relatedTo": [
+      "Robot"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Field Layout Complexity",
+    "description": "The arrangement of the crop rows creates a more complex, irregular path, impacting travel time.",
+    "relatedTo": [
+      "Field"
+    ]
+  }
+]

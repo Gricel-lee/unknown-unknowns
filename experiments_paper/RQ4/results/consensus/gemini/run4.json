@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "TCP Retransmission and Timeout (RTO)",
+    "description": "Network packet loss forces TCP to retransmit. Due to standard exponential backoff timers (often starting at 200ms or 1s), this introduces highly distinct, discrete latency bands (modes) corresponding to base latency plus one or more Retransmission Timeouts (RTOs). This is ranked first because network-level packet loss is the most common cause of multi-millisecond bimodal/multimodal latency steps in distributed systems.",
+    "relatedTo": [
+      "Multi-path Network Routing",
+      "NIC Interrupt Coalescing and SoftIRQs"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Garbage Collection (GC) Pauses",
+    "description": "If the servers run on managed runtimes (like Go, Java, or .NET), runtime garbage collection introduces periodic pauses. Latency measurements will split into distinct modes: normal execution (microseconds to low milliseconds), minor GC pauses, and major 'Stop-the-World' GC pauses. This is ranked second because of its high frequency and pronounced impact on application-level latency.",
+    "relatedTo": [
+      "OS Context Switching",
+      "Controller-side Queueing and Scheduling"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Multi-path Network Routing",
+    "description": "In cloud or multi-region environments, Equal-Cost Multi-Path (ECMP) routing can assign packets to different physical network paths with varying hop counts, switch queues, or physical distances. This creates multiple distinct baseline network latency modes. It is ranked high because distributed consensus controllers are frequently deployed across different availability zones or subnets.",
+    "relatedTo": [
+      "TCP Retransmission and Timeout (RTO)"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "CPU Power States (C-states)",
+    "description": "Modern CPUs enter low-power idle states (C1 to C6) to conserve energy. If a server is selected less frequently by the controller, its CPU cores may fall asleep. Waking them up to process a coin flip adds a discrete wake-up latency (ranging from tens to hundreds of microseconds), creating separate modes based on how recently the server was active. This is highly relevant because the controller dynamically decides which server to call.",
+    "relatedTo": [
+      "CPU Thermal Throttling"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Noisy Neighbors in Virtualized Environments",
+    "description": "In shared cloud infrastructure, other virtual machines (VMs) on the same physical host may experience bursty workloads. When a 'noisy neighbor' steals CPU cycles, the server experiences hypervisor-level CPU steal time. This shifts the server's execution time into a higher, more volatile latency mode during resource-contention periods.",
+    "relatedTo": [
+      "VM Live Migration",
+      "OS Context Switching"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Lock Contention on Shared State",
+    "description": "If updating the shared counter or logging the coin flip requires acquiring a database, file, or memory lock, the latency profile will split. Transactions that acquire the lock immediately form a low-latency mode, while those waiting behind a queued transaction form a high-latency mode. This is ranked in the middle because it depends heavily on the concurrency model of the shared state.",
+    "relatedTo": [
+      "OS Context Switching",
+      "Disk Write and Logging Latency"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Entropy Depletion in Cryptographic PRNG",
+    "description": "If the 'coin flip' relies on cryptographically secure random number generators (e.g., reading from `/dev/random`), the system may block when the operating system's entropy pool is depleted. This causes a sudden, massive jump in latency for coin-flip operations until entropy is replenished, resulting in two very distinct performance modes.",
+    "relatedTo": []
+  },
+  {
+    "id": 8,
+    "name": "Disk Write and Logging Latency",
+    "description": "If the servers synchronously write coin-flip outcomes or state updates to a Write-Ahead Log (WAL) for durability, disk I/O performance will dictate latency. SSD page cache hits, physical NAND writes, and garbage collection on the drive controller create highly distinct, multi-tier latency modes.",
+    "relatedTo": [
+      "Lock Contention on Shared State",
+      "Noisy Neighbors in Virtualized Environments"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "NUMA Node Memory Access",
+    "description": "On multi-socket servers, accessing memory allocated on a remote CPU socket (via UPI/QPI links) takes significantly longer than accessing memory on the local NUMA node. If the server process is scheduled across different sockets or its memory is interleaved, distinct memory-latency modes emerge.",
+    "relatedTo": [
+      "OS Context Switching",
+      "Garbage Collection (GC) Pauses"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "CPU Thermal Throttling",
+    "description": "Under sustained load, physical CPUs lower their operating frequency (dynamic voltage and frequency scaling, or DVFS) in discrete steps to prevent overheating. This causes the execution time of the coin-flip protocol to step up to distinct, slower latency plateaus.",
+    "relatedTo": [
+      "CPU Power States (C-states)"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "NIC Interrupt Coalescing and SoftIRQs",
+    "description": "Network Interface Cards (NICs) often delay hardware interrupts to bundle incoming packets (interrupt coalescing). Depending on packet arrival rates and NIC configuration, packet processing can switch between low-latency immediate interrupt mode and higher-latency batched polling mode (NAPI/softIRQs).",
+    "relatedTo": [
+      "TCP Retransmission and Timeout (RTO)"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "VM Live Migration",
+    "description": "Cloud providers occasionally migrate running VMs to different physical hardware. During the 'stun' phase of live migration, the VM is paused for tens to hundreds of milliseconds. This causes a rare but extremely pronounced high-latency mode. It is ranked lower due to its low frequency of occurrence.",
+    "relatedTo": [
+      "Noisy Neighbors in Virtualized Environments"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Controller-side Queueing and Scheduling",
+    "description": "The controller itself might experience OS scheduling delays or network queueing (e.g., HOL blocking) before it dispatches the coin-flip command. The observed latency is the round-trip time, meaning controller-side delays will masquerade as server-side latency modes.",
+    "relatedTo": [
+      "Garbage Collection (GC) Pauses",
+      "OS Context Switching"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "OS Context Switching",
+    "description": "If the servers are running many threads or other processes, the OS kernel will frequently swap the consensus process out of the CPU. The latency of a coin flip will differ based on whether it is executed immediately or forced to wait for a thread context switch, creating micro-modes of latency.",
+    "relatedTo": [
+      "Lock Contention on Shared State",
+      "NUMA Node Memory Access",
+      "Noisy Neighbors in Virtualized Environments"
+    ]
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "Path 2 (grass path) travel time is *highly* sensitive to soil moisture. Wet soil significantly increases wheel slippage and energy expenditure, leading to a distinct, slower travel time group. Dry soil allows for faster travel.  This is the most probable initial explanation given the context of a field and grass path.",
+    "relatedTo": [
+      "Rainfall",
+      "Time of Day",
+      "Temperature"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Crop Row Condition (Path 2)",
+    "description": "The state of the crop rows along Path 2 \u2013 e.g., height, density, presence of fallen debris \u2013 directly impacts the robot\u2019s ability to navigate and maintain speed.  Poorly maintained rows will slow it down, creating a separate travel time group.",
+    "relatedTo": [
+      "Growth Stage",
+      "Weather Events"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Rainfall",
+    "description": "Rainfall directly impacts soil moisture, and also creates puddles on both paths, but will have a more pronounced effect on the unpaved Path 2. Moderate to heavy rainfall could create a distinct slow travel time group. It affects Path 1 also, but less significantly.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Time of Day",
+      "Temperature"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day",
+    "description": "Temperature and sunlight exposure change throughout the day. This impacts soil moisture (evaporation), battery performance (temperature sensitive) and potentially visibility for the cameras on both paths.  Creates different conditions at different times.",
+    "relatedTo": [
+      "Temperature",
+      "Soil Moisture",
+      "Sunlight Intensity"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sunlight Intensity",
+    "description": "Strong sunlight could cause glare and reduce camera performance, slightly increasing travel time on both paths, particularly Path 1 where there is less shelter. This could form a separate group, especially if the robot's algorithm isn't robust to glare.",
+    "relatedTo": [
+      "Time of Day",
+      "Camera Settings"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Battery Charge Level",
+    "description": "A lower battery charge level may cause the robot to operate more conservatively (slower) to conserve energy.  If the robot starts journeys with varying charge levels, this can manifest as multiple travel time groups. This is independent of the path.",
+    "relatedTo": [
+      "Journey Frequency"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Growth Stage",
+    "description": "As crops grow, the condition of Path 2 (between the rows) changes.  Young, small plants offer little resistance. Mature plants, especially if leaning, can impede movement. This could explain differing Path 2 times.",
+    "relatedTo": [
+      "Crop Row Condition (Path 2)",
+      "Time of Year"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Obstacle Presence (Path 2)",
+    "description": "Unexpected obstacles in Path 2, like fallen branches, weeds, or even animals, will significantly slow the robot down. Even infrequent occurrences could create a separate travel time group.",
+    "relatedTo": [
+      "Weather Events"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Wind Speed",
+    "description": "High wind speeds could affect the robot's stability and require slower, more cautious movements, especially along the more open Path 1.",
+    "relatedTo": [
+      "Weather Events"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Temperature",
+    "description": "Extreme temperatures can affect battery performance and potentially the operation of motors/sensors.  Very hot or cold temperatures may lead to slower travel times.",
+    "relatedTo": [
+      "Time of Day",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Camera Settings",
+    "description": "Variations in camera settings (e.g., exposure, contrast) during the journey could affect the robot\u2019s ability to accurately perceive the environment and navigate effectively, resulting in different travel times. If the system auto-adjusts these, it can contribute to variability.",
+    "relatedTo": [
+      "Sunlight Intensity"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Field Slope",
+    "description": "Variations in field slope, even minor ones, will affect travel time on both paths, potentially creating different groups.  Path 1 may be more susceptible to slope variations.",
+    "relatedTo": [
+      "Path 1 Condition"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Path 1 Condition",
+    "description": "The condition of the track along Path 1 (e.g., ruts, potholes, unevenness) impacts the ride. This is less likely to be a *major* factor unless Path 1 is poorly maintained.",
+    "relatedTo": [
+      "Field Slope"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Journey Frequency",
+    "description": "Frequent journeys might not allow the battery to fully recharge between trips, gradually decreasing performance and travel speed over time. This would be reflected in increasing travel times.",
+    "relatedTo": [
+      "Battery Charge Level"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Weed Density (Path 2)",
+    "description": "High weed density within Path 2 will physically obstruct the robot, slowing it down. While related to 'Crop Row Condition', it's specific enough to be a separate consideration.",
+    "relatedTo": [
+      "Crop Row Condition (Path 2)"
+    ]
+  }
+]

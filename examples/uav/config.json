@@ -1,0 +1,18 @@
+{
+  "n_min": {
+    "value": 10,
+    "description": "Minimum number of observations a bin (one combination of values of the known variables) must have to be tested for anomalies with the dip test. Smaller bins are not tested yet."
+  },
+  "alpha": {
+    "value": 0.05,
+    "description": "Significance level. The dip test divides it by the number of bins times the number of outputs, and the gain test divides it by the number of candidates |C| (Bonferroni correction)."
+  },
+  "m_max": {
+    "value": 3,
+    "description": "Maximum number of iterations of the identification loop. Each iteration adds at most one candidate, so at most m_max variables are added; fewer if the costs become unimodal or no candidate passes the acceptance criteria. Set it to the number of logged candidate variables to never stop early because of it."
+  },
+  "epsilon": {
+    "value": 0.05,
+    "description": "Minimum relative gain: a candidate W is accepted only if GAIN(D, W, K) / H(O | K) >= epsilon, i.e. it removes at least this fraction of the uncertainty left about the costs given the known variables K."
+  }
+}

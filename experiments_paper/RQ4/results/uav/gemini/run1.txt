@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Network Connection Type",
+    "description": "The type of wireless link active at a waypoint (e.g., high-speed Wi-Fi/5G, medium-speed LTE, or low-speed satellite/RF line-of-sight link). This is ranked highest because network transition creates massive, discrete steps in image transmission times to the human operator, naturally leading to a multimodal distribution.",
+    "relatedTo": ["Distance to Ground Station", "Network Congestion"]
+  },
+  {
+    "id": 2,
+    "name": "Operator Concurrent Workload",
+    "description": "The number of active tasks or UAVs the human operator is monitoring simultaneously. If the operator is free, response time is immediate; if they are busy, the image waits in a queue. This binary state (queued vs. unqueued) directly explains the multimodal response times for the human analysis channel.",
+    "relatedTo": ["Operator Shift and Experience", "Operator Fatigue"]
+  },
+  {
+    "id": 3,
+    "name": "Onboard Processor Thermal Throttling",
+    "description": "UAV onboard computers (like NVIDIA Jetson or Raspberry Pi) scale down CPU/GPU clock frequencies to discrete lower levels when overheating. This thermal throttling causes the onboard classifier execution time to instantly double or triple, creating distinct performance bands.",
+    "relatedTo": ["Ambient Temperature", "Onboard Power Mode"]
+  },
+  {
+    "id": 4,
+    "name": "Image Resolution and Compression Mode",
+    "description": "The system might capture or compress images differently depending on the waypoint's operational requirements. Processing high-resolution uncompressed images vs. low-resolution JPEG images creates distinct groups of processing times for both the onboard classifier (more pixels to process) and the human operator (longer transmission times).",
+    "relatedTo": ["Network Connection Type", "Image Content Complexity"]
+  },
+  {
+    "id": 5,
+    "name": "Distance to Ground Station",
+    "description": "The physical distance between the UAV and the ground receiver. Signal attenuation and physical obstacles (e.g., hills, buildings) trigger packet loss and TCP retransmissions, shifting transmission latency into higher, distinct multimodal bands.",
+    "relatedTo": ["Network Connection Type", "Weather and Atmospheric Conditions"]
+  },
+  {
+    "id": 6,
+    "name": "Weather and Atmospheric Conditions",
+    "description": "Fog, rain, dust, or heavy cloud cover. Poor weather degrades image quality, requiring the human operator to zoom, enhance, or scrutinize the image longer, and can trigger image-restoration preprocessing algorithms onboard, creating a slower processing mode.",
+    "relatedTo": ["Image Content Complexity", "Distance to Ground Station", "Ambient Temperature"]
+  },
+  {
+    "id": 7,
+    "name": "Onboard Classifier Early-Exit Mechanism",
+    "description": "If the onboard classifier utilizes an early-exit neural network architecture, simple images are classified at early layers (very fast), while ambiguous or complex images must pass through the entire network depth (slow). This architectural design inherently produces a multimodal runtime distribution.",
+    "relatedTo": ["Image Content Complexity"]
+  },
+  {
+    "id": 8,
+    "name": "Operator Shift and Experience",
+    "description": "The active human operator's profile (e.g., highly experienced specialist vs. novice, or day-shift vs. night-shift worker). Different operators have distinct baseline response times, grouping the human analysis times into clusters corresponding to who is on duty.",
+    "relatedTo": ["Operator Concurrent Workload", "Operator Fatigue"]
+  },
+  {
+    "id": 9,
+    "name": "Onboard Power Mode and Battery State",
+    "description": "Modern UAV flight controllers or companion computers switch to low-power saving modes when the battery drops below certain thresholds (e.g., 20%). These discrete energy-saving profiles cap processor frequencies, creating distinct, slower classification time groups.",
+    "relatedTo": ["Onboard Processor Thermal Throttling"]
+  },
+  {
+    "id": 10,
+    "name": "Image Content Complexity",
+    "description": "The visual clutter or number of features in the captured image. Highly cluttered scenes take longer for humans to analyze and can trigger longer search/bounding-box generation steps in certain onboard computer vision pipelines compared to simple, empty landscapes.",
+    "relatedTo": ["Onboard Classifier Early-Exit Mechanism", "Weather and Atmospheric Conditions"]
+  },
+  {
+    "id": 11,
+    "name": "Background System Tasks on UAV",
+    "description": "Periodic high-priority system tasks on the UAV's companion computer (such as 3D mapping updates, log serialization, or intermittent telemetry synchronization) compete with the classifier for CPU/GPU resources, causing periodic, distinct latency spikes.",
+    "relatedTo": ["Onboard Processor Thermal Throttling"]
+  },
+  {
+    "id": 12,
+    "name": "Ambient Temperature",
+    "description": "The outside air temperature. High ambient temperatures accelerate thermal throttling of the UAV's onboard electronics, while extremely low temperatures can affect battery performance, both leading to discrete changes in computing efficiency.",
+    "relatedTo": ["Onboard Processor Thermal Throttling", "Onboard Power Mode"]
+  },
+  {
+    "id": 13,
+    "name": "Network Congestion",
+    "description": "Shared network usage on the same frequency bands by other systems, UAVs, or localized civilian traffic. This causes intermittent, stepped queueing delays on the transmission link to the human operator.",
+    "relatedTo": ["Network Connection Type", "Distance to Ground Station"]
+  },
+  {
+    "id": 14,
+    "name": "Operator Fatigue",
+    "description": "The duration of the operator's continuous work session. Cognitive slowdown and fatigue accumulate over a shift, leading to a bimodal distribution of fast, alert responses at the beginning of a shift versus slower, deliberate responses near the end.",
+    "relatedTo": ["Operator Shift and Experience", "Operator Concurrent Workload"]
+  },
+  {
+    "id": 15,
+    "name": "Onboard Memory Swapping",
+    "description": "Occasional RAM exhaustion on the UAV's embedded OS due to memory leaks or large imagery files. This forces the operating system to use disk swap space, which introduces a severe, discrete performance penalty on the onboard classifier.",
+    "relatedTo": ["Background System Tasks on UAV", "Image Resolution and Compression Mode"]
+  }
+]
+```

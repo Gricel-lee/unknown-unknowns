@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Entropy Source Blocking",
+    "description": "Since the servers are executing a randomized consensus protocol, they require a random number generator (RNG) for the coin flips. If the cryptographic RNG relies on a blocking entropy source (e.g., /dev/random on Linux), the system will stall and wait for environmental noise to harvest entropy. This creates a distinct high-latency band compared to non-blocking PRNGs.",
+    "relatedTo": [
+      "Thread Pool Starvation",
+      "Operating System Context Switching"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Shared Counter Lock Contention",
+    "description": "The 'shared counter' must be synchronized. If both servers and the controller frequently read/write to this counter (using distributed locks, database transactions, or local mutexes), lock contention will occur. This creates a low-latency cluster when the lock is acquired immediately, and distinct higher-latency clusters based on waiting in the lock queue.",
+    "relatedTo": [
+      "Thread Pool Starvation",
+      "Synchronous Disk Logging"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Garbage Collection (GC) Pauses",
+    "description": "If the servers or controller run on a managed runtime (like Java, Go, or .NET), periodic GC sweeps (Stop-The-World events) pause execution. This causes a bimodal or multimodal distribution: a massive 'normal' latency cluster and smaller, discrete high-latency clusters corresponding to minor and major GC pauses.",
+    "relatedTo": [
+      "Memory Paging / Swap Space Usage",
+      "Thread Pool Starvation"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Network Packet Retransmissions",
+    "description": "Transient network congestion causes packet loss. Under TCP, lost packets trigger retransmission timeouts (RTO) or fast retransmit. This creates sharp, multimodal latency spikes at discrete intervals (e.g., +200ms, +1s, +3s) representing the TCP backoff schedule.",
+    "relatedTo": [
+      "Network Routing Paths",
+      "Connection Re-establishment"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Virtualization and Noisy Neighbors (CPU Steal Time)",
+    "description": "If the servers are hosted in a public cloud, they share physical hardware with other virtual machines (VMs). When other VMs spike in resource usage, 'CPU steal time' increases. This dynamically starves the consensus servers of CPU cycles, creating distinct latency bands depending on the hypervisor's scheduling cycles.",
+    "relatedTo": [
+      "Hypervisor CPU Scheduling",
+      "CPU Power States and Frequency Scaling"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Connection Re-establishment",
+    "description": "If the controller-to-server connections are not persistent (e.g., lack of Keep-Alive), or if they timeout periodically, some requests must pay the overhead of a full TCP 3-way handshake and TLS negotiation. This introduces a distinct, highly consistent higher-latency mode for connection-initiating requests.",
+    "relatedTo": [
+      "Network Packet Retransmissions",
+      "Network Routing Paths"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Thread Pool Starvation",
+    "description": "If the servers handle other operations besides the consensus protocol, a sudden influx of background requests can exhaust the thread pool. Coin flips then wait in an executor queue, resulting in latency modes that are integer multiples of the average task execution time.",
+    "relatedTo": [
+      "Shared Counter Lock Contention",
+      "Garbage Collection (GC) Pauses",
+      "Entropy Source Blocking"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "CPU Power States and Frequency Scaling",
+    "description": "Modern CPUs use Dynamic Voltage and Frequency Scaling (DVFS) and C-states to save power. When a server transitions from idle to active to process a coin flip, there is a physical hardware latency to ramp up the CPU frequency. This creates a distinct 'cold start' latency mode versus 'warm execution' modes.",
+    "relatedTo": [
+      "Thermal Throttling",
+      "Virtualization and Noisy Neighbors (CPU Steal Time)"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Synchronous Disk Logging",
+    "description": "If each state transition (the coin flip and counter update) is logged synchronously to disk for durability and auditability, the latency becomes bound to storage I/O. Multimodality occurs due to OS page cache flushing cycles, SSD garbage collection, or write-queue saturation.",
+    "relatedTo": [
+      "Shared Counter Lock Contention",
+      "Memory Paging / Swap Space Usage"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Hypervisor CPU Scheduling",
+    "description": "In virtualized environments, the hypervisor's scheduler decides when to map virtual CPUs (vCPUs) to physical CPUs (pCPUs). Jitter in this scheduling, especially on multi-core VMs (co-scheduling latency), causes discrete, periodic latency steps.",
+    "relatedTo": [
+      "Virtualization and Noisy Neighbors (CPU Steal Time)",
+      "Operating System Context Switching"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Network Routing Paths",
+    "description": "In multi-tenant or distributed environments, Equal-Cost Multi-Path (ECMP) routing might send network packets between the controller and servers over different physical paths. If one path is congested or physically longer, it creates stable, parallel latency bands.",
+    "relatedTo": [
+      "Network Packet Retransmissions",
+      "Connection Re-establishment"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Operating System Context Switching",
+    "description": "If the servers run with high CPU core utilization or many competing processes, the OS kernel will frequently force context switches. Voluntary and involuntary context switching overhead creates a distinct band of delayed scheduling for the coin-flip process.",
+    "relatedTo": [
+      "Thread Pool Starvation",
+      "Hypervisor CPU Scheduling"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Memory Paging / Swap Space Usage",
+    "description": "If the physical RAM of the host machine is exhausted, the OS will page memory to disk swap space. If the consensus code or its stack is paged out, a coin flip request will suffer a massive 'disk-read' latency penalty to load the memory back, producing a highly distinct high-latency outlier cluster.",
+    "relatedTo": [
+      "Garbage Collection (GC) Pauses",
+      "Synchronous Disk Logging"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Thermal Throttling",
+    "description": "Under sustained load, physical server CPUs may heat up past safety thresholds, prompting the hardware to throttle its clock speed down to prevent damage. This transitions the server from a 'high-performance' latency band to a 'low-performance' latency band.",
+    "relatedTo": [
+      "CPU Power States and Frequency Scaling"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Hardware Interrupt Handling (SoftIRQs)",
+    "description": "If network interface cards (NICs) route network interrupts to the same CPU cores processing the consensus protocol, the CPU must pause user-space execution to handle SoftIRQs. This interrupt storming creates a distinct, secondary latency band during high network traffic.",
+    "relatedTo": [
+      "Network Packet Retransmissions",
+      "Operating System Context Switching"
+    ]
+  }
+]

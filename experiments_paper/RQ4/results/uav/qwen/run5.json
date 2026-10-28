@@ -1,0 +1,139 @@
+[
+  {
+    "id": 1,
+    "name": "Sensor Quality",
+    "description": "Higher quality sensors can produce clearer images, reducing the analysis time. Poorer quality sensors might result in more ambiguous images requiring more time for analysis.",
+    "relatedTo": [
+      "Image Clarity",
+      "Camera Resolution"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Image Resolution",
+    "description": "Higher resolution images may require more time to analyze, but provide more detail. Lower resolution images are faster to process but may lack detail.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Image Clarity"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Weather Conditions",
+    "description": "Poor weather conditions (e.g., rain, fog) can affect image clarity, making analysis more difficult and time-consuming. Clear weather might allow for quicker analysis.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Image Clarity"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day",
+    "description": "Lighting conditions can vary significantly by time of day, affecting image quality. Brighter conditions can make images easier to analyze, while low light conditions can make them harder.",
+    "relatedTo": [
+      "Image Clarity",
+      "Sensor Quality"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Camera Exposure Settings",
+    "description": "Incorrect exposure settings can lead to under- or over-exposed images, which might need more time to analyze or require retaking the image.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Image Clarity"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sensor Noise",
+    "description": "Noise in the sensor can distort the image, making it harder to analyze. Lower noise images are easier to analyze.",
+    "relatedTo": [
+      "Sensor Quality"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Battery Life",
+    "description": "If the UAV's battery is low, it might not have enough power to run the onboard classifier efficiently, leading to slower analysis or failed classifications.",
+    "relatedTo": [
+      "UAV Performance"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "UAV Speed",
+    "description": "The speed at which the UAV travels between waypoints can affect the quality of the images. Faster speeds might lead to motion blur, making images harder to analyze.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Image Clarity"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "UAV Altitude",
+    "description": "The altitude at which the UAV is flying can affect the clarity of the images. Lower altitudes may provide better detail but can be more prone to obstructions.",
+    "relatedTo": [
+      "Sensor Quality",
+      "Image Clarity"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "UAV Performance",
+    "description": "The overall performance of the UAV, including its computing power and hardware, can affect how quickly it can process and analyze images.",
+    "relatedTo": [
+      "Battery Life",
+      "Sensor Quality"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Distance to Waypoint",
+    "description": "The distance to the next waypoint can affect the time it takes to take the image. Longer distances might mean the UAV is in motion for longer, potentially affecting image quality.",
+    "relatedTo": [
+      "UAV Speed"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Operator Skill Level",
+    "description": "The skill level of the human operator can affect the time it takes to analyze an image. Skilled operators might analyze images more quickly.",
+    "relatedTo": [
+      "Human Factor"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Human Factor",
+    "description": "Human factors such as fatigue, distractions, or familiarity with the task can significantly affect the time it takes to analyze images.",
+    "relatedTo": [
+      "Operator Skill Level"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Task Urgency",
+    "description": "The urgency of the task might affect how quickly the UAV and human operator act. More urgent tasks might lead to faster analysis, while less urgent tasks might result in more thorough analysis.",
+    "relatedTo": [
+      "Human Factor"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Waypoint Complexity",
+    "description": "Waypoints with more complex or diverse features might require more time to analyze. Simple waypoints might be easier to process.",
+    "relatedTo": [
+      "Image Clarity",
+      "Sensor Quality"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Image Background",
+    "description": "The background in the image can affect the analysis time. Simple backgrounds might be easier to analyze, while complex backgrounds might require more time.",
+    "relatedTo": [
+      "Image Clarity"
+    ]
+  }
+]

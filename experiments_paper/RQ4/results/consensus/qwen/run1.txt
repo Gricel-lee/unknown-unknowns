@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Network Latency", "description": "Variations in the network latency can cause different latencies in coin flips, especially if one server is often slower to communicate.", "relatedTo": []},
+    {"id": 2, "name": "Server Load", "description": "The load on the servers can affect their responsiveness. A server under heavy load might take longer to process requests, leading to varied latencies.", "relatedTo": []},
+    {"id": 3, "name": "Power Supply Variability", "description": "Fluctuations in power supply can cause variations in the performance of the servers, potentially leading to different latencies.", "relatedTo": []},
+    {"id": 4, "name": "Temperature Fluctuations", "description": "Environmental temperature changes can affect the performance of hardware components, leading to differences in latency.", "relatedTo": []},
+    {"id": 5, "name": "Cache Hit Rates", "description": "Differences in cache hit rates can lead to varying latencies, as cache misses require more time to retrieve data from slower storage.", "relatedTo": []},
+    {"id": 6, "name": "Disk I/O Operations", "description": "If disk I/O operations are involved in the process, variations in the speed of these operations can contribute to different latencies.", "relatedTo": []},
+    {"id": 7, "name": "External Interference", "description": "External factors like electromagnetic interference or radio signals can affect server performance, causing inconsistencies in latency.", "relatedTo": []},
+    {"id": 8, "name": "Software Optimization Level", "description": "Differences in how the software is optimized on each server could lead to variations in response times.", "relatedTo": []},
+    {"id": 9, "name": "Clock Synchronization", "description": "Clock synchronization issues can cause discrepancies in timing, affecting the perceived latency.", "relatedTo": []},
+    {"id": 10, "name": "Power Management Settings", "description": "Power management settings can cause servers to throttle performance under certain conditions, leading to varied latencies.", "relatedTo": []},
+    {"id": 11, "name": "Resource Contention", "description": "Resource contentions for CPU, memory, and other resources can affect the performance of the servers, leading to different latencies.", "relatedTo": []},
+    {"id": 12, "name": "Background Processes", "description": "The presence of background processes can affect the responsiveness of the servers, causing varied latencies.", "relatedTo": []},
+    {"id": 13, "name": "Latency of Shared Services", "description": "If the servers rely on other shared services, the latency of these services can vary, affecting the overall latency of the coin flips.", "relatedTo": []},
+    {"id": 14, "name": "Memory Fragmentation", "description": "Memory fragmentation can affect the performance of the servers, potentially leading to different latencies.", "relatedTo": []},
+    {"id": 15, "name": "Operating System Version", "description": "Differences in the operating system version or configuration between the two servers can lead to variations in performance and latency.", "relatedTo": []}
+]
+```

@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "Market Volatility",
+    "description": "Sudden spikes or trends in market sentiment can significantly impact technical analysis results and lead to unpredictable movement.",
+    "relatedTo": [
+      "Market Sentiment",
+      "Market Data"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Order Book Dynamics",
+    "description": "The order book reflects a trader's expectations and can influence technical indicators. A rapidly changing order book can create uncertainty.",
+    "relatedTo": [
+      "Order Book Data",
+      "Trading Volume"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "News Events",
+    "description": "Significant news releases (economic, political, company-specific) can trigger algorithmic reactions and signal changes in market expectations.",
+    "relatedTo": [
+      "News Events",
+      "Market Sentiment"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Volatility Spikes",
+    "description": "Increased market volatility creates a higher likelihood of rapid, unpredictable shifts in prices, impacting technical analysis results.",
+    "relatedTo": [
+      "Market Volatility"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Trading Volume",
+    "description": "Higher or lower trading volume can influence the signal strength of technical analysis.",
+    "relatedTo": [
+      "Trading Volume",
+      "Market Data"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Specific Instrument Behavior",
+    "description": "Certain instruments (e.g., volatility in a specific currency pair, a particular commodity) might exhibit unique patterns that are misinterpreted by the model.",
+    "relatedTo": [
+      "Instrument Data"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Time of Day/Day of Week",
+    "description": "Market activity patterns can vary throughout the day, influencing the output of technical analysis.",
+    "relatedTo": [
+      "Time of Day",
+      "Day of Week"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Trend Strength",
+    "description": "The strength of the current trend can influence how the model interprets the indicators.",
+    "relatedTo": [
+      "Trend Direction"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Data Lag",
+    "description": "The model's understanding might be hampered by a delay in the availability of data \u2013 perhaps a longer time delay than the model allows for.",
+    "relatedTo": [
+      "Data Lag"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Model Calibration",
+    "description": "The model's internal parameters might not be correctly calibrated to the specific market behavior.",
+    "relatedTo": [
+      "Model Calibration"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Statistical Patterns",
+    "description": "Certain statistical patterns or correlations within the multimodal data could be causing difficulties.",
+    "relatedTo": [
+      "Multimodal Data"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "External Correlations",
+    "description": "The model may be affected by correlations with other systems or data sources outside of its direct purview.",
+    "relatedTo": [
+      "External Systems",
+      "Data Sources"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Noise in Data",
+    "description": "Random fluctuations in the input data can introduce significant noise, making it harder for the model to reliably extract meaningful insights.",
+    "relatedTo": [
+      "Data Quality",
+      "Input Data"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Algorithm Bias",
+    "description": "Potential biases in the algorithm's internal weighting can lead to inconsistent results across different scenarios.",
+    "relatedTo": [
+      "Algorithm Design"
+    ]
+  }
+]

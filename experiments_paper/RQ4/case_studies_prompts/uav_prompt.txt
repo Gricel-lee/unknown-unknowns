@@ -1,0 +1,6 @@
+You are assisting the engineers of a self-adaptive system.
+System: an unmanned aerial vehicle (UAV) visits a sequence of waypoints and takes an image at each one. At every waypoint, a controller decides whether the image is sent to a human operator for analysis or analysed by the UAV's onboard image classifier; a failed analysis means waiting and taking another image. The controller minimises the expected mission time.
+Observation: the logged times to analyse an image by the human operator and by the onboard classifier are multimodal, i.e., they form several distinct groups that the current model cannot explain.
+No environmental or operational factor is currently part of the model.
+Task: list up to 15 environmental or operational factors that could explain this, ranked by how likely they are.
+Return JSON: [{"id": <rank>, "name": "...", "description": "what it is and why it has this rank", "relatedTo": ["names of other listed factors it may be correlated with"]}]

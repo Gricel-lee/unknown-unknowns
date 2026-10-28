@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Network Latency Variability",
+    "description": "The network latency between the controller and the servers may be varying, causing different modes in the latency distribution.",
+    "relatedTo": [
+      "Clock Synchronization",
+      "Server Load"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Clock Synchronization Issues",
+    "description": "The clocks of the servers and the controller may not be perfectly synchronized, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Network Latency Variability",
+      "Server Load"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Server Load Variability",
+    "description": "The load on the servers may be varying, causing different modes in the latency distribution.",
+    "relatedTo": [
+      "Network Latency Variability",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Coin Flip Implementation",
+    "description": "The implementation of the coin flip logic on the servers may be different, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Server Load Variability",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Controller Logic Variability",
+    "description": "The controller's decision-making logic may be varying, causing different modes in the latency distribution.",
+    "relatedTo": [
+      "Coin Flip Implementation",
+      "Server Load Variability"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Network Packet Loss",
+    "description": "Network packet loss may be occurring, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Network Latency Variability",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Server Resource Constraints",
+    "description": "The servers may be experiencing resource constraints, such as memory or CPU limitations, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Server Load Variability",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Controller-Server Communication Delays",
+    "description": "Delays in communication between the controller and the servers may be occurring, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Network Latency Variability",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Random Number Generator Quality",
+    "description": "The quality of the random number generator used to generate the coin flips may be varying, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Coin Flip Implementation",
+      "Server Load Variability"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Server Temperature or Power Variability",
+    "description": "The temperature or power consumption of the servers may be varying, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Server Resource Constraints",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Controller Hardware or Software Issues",
+    "description": "The controller's hardware or software may be experiencing issues, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Controller Logic Variability",
+      "Network Packet Loss"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Network Congestion",
+    "description": "Network congestion may be occurring, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Network Latency Variability",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Server Clock Drift",
+    "description": "The clocks of the servers may be drifting apart, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Clock Synchronization Issues",
+      "Server Load Variability"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Operating System or Library Issues",
+    "description": "Issues with the operating system or libraries used on the servers may be occurring, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Server Resource Constraints",
+      "Clock Synchronization Issues"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Environmental Factors (e.g. temperature, humidity)",
+    "description": "Environmental factors may be affecting the performance of the servers, leading to different modes in the latency distribution.",
+    "relatedTo": [
+      "Server Temperature or Power Variability",
+      "Server Resource Constraints"
+    ]
+  }
+]

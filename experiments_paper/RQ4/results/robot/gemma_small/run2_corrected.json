@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Field Slope Variation",
+    "description": "Significant variations in slope across the field will impact the robot\u2019s movement and travel time, potentially forcing it to take longer paths.",
+    "relatedTo": [
+      "Field Slope Variation"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Terrain Ruggedness",
+    "description": "Rough terrain will necessitate more detours and potentially longer paths, significantly increasing travel time.",
+    "relatedTo": [
+      "Terrain Ruggedness"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Wind Speed and Direction",
+    "description": "Strong winds can create turbulence, altering the robot's path and increasing travel time and instability.",
+    "relatedTo": [
+      "Wind Speed and Direction"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Vegetation Density and Type",
+    "description": "Dense vegetation can obstruct the robot's view, making it harder to navigate, and might create obstacles that require more steps.",
+    "relatedTo": [
+      "Vegetation Density and Type"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Soil Moisture Content",
+    "description": "Moisture content can affect the robot's traction and stability, leading to changes in path selection.",
+    "relatedTo": [
+      "Soil Moisture Content"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sun Angle",
+    "description": "The angle of the sun significantly impacts the robot\u2019s movement \u2013 it may cause it to change direction frequently.",
+    "relatedTo": [
+      "Sun Angle"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Obstacle Type and Density",
+    "description": "The presence of obstacles of varying shapes, sizes, and densities, particularly those that are difficult to detect, will introduce significant variability in the travel time.",
+    "relatedTo": [
+      "Obstacle Type and Density"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Path Width",
+    "description": "The width of the path can influence how close the robot must be to the edges, increasing travel time.",
+    "relatedTo": [
+      "Path Width"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Light Conditions",
+    "description": "Changes in light (e.g., shadows, glare) can affect the robot\u2019s perception of the environment, influencing its path selection.",
+    "relatedTo": [
+      "Light Conditions"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Surface Texture",
+    "description": "The surface texture of the field \u2013 smoothness, bumps, etc. \u2013 can affect the robot\u2019s movement, causing it to deviate from the optimal path.",
+    "relatedTo": [
+      "Surface Texture"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Robot's Calibration and Sensor Accuracy",
+    "description": "Inaccuracies in the robot's sensor readings (e.g., GPS, camera data) will inevitably result in path variations.",
+    "relatedTo": [
+      "Robot's Calibration and Sensor Accuracy"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dynamic Terrain Features",
+    "description": "Any subtle changes in terrain, such as small ridges or depressions, will cause the robot to deviate, resulting in varying travel times.",
+    "relatedTo": [
+      "Dynamic Terrain Features"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Path Markings (if any)",
+    "description": "The presence or absence of markings indicates which route the robot should take, and could influence its path.",
+    "relatedTo": [
+      "Path Markings"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Robot's Movement Pattern",
+    "description": "The pattern of movement a robot makes may be the cause of varying travel times.",
+    "relatedTo": [
+      "Robot's Movement Pattern"
+    ]
+  }
+]

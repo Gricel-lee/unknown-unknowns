@@ -1,0 +1,18 @@
+# Normal distribution of the time of the technical and the fundamental analysis, for each
+# (volatile, news, disk_busy) combination.
+# Format: {env:<combination>, technical_mean:<m>, technical_std:<s>, fundamental_mean:<m>, fundamental_std:<s>}
+#
+# time = c * queue * disk operations, with c = 0.132 time units per disk operation:
+#   technical   : 12 disk ops, 40 when the market is volatile
+#   fundamental : 20 disk ops, 50 on a major news day
+#   queue       : 5 disk ops waiting, 15 when the disk is busy
+# std = 8% of the mean. The faster mode depends on the environment (fundamental analysis is
+# better only when the market is volatile and there is no news).
+{env:000, technical_mean:7.92, technical_std:0.63, fundamental_mean:13.2, fundamental_std:1.06}
+{env:001, technical_mean:23.76, technical_std:1.9, fundamental_mean:39.6, fundamental_std:3.17}
+{env:010, technical_mean:7.92, technical_std:0.63, fundamental_mean:33.0, fundamental_std:2.64}
+{env:011, technical_mean:23.76, technical_std:1.9, fundamental_mean:99.0, fundamental_std:7.92}
+{env:100, technical_mean:26.4, technical_std:2.11, fundamental_mean:13.2, fundamental_std:1.06}
+{env:101, technical_mean:79.2, technical_std:6.34, fundamental_mean:39.6, fundamental_std:3.17}
+{env:110, technical_mean:26.4, technical_std:2.11, fundamental_mean:33.0, fundamental_std:2.64}
+{env:111, technical_mean:79.2, technical_std:6.34, fundamental_mean:99.0, fundamental_std:7.92}

@@ -1,0 +1,36 @@
+1. controller synthesis per case study and k
+   {'case': 'robot', 'k': 0, 'states': 4, 'transitions': 5, 'prism_time': 0.053, 'synthesis_time': 1.58}
+   {'case': 'robot', 'k': 1, 'states': 7, 'transitions': 10, 'prism_time': 0.051, 'synthesis_time': 1.706}
+   {'case': 'robot', 'k': 2, 'states': 13, 'transitions': 20, 'prism_time': 0.046, 'synthesis_time': 1.638}
+   {'case': 'robot', 'k': 3, 'states': 25, 'transitions': 40, 'prism_time': 0.056, 'synthesis_time': 1.687}
+   {'case': 'consensus', 'k': 0, 'states': 6, 'transitions': 15, 'prism_time': 0.052, 'synthesis_time': 1.7}
+   {'case': 'consensus', 'k': 1, 'states': 11, 'transitions': 30, 'prism_time': 0.054, 'synthesis_time': 1.68}
+   {'case': 'consensus', 'k': 2, 'states': 21, 'transitions': 60, 'prism_time': 0.057, 'synthesis_time': 1.691}
+   {'case': 'consensus', 'k': 3, 'states': 41, 'transitions': 120, 'prism_time': 0.059, 'synthesis_time': 1.726}
+   {'case': 'fx', 'k': 0, 'states': 24, 'transitions': 47, 'prism_time': 0.082, 'synthesis_time': 1.743}
+   {'case': 'fx', 'k': 1, 'states': 47, 'transitions': 94, 'prism_time': 0.066, 'synthesis_time': 1.789}
+   {'case': 'fx', 'k': 2, 'states': 93, 'transitions': 188, 'prism_time': 0.076, 'synthesis_time': 1.747}
+   {'case': 'fx', 'k': 3, 'states': 185, 'transitions': 376, 'prism_time': 0.08, 'synthesis_time': 1.704}
+   {'case': 'uav', 'k': 0, 'states': 50021, 'transitions': 314002, 'prism_time': 0.646, 'synthesis_time': 2.998}
+   {'case': 'uav', 'k': 1, 'states': 100041, 'transitions': 628004, 'prism_time': 1.345, 'synthesis_time': 4.582}
+   {'case': 'uav', 'k': 2, 'states': 200081, 'transitions': 1256008, 'prism_time': 2.567, 'synthesis_time': 7.967}
+   {'case': 'uav', 'k': 3, 'states': 400161, 'transitions': 2512016, 'prism_time': 4.942, 'synthesis_time': 13.853}
+2. detector
+   {'m': 3, 'n': 1000, 'bins': 8, 'check_all_known': 0.0324, 'iterations': 2, 'search_time': 0.273, 'accepted': 'x1 x0'}
+   {'m': 3, 'n': 5000, 'bins': 8, 'check_all_known': 0.0762, 'iterations': 2, 'search_time': 0.7936, 'accepted': 'x0 x1'}
+   {'m': 3, 'n': 20000, 'bins': 8, 'check_all_known': 0.3731, 'iterations': 2, 'search_time': 3.1858, 'accepted': 'x1 x0'}
+   {'m': 4, 'n': 1000, 'bins': 16, 'check_all_known': 0.0396, 'iterations': 2, 'search_time': 0.2937, 'accepted': 'x1 x0'}
+   {'m': 4, 'n': 5000, 'bins': 16, 'check_all_known': 0.1946, 'iterations': 2, 'search_time': 1.1264, 'accepted': 'x0 x1'}
+   {'m': 4, 'n': 20000, 'bins': 16, 'check_all_known': 0.6899, 'iterations': 2, 'search_time': 4.0173, 'accepted': 'x1 x0'}
+   {'m': 5, 'n': 1000, 'bins': 32, 'check_all_known': 0.0706, 'iterations': 2, 'search_time': 0.3097, 'accepted': 'x1 x0'}
+   {'m': 5, 'n': 5000, 'bins': 32, 'check_all_known': 0.3544, 'iterations': 2, 'search_time': 1.1861, 'accepted': 'x0 x1'}
+   {'m': 5, 'n': 20000, 'bins': 32, 'check_all_known': 1.4275, 'iterations': 2, 'search_time': 5.2203, 'accepted': 'x1 x0'}
+   {'m': 6, 'n': 1000, 'bins': 64, 'check_all_known': 0.143, 'iterations': 2, 'search_time': 0.3748, 'accepted': 'x1 x0'}
+   {'m': 6, 'n': 5000, 'bins': 64, 'check_all_known': 0.7334, 'iterations': 2, 'search_time': 1.4631, 'accepted': 'x0 x1'}
+   {'m': 6, 'n': 20000, 'bins': 64, 'check_all_known': 3.3601, 'iterations': 2, 'search_time': 5.9799, 'accepted': 'x1 x0'}
+   {'m': 7, 'n': 1000, 'bins': 128, 'check_all_known': 0.1978, 'iterations': 2, 'search_time': 0.4586, 'accepted': 'x1 x0'}
+   {'m': 7, 'n': 5000, 'bins': 128, 'check_all_known': 1.8698, 'iterations': 2, 'search_time': 2.0086, 'accepted': 'x0 x1'}
+   {'m': 7, 'n': 20000, 'bins': 128, 'check_all_known': 6.5897, 'iterations': 2, 'search_time': 7.6706, 'accepted': 'x1 x0'}
+   {'m': 8, 'n': 1000, 'bins': 256, 'check_all_known': 0.3356, 'iterations': 2, 'search_time': 0.5112, 'accepted': 'x1 x0'}
+   {'m': 8, 'n': 5000, 'bins': 256, 'check_all_known': 3.6724, 'iterations': 2, 'search_time': 2.3771, 'accepted': 'x0 x1'}
+   {'m': 8, 'n': 20000, 'bins': 256, 'check_all_known': 15.1737, 'iterations': 2, 'search_time': 9.3247, 'accepted': 'x1 x0'}

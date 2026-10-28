@@ -1,0 +1,98 @@
+Here is the list of environmental or operational factors that could explain the multimodal analysis times, ranked by likelihood:
+
+```
+[
+  {
+    "id": 1,
+    "name": "Network Latency",
+    "description": "Differences in network speed and congestion can significantly impact analysis times. This is likely the primary cause of multimodal analysis times.",
+    "relatedTo": ["Image Size", "Network Type"]
+  },
+  {
+    "id": 2,
+    "name": "Image Quality",
+    "description": "Poor image quality due to lighting conditions, camera settings, or sensor limitations can affect analysis times. This is a likely contributor to multimodal analysis times.",
+    "relatedTo": ["Lighting Conditions", "Camera Settings"]
+  },
+  {
+    "id": 3,
+    "name": "Image Size",
+    "description": "Larger image sizes can increase analysis times, especially if the onboard classifier is not optimized for large images.",
+    "relatedTo": ["Network Latency", "Image Resolution"]
+  },
+  {
+    "id": 4,
+    "name": "Image Resolution",
+    "description": "Higher image resolutions can increase analysis times due to the increased processing requirements.",
+    "relatedTo": ["Image Size", "Camera Settings"]
+  },
+  {
+    "id": 5,
+    "name": "Camera Settings",
+    "description": "Optical settings such as focal length, aperture, and ISO can impact image quality and analysis times.",
+    "relatedTo": ["Image Quality", "Image Resolution"]
+  },
+  {
+    "id": 6,
+    "name": "Lighting Conditions",
+    "description": "Variations in lighting conditions can affect image quality and analysis times.",
+    "relatedTo": ["Image Quality", "Image Resolution"]
+  },
+  {
+    "id": 7,
+    "name": "Environmental Temperature",
+    "description": "Extreme temperatures can impact the performance of the onboard classifier and camera sensors.",
+    "relatedTo": ["Battery Life", "System Performance"]
+  },
+  {
+    "id": 8,
+    "name": "Battery Life",
+    "description": "Low battery levels can limit the UAV's flight time and impact analysis times.",
+    "relatedTo": ["Environmental Temperature", "System Performance"]
+  },
+  {
+    "id": 9,
+    "name": "System Performance",
+    "description": "Aging or degraded system components can impact analysis times.",
+    "relatedTo": ["Environmental Temperature", "Battery Life"]
+  },
+  {
+    "id": 10,
+    "name": "Human Operator Experience",
+    "description": "Variations in human operator experience can impact analysis times, especially if the operator is not familiar with the onboard classifier.",
+    "relatedTo": ["Analysis Time Variability"]
+  },
+  {
+    "id": 11,
+    "name": "Analysis Time Variability",
+    "description": "Inconsistencies in human operator analysis times can contribute to multimodal analysis times.",
+    "relatedTo": ["Human Operator Experience"]
+  },
+  {
+    "id": 12,
+    "name": "Network Type",
+    "description": "Differences in network type (e.g., 2G, 3G, 4G) can impact analysis times.",
+    "relatedTo": ["Network Latency", "Image Size"]
+  },
+  {
+    "id": 13,
+    "name": "UAV Speed and Altitude",
+    "description": "Variations in UAV speed and altitude can impact image capture times and analysis times.",
+    "relatedTo": ["Image Quality", "Image Resolution"]
+  },
+  {
+    "id": 14,
+    "name": "Sensor Limitations",
+    "description": "Sensor limitations such as noise, distortion, or limited dynamic range can impact image quality and analysis times.",
+    "relatedTo": ["Image Quality", "Image Resolution"]
+  },
+  {
+    "id": 15,
+    "name": "Human Operator Fatigue",
+    "description": "Human operator fatigue can impact analysis times, especially if the operator is performing multiple tasks simultaneously.",
+    "relatedTo": ["Human Operator Experience", "Analysis Time Variability"]
+  }
+]
+```
+
+Note: The ranking of factors is based on general knowledge and may vary depending on specific system design and operating conditions.

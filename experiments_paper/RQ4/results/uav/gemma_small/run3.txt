@@ -1,0 +1,98 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Weather Conditions",
+    "description": "Cloud cover, rain, snow, or fog can significantly impact image quality and the classifier's performance.",
+    "relatedTo": ["Weather", "Image Quality"]
+  },
+  {
+    "id": 2
+    "name": "Lighting Conditions",
+    "description": "Shadows, glare, and inconsistent lighting drastically affect image interpretation and classifier accuracy.",
+    "relatedTo": ["Lighting", "Image Quality"]
+  },
+  {
+    "id": 3
+    "name": "Sensor Noise",
+    "description": "Noise from the cameras (sensors) can interfere with image data, leading to misclassification.",
+    "relatedTo": ["Cameras", "Image Data"]
+  },
+  {
+    "id": 4
+    "name": "Geometric Distortion",
+    "description": "Lens distortion, camera angle, or perspective can introduce artifacts into the images.",
+    "relatedTo": ["Cameras", "Image Data"]
+  },
+  {
+    "id": 5
+    "name": "Image Resolution & Bandwidth",
+    "description": "Lower resolution or less bandwidth can limit the classifier's ability to accurately interpret complex scenes.",
+    "relatedTo": ["Image Data", "Classifier Performance"]
+  },
+  {
+    "id": 6
+    "name": "Contrast/Brightness Levels",
+    "description": "Differences in brightness and contrast can cause the classifier to struggle with highlights and shadows.",
+    "relatedTo": ["Image Data", "Classifier Performance"]
+  },
+  {
+    "id": 7
+    "name": "Image Content Complexity",
+    "description": "Highly cluttered scenes, complex objects, or unusual patterns can pose challenges for the classifier.",
+    "relatedTo": ["Image Data", "Classifier Performance"]
+  },
+  {
+    "id": 8
+    "name": "Object Count & Density",
+    "description": "A higher density of objects introduces more data for the classifier to analyze, potentially improving accuracy, but also increasing the challenge.",
+    "relatedTo": ["Image Data", "Classifier Performance"]
+  },
+  {
+    "id": 9
+    "name": "Camera Calibration Issues",
+    "description": "Inaccurate camera calibration can result in errors in image projections, impacting the classifier.",
+    "relatedTo": ["Cameras"]
+  },
+  {
+    "id": 10
+    "name": "Motion Blur",
+    "description": "Motion can blur images, making it harder for the classifier to discern details.",
+    "relatedTo": ["Images"]
+  },
+  {
+    "id": 11
+    "name": "Dynamic Range",
+    "description": "The variation in brightness within the scene can cause issues for the classifier.",
+    "relatedTo": ["Images", "Classifier Performance"]
+  },
+  {
+    "id": 12
+    "name": "Image Format & Compression",
+    "description": "Different image formats and compression levels can influence the image quality and how well the classifier sees patterns.",
+    "relatedTo": ["Images"]
+  },
+  {
+    "id": 13
+    "name": "Temporal Variation",
+    "description": "Changes in the scene over time, especially slight variations, can disrupt the classifier's patterns.",
+    "relatedTo": ["Images"]
+  },
+  {
+    "id": 14
+    "name": "Prior Knowledge/Context",
+    "description": "The existing data in the UAV's memory and the context of the scene could be informing the classifier.",
+    "relatedTo": ["Image Data", "UAV Data"]
+  }
+]
+```
+
+**Explanation of Ranks:**
+
+* **1:**  High likelihood (likely to be the primary driver) -  This is a fundamental, high-impact factor.
+* **2-4:** Medium likelihood - These are plausible but require more investigation.
+* **5-7:** Moderate likelihood - Could be contributing, but not the primary cause.
+* **8-12:** Lower likelihood -  These are potential contributing factors, but may not be the central issue.
+* **13:** Low likelihood -  Less likely to be the primary driver, but still important.
+
+This list is a starting point and can be refined based on further analysis of the logged data.  The most likely explanations would likely involve a combination of factors.  The current model is currently *not* capable of explaining why these factors are contributing to this multimodal data.

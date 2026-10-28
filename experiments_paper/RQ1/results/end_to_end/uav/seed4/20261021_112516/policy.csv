@@ -1,0 +1,10 @@
+model,environment,action
+without_u,(all),onboard
+with_u,"low_light=0, operator_busy=0, signal_noise=0",ask_operator
+with_u,"low_light=1, operator_busy=0, signal_noise=0",ask_operator
+with_u,"low_light=0, operator_busy=1, signal_noise=0",onboard
+with_u,"low_light=1, operator_busy=1, signal_noise=0",ask_operator
+with_u,"low_light=0, operator_busy=0, signal_noise=1",onboard
+with_u,"low_light=1, operator_busy=0, signal_noise=1",ask_operator
+with_u,"low_light=0, operator_busy=1, signal_noise=1",onboard
+with_u,"low_light=1, operator_busy=1, signal_noise=1",onboard

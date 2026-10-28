@@ -1,0 +1,129 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture Variation",
+    "description": "Soil moisture significantly impacts wheel slippage and therefore path performance.  Path 2 (grass) is likely more susceptible to variations in moisture content (damp, muddy, dry) leading to higher variance in travel times compared to Path 1 (track) which offers consistent ground conditions. This is the most likely factor due to its direct influence on robot traction.",
+    "relatedTo": [
+      "Path 2",
+      "Wheel Slippage"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Vegetation Density (Path 2)",
+    "description": "The density of grass between crop rows in Path 2 varies significantly due to crop height, sunlight exposure, and potentially weed growth. This leads to inconsistent resistance, affecting travel time.  Path 1 has a standardized ground cover.",
+    "relatedTo": [
+      "Soil Moisture Variation",
+      "Path 2"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Slope Variation",
+    "description": "Even seemingly flat fields have subtle slopes. Path 2, being on the periphery of rows, is likely to encounter more significant and unpredictable slope variations, impacting travel time more dramatically than Path 1, which may be relatively level.",
+    "relatedTo": [
+      "Soil Moisture Variation"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Wheel Slippage",
+    "description": "The robot's wheels will experience varying degrees of slippage on both paths depending on traction, surface conditions, and robot speed.  Path 2 is inherently more prone to slippage due to its variable grass and potentially uneven ground.",
+    "relatedTo": [
+      "Soil Moisture Variation",
+      "Vegetation Density (Path 2)",
+      "Slope Variation"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Time of Day (Sunlight)",
+    "description": "Solar heating can dry out the grass in Path 2, impacting traction, while also impacting camera performance. Path 1 is less affected. This introduces temporal variation in the environment that influences speed.",
+    "relatedTo": [
+      "Soil Moisture Variation",
+      "Vegetation Density (Path 2)"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Robot Speed",
+    "description": "The robot's speed selection will influence travel time.  The speed may have to be adjusted due to changing path conditions (e.g., reduced speed on a wet Path 2).",
+    "relatedTo": [
+      "Wheel Slippage"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Crop Row Spacing",
+    "description": "Variations in the spacing between crop rows in Path 2 will directly affect the robot\u2019s ability to navigate and the duration of travel.",
+    "relatedTo": [
+      "Vegetation Density (Path 2)"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Surface Roughness (Path 2)",
+    "description": "The grass surface in Path 2 is likely to be rougher than the track in Path 1. This leads to increased rolling resistance and therefore longer travel times. ",
+    "relatedTo": [
+      "Vegetation Density (Path 2)"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Wind Speed",
+    "description": "Wind can affect the robot\u2019s stability and potentially influence its path choice, though the impact on travel time is likely secondary to other factors.",
+    "relatedTo": [
+      "Wheel Slippage"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Camera Calibration Drift",
+    "description": "Small drifts in camera calibration can cause errors in odometry, which will affect navigation and therefore travel time. This effect will be more pronounced on Path 2 where the camera perspective changes more frequently.",
+    "relatedTo": [
+      "Path 2"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Robot Wheel Condition",
+    "description": "Wear and tear on the robot's wheels can change their rolling resistance, significantly affecting travel time, particularly on Path 2 which has variable surfaces. ",
+    "relatedTo": [
+      "Wheel Slippage"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Soil Compaction",
+    "description": "Compacted soil in either path will increase rolling resistance and slow the robot down, particularly in Path 2 due to higher foot traffic from human maintenance.",
+    "relatedTo": [
+      "Soil Moisture Variation",
+      "Vegetation Density (Path 2)"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Robot Load",
+    "description": "The weight carried by the robot affects its speed and traction, making variations on Path 2 more pronounced when the robot is carrying a full inspection payload.",
+    "relatedTo": [
+      "Wheel Slippage"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Rainfall",
+    "description": "Recent rainfall increases the risk of Path 2 becoming muddy, and therefore increases travel time. ",
+    "relatedTo": [
+      "Soil Moisture Variation",
+      "Path 2"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Obstacle Presence (Small Debris)",
+    "description": "Small stones, roots, or other debris in either path can cause momentary slowdowns, leading to variability in travel times. Path 2 may have a higher concentration of these.",
+    "relatedTo": [
+      "Vegetation Density (Path 2)"
+    ]
+  }
+]

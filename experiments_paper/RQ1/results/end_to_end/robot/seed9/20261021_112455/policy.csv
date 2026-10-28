@@ -1,0 +1,10 @@
+model,environment,action
+without_u,(all),action2
+with_u,"light=0, wet=0, busy=0",action2
+with_u,"light=1, wet=0, busy=0",action2
+with_u,"light=0, wet=1, busy=0",action1
+with_u,"light=1, wet=1, busy=0",action1
+with_u,"light=0, wet=0, busy=1",action2
+with_u,"light=1, wet=0, busy=1",action2
+with_u,"light=0, wet=1, busy=1",action1
+with_u,"light=1, wet=1, busy=1",action1

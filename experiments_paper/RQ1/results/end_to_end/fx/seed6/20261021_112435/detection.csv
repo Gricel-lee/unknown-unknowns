@@ -1,0 +1,31 @@
+iteration,known_vars,bin,output,unimodal,p_value
+1,,(all),technical,False,0.0
+1,,(all),fundamental,False,0.0
+2,disk_busy,disk_busy=0,technical,False,0.0
+2,disk_busy,disk_busy=0,fundamental,False,0.0
+2,disk_busy,disk_busy=1,technical,False,0.0
+2,disk_busy,disk_busy=1,fundamental,False,0.0
+3,disk_busy volatile,"disk_busy=0, volatile=0",technical,True,0.9874
+3,disk_busy volatile,"disk_busy=0, volatile=0",fundamental,False,0.0
+3,disk_busy volatile,"disk_busy=0, volatile=1",technical,True,0.5816
+3,disk_busy volatile,"disk_busy=0, volatile=1",fundamental,False,0.0
+3,disk_busy volatile,"disk_busy=1, volatile=0",technical,True,0.9527
+3,disk_busy volatile,"disk_busy=1, volatile=0",fundamental,False,0.0
+3,disk_busy volatile,"disk_busy=1, volatile=1",technical,True,0.9844
+3,disk_busy volatile,"disk_busy=1, volatile=1",fundamental,False,0.0
+4,disk_busy volatile news,"disk_busy=0, volatile=0, news=0",technical,True,0.98
+4,disk_busy volatile news,"disk_busy=0, volatile=0, news=0",fundamental,True,0.9604
+4,disk_busy volatile news,"disk_busy=0, volatile=0, news=1",technical,True,0.9905
+4,disk_busy volatile news,"disk_busy=0, volatile=0, news=1",fundamental,True,0.7663
+4,disk_busy volatile news,"disk_busy=0, volatile=1, news=0",technical,True,0.9227
+4,disk_busy volatile news,"disk_busy=0, volatile=1, news=0",fundamental,True,0.9913
+4,disk_busy volatile news,"disk_busy=0, volatile=1, news=1",technical,True,0.937
+4,disk_busy volatile news,"disk_busy=0, volatile=1, news=1",fundamental,True,0.9962
+4,disk_busy volatile news,"disk_busy=1, volatile=0, news=0",technical,True,0.9812
+4,disk_busy volatile news,"disk_busy=1, volatile=0, news=0",fundamental,True,0.8826
+4,disk_busy volatile news,"disk_busy=1, volatile=0, news=1",technical,True,0.9507
+4,disk_busy volatile news,"disk_busy=1, volatile=0, news=1",fundamental,True,0.8882
+4,disk_busy volatile news,"disk_busy=1, volatile=1, news=0",technical,True,0.7584
+4,disk_busy volatile news,"disk_busy=1, volatile=1, news=0",fundamental,True,0.8335
+4,disk_busy volatile news,"disk_busy=1, volatile=1, news=1",technical,True,0.6023
+4,disk_busy volatile news,"disk_busy=1, volatile=1, news=1",fundamental,True,0.6674

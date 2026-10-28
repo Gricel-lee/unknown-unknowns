@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Network Latency",
+    "description": "The time it takes for a packet to travel between the servers and the controller. Higher network latency can cause delays in receiving the coin flip results, leading to increased latency and multimodal distribution.",
+    "relatedTo": [
+      "Power Supply Stability"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Power Supply Stability",
+    "description": "Irregular power supply can affect the timing and accuracy of the coin flip. Variations in power can lead to inconsistent execution times and may correlate with network latency fluctuations.",
+    "relatedTo": [
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Environmental Temperature",
+    "description": "Temperature variations can affect the performance and timing of the servers, causing them to behave differently under varying conditions. Higher temperatures might increase the execution time of the coin flip process.",
+    "relatedTo": []
+  },
+  {
+    "id": 4,
+    "name": "Software Version Differences",
+    "description": "If the servers are running different versions of the consensus protocol software, they may have subtle differences in how they handle tasks, leading to different latencies.",
+    "relatedTo": [
+      "Configuration Differences"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Configuration Differences",
+    "description": "Even if the servers are identical, small differences in configuration settings could lead to varying latencies. This includes differences in local caching, network stack settings, etc.",
+    "relatedTo": [
+      "Software Version Differences"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Load Balancing",
+    "description": "If the system is running other tasks that require server resources, it might affect the performance of the consensus protocol. Load balancing can cause uneven distribution of tasks, leading to different latencies.",
+    "relatedTo": []
+  },
+  {
+    "id": 7,
+    "name": "Hardware Differences",
+    "description": "Different hardware components such as CPUs, RAM, or storage can lead to variations in performance. Even small differences can cause fluctuations in the latency of the coin flip process.",
+    "relatedTo": []
+  },
+  {
+    "id": 8,
+    "name": "System Updates",
+    "description": "Regular system updates or patches might temporarily affect the performance of the servers, causing fluctuations in the latencies of the coin flips.",
+    "relatedTo": [
+      "Software Version Differences"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Network Congestion",
+    "description": "High network congestion can cause delays in the coin flip results, leading to longer latencies. This is particularly relevant if the controller and servers are in different physical locations.",
+    "relatedTo": [
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Power Management Settings",
+    "description": "Different power management settings can affect the performance of the servers. For example, a server in a low-power state might have slower response times.",
+    "relatedTo": [
+      "Power Supply Stability"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Disk I/O Operations",
+    "description": "If the servers are performing heavy disk I/O operations, it can slow down the coin flip process. This is especially relevant if the coin flip code is stored on the disk.",
+    "relatedTo": []
+  },
+  {
+    "id": 12,
+    "name": "Clock Synchronization",
+    "description": "If the servers have slightly different clock times, it can affect the timing of the coin flip process. This is more relevant in a distributed system where precise timing is crucial.",
+    "relatedTo": []
+  },
+  {
+    "id": 13,
+    "name": "External Interference",
+    "description": "External factors such as electromagnetic interference or other wireless devices can cause variations in the coin flip process. This is more of a theoretical concern but is worth considering.",
+    "relatedTo": []
+  },
+  {
+    "id": 14,
+    "name": "Software Bugs",
+    "description": "Undetected bugs in the consensus protocol software can cause unpredictable behavior, leading to variations in the latencies of the coin flips.",
+    "relatedTo": [
+      "Configuration Differences"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Random Hardware Failures",
+    "description": "Occasional hardware failures or glitches can cause variations in the latencies of the coin flips. This is less common but still a possibility.",
+    "relatedTo": [
+      "Hardware Differences"
+    ]
+  }
+]

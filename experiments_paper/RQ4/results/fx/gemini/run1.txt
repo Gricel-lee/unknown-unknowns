@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Market Session / Trading Hours",
+    "description": "Forex markets operate 24/5 across major sessions (Asian, London, New York). The volume of ticks, price updates, and financial news varies drastically between sessions (and overlaps). This causes distinct modes in data retrieval and processing times for both TA (dense tick data vs. sparse data) and FA (high vs. low news volume).",
+    "relatedTo": ["Volume of Economic News", "Database Cache State", "Scope and Granularity of Analysis"]
+  },
+  {
+    "id": 2,
+    "name": "External API Latency and Rate Limiting",
+    "description": "Both TA (historical prices) and FA (news feeds, economic calendars) rely on third-party APIs. Network latency, regional routing, or API rate-limiting/throttling mechanisms (which introduce forced back-off delays) create distinct, multimodal step-functions in execution times.",
+    "relatedTo": ["Geographic Routing and Server Location", "Rate Limiting and Throttling"]
+  },
+  {
+    "id": 3,
+    "name": "Database Cache State (Warm vs. Cold)",
+    "description": "If market data or historical indicators are cached in memory (Redis, Memcached), read times are sub-millisecond. If the system experiences a cache miss and must query the primary database, execution times jump to a much slower, distinct cluster.",
+    "relatedTo": ["Market Session / Trading Hours", "Historical Lookback Window"]
+  },
+  {
+    "id": 4,
+    "name": "Volume of Economic News and Press Releases",
+    "description": "Fundamental Analysis processing time is highly dependent on the volume of text to analyze. During major macroeconomic events (e.g., US CPI, Fed Rate decisions), the system processes thousands of news items, causing FA execution times to spike into a high-duration mode compared to quiet hours.",
+    "relatedTo": ["Market Session / Trading Hours", "NLP Model Complexity and Execution Path"]
+  },
+  {
+    "id": 5,
+    "name": "Historical Lookback Window Size",
+    "description": "Technical analysis algorithms may dynamically scale their lookback window (e.g., analyzing 50 vs. 2000 candlesticks) based on market volatility. This changes the payload size and computation time of indicators (e.g., SMA, Bollinger Bands), resulting in discrete runtime clusters.",
+    "relatedTo": ["Scope and Granularity of Analysis", "Market Volatility"]
+  },
+  {
+    "id": 6,
+    "name": "NLP Model Complexity and Execution Path",
+    "description": "For FA, the system may route different types of news through different Natural Language Processing models (e.g., a fast, regex-based sentiment check vs. a heavy Transformer/LLM model for complex reports). This structural difference in computational complexity yields highly bimodal execution times.",
+    "relatedTo": ["Volume of Economic News", "Hardware Resource Contention"]
+  },
+  {
+    "id": 7,
+    "name": "Scope and Granularity of Analysis",
+    "description": "The controller or trader might dynamically adjust the timeframes analyzed (e.g., 1-minute, 15-minute, or daily charts). Processing tick-by-tick data requires significantly more computations and database reads than analyzing daily bars, leading to distinct runtimes.",
+    "relatedTo": ["Historical Lookback Window Size", "Market Session / Trading Hours"]
+  },
+  {
+    "id": 8,
+    "name": "Market Volatility",
+    "description": "In highly volatile markets, the number of order book updates and price ticks spikes exponentially. TA algorithms that process every tick or trigger re-calculations on every price change will experience structured slowdowns compared to calm market conditions.",
+    "relatedTo": ["Market Session / Trading Hours", "Historical Lookback Window Size"]
+  },
+  {
+    "id": 9,
+    "name": "Hardware Resource Contention / Multi-Tenancy",
+    "description": "If the trading system runs in a shared cloud environment (e.g., Kubernetes, multi-tenant VMs), CPU/Memory throttling and noisy neighbors can cause processing times to suddenly shift from a fast, optimized mode to a degraded, throttled mode.",
+    "relatedTo": ["NLP Model Complexity and Execution Path", "Concurrency and Queueing Delay"]
+  },
+  {
+    "id": 10,
+    "name": "Rate Limiting and Throttling",
+    "description": "When data providers or brokers enforce dynamic throttling, requests are delayed by fixed intervals (e.g., 1-second, 5-second retry windows). This adds discrete, predictable delay overheads that create multi-modal latency distributions.",
+    "relatedTo": ["External API Latency and Rate Limiting"]
+  },
+  {
+    "id": 11,
+    "name": "Concurrency and Queueing Delay",
+    "description": "If multiple currency pairs are analyzed simultaneously, tasks may queue up in thread pools. When threads are available, execution is instant; when the thread pool is exhausted, execution times suffer a discrete delay equal to the wait time in the queue.",
+    "relatedTo": ["Hardware Resource Contention / Multi-Tenancy", "Number of Monitored Currency Pairs"]
+  },
+  {
+    "id": 12,
+    "name": "Geographic Routing and Server Location",
+    "description": "If the automated workflow is deployed in a multi-region cloud setup, requests to broker servers or news feeds may route to different regional servers (e.g., US-East vs. EU-West), introducing distinct, geographically bound latency steps.",
+    "relatedTo": ["External API Latency and Rate Limiting"]
+  },
+  {
+    "id": 13,
+    "name": "Number of Monitored Currency Pairs",
+    "description": "The system might run analyses on a single pair (e.g., EUR/USD) or scale out to cross-currency baskets (e.g., EUR/USD, GBP/USD, USD/JPY) depending on market opportunities. The execution time will scale in step-functions proportional to the number of active pairs.",
+    "relatedTo": ["Concurrency and Queueing Delay"]
+  },
+  {
+    "id": 14,
+    "name": "Runtime Garbage Collection and JIT Compilation",
+    "description": "Execution environments (such as JVM, Go, or .NET) introduce Stop-The-World Garbage Collection (GC) pauses. Additionally, JIT compilers cause initial runs (cold starts) to be slow, while subsequent runs (warm starts) are highly optimized, producing a bimodal runtime profile.",
+    "relatedTo": ["Hardware Resource Contention / Multi-Tenancy"]
+  },
+  {
+    "id": 15,
+    "name": "Type of Currency Pair (Major vs. Exotic)",
+    "description": "Major currency pairs have high liquidity, rich order books, and extensive historical data. Exotic currency pairs have sparse historical data and fewer news updates. The system may run lighter/faster heuristics on exotics due to missing data, or slower fallback queries to fetch rare data.",
+    "relatedTo": ["Historical Lookback Window Size", "Scope and Granularity of Analysis"]
+  }
+]
+```

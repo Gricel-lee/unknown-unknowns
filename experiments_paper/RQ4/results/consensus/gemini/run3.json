@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Entropy Pool Starvation",
+    "description": "Randomized consensus protocols rely heavily on random number generation (RNG). If the servers use blocking system calls (like `/dev/random` in Linux) to generate the coin flips, the process will halt when the system's entropy pool is depleted. This creates a distinct high-latency mode when blocking, compared to a very low-latency mode when entropy is abundant.",
+    "relatedTo": [
+      "Server CPU Load / Noisy Neighbors"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Network Topology and Geographic Dispersion",
+    "description": "If Server 1, Server 2, and the controller are placed in different physical racks, availability zones, or geographical regions, the round-trip time (RTT) will naturally form discrete modes depending on which path is taken (e.g., controller-to-Server 1 vs. controller-to-Server 2, or intra-datacenter vs. cross-datacenter transit).",
+    "relatedTo": [
+      "TCP Retransmissions and Timeouts",
+      "Network Switch Congestion"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lock Contention on Shared Counter",
+    "description": "The shared counter is a shared resource that must be updated. If the coordination mechanism uses optimistic locking with retries or pessimistic locks (mutexes) at the database/state layer, the presence of contention will split latency into 'no contention' (immediate write), 'medium contention' (retries), and 'high contention' (blocking queues) modes.",
+    "relatedTo": [
+      "Server CPU Load / Noisy Neighbors",
+      "Synchronous Logging and Disk I/O"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Garbage Collection Pauses",
+    "description": "If the servers or controller run on managed runtimes (e.g., Java, Go, or .NET), runtime Garbage Collection (GC) introduces periodic 'stop-the-world' pauses. Coin flips executed during minor or major GC cycles will experience highly distinct, elevated latency modes compared to execution during normal runtime.",
+    "relatedTo": [
+      "Server CPU Load / Noisy Neighbors",
+      "OS Swapping and Page Faults"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "TCP Retransmissions and Timeouts",
+    "description": "Minor packet drops in the network require TCP retransmissions. Because modern OS kernels have a minimum Retransmission Timeout (RTO) that is typically fixed (e.g., 200ms or 1s), any coin flip request experiencing a packet drop will jump into a highly distinct, repeatable latency band.",
+    "relatedTo": [
+      "Network Topology and Geographic Dispersion",
+      "Network Switch Congestion"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Server CPU Load / Noisy Neighbors",
+    "description": "In shared cloud environments, background processes, system cron jobs, or other virtual machines on the same hardware can compete for CPU cache and cycles. This shifts the server between idle (low latency) and throttled/congested (high latency) operational phases.",
+    "relatedTo": [
+      "Hypervisor Steal Time",
+      "Garbage Collection Pauses",
+      "Lock Contention on Shared Counter"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Connection Reuse vs. New Handshakes",
+    "description": "If the controller's connection pool occasionally closes idle connections, some coin flip requests will require a full TCP and TLS handshake (adding multiple RTTs of latency), while others will reuse existing, warm keep-alive connections (adding zero handshake latency).",
+    "relatedTo": [
+      "Network Topology and Geographic Dispersion",
+      "TCP Retransmissions and Timeouts"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Synchronous Logging and Disk I/O",
+    "description": "If the controller or the servers synchronously write coin-flip results and counter updates to disk for persistence/auditing, latency will be determined by disk performance. This creates modes corresponding to OS page cache hits (sub-millisecond) versus physical SSD/HDD flush cycles (tens of milliseconds).",
+    "relatedTo": [
+      "Lock Contention on Shared Counter",
+      "OS Swapping and Page Faults"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Hypervisor Steal Time",
+    "description": "In virtualized environments, the hypervisor's scheduler may allocate the host CPU to other virtual machines. This causes 'steal time,' where the server process is frozen. This introduces a distinct mode of prolonged latencies depending on hypervisor queue lengths.",
+    "relatedTo": [
+      "Server CPU Load / Noisy Neighbors"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "OS Swapping and Page Faults",
+    "description": "If the servers experience high memory pressure, parts of the application or runtime may be swapped out to disk. Requests that trigger a hard page fault to load code or state back from disk will exhibit vastly higher latency than requests running purely in RAM.",
+    "relatedTo": [
+      "Synchronous Logging and Disk I/O",
+      "Garbage Collection Pauses"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "CPU Frequency Scaling and Power States",
+    "description": "Modern CPUs use dynamic frequency scaling (C-states and P-states) to save power. If the consensus protocol has low or sporadic traffic, a request arriving while the CPU is in a deep sleep state will incur a latency penalty to wake up the core, compared to requests arriving when the CPU is fully active.",
+    "relatedTo": [
+      "Server CPU Load / Noisy Neighbors",
+      "Interrupt Handling and NIC Coalescing"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "NUMA Node Memory Access",
+    "description": "On multi-socket servers, memory access times are non-uniform (NUMA). If threads handling the coin flip process are rescheduled across different sockets, accessing memory bound to a remote CPU socket is significantly slower than local cache access, resulting in a bimodal distribution.",
+    "relatedTo": [
+      "Server CPU Load / Noisy Neighbors"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Network Switch Congestion",
+    "description": "Shared network switches experience transient, microsecond-level queueing delays (micro-bursts). When other applications flood the switch, packets from this system queue behind them, creating discrete step-like increases in transit latency.",
+    "relatedTo": [
+      "Network Topology and Geographic Dispersion",
+      "TCP Retransmissions and Timeouts"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "DNS Resolution Latency",
+    "description": "If the controller resolves the domain names of Server 1 and Server 2 dynamically instead of using cached IP addresses, occasional expired DNS Time-To-Live (TTL) values will force a DNS lookup, adding a large, distinct latency peak.",
+    "relatedTo": [
+      "Connection Reuse vs. New Handshakes"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Interrupt Handling and NIC Coalescing",
+    "description": "Network Interface Cards (NICs) use packet coalescing (buffering incoming packets before triggering an OS interrupt) to save CPU. Under low throughput, packets are held briefly to wait for more data, introducing artificial delays. Under high throughput, interrupts are triggered immediately, creating distinct latency bands based on traffic density.",
+    "relatedTo": [
+      "Network Switch Congestion",
+      "CPU Frequency Scaling and Power States"
+    ]
+  }
+]

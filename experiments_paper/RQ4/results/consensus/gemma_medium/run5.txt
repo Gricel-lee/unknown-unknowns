@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Network Latency Variation",
+    "description": "The time it takes for a message to travel between the controller and each server fluctuates due to network congestion, routing changes, and general network conditions. This variation directly impacts the time it takes for a flip request and response, leading to multimodal latency distributions. This is highly likely due to the inherent nature of distributed systems and network communication.",
+    "relatedTo": ["Network Congestion", "Server Processing Time", "Coin Generation Time"]
+  },
+  {
+    "id": 2,
+    "name": "Server Processing Time Variation",
+    "description": "The time it takes each server to process the coin flip request, generate the random result, and update the counter varies due to CPU load, memory pressure, and other internal processes.  This contributes to the multiple latency peaks.",
+    "relatedTo": ["Network Latency Variation", "Coin Generation Time", "System Load"]
+  },
+  {
+    "id": 3,
+    "name": "Coin Generation Time Variation",
+    "description": "The time it takes each server to generate the random coin flip result (heads/tails) itself also fluctuates. This can be influenced by various factors within the server's random number generator (RNG) and may have a noticeable impact on the time taken for a flip to complete.",
+    "relatedTo": ["Server Processing Time Variation", "Network Latency Variation"]
+  },
+  {
+    "id": 4,
+    "name": "Controller Selection Strategy",
+    "description": "The algorithm used by the controller to choose which server to request a flip from could introduce non-uniformity in the process.  For example, if the controller always picks the same server repeatedly, it could exacerbate latency variation.",
+    "relatedTo": ["Server Processing Time Variation", "Network Latency Variation"]
+  },
+  {
+    "id": 5,
+    "name": "System Load (Overall)",
+    "description": "The overall load on the servers (CPU, memory, I/O) impacts their responsiveness. Higher load leads to longer processing times and increased variability in responses.",
+    "relatedTo": ["Server Processing Time Variation", "Network Latency Variation"]
+  },
+  {
+    "id": 6,
+    "name": "Clock Skew/Synchronization Issues",
+    "description": "Small discrepancies in the clocks of the two servers can lead to variations in the timing of events, especially noticeable in a system relying on precise timing for consensus.",
+    "relatedTo": ["Server Processing Time Variation"]
+  },
+  {
+    "id": 7,
+    "name": "Hardware Differences",
+    "description": "Subtle differences in the hardware (CPU speed, memory speed, network card performance) of the two servers can create performance variations.",
+    "relatedTo": ["Server Processing Time Variation", "Network Latency Variation"]
+  },
+  {
+    "id": 8,
+    "name": "Queueing at Network Interfaces",
+    "description": "Packets arriving at the network interfaces of the servers may experience queuing, particularly under heavy load, adding to the total latency.",
+    "relatedTo": ["Network Latency Variation", "Server Processing Time Variation"]
+  },
+  {
+    "id": 9,
+    "name": "Controller Response Time",
+    "description": "The time it takes the controller itself to respond to a request and send a new instruction can contribute to latency variation, especially if the controller is under load or has a complex algorithm.",
+    "relatedTo": ["Network Latency Variation", "Server Processing Time Variation"]
+  },
+  {
+    "id": 10,
+    "name": "Coin Generation Algorithm Bias",
+    "description": "If the coin generation algorithm itself isn't truly random or has slight biases, this could introduce variations in the flip results and, consequently, in the latency.",
+    "relatedTo": ["Coin Generation Time Variation"]
+  },
+  {
+    "id": 11,
+    "name": "Caching Effects",
+    "description": "Caching mechanisms within the servers or the network could introduce delays by retrieving and re-transmitting data, leading to non-deterministic latency.",
+    "relatedTo": ["Network Latency Variation", "Server Processing Time Variation"]
+  },
+  {
+    "id": 12,
+    "name": "Partial Failure/Transient Errors",
+    "description": "Brief network glitches or server hiccups can cause retransmissions and introduce latency spikes, appearing as peaks in the latency distribution.",
+    "relatedTo": ["Network Latency Variation", "Server Processing Time Variation"]
+  },
+  {
+    "id": 13,
+    "name": "Load Balancing Algorithm",
+    "description": "If the system utilizes a load balancing algorithm, variations in how requests are distributed between servers could influence the observed latencies.",
+    "relatedTo": ["Controller Selection Strategy", "Server Processing Time Variation"]
+  },
+  {
+    "id": 14,
+    "name": "Memory Allocation Overhead",
+    "description": "The overhead of memory allocation and deallocation during the coin flip and counter update operations can contribute to latency variations, especially when the system is heavily loaded.",
+    "relatedTo": ["Server Processing Time Variation"]
+  },
+  {
+    "id": 15,
+    "name": "Operating System Scheduling Policies",
+    "description": "The way the OS schedules processes on the servers can influence response times and, therefore, the observed latencies.  Different scheduling policies will produce different results.",
+    "relatedTo":["Server Processing Time Variation", "System Load"]
+  }
+]
+```

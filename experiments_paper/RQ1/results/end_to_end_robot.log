@@ -1,0 +1,60 @@
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.38 without the unknown unknowns, 28.52 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed0/20261021_112356
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.73 without the unknown unknowns, 28.23 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed1/20261021_112402
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.51 without the unknown unknowns, 28.38 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed2/20261021_112409
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.34 without the unknown unknowns, 28.26 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed3/20261021_112415
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.61 without the unknown unknowns, 28.61 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed4/20261021_112422
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.21 without the unknown unknowns, 28.18 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed5/20261021_112429
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.58 without the unknown unknowns, 28.42 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed6/20261021_112435
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.38 without the unknown unknowns, 28.32 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed7/20261021_112442
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.06 without the unknown unknowns, 27.9 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed8/20261021_112448
+iteration 1: adding light (mi)
+iteration 2: adding wet (mi)
+iteration 3: adding busy (mi)
+Known variables: ['light', 'wet', 'busy'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 31.5 without the unknown unknowns, 28.26 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/robot/seed9/20261021_112455

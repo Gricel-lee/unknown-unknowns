@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "name": "Market Volatility and Volume",
+    "description": "During high-volatility events (e.g., CPI releases, central bank rate decisions), the volume of market ticks spikes drastically. Since Technical Analysis (TA) processes tick data, execution times naturally form distinct clusters corresponding to low, medium, and high volatility periods.",
+    "relatedTo": [
+      "Asset Class and Liquidity",
+      "Trading Session Timeframe",
+      "Adaptive Algorithm Complexity"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Data Cache Hit Rate",
+    "description": "A classic source of bimodal/multimodal performance. If market data, order books, or historical rates are cached locally (warm cache), TA runs extremely fast. If the cache expires or is invalidated (cold cache), the workflow must query the primary database, resulting in a distinct, much slower latency band.",
+    "relatedTo": [
+      "Shared Infrastructure and DB Load",
+      "Dynamic Historical Lookback Window"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Asset Class and Liquidity",
+    "description": "Analyzing highly liquid 'Major' currency pairs (like EUR/USD) involves processing millions of ticks, whereas 'Exotics' (like USD/HUF) have far lower data density. The analysis duration will cluster based on the asset class currently being analyzed.",
+    "relatedTo": [
+      "Market Volatility and Volume"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "News and Event Volume",
+    "description": "Fundamental Analysis (FA) relies on scraping and processing geopolitical news, economic calendars, and financial reports. On days with many scheduled economic releases, the amount of data to ingest and analyze spikes, leading to discrete clusters of longer processing times.",
+    "relatedTo": [
+      "Document Complexity and Source Type",
+      "Trading Session Timeframe"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Dynamic Historical Lookback Window",
+    "description": "The system may programmatically adjust its lookback window (e.g., 50 vs. 200 vs. 1000 candles) for technical indicators depending on the market state. These discrete window sizes result in step-like execution times.",
+    "relatedTo": [
+      "Data Cache Hit Rate",
+      "Adaptive Algorithm Complexity"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "API Rate Limiting and Retries",
+    "description": "If external APIs (for news feeds or broker data) rate-limit the system, the workflow may execute back-off and retry logic. This introduces discrete delays (e.g., 1s, 2s, 5s pause steps) creating strict multimodal spikes in duration.",
+    "relatedTo": [
+      "Geographical Data Routing",
+      "News and Event Volume"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Heterogeneous Cloud Node Allocation",
+    "description": "In cloud-native or containerized deployments, instances of the workflow might run on different virtual machine classes (e.g., some on CPU-optimized nodes, others on shared/burstable instances). This hardware heterogeneity creates distinct performance tiers.",
+    "relatedTo": [
+      "Shared Infrastructure and DB Load",
+      "Garbage Collection and Memory Pressure"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Shared Infrastructure and DB Load",
+    "description": "The workflow's database queries can be delayed if other services are executing heavy batch writes or reports. This resource contention groups the execution times into 'uncongested' and 'congested' database states.",
+    "relatedTo": [
+      "Data Cache Hit Rate",
+      "Workflow Concurrency and Queue Delay"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Document Complexity and Source Type",
+    "description": "For FA, the workflow may analyze different document types. Processing a short text tweet or RSS feed item is near-instant, while performing NLP/sentiment analysis on a 30-page central bank PDF report takes significantly longer, creating distinct timing modes.",
+    "relatedTo": [
+      "News and Event Volume"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Adaptive Algorithm Complexity",
+    "description": "The workflow might branch its logic. For example, if simple indicators (like moving average crossovers) show high certainty, it finishes quickly. If they are ambiguous, it may trigger heavier ML-based pattern recognition, creating a distinct high-latency tier.",
+    "relatedTo": [
+      "Dynamic Historical Lookback Window",
+      "Market Volatility and Volume"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Workflow Concurrency and Queue Delay",
+    "description": "When multiple trading signals occur simultaneously, workflow instances queue up for shared execution threads or CPU time. This queue wait time causes parallel runs to cluster around distinct latency multiples.",
+    "relatedTo": [
+      "Shared Infrastructure and DB Load",
+      "Garbage Collection and Memory Pressure"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Garbage Collection and Memory Pressure",
+    "description": "If the runtime environment (e.g., JVM or .NET) undergoes Stop-The-World garbage collection, workflows running during these intervals experience sudden, discrete execution delays compared to those running during clean memory cycles.",
+    "relatedTo": [
+      "Workflow Concurrency and Queue Delay",
+      "Heterogeneous Cloud Node Allocation"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Trading Session Timeframe",
+    "description": "The overlapping of major trading sessions (e.g., London and New York) creates systemic bursts of data throughput. Workflows executed during active overlaps run in a high-density processing mode compared to quiet Asian sessions.",
+    "relatedTo": [
+      "Market Volatility and Volume",
+      "Day of Week Market State"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Geographical Data Routing",
+    "description": "If the workflow retrieves broker data or news from geographically distributed endpoints (e.g., New York vs. London vs. Tokyo), network round-trip times (RTT) will fall into highly distinct latency bands.",
+    "relatedTo": [
+      "API Rate Limiting and Retries"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Day of Week Market State",
+    "description": "Weekend market pauses, Monday openings, and Friday afternoon liquidity drop-offs impact historical database updates and active feed processing, causing predictable weekly variations in analysis duration.",
+    "relatedTo": [
+      "Trading Session Timeframe",
+      "Market Volatility and Volume"
+    ]
+  }
+]

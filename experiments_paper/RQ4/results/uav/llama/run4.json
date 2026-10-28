@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Network Congestion",
+    "description": "The human operator's network connection may be congested, leading to variable analysis times.",
+    "relatedTo": [
+      "Network Connection",
+      "Human Operator Workload"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Network Connection",
+    "description": "The quality of the network connection between the UAV and the human operator may vary, affecting analysis times.",
+    "relatedTo": [
+      "Network Congestion",
+      "Human Operator Workload"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Human Operator Workload",
+    "description": "The human operator's workload may fluctuate, affecting their ability to analyze images quickly.",
+    "relatedTo": [
+      "Network Congestion",
+      "Network Connection"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "UAV Onboard Computer Resources",
+    "description": "The UAV's onboard computer resources may be limited, affecting the performance of the image classifier.",
+    "relatedTo": [
+      "Image Classifier Efficiency",
+      "Power Management"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Image Classifier Efficiency",
+    "description": "The efficiency of the onboard image classifier may vary due to factors such as software updates or hardware changes.",
+    "relatedTo": [
+      "UAV Onboard Computer Resources",
+      "Data Preprocessing"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Data Preprocessing",
+    "description": "The time required for data preprocessing may vary depending on the type of image and the efficiency of the onboard computer.",
+    "relatedTo": [
+      "Image Classifier Efficiency",
+      "UAV Onboard Computer Resources"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Power Management",
+    "description": "The UAV's power management system may affect the performance of the onboard computer, leading to variable analysis times.",
+    "relatedTo": [
+      "UAV Onboard Computer Resources",
+      "Battery Health"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Battery Health",
+    "description": "The health of the UAV's battery may affect its performance, leading to variable analysis times.",
+    "relatedTo": [
+      "Power Management",
+      "UAV Onboard Computer Resources"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Weather Conditions",
+    "description": "Weather conditions such as turbulence or precipitation may affect the UAV's ability to take clear images, leading to variable analysis times.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Camera Settings"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Lighting Conditions",
+    "description": "The lighting conditions at each waypoint may vary, affecting the quality of the images taken.",
+    "relatedTo": [
+      "Weather Conditions",
+      "Camera Settings"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Camera Settings",
+    "description": "The camera settings used by the UAV may vary, affecting the quality of the images taken.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Image Classifier Efficiency"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Sensor Degradation",
+    "description": "The degradation of the UAV's sensors over time may affect the quality of the images taken, leading to variable analysis times.",
+    "relatedTo": [
+      "Maintenance Schedule",
+      "Sensor Calibration"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Maintenance Schedule",
+    "description": "The maintenance schedule of the UAV may affect the performance of its sensors, leading to variable analysis times.",
+    "relatedTo": [
+      "Sensor Degradation",
+      "Sensor Calibration"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Sensor Calibration",
+    "description": "The calibration of the UAV's sensors may vary, affecting the quality of the images taken.",
+    "relatedTo": [
+      "Maintenance Schedule",
+      "Sensor Degradation"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Route Planning",
+    "description": "The route planning algorithm may affect the sequence of waypoints visited by the UAV, leading to variable analysis times.",
+    "relatedTo": [
+      "Waypoint Selection",
+      "UAV Trajectory"
+    ]
+  }
+]

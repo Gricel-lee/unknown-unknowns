@@ -1,0 +1,60 @@
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 594.2 without the unknown unknowns, 568.6 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed0/20261021_112356
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 599.1 without the unknown unknowns, 568.7 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed1/20261021_112416
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 594.2 without the unknown unknowns, 565.1 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed2/20261021_112437
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 593 without the unknown unknowns, 564.8 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed3/20261021_112456
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 595.6 without the unknown unknowns, 568.7 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed4/20261021_112516
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 596.6 without the unknown unknowns, 567.9 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed5/20261021_112535
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 595.1 without the unknown unknowns, 566.6 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed6/20261021_112554
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 597 without the unknown unknowns, 566.9 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed7/20261021_112613
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 594.1 without the unknown unknowns, 564.6 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed8/20261021_112633
+iteration 1: adding low_light (mi)
+iteration 2: adding operator_busy (mi)
+iteration 3: adding signal_noise (mi)
+Known variables: ['low_light', 'operator_busy', 'signal_noise'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 595.7 without the unknown unknowns, 566.1 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/uav/seed9/20261021_112653

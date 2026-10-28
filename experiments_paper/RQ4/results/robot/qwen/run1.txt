@@ -1,0 +1,19 @@
+```json
+[
+    {"id": 1, "name": "Field Conditions", "description": "Variations in soil type, terrain, and vegetation along the paths.", "relatedTo": ["Weather Conditions", "Crop Growth"]},
+    {"id": 2, "name": "Weather Conditions", "description": "Rain, wind, and temperature can affect travel time and path conditions.", "relatedTo": ["Field Conditions", "Crop Growth", "Charging Station Availability"]},
+    {"id": 3, "name": "Crop Growth", "description": "The height and density of crops can block the robot’s view and slow down travel.", "relatedTo": ["Field Conditions", "Charging Station Availability"]},
+    {"id": 4, "name": "Charging Station Availability", "description": "The distance and accessibility of the charging station can affect route selection.", "relatedTo": ["Field Conditions", "Weather Conditions"]},
+    {"id": 5, "name": "Camera Performance", "description": "Issues with the on-board cameras, such as dirt or calibration issues, could impact path selection accuracy.", "relatedTo": ["Field Conditions", "Charging Station Availability"]},
+    {"id": 6, "name": "Battery Life", "description": "Battery performance can vary, affecting the robot's ability to make decisions.", "relatedTo": ["Charging Station Availability", "Weather Conditions"]},
+    {"id": 7, "name": "Obstacle Presence", "description": "Static or dynamic obstacles, such as fallen branches or moving animals, can cause delays.", "relatedTo": ["Field Conditions", "Weather Conditions"]},
+    {"id": 8, "name": "Grass and Soil Compaction", "description": "Compaction or softness of the grass and soil can affect the robot's speed.", "relatedTo": ["Field Conditions", "Weather Conditions"]},
+    {"id": 9, "name": "Traffic and Interference", "description": "Other robots or human activity on the paths could slow the robot down.", "relatedTo": ["Field Conditions", "Charging Station Availability"]},
+    {"id": 10, "name": "Sensor Data Quality", "description": "Quality of data from on-board sensors can affect the accuracy of the route choice.", "relatedTo": ["Camera Performance", "Field Conditions"]},
+    {"id": 11, "name": "Robot Load", "description": "The weight and payload of the robot can affect its speed and decision-making.", "relatedTo": ["Battery Life", "Charging Station Availability"]},
+    {"id": 12, "name": "Communication Latency", "description": "Latency in communication between the robot and controller can affect route decisions.", "relatedTo": ["Charging Station Availability", "Field Conditions"]},
+    {"id": 13, "name": "Route Familiarity", "description": "The robot's familiarity with each route can influence its decision-making.", "relatedTo": ["Field Conditions", "Crop Growth"]},
+    {"id": 14, "name": "Route Maintenance", "description": "The condition and maintenance of the paths can vary, affecting travel time.", "relatedTo": ["Field Conditions", "Charging Station Availability"]},
+    {"id": 15, "name": "Route Visibility", "description": "Obstructions or lack of visibility due to vegetation or other factors can impact path choice.", "relatedTo": ["Field Conditions", "Crop Growth"]}
+]
+```

@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Cache Hit vs. Miss Status",
+    "description": "Whether the historical price data (for Technical Analysis) or market news (for Fundamental Analysis) is served from a local cache or fetched from an external database/API. Cache hits resolve in microseconds, whereas cache misses require network hops and queries, creating two highly distinct and clean latency modes.",
+    "relatedTo": ["Database Query Plan and Scan Depth", "Lookback Window Configuration", "External Service Latency"]
+  },
+  {
+    "id": 2,
+    "name": "API Rate Limiting and Throttling (Cool-down states)",
+    "description": "External data providers often enforce rate limits. When exceeded, they return HTTP 429 or introduce artificial delays (e.g., sleeping for exactly 1s, 2s, or 5s). This introduces discrete, recurring step-delays that directly manifest as distinct modal peaks in the workflow time.",
+    "relatedTo": ["External Service Latency", "Network Protocol Fallback"]
+  },
+  {
+    "id": 3,
+    "name": "Market Activity Session (Time of Day)",
+    "description": "Forex markets operate 24/5 across major sessions (Sydney, Tokyo, London, New York). Overlapping sessions (e.g., London-New York) experience massive transaction volumes and high volatility. This causes data pipelines, WebSocket feeds, and indicators to process significantly larger arrays of tick data compared to quiet hours.",
+    "relatedTo": ["Macroeconomic Calendar Events", "Currency Pair Type", "Thread Pool Saturation"]
+  },
+  {
+    "id": 4,
+    "name": "Macroeconomic Calendar Events (High-Volatility News)",
+    "description": "Major economic releases (such as US Non-Farm Payrolls or CPI) trigger an explosion of news articles, social sentiment, and rapid tick updates. Fundamental Analysis tasks face a surge of text data to parse, while Technical Analysis must process dense order-book volatility, creating a 'storm mode' vs 'calm mode' performance split.",
+    "relatedTo": ["Market Activity Session", "Type of Fundamental Analysis Source", "Thread Pool Saturation"]
+  },
+  {
+    "id": 5,
+    "name": "Type of Fundamental Analysis Source (Structured vs. Unstructured)",
+    "description": "Fundamental Analysis execution time depends heavily on whether the run processes a structured JSON feed (e.g., a simple interest rate schedule) or unstructured text (e.g., performing Natural Language Processing / Sentiment Analysis on a 50-page central bank minutes document). The latter introduces a much higher, distinct processing time tier.",
+    "relatedTo": ["Macroeconomic Calendar Events", "Payload Size and Compression"]
+  },
+  {
+    "id": 6,
+    "name": "Currency Pair Type (Majors vs. Exotics)",
+    "description": "Major currency pairs (e.g., EUR/USD) have highly liquid markets with continuous, high-frequency tick data and abundant news sources. Exotic pairs (e.g., USD/TRY) have sparse data. Algorithms evaluating exotics will process significantly fewer records, resulting in much faster execution than majors.",
+    "relatedTo": ["Market Activity Session", "Lookback Window Configuration"]
+  },
+  {
+    "id": 7,
+    "name": "Database Query Plan and Scan Depth",
+    "description": "Depending on the time window requested, the database query planner may switch between an Index Scan (for recent, cached partitions) and a Sequential Table Scan (for older, cold historical data). This sudden transition in the query execution plan leads to a distinct bimodal distribution in data retrieval times.",
+    "relatedTo": ["Cache Hit vs. Miss Status", "Lookback Window Configuration"]
+  },
+  {
+    "id": 8,
+    "name": "Network Protocol Fallback (WebSockets vs. HTTP REST)",
+    "description": "If a persistent, low-latency WebSocket connection fails or drops, the system falls back to polling via HTTP REST. This architectural fallback mechanism shifts communication from near-instantaneous streaming to high-overhead request-response cycles, yielding a clear step-change in elapsed time.",
+    "relatedTo": ["API Rate Limiting and Throttling", "External Service Latency"]
+  },
+  {
+    "id": 9,
+    "name": "Lookback Window Configuration",
+    "description": "Technical Analysis runtimes scale with the configured historical lookback period (e.g., 5-minute intervals vs. 1-day intervals over 10 years). Discrete user or system configurations will request vastly different dataset sizes, yielding clustered processing execution times.",
+    "relatedTo": ["Database Query Plan and Scan Depth", "Currency Pair Type", "Cache Hit vs. Miss Status"]
+  },
+  {
+    "id": 10,
+    "name": "Thread Pool Saturation and Queuing Delay",
+    "description": "When multiple automated workflows run concurrently, the controller's tasks may queue up waiting for an available thread. The execution time will consist of actual processing time plus a queuing delay that increases in discrete steps as the thread pool reaches queue limits.",
+    "relatedTo": ["Market Activity Session", "Cloud VM Co-tenancy", "Garbage Collection and JIT Compilation"]
+  },
+  {
+    "id": 11,
+    "name": "External Service Latency (SLA Tiers)",
+    "description": "The third-party APIs used to retrieve sentiment or fundamental data may operate under different tiers (e.g., free tier vs. premium tier, or regional servers), each with distinct response latencies. Network routing differences to these APIs introduce distinct clustering in round-trip times.",
+    "relatedTo": ["API Rate Limiting and Throttling", "Network Protocol Fallback", "Geographic Routing"]
+  },
+  {
+    "id": 12,
+    "name": "Garbage Collection and JIT Compilation",
+    "description": "In runtime environments like Java, Go, or .NET, Garbage Collection (GC) pauses introduce brief stop-the-world delays. If a workflow run triggers a major GC cycle (especially when processing heavy NLP structures for Fundamental Analysis), its completion time will spike into a distinct, high-latency group.",
+    "relatedTo": ["Type of Fundamental Analysis Source", "Thread Pool Saturation"]
+  },
+  {
+    "id": 13,
+    "name": "Cloud VM Co-tenancy (Noisy Neighbors)",
+    "description": "If the workflow is hosted on shared public cloud infrastructure, CPU and disk I/O performance can degrade when a co-located virtual machine experiences a resource spike. This causes the system to oscillate between a high-performance nominal mode and a degraded, throttled mode.",
+    "relatedTo": ["Thread Pool Saturation"]
+  },
+  {
+    "id": 14,
+    "name": "Geographic Routing (Edge vs. Origin)",
+    "description": "Data queries may be resolved at regional edge nodes (e.g., CDN caching) or routed all the way to the origin server (e.g., US-East database). This physical distance introduces discrete latency modes corresponding to regional speed-of-light propagation delays (e.g., ~15ms vs ~120ms).",
+    "relatedTo": ["External Service Latency", "Cache Hit vs. Miss Status"]
+  },
+  {
+    "id": 15,
+    "name": "Payload Size and Compression",
+    "description": "When retrieving raw historical data or news feeds, payloads crossing a specific size threshold (e.g., 1MB) trigger automatic gzip compression/decompression and TCP window resizing. This introduces discrete overhead steps compared to small, uncompressed payloads.",
+    "relatedTo": ["Type of Fundamental Analysis Source", "External Service Latency"]
+  }
+]
+```

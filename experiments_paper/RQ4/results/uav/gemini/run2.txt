@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Network Connection Type and Quality",
+    "description": "The communication link between the UAV and the human operator can switch between distinct modalities (e.g., high-bandwidth 5G/Wi-Fi, 4G LTE, or low-bandwidth satellite fallback). This creates sharp, discrete steps in latency for transmitting images to the operator, leading to multimodal human analysis times. It is ranked first because network state transitions are typically discrete and have a massive impact on remote tasks.",
+    "relatedTo": ["Distance to Base Station", "Image Resolution and Compression Level"]
+  },
+  {
+    "id": 2,
+    "name": "Operator Multi-tasking and Queueing",
+    "description": "Human operators often monitor multiple UAVs or perform other tasks. If the operator is immediately available, the response time is fast (first peak). If they are occupied, the image enters a queue, adding a distinct waiting time overhead (second peak). This queuing behavior naturally creates a bimodal distribution in human analysis times.",
+    "relatedTo": ["Operator Shift and Fatigue"]
+  },
+  {
+    "id": 3,
+    "name": "Onboard Resource Contention",
+    "description": "The UAV's onboard computer runs multiple critical processes (e.g., flight control, path planning, SLAM/navigation, image classification). If the processor dynamically prioritizes flight safety during intensive maneuvers, the classifier is starved of CPU/GPU cycles, shifting its processing time into a significantly slower modal group.",
+    "relatedTo": ["UAV Flight State and Maneuvers", "Ambient Temperature"]
+  },
+  {
+    "id": 4,
+    "name": "Adaptive/Early-Exit Classifier Architecture",
+    "description": "If the onboard classifier uses an adaptive neural network (e.g., early-exit or cascading architectures), easy-to-classify images exit at shallow layers (very fast peak), while ambiguous or complex images must pass through the entire deep network (slow peak). This architectural feature directly generates multimodal inference times.",
+    "relatedTo": ["Scene Complexity and Information Density", "Target Ambiguity"]
+  },
+  {
+    "id": 5,
+    "name": "Scene Complexity and Information Density",
+    "description": "Highly complex environments (e.g., dense urban areas with many objects) take significantly longer for both humans to scan and onboard algorithms to parse (e.g., object detection bounding box generation). Simple environments (e.g., open sea or desert) are processed almost instantly, creating distinct time groupings based on the waypoint environment type.",
+    "relatedTo": ["Adaptive/Early-Exit Classifier Architecture", "Target Ambiguity"]
+  },
+  {
+    "id": 6,
+    "name": "Weather and Atmospheric Conditions",
+    "description": "Adverse weather (fog, heavy rain, dust) degrades image quality. In clear weather, classification is fast. In poor weather, the human operator must spend extra time zooming, panning, or adjusting contrast to verify the image, while the onboard classifier might trigger fallback/retry routines, creating a distinct 'delayed' time group.",
+    "relatedTo": ["Time of Day and Lighting", "Image Resolution and Compression Level"]
+  },
+  {
+    "id": 7,
+    "name": "Operator Expertise and Experience Level",
+    "description": "Human operators may have vastly different skill levels (e.g., highly experienced veterans vs. trainees). Veterans analyze images rapidly with high confidence, while trainees deliberate and double-check, resulting in two distinct peaks in human analysis time depending on who is on shift.",
+    "relatedTo": ["Operator Shift and Fatigue"]
+  },
+  {
+    "id": 8,
+    "name": "Thermal Throttling of Onboard Hardware",
+    "description": "The onboard hardware (e.g., Jetson GPU) may experience thermal throttling when operating under high workloads or in hot climates. When throttled, clock speeds drop discretely to prevent damage, causing a secondary, much slower peak for onboard classification times.",
+    "relatedTo": ["Ambient Temperature", "Onboard Resource Contention"]
+  },
+  {
+    "id": 9,
+    "name": "Distance to Base Station",
+    "description": "As the UAV flies farther from the ground control station, signal degradation leads to packet loss and frequent TCP/IP retransmissions. This causes transmission times to jump from a 'low loss' mode (fast) to a 'high retransmission' mode (slow).",
+    "relatedTo": ["Network Connection Type and Quality"]
+  },
+  {
+    "id": 10,
+    "name": "Time of Day and Lighting",
+    "description": "Daylight vs. nighttime/dusk conditions change image characteristics. Night/low-light images require longer exposures (causing motion blur) or infrared processing. For humans, glare and long shadows increase visual fatigue and decision-making time, creating distinct diurnal time distributions.",
+    "relatedTo": ["Weather and Atmospheric Conditions", "Operator Shift and Fatigue"]
+  },
+  {
+    "id": 11,
+    "name": "Image Resolution and Compression Level",
+    "description": "The system may dynamically adjust image compression (e.g., raw TIFF vs. highly compressed JPEG) based on available bandwidth. Processing raw files takes longer both to transmit and to load/render on the operator's screen, while highly compressed files load fast but may cause human delays due to compression artifacts.",
+    "relatedTo": ["Network Connection Type and Quality", "Weather and Atmospheric Conditions"]
+  },
+  {
+    "id": 12,
+    "name": "Operator Shift and Fatigue",
+    "description": "The cognitive processing speed of human operators drops during long shifts or night rotations. Alert operators (start of shift) analyze images quickly, whereas fatigued operators (end of shift) exhibit delayed reaction and processing times, resulting in multimodal distributions.",
+    "relatedTo": ["Operator Multi-tasking and Queueing", "Operator Expertise and Experience Level", "Time of Day and Lighting"]
+  },
+  {
+    "id": 13,
+    "name": "UAV Flight State and Maneuvers",
+    "description": "If the UAV takes an image while accelerating, turning, or battling high winds, the resulting motion blur or camera vibrations require the onboard image stabilizer or the human operator to wait/post-process the frame, dividing the times into 'stable flight' (fast) and 'unstable flight' (slow) modes.",
+    "relatedTo": ["Onboard Resource Contention", "Ambient Temperature"]
+  },
+  {
+    "id": 14,
+    "name": "Target Ambiguity",
+    "description": "The specific objects of interest at waypoints might be highly distinct (e.g., a bright red vehicle) or highly ambiguous (e.g., a camouflaged object). Ambiguity causes both human operators to hesitate (seeking confirmation) and classifiers to require more iterations or alternative model pathways, producing a distinct 'uncertain target' time peak.",
+    "relatedTo": ["Scene Complexity and Information Density", "Adaptive/Early-Exit Classifier Architecture"]
+  },
+  {
+    "id": 15,
+    "name": "Ambient Temperature",
+    "description": "Extreme ambient temperatures affect both the UAV's onboard cooling efficiency (inducing hardware throttling) and battery discharge rates. Although a physical factor, its effect is indirect compared to direct software/network state changes, placing it at the end of the ranking.",
+    "relatedTo": ["Thermal Throttling of Onboard Hardware", "UAV Flight State and Maneuvers"]
+  }
+]
+```

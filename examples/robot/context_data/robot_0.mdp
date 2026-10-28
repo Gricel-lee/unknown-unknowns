@@ -1,0 +1,37 @@
+mdp
+
+// Template with 0 unknown variables: a single environment.
+// The constants below have no value; the controller fills them in.
+
+// --- rewards (filled by the controller) -----
+// cA = cost of taking actionA
+const double c1 = 34.26501694255101;
+const double c2 = 31.383904029685052;
+
+module environment
+  env_id : [0..1] init 0; // 0 = not set, 1 = set
+
+  // only one environment, so it is set with probability 1
+  [] env_id=0 -> 1 : (env_id'=1);
+endmodule
+
+formula env_set = env_id != 0;
+
+module agent
+  s : [0..1] init 0;      // 0 = start, 1 = end of journey
+  action : [0..2] init 0; // 0 = none yet, 1 = action1, 2 = action2
+
+  // nondeterministic choice once the environment is known
+  [action1] s=0 & env_set -> 1 : (s'=1) & (action'=1);
+  [action2] s=0 & env_set -> 1 : (s'=1) & (action'=2);
+
+  // absorbing end state (avoids deadlock warnings)
+  [done] s=1 -> 1 : true;
+endmodule
+
+rewards "cost"
+  [action1] env_id=1 : c1;
+  [action2] env_id=1 : c2;
+endrewards
+
+label "end" = s=1;

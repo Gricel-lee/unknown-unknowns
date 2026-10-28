@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "Variations in soil moisture can affect traction and thus travel time. High likelihood due to the robot's weight and speed.",
+    "relatedTo": [
+      "Crop Type",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Crop Type",
+    "description": "Different crops have varying heights and densities, affecting the robot's ability to navigate and causing variations in travel time.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Weather Conditions",
+    "description": "Rain, sunlight, wind, and temperature can all impact the robot's performance and travel time.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Crop Type"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Grass Density",
+    "description": "Differences in grass density along Path 2 can affect the robot's traction and travel time.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Crop Type"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Wheel Wear",
+    "description": "Worn or uneven wheels can cause variations in travel time due to reduced traction and uneven speed.",
+    "relatedTo": [
+      "Maintenance Schedule"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Battery State",
+    "description": "Low battery levels can cause the robot to travel more slowly or take longer to recover, affecting travel time.",
+    "relatedTo": [
+      "Charging Schedule"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Charging Schedule",
+    "description": "Inconsistent or infrequent charging can lead to variations in battery level and travel time.",
+    "relatedTo": [
+      "Battery State"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Route Maintenance",
+    "description": "Unmaintained or uneven routes can cause variations in travel time due to reduced traction or uneven speed.",
+    "relatedTo": [
+      "Maintenance Schedule"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Robot Mass",
+    "description": "Variations in the robot's mass due to payload or fuel level can affect its speed and travel time.",
+    "relatedTo": [
+      "Battery State"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Temperature",
+    "description": "High or low temperatures can impact the robot's performance and travel time.",
+    "relatedTo": [
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Light Intensity",
+    "description": "Variations in light intensity due to weather conditions or time of day can affect the robot's ability to navigate.",
+    "relatedTo": [
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Camera Calibration",
+    "description": "Incorrect or inconsistent camera calibration can lead to navigation errors and variations in travel time.",
+    "relatedTo": [
+      "Sensor Maintenance"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Sensor Maintenance",
+    "description": "Inadequate or inconsistent sensor maintenance can lead to navigation errors and variations in travel time.",
+    "relatedTo": [
+      "Camera Calibration"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Controller Settings",
+    "description": "Incorrect or inconsistent controller settings can cause variations in travel time due to changes in speed or navigation behavior.",
+    "relatedTo": [
+      "Software Updates"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Software Updates",
+    "description": "Inadequate or infrequent software updates can lead to navigation errors and variations in travel time.",
+    "relatedTo": [
+      "Controller Settings"
+    ]
+  }
+]

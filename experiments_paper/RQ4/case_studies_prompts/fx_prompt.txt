@@ -1,0 +1,6 @@
+You are assisting the engineers of a self-adaptive system.
+System: an automated foreign-exchange trading workflow analyses the market before placing an order or raising an alarm, and then notifies the trader. At the start of each run, a controller chooses between an expert mode (market watch followed by a technical analysis) and a normal mode (a fundamental analysis), minimising the expected time to finish the workflow.
+Observation: the logged times of the technical analysis and of the fundamental analysis are multimodal, i.e., they form several distinct groups that the current model cannot explain.
+No environmental or operational factor is currently part of the model.
+Task: list up to 15 environmental or operational factors that could explain this, ranked by how likely they are.
+Return JSON: [{"id": <rank>, "name": "...", "description": "what it is and why it has this rank", "relatedTo": ["names of other listed factors it may be correlated with"]}]

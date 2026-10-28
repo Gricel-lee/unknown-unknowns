@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "name": "Image Complexity",
+    "description": "Images with more detail, clutter, or subtle features (e.g., blurry objects, low contrast) are likely to take longer to analyse by *both* the human and the onboard classifier, potentially forming distinct groups based on complexity level. High likelihood as visual complexity is a core factor in image processing difficulty.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Object Density",
+      "Target Size"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Object Class",
+    "description": "The onboard classifier might be significantly less accurate, and therefore slower to process, with certain object classes (e.g., rarely seen objects, objects similar to background noise). The human operator may also struggle with these. This leads to clusters of longer processing times for specific object types.",
+    "relatedTo": [
+      "Image Complexity",
+      "Training Data Quality"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lighting Conditions",
+    "description": "Poor or unusual lighting (e.g., shadows, glare, low light) significantly impacts both human and machine vision. Different lighting conditions would create different processing time clusters. This affects feature detection for both.",
+    "relatedTo": [
+      "Image Complexity",
+      "Time of Day",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day",
+    "description": "Correlated with lighting conditions, but also potentially introduces human operator fatigue or varying performance levels (e.g., slower analysis during early mornings or late evenings).",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Operator Experience"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Object Density",
+    "description": "A high density of objects within the image can slow down analysis for both methods. Human operators require more time to scan, and the classifier struggles with disambiguation.",
+    "relatedTo": [
+      "Image Complexity",
+      "Object Class"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Operator Experience",
+    "description": "Different operators will have varying levels of expertise and speed of analysis. If multiple operators are involved, this could create distinct clusters of human analysis times.",
+    "relatedTo": [
+      "Time of Day",
+      "Operator Fatigue"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "UAV Speed/Motion",
+    "description": "If the UAV experiences significant motion or vibration during image capture, it can result in blurry or distorted images, impacting analysis time for both human and classifier. Different speeds will correlate with different image quality.",
+    "relatedTo": [
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Altitude",
+    "description": "Altitude impacts image resolution and perspective. Lower altitudes may have more detail but more distortion. Higher altitudes may have less detail, but easier classification, influencing processing times.",
+    "relatedTo": [
+      "Object Size"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Weather Conditions",
+    "description": "Rain, fog, or snow can severely degrade image quality, affecting both analysis methods. Severity of the weather could create different analysis time clusters.",
+    "relatedTo": [
+      "UAV Speed/Motion",
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Target Size",
+    "description": "Smaller targets are inherently harder to identify and analyse, requiring more effort from both human and classifier. Creates different clusters based on target size.",
+    "relatedTo": [
+      "Altitude",
+      "Object Class"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Training Data Quality",
+    "description": "The accuracy and diversity of the training data used for the onboard classifier heavily influence its performance. Poor or limited training data for specific scenarios will lead to slower and more frequent failures.",
+    "relatedTo": [
+      "Object Class"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Network Connectivity",
+    "description": "If the human operator analysis relies on a network connection, intermittent or slow connectivity can introduce significant delays. Not applicable if analysis is local, but relevant to overall mission time.",
+    "relatedTo": []
+  },
+  {
+    "id": 13,
+    "name": "Image Resolution",
+    "description": "Higher resolution images take longer to process by both methods, but may provide better details for human analysis. Different resolution settings will generate different analysis time profiles.",
+    "relatedTo": [
+      "Altitude"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Operator Fatigue",
+    "description": "Human performance can degrade over time due to fatigue, leading to longer analysis times. Might be subtle but can influence the distribution of times.",
+    "relatedTo": [
+      "Operator Experience",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Sensor Calibration",
+    "description": "Improperly calibrated camera sensors can produce distorted or inaccurate images, impacting analysis times.  Rare, but could create a consistent bias in certain images.",
+    "relatedTo": [
+      "Image Complexity"
+    ]
+  }
+]

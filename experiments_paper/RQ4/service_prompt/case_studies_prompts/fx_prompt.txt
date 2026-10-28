@@ -1,0 +1,1 @@
+I would like my automated foreign-exchange trading workflow to invoke online (web) services helping it to estimate (1) the current load of the computing system that runs its market analyses and (2) the current volatility of the foreign-exchange market, as the workflow doesn't measure or compute these itself. Can you recommend any such services?

@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "name": "Server Load",
+    "description": "The servers likely handle other tasks alongside the consensus protocol. Varying load on each server (CPU, memory, I/O) can directly impact coin flip latency. This is the most probable cause as it's common in shared systems and causes distinct performance tiers.",
+    "relatedTo": [
+      "Time of Day",
+      "Network Conditions",
+      "Virtualization"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Network Conditions",
+    "description": "Network latency between the controller and each server, or between the servers themselves during consensus, will affect the observed flip latency. Temporary network congestion or packet loss could create distinct latency groups.",
+    "relatedTo": [
+      "Geographic Location",
+      "Server Load"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Virtualization",
+    "description": "If either server is virtualized, hypervisor scheduling and resource allocation can introduce latency variations, creating distinct performance groups depending on hypervisor load and configuration.",
+    "relatedTo": [
+      "Server Load",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day",
+    "description": "System-wide peak usage times (e.g., backups, scheduled tasks) can indirectly increase latency on both servers, but the impact might be different on each server depending on their roles and background processes. This creates temporal patterns in latency.",
+    "relatedTo": [
+      "Server Load",
+      "Virtualization"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Coin Flip Implementation",
+    "description": "The coin flip isn't a single atomic operation; it's likely implemented with software (e.g., using a random number generator). Differences in the specific RNG implementation or seeding on each server could lead to consistent latency differences.",
+    "relatedTo": []
+  },
+  {
+    "id": 6,
+    "name": "Geographic Location",
+    "description": "If the servers are geographically dispersed, the physical distance introduces inherent network latency. The distribution of users/services accessing each server could also cause varying levels of localized network congestion.",
+    "relatedTo": [
+      "Network Conditions"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Background Garbage Collection",
+    "description": "Garbage collection pauses on managed runtimes (e.g., Java, .NET) can cause significant, unpredictable latency spikes, which could explain the multimodal distribution.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Disk I/O",
+    "description": "If the coin flip involves writing to disk (e.g., for logging or persistence), disk I/O performance variations (due to disk fragmentation, competing I/O requests, or drive health) could create distinct latency groups.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Interference from other Applications",
+    "description": "Other applications running on the same servers can steal CPU cycles, memory, or network bandwidth, interfering with the coin flip process and creating latency variations.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Hardware Differences",
+    "description": "Subtle hardware differences between the two servers (e.g., CPU speed, memory bandwidth, network card) could contribute to differing baseline latencies.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "Clock Synchronization",
+    "description": "If the servers\u2019 clocks aren\u2019t perfectly synchronized, it can introduce discrepancies in the timing of events and contribute to apparent latency differences. Though usually small, these differences may aggregate.",
+    "relatedTo": []
+  },
+  {
+    "id": 12,
+    "name": "Caching Effects",
+    "description": "Caching mechanisms (e.g., CPU caches, disk caches) can affect latency. Varying cache hit rates on each server could lead to different observed flip latencies.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Power Saving Modes",
+    "description": "If the servers are configured with power-saving modes, the CPU or network interface might throttle performance intermittently, introducing latency spikes.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Kernel Version/Configuration",
+    "description": "Differences in kernel versions or kernel parameters between the two servers could affect the performance of system calls used in the coin flip process.",
+    "relatedTo": []
+  },
+  {
+    "id": 15,
+    "name": "Storage Type",
+    "description": "Different storage technologies (SSD vs. HDD) or configurations (RAID levels) on the servers can significantly impact I/O latency.",
+    "relatedTo": [
+      "Disk I/O"
+    ]
+  }
+]

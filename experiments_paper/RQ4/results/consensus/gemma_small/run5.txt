@@ -1,0 +1,88 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Network Latency",
+    "description": "High network latency between the servers can significantly slow down the coin flips, leading to a larger expected total latency.",
+    "relatedTo": ["Network Latency"]
+  },
+  {
+    "id": 2,
+    "name": "Server Hardware Specifications",
+    "description": "Differences in CPU, RAM, or network bandwidth between the servers can introduce variability in the coin flip outcomes, impacting the convergence process.",
+    "relatedTo": ["Server Hardware Specifications"]
+  },
+  {
+    "id": 3,
+    "name": "Cache Misses",
+    "description": "Frequent cache misses on either server can cause unnecessary delays during the coin flip process, increasing the expected total latency.",
+    "relatedTo": ["Cache Misses"]
+  },
+  {
+    "id": 4,
+    "name": "Queue Length",
+    "description": "If both servers are experiencing high queue lengths, the time spent waiting for requests will increase, affecting the speed of the consensus protocol.",
+    "relatedTo": ["Queue Length"]
+  },
+  {
+    "id": 5,
+    "name": "Data Serialization/Deserialization Overhead",
+    "description": "Complex serialization/deserialization processes (if any) can introduce delays during the coin flip rounds, affecting convergence.",
+    "relatedTo": ["Data Serialization/Deserialization"]
+  },
+  {
+    "id": 6,
+    "name": "System Load",
+    "description": "High overall system load (CPU, memory, disk I/O) can introduce variability in the coin flip results and impact convergence speed.",
+    "relatedTo": ["System Load"]
+  },
+  {
+    "id": 7,
+    "name": "Clock Drift",
+    "description": "Significant clock drift in the servers can lead to inconsistencies in the timing of the coin flips, complicating the consensus process.",
+    "relatedTo": ["Clock Drift"]
+  },
+  {
+    "id": 8,
+    "name": "Operating System Configuration",
+    "description": "Different operating system configurations or system settings can influence the behavior of the coin flip algorithm or the way the data is processed.",
+    "relatedTo": ["Operating System Configuration"]
+  },
+  {
+    "id": 9,
+    "name": "Message Queue Behavior",
+    "description": "The order and frequency of messages exchanged within the consensus protocol can affect convergence, especially if there are bottlenecks.",
+    "relatedTo": ["Message Queue Behavior"]
+  },
+  {
+    "id": 10,
+    "name": "Protocol Implementation Details",
+    "description": "Specific nuances within the coin flip algorithm itself (e.g., handling edge cases, fairness) can introduce variability that the current model isn’t accounting for.",
+    "relatedTo": ["Protocol Implementation Details"]
+  },
+  {
+    "id": 11,
+    "name": "Data Consistency Checks",
+    "description": "Frequent data consistency checks during the coin flip rounds can introduce delays and potentially affect convergence.",
+    "relatedTo": ["Data Consistency Checks"]
+  },
+  {
+    "id": 12,
+    "name": "Concurrency Issues",
+    "description": "If the servers are operating in a concurrent environment, race conditions can affect the outcome of the coin flips, increasing the expected total latency.",
+    "relatedTo": ["Concurrency Issues"]
+  },
+  {
+    "id": 13,
+    "name": "Resource Allocation",
+    "description": "Uneven resource allocation among the servers can lead to disparities in the time it takes for the coins to flip, influencing convergence.",
+    "relatedTo": ["Resource Allocation"]
+  },
+  {
+    "id": 14,
+    "name": "System State",
+    "description": "Unstable system state (e.g., disk space, memory allocation) can introduce unpredictability in the coin flip results, impacting convergence.",
+    "relatedTo": ["System State"]
+  }
+]
+```

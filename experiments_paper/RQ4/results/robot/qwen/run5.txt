@@ -1,0 +1,94 @@
+```json
+[
+    {
+        "id": 1,
+        "name": "Field Condition",
+        "description": "The condition of the field, such as the presence of obstacles or uneven terrain, can significantly affect travel time. Poor conditions can lead to delays and increased travel time.",
+        "relatedTo": ["Obstacles", "Terrain"]
+    },
+    {
+        "id": 2,
+        "name": "Obstacles",
+        "description": "Presence of obstacles such as fallen branches, crops, or other debris can slow down the robot and increase travel time. Path 1 might have more obstacles due to its proximity to the edge of the field.",
+        "relatedTo": ["Field Condition", "Terrain"]
+    },
+    {
+        "id": 3,
+        "name": "Terrain",
+        "description": "The type of terrain, such as hard-packed soil versus soft soil, can affect the robot's speed. Uneven or soft terrain can slow the robot down.",
+        "relatedTo": ["Field Condition", "Obstacles"]
+    },
+    {
+        "id": 4,
+        "name": "Weather Conditions",
+        "description": "Rain, wind, or other weather conditions can affect the robot's travel time. For example, heavy rain can turn Path 2 into a muddy path, reducing speed.",
+        "relatedTo": ["Obstacles", "Field Condition"]
+    },
+    {
+        "id": 5,
+        "name": "Crop Stage",
+        "description": "The stage of crop growth can affect the path's condition. During harvesting or when crops are tall, Path 2 might be more obstructed, increasing travel time.",
+        "relatedTo": ["Obstacles"]
+    },
+    {
+        "id": 6,
+        "name": "Sunlight",
+        "description": "Lighting conditions can affect the visibility for the robot's cameras, potentially causing delays. Path 2 might be more shaded, leading to poorer visibility.",
+        "relatedTo": ["Field Condition", "Obstacles"]
+    },
+    {
+        "id": 7,
+        "name": "Traffic",
+        "description": "The presence of other robots or vehicles in the field can delay the robot. Path 1 might be more congested if it is used by more robots.",
+        "relatedTo": ["Field Condition"]
+    },
+    {
+        "id": 8,
+        "name": "Battery Level",
+        "description": "The battery level of the robot can affect its speed. A low battery might reduce its speed, affecting travel time, especially on longer Path 1.",
+        "relatedTo": ["Maintenance"]
+    },
+    {
+        "id": 9,
+        "name": "Maintenance",
+        "description": "The overall maintenance state of the robot can affect its performance. Older or poorly maintained robots might experience mechanical issues, leading to increased travel time.",
+        "relatedTo": ["Battery Level"]
+    },
+    {
+        "id": 10,
+        "name": "Sensor Calibration",
+        "description": "The calibration of the robot's sensors can affect its ability to navigate correctly. Misaligned cameras or sensors can cause the robot to take longer to make decisions.",
+        "relatedTo": ["Field Condition", "Maintenance"]
+    },
+    {
+        "id": 11,
+        "name": "Speed Setting",
+        "description": "The speed setting of the robot can be adjusted based on the current conditions. If the speed is set too low, it can increase travel time.",
+        "relatedTo": ["Maintenance", "Battery Level"]
+    },
+    {
+        "id": 12,
+        "name": "Software Performance",
+        "description": "The performance of the robot's software can affect its decision-making speed. If the software is slow, the robot might take longer to make route decisions.",
+        "relatedTo": ["Maintenance", "Sensor Calibration"]
+    },
+    {
+        "id": 13,
+        "name": "Noise",
+        "description": "Environmental noise can affect the robot's sensors, particularly if the cameras rely on visual cues. High noise levels can reduce visibility and increase travel time.",
+        "relatedTo": ["Field Condition"]
+    },
+    {
+        "id": 14,
+        "name": "Temperature",
+        "description": "Extreme temperatures can affect the robot's hardware, potentially causing delays if the temperature is too high or too low for optimal operation.",
+        "relatedTo": ["Maintenance"]
+    },
+    {
+        "id": 15,
+        "name": "Signal Strength",
+        "description": "The strength of the communication signal between the robot and the controller can affect the robot's ability to receive and process instructions. Weak signals can cause delays.",
+        "relatedTo": ["Maintenance"]
+    }
+]
+```

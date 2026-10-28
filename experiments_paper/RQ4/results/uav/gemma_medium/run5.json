@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Lighting Conditions",
+    "description": "Variations in ambient light (sunlight, shadows, cloud cover) significantly impact the clarity and contrast of images, making human analysis more time-consuming when images are poorly lit and more straightforward when images are well lit.  This is the most likely factor due to its constant and ubiquitous influence.",
+    "relatedTo": [
+      "Weather Conditions",
+      "Image Quality",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Weather Conditions",
+    "description": "Rain, fog, snow, and haze dramatically degrade image quality, increasing the difficulty for both human operators and the onboard classifier. Severe weather would likely trigger a higher proportion of failed analyses and longer human review times.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Image Quality",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Object Orientation/Pose",
+    "description": "The angle at which objects appear in the images (e.g., a person facing sideways vs. directly) affects how easily a human operator can identify them, and how effectively a classifier can interpret features.  Complex poses often require more cognitive effort.",
+    "relatedTo": [
+      "Image Quality",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Target Visibility/Obscuration",
+    "description": "Partial obstructions to the target (e.g., vegetation, buildings) make it harder for both humans and the classifier to discern the object's features, leading to more analysis time.",
+    "relatedTo": [
+      "Image Quality",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "UAV Movement/Stabilization",
+    "description": "Movement of the UAV during image capture can introduce blur and distortions.  This is more pronounced at higher altitudes or with turbulent air.  The impact varies with image classifier robustness to motion.",
+    "relatedTo": [
+      "Image Quality",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Operator Fatigue/Experience",
+    "description": "Human operator attention and analysis speed can fluctuate throughout the mission due to fatigue or variations in experience.  This will create a distribution of processing times.",
+    "relatedTo": [
+      "Weather Conditions",
+      "Image Quality"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Onboard Classifier Confidence Threshold",
+    "description": "The threshold at which the classifier triggers a \u2018failed\u2019 analysis can impact the volume of images sent to the human operator. A higher threshold might lead to more \u2018failed\u2019 classifications and, consequently, increased review time.",
+    "relatedTo": [
+      "Image Quality",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Image Resolution/Sensor Quality",
+    "description": "Lower resolution or poorer sensor quality leads to less detailed images, making identification more difficult for both humans and the classifier.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Weather Conditions",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Time of Day/Sun Angle",
+    "description": "Sun angle and shadows shift throughout the day, affecting lighting conditions and the visibility of objects. This has a strong correlation with lighting conditions.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Weather Conditions"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Target Size/Distance",
+    "description": "Smaller or more distant targets require higher resolution images and potentially more complex processing (either human or automated) to identify them.",
+    "relatedTo": [
+      "Image Quality",
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Terrain Features",
+    "description": "The specific terrain features (e.g., forests, urban areas, water bodies) influence both the image content and the difficulty of visual analysis. Forests, for example, are often more difficult for human and automated vision systems.",
+    "relatedTo": [
+      "Target Visibility/Obscuration",
+      "Image Quality"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "System Latency",
+    "description": "Latency between image capture, transmission to the operator, and human/classifier processing adds variability to the overall time.",
+    "relatedTo": [
+      "Onboard Classifier Performance"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Operational Mode (e.g., Autonomous vs. Assisted)",
+    "description": "The level of human intervention (e.g., proactive requests for images versus reactive review) can impact the observed processing times.  A more reactive approach will naturally introduce variability.",
+    "relatedTo": [
+      "Operator Fatigue/Experience"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "UAV Navigation Accuracy",
+    "description": "Inaccurate positioning can cause the UAV to capture images slightly off-target or at suboptimal angles, impacting the relevance of the images and thus the time taken to process.",
+    "relatedTo": [
+      "Target Visibility/Obscuration",
+      "Image Quality"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Image Compression Settings",
+    "description": "Higher compression leads to lower quality images, increasing the difficulty for both human operators and the classifier.  ",
+    "relatedTo": [
+      "Image Quality"
+    ]
+  }
+]

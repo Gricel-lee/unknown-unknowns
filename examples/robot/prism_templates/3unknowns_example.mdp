@@ -1,0 +1,100 @@
+mdp
+
+// DELIVERY ROBOT CHOOSING BETWEEN TWO PATHS (the paper's running example, with three variables)
+// The robot travels from A to B along path 1 (action1) or path 2 (action2). The travel cost of
+// each path depends on the environment, so the controller picks the cheaper path in each one.
+//
+// Example with all values filled in, for testing in PRISM (the means of examples/robot/context_data).
+// Unknown variables u1=light, u2=wet, u3=busy, each with values 0/1:
+//   light : daylight -> path 1 is 14 slower (glare on the camera), path 2 is 2 slower
+//   wet   : wet ground -> path 1 is 7 faster (paved, drains), path 2 is 8 slower (unpaved trail)
+//   busy  : many people around -> path 1 is 4.5 slower, path 2 is 4 slower
+// Travel cost: path 1 = 26 + 14*light - 7*wet + 4.5*busy
+//              path 2 = 25 +  2*light + 8*wet + 4*busy
+//
+// Property:  R{"cost"}min=? [ F "end" ]   -> 28.3 (best path per environment)
+// Always taking path 2 (the cheaper on average) would cost 31.4.
+
+// --- probabilities -----
+// pXYZ = probability of light=X, wet=Y, busy=Z
+const double p000 = 0.1; // env_id=1
+const double p100 = 0.2; // env_id=2
+const double p010 = 0.1; // env_id=3
+const double p110 = 0.1; // env_id=4
+const double p001 = 0.1; // env_id=5
+const double p101 = 0.2; // env_id=6
+const double p011 = 0.1; // env_id=7
+const double p111 = 0.1; // env_id=8
+
+// --- rewards -----
+// cA_XYZ = cost of taking actionA when light=X, wet=Y, busy=Z
+const double c1_000 = 26;
+const double c1_100 = 40;
+const double c1_010 = 19;
+const double c1_110 = 33;
+const double c1_001 = 30.5;
+const double c1_101 = 44.5;
+const double c1_011 = 23.5;
+const double c1_111 = 37.5;
+const double c2_000 = 25;
+const double c2_100 = 27;
+const double c2_010 = 33;
+const double c2_110 = 35;
+const double c2_001 = 29;
+const double c2_101 = 31;
+const double c2_011 = 37;
+const double c2_111 = 39;
+
+// --- readable views of the environment (derived from env_id) -----
+formula env_set = env_id != 0;
+formula light   = (env_id=2 | env_id=4 | env_id=6 | env_id=8) ? 1 : 0;
+formula wet     = (env_id=3 | env_id=4 | env_id=7 | env_id=8) ? 1 : 0;
+formula busy    = (env_id>=5) ? 1 : 0;
+
+module environment
+  env_id : [0..8] init 0; // 0 = not set, 1..8 = set
+
+  // sample the environment once, at the start
+  [] env_id=0 -> p000 : (env_id'=1)
+               + p100 : (env_id'=2)
+               + p010 : (env_id'=3)
+               + p110 : (env_id'=4)
+               + p001 : (env_id'=5)
+               + p101 : (env_id'=6)
+               + p011 : (env_id'=7)
+               + p111 : (env_id'=8);
+endmodule
+
+module agent
+  s : [0..1] init 0;      // 0 = start, 1 = end of journey
+  action : [0..2] init 0; // 0 = none yet, 1 = action1, 2 = action2
+
+  // nondeterministic choice once the environment is known
+  [action1] s=0 & env_set -> 1 : (s'=1) & (action'=1);
+  [action2] s=0 & env_set -> 1 : (s'=1) & (action'=2);
+
+  // absorbing end state (avoids deadlock warnings)
+  [done] s=1 -> 1 : true;
+endmodule
+
+rewards "cost"
+  [action1] env_id=1 : c1_000;
+  [action1] env_id=2 : c1_100;
+  [action1] env_id=3 : c1_010;
+  [action1] env_id=4 : c1_110;
+  [action1] env_id=5 : c1_001;
+  [action1] env_id=6 : c1_101;
+  [action1] env_id=7 : c1_011;
+  [action1] env_id=8 : c1_111;
+
+  [action2] env_id=1 : c2_000;
+  [action2] env_id=2 : c2_100;
+  [action2] env_id=3 : c2_010;
+  [action2] env_id=4 : c2_110;
+  [action2] env_id=5 : c2_001;
+  [action2] env_id=6 : c2_101;
+  [action2] env_id=7 : c2_011;
+  [action2] env_id=8 : c2_111;
+endrewards
+
+label "end" = s=1;

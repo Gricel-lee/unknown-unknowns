@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Soil Moisture",
+    "description": "Path 2 (grass path) is highly susceptible to travel time changes based on soil moisture. Wet soil significantly increases wheel slippage and energy expenditure, creating a distinct, slower group of observations. This is the most likely explanation given the context and multimodal distributions. Dry conditions would represent a faster group. Path 1 is less affected.",
+    "relatedTo": [
+      "Rainfall",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Rainfall",
+    "description": "Directly impacts soil moisture, and therefore Path 2 travel time. Even light rain can quickly create a noticeably slower travel time group for the grass path. A correlation exists between rainfall amount and the extent of the performance degradation on Path 2. Path 1 is more resistant to rainfall.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Time of Day"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Grass Height/Density",
+    "description": "The height and density of the grass on Path 2 affects resistance to the robot\u2019s movement. Rapid growth phases (e.g., after rain) will create slower travel times, while cutting or naturally shorter grass yields faster times. Path 1, being a track, has more consistent resistance.",
+    "relatedTo": [
+      "Time of Year",
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Time of Day/Sun Exposure",
+    "description": "Sun exposure can significantly impact soil moisture (evaporation) on Path 2. Additionally, extreme heat can affect battery performance (slightly slowing travel speed on either path) or potentially overheat sensors. These effects may be more pronounced on Path 2, which might lack shade.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Temperature"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Robot Battery Level",
+    "description": "As the battery discharges, motor performance may decrease, impacting speed on both paths, but potentially more noticeably on Path 2 due to increased resistance. Different starting battery levels could create distinct travel time groups.",
+    "relatedTo": [
+      "Charging Frequency"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Obstacle Density on Path 2",
+    "description": "Small debris (e.g. fallen leaves, small branches, weeds) on Path 2 could impede the robot. Frequency and size of these obstacles will vary, creating distinct groups of slow travel times.",
+    "relatedTo": [
+      "Time of Year",
+      "Weather"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Temperature",
+    "description": "High temperatures can affect battery performance and potentially the performance of the onboard cameras (slightly affecting navigation speed).",
+    "relatedTo": [
+      "Time of Day",
+      "Robot Battery Level"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Robot Wheel Condition/Tyre Pressure",
+    "description": "Changes to wheel condition or tyre pressure (even within normal operating ranges) will affect traction, particularly on Path 2, resulting in different travel time groups. This could be due to wear and tear.",
+    "relatedTo": [
+      "Maintenance Schedule"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Load/Weight on Robot",
+    "description": "If the robot carries any additional equipment (e.g., for sampling), this would increase resistance and travel time, particularly on the softer Path 2. ",
+    "relatedTo": [
+      "Inspection Point Task"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Wind Speed & Direction",
+    "description": "Strong winds could create resistance, especially on Path 1, and potentially affect camera-based navigation. It's a lesser factor than soil moisture, but still plausible.",
+    "relatedTo": [
+      "Weather"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Time of Year/Season",
+    "description": "Affects grass growth (density/height) on Path 2, and potentially the type of obstacles present. Also impacts the likelyhood of rainfall or frost. ",
+    "relatedTo": [
+      "Grass Height/Density",
+      "Rainfall",
+      "Temperature"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Field Slope",
+    "description": "Even slight slopes on either path will impact travel time, and varying slopes could explain different travel time groups.",
+    "relatedTo": [
+      "Terrain Map"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Charging Frequency",
+    "description": "If the robot consistently starts with different levels of charge, this could cause different observed travel times.",
+    "relatedTo": [
+      "Robot Battery Level"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Inspection Point Task",
+    "description": "If the robot performs different tasks *at* the inspection point that subtly change its weight or configuration before the return journey.",
+    "relatedTo": [
+      "Load/Weight on Robot"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Vibration/Terrain Roughness (Path 1)",
+    "description": "Path 1, being a track, might have varying levels of roughness or vibration due to terrain. Subtle differences could cause slight performance variations.",
+    "relatedTo": [
+      "Field Slope"
+    ]
+  }
+]

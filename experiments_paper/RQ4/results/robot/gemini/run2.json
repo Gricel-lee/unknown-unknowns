@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Crop Growth Stage",
+    "description": "As crops grow, they physically encroach on Path 2 (between rows), causing visual obstruction for cameras and physical resistance. This creates distinct, seasonal travel-time modes (e.g., fast in early spring when crops are short, very slow in late summer when the canopy closes and requires cautious navigation).",
+    "relatedTo": [
+      "Path Maintenance State",
+      "GPS Signal Degradation",
+      "Wind Speed"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Soil Moisture",
+    "description": "Rainfall dramatically changes soil traction. This creates a binary-like split in travel times: dry conditions allow maximum speed, while wet/muddy conditions cause significant wheel slippage on both the grass path (Path 2) and the dirt track (Path 1), triggering traction control and slowing travel.",
+    "relatedTo": [
+      "Active Weather",
+      "Tire Wear and Pressure"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Lighting Conditions",
+    "description": "Camera-based navigation is highly sensitive to illumination. Direct sunlight, harsh shadows during golden hours, or night/dusk conditions degrade visual odometry and object detection, forcing the robot to fall back to a slower, safety-oriented speed mode.",
+    "relatedTo": [
+      "Active Weather"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Active Weather",
+    "description": "Active rain, heavy fog, or airborne dust directly impacts camera visibility and can cause lens droplets. This forces the vision system into high-latency processing or safety-hold states, yielding a distinct cluster of highly delayed journeys.",
+    "relatedTo": [
+      "Soil Moisture",
+      "Lighting Conditions",
+      "Camera Lens Obscuration",
+      "Wind Speed",
+      "Surface Debris"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Path Maintenance State",
+    "description": "The grass on Path 2 is periodically mowed, and Path 1 is periodically graded. When overgrown, Path 2 increases wheel resistance and camera clutter. This creates two distinct modes of operation depending on how recently maintenance was performed.",
+    "relatedTo": [
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Path Obstruction by Farm Activity",
+    "description": "Path 1, being an outer track, is likely shared with larger agricultural machinery, trucks, or gates. If a gate is closed or a tractor is blocking the path, the robot must wait or perform slow obstacle avoidance maneuvers, creating a long-tailed delay group.",
+    "relatedTo": [
+      "Surface Debris"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Battery State of Charge",
+    "description": "To preserve battery health or prevent brownouts under high load, the robot's power management system may throttle motor voltage when the battery is low (e.g., <20%), resulting in a distinct slow travel mode compared to journeys on a full charge.",
+    "relatedTo": [
+      "Ambient Temperature",
+      "Payload Weight"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Wind Speed",
+    "description": "High wind sways the crops flanking Path 2. This dynamic movement creates visual noise (optical flow errors) for camera navigation, confusing the obstacle-detection system into thinking the path is blocked and causing frequent stops.",
+    "relatedTo": [
+      "Crop Growth Stage",
+      "Active Weather"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Camera Lens Obscuration",
+    "description": "Dust kicked up from the outer track (Path 1) or mud splattered from the grass (Path 2) can coat the camera lenses over multiple runs. Until cleaned, this causes a persistent, highly degraded vision state that increases processing latency and reduces travel speed.",
+    "relatedTo": [
+      "Active Weather"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Payload Weight",
+    "description": "If the robot carries variable payloads (such as harvested crops, soil samples, or water/utility tanks), empty runs will be significantly faster and consume less power than runs carrying maximum payload, dividing travel times into two weight-based groups.",
+    "relatedTo": [
+      "Battery State of Charge"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Ambient Temperature",
+    "description": "Extreme heat during peak afternoon hours causes thermal throttling of the on-board compute units (CPUs/GPUs running vision algorithms) or motors, leading to a distinct cluster of slower, thermally managed runtimes.",
+    "relatedTo": [
+      "Battery State of Charge"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Tire Wear and Pressure",
+    "description": "Operational wear and tear changes the effective wheel diameter and grip coefficient. Low tire pressure or worn treads yield lower top speeds and high slippage on Path 2's grass, defining a slower mode of travel compared to fresh maintenance states.",
+    "relatedTo": [
+      "Soil Moisture"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "GPS Signal Degradation",
+    "description": "Even if primarily navigating with cameras, the system likely uses GPS for global path planning. Trees near the outer edge (Path 1) or tall crops (Path 2) cause multipath interference, leading to GPS signal dropouts where the robot must slow down to navigate purely via visual dead-reckoning.",
+    "relatedTo": [
+      "Crop Growth Stage"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Surface Debris",
+    "description": "Storms, animals, or farm work can leave debris (fallen branches, stones, or lost tools) on the tracks. This forces the robot to execute slow, complex path-deviation maneuvers instead of its typical straight-line trajectory.",
+    "relatedTo": [
+      "Active Weather",
+      "Path Obstruction by Farm Activity"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Software Version",
+    "description": "Over-the-air updates to the robot's navigation stack, object detection models, or maximum speed parameters can introduce sudden, permanent shifts in nominal performance, resulting in distinct historical clusters in the travel time logs.",
+    "relatedTo": []
+  }
+]

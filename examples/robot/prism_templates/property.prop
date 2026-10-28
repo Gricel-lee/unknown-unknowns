@@ -1,0 +1,2 @@
+// minimum expected cost of reaching the end of the journey; the controller's reward
+R{"cost"}min=? [ F "end" ]

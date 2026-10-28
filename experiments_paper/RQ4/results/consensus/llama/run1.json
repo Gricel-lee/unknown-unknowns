@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Clock Drift",
+    "description": "Clock drift can cause servers to have different perceptions of time, leading to multimodal latencies.",
+    "relatedTo": [
+      "Synchronization, Network Latency"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Network Latency",
+    "description": "Variations in network latency can cause servers to experience different latency distributions, leading to multimodal latencies.",
+    "relatedTo": [
+      "Clock Drift, Synchronization"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Synchronization Issues",
+    "description": "Synchronization issues between servers can cause them to lose track of each other's state, leading to multimodal latencies.",
+    "relatedTo": [
+      "Clock Drift, Network Latency"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Server Load",
+    "description": "Server load can cause one server to experience higher latency than the other, leading to multimodal latencies.",
+    "relatedTo": [
+      "Resource Utilization, Network Latency"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Resource Utilization",
+    "description": "Resource utilization can cause servers to experience varying levels of latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Server Load, Network Latency"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Communication Overhead",
+    "description": "Communication overhead between servers can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Network Latency, Synchronization Issues"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Controller Algorithm",
+    "description": "The controller algorithm may not be optimal for all scenarios, leading to multimodal latencies.",
+    "relatedTo": [
+      "Server Load, Resource Utilization"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Network Partition",
+    "description": "Network partition can cause servers to experience different latency distributions, leading to multimodal latencies.",
+    "relatedTo": [
+      "Clock Drift, Synchronization Issues"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Server Configuration",
+    "description": "Server configuration can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Resource Utilization, Server Load"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Network Congestion",
+    "description": "Network congestion can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Network Latency, Communication Overhead"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Temperature Sensitivity",
+    "description": "Temperature sensitivity can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Server Configuration, Resource Utilization"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Power Capping",
+    "description": "Power capping can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Server Configuration, Resource Utilization"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Maintenance Windows",
+    "description": "Maintenance windows can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Server Configuration, Resource Utilization"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Datacenter Interconnect",
+    "description": "Datacenter interconnect can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Network Latency, Communication Overhead"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Third-Party Dependencies",
+    "description": "Third-party dependencies can cause variations in latency, leading to multimodal latencies.",
+    "relatedTo": [
+      "Server Configuration, Resource Utilization"
+    ]
+  }
+]

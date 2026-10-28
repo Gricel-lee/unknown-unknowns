@@ -1,0 +1,35 @@
+# RQ1 variant of uav: 1 relevant variable(s) ['signal_noise'], difficulty 3 (shift = 5.0 std)
+# Distractors (no effect): ['operator_busy', 'low_light', 'z1', 'z2']
+# Format: {env:<operator_busy,signal_noise,low_light,z1,z2>, <output>_mean:<m>, <output>_std:<s>, ...}
+{env:00000, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:00001, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:00010, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:00011, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:00100, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:00101, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:00110, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:00111, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01000, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01001, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01010, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01011, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01100, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01101, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01110, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:01111, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10000, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10001, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10010, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10011, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10100, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10101, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10110, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:10111, operator_mean:8.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11000, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11001, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11010, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11011, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11100, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11101, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11110, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}
+{env:11111, operator_mean:12.0, operator_std:0.8, onboard_mean:14.0, onboard_std:1.4}

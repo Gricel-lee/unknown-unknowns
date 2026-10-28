@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Network Latency",
+    "description": "High network latency between servers can significantly increase the time it takes for the servers to reach consensus, forcing them to repeatedly ask for coin flips.",
+    "relatedTo": [
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Server Hardware/Configuration",
+    "description": "Differences in server hardware (CPU, memory, network bandwidth) or configuration (e.g., buffer size) can influence the coin flip timings and the responsiveness of the servers.",
+    "relatedTo": [
+      "Server Hardware/Configuration"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Server Load",
+    "description": "High load on either server can cause increased delays during coin flips, especially if the servers are struggling to process requests.",
+    "relatedTo": [
+      "Server Load"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "DNS Latency",
+    "description": "DNS resolution latency can introduce a delay, particularly if the servers are pulling data from different DNS servers.",
+    "relatedTo": [
+      "DNS Latency"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Protocol Overhead",
+    "description": "The inherent overhead of the consensus protocol itself, including round-trip times for communications, can contribute to latency.",
+    "relatedTo": [
+      "Protocol Overhead"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Queue Length",
+    "description": "If the servers have a queue of requests waiting to be processed, this can lead to increased latency during coin flips.",
+    "relatedTo": [
+      "Queue Length"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Cache Hit Ratio",
+    "description": "If the servers have a low cache hit ratio, they need to frequently retrieve data from memory, slowing down the process.",
+    "relatedTo": [
+      "Cache Hit Ratio"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Time Synchronization",
+    "description": "Inconsistent or inaccurate time synchronization between servers can introduce delays in the timing of the coin flips.",
+    "relatedTo": [
+      "Time Synchronization"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Operating System Latency",
+    "description": "The operating system running on the servers can have latency that affects the timing of the coin flips.",
+    "relatedTo": [
+      "Operating System Latency"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Message Loss",
+    "description": "Lost messages during the consensus process can introduce delays.",
+    "relatedTo": [
+      "Message Loss"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Resource Contention",
+    "description": "If the servers are competing for the same resources (e.g., CPU cores, memory), this can create bottlenecks during the coin flip process.",
+    "relatedTo": [
+      "Resource Contention"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Concurrency Control",
+    "description": "The way concurrency control is implemented (e.g., lock/unlock times) can impact the efficiency of the consensus process.",
+    "relatedTo": [
+      "Concurrency Control"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "System State",
+    "description": "The overall state of the system, including the current state of the coin counter and the status of the servers, can influence the latency.",
+    "relatedTo": [
+      "System State"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Data Volume",
+    "description": "The volume of data being processed can introduce delays if the consensus process is not efficiently handling it.",
+    "relatedTo": [
+      "Data Volume"
+    ]
+  }
+]

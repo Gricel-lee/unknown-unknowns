@@ -1,0 +1,23 @@
+Here is the list of environmental or operational factors that could explain the multimodal logged latencies, ranked by likelihood:
+
+```
+[
+  {"id": 1, "name": "Network Congestion", "description": "Network congestion can cause delays in sending and receiving coin flip requests, resulting in multimodal latencies.", "relatedTo": ["Latency Variability", "Network Load"]},
+  {"id": 2, "name": "Clock Skew", "description": "Clock skew between the servers and the controller can cause the controller to misjudge the latency of each server, leading to multimodal patterns.", "relatedTo": ["Clock Synchronization", "Server Synchronization"]},
+  {"id": 3, "name": "Server Load", "description": "High server load can cause delays in processing coin flip requests, resulting in multimodal latencies.", "relatedTo": ["Network Load", "Process Queue Length"]},
+  {"id": 4, "name": "Network Latency Variability", "description": "Network latency variability can cause the delay between sending and receiving coin flip requests to be multimodal.", "relatedTo": ["Latency Variability", "Network Congestion"]},
+  {"id": 5, "name": "Controller-Server Communication", "description": " Issues with controller-server communication, such as packet loss or retransmission, can cause multimodal latencies.", "relatedTo": ["Network Congestion", "Clock Synchronization"]},
+  {"id": 6, "name": "Power Outage", "description": "Power outages can cause servers to restart, resulting in multimodal latencies.", "relatedTo": ["Server Uptime", "Power Grid Quality"]},
+  {"id": 7, "name": "Server Synchronization", "description": "Server synchronization issues can cause the servers to lose synchronization, resulting in multimodal latencies.", "relatedTo": ["Clock Synchronization", "Server Load"]},
+  {"id": 8, "name": "Clock Synchronization", "description": "Clock synchronization issues between the servers and the controller can cause the controller to misjudge the latency of each server, leading to multimodal patterns.", "relatedTo": ["Server Synchronization", "Controller-Server Communication"]},
+  {"id": 9, "name": "Server Failure", "description": "Server failure can cause the system to lose synchronization, resulting in multimodal latencies.", "relatedTo": ["Server Uptime", "Power Outage"]},
+  {"id": 10, "name": "Network Load", "description": "Network load can cause delays in sending and receiving coin flip requests, resulting in multimodal latencies.", "relatedTo": ["Server Load", "Network Congestion"]},
+  {"id": 11, "name": "Process Queue Length", "description": "High process queue length can cause delays in processing coin flip requests, resulting in multimodal latencies.", "relatedTo": ["Server Load", "Network Load"]},
+  {"id": 12, "name": "Controller Failure", "description": "Controller failure can cause the system to lose synchronization, resulting in multimodal latencies.", "relatedTo": ["Server Failure", "Power Outage"]},
+  {"id": 13, "name": "Environmental Temperature", "description": "High environmental temperature can cause server failure, resulting in multimodal latencies.", "relatedTo": ["Server Uptime", "Power Outage"]},
+  {"id": 14, "name": "Network Quality of Service", "description": "Network quality of service can cause delays in sending and receiving coin flip requests, resulting in multimodal latencies.", "relatedTo": ["Network Congestion", "Network Load"]},
+  {"id": 15, "name": "User Activity", "description": "User activity can cause high server load, resulting in multimodal latencies.", "relatedTo": ["Server Load", "Network Load"]}
+]
+```
+
+Note: The ranking is based on the likelihood of each factor to explain the multimodal logged latencies. The likelihood is subjective and may vary depending on the specific system and environment.

@@ -1,0 +1,97 @@
+mdp
+
+// SHARED COIN WITH TWO SERVERS (simplified from the PRISM consensus/coin2 benchmark [AH90])
+// Two servers must agree on a coin outcome. A shared counter starts in the middle; each
+// round we ask ONE server to flip its coin (heads +1, tails -1). The servers agree when the
+// counter reaches either end. Each flip has a latency (ms) that depends on the environment,
+// so the controller decides which server to ask, minimising the expected total latency.
+//
+// Template with 3 unknown variables u1, u2, u3 (u1=busy, u2=remote, u3=congested), each with values 0/1.
+// The constants below have no value; the controller fills them in.
+
+const int K = 2; // agreement: the counter must move K steps away from the middle
+
+// --- probabilities (filled by the controller) -----
+// pXYZ = probability of busy=X, remote=Y, congested=Z
+const double p000 = 0.187; // env_id=1
+const double p100 = 0.151; // env_id=2
+const double p010 = 0.156; // env_id=3
+const double p110 = 0.103; // env_id=4
+const double p001 = 0.16; // env_id=5
+const double p101 = 0.11; // env_id=6
+const double p011 = 0.093; // env_id=7
+const double p111 = 0.04; // env_id=8
+
+// --- rewards (filled by the controller) -----
+// cA_XYZ = latency of a flip on server A when busy=X, remote=Y, congested=Z
+const double c1_000 = 9.897962224555775;
+const double c1_100 = 29.818959837347784;
+const double c1_010 = 10.263601984303316;
+const double c1_110 = 30.238758196657486;
+const double c1_001 = 19.981233561633083;
+const double c1_101 = 40.20561748567423;
+const double c1_011 = 20.30460987589339;
+const double c1_111 = 39.81438204418405;
+const double c2_000 = 11.97019618340965;
+const double c2_100 = 12.246050482139772;
+const double c2_010 = 36.93126830280591;
+const double c2_110 = 36.89182580021089;
+const double c2_001 = 22.06546177359361;
+const double c2_101 = 21.837412930632304;
+const double c2_011 = 47.10925291742205;
+const double c2_111 = 46.43787098685468;
+
+// --- readable views of the environment (derived from env_id) -----
+formula env_set = env_id != 0;
+formula u1      = (env_id=2 | env_id=4 | env_id=6 | env_id=8) ? 1 : 0;
+formula u2      = (env_id=3 | env_id=4 | env_id=7 | env_id=8) ? 1 : 0;
+formula u3      = (env_id=5 | env_id=6 | env_id=7 | env_id=8) ? 1 : 0;
+
+module environment
+  env_id : [0..8] init 0; // 0 = not set, 1..8 = set
+
+  // sample the environment once, at the start
+  [] env_id=0 -> p000 : (env_id'=1)
+               + p100 : (env_id'=2)
+               + p010 : (env_id'=3)
+               + p110 : (env_id'=4)
+               + p001 : (env_id'=5)
+               + p101 : (env_id'=6)
+               + p011 : (env_id'=7)
+               + p111 : (env_id'=8);
+endmodule
+
+formula agreed = counter=0 | counter=2*K;
+
+module shared_coin
+  counter : [0..2*K] init K; // K = undecided middle, 0 = agree tails, 2K = agree heads
+
+  // nondeterministic choice: which server flips next (each coin is fair)
+  [flip1] env_set & !agreed -> 0.5 : (counter'=counter+1) + 0.5 : (counter'=counter-1);
+  [flip2] env_set & !agreed -> 0.5 : (counter'=counter+1) + 0.5 : (counter'=counter-1);
+
+  // absorbing once the servers agree (avoids deadlock warnings)
+  [done] agreed -> 1 : true;
+endmodule
+
+rewards "latency"
+  [flip1] env_id=1 : c1_000;
+  [flip1] env_id=2 : c1_100;
+  [flip1] env_id=3 : c1_010;
+  [flip1] env_id=4 : c1_110;
+  [flip1] env_id=5 : c1_001;
+  [flip1] env_id=6 : c1_101;
+  [flip1] env_id=7 : c1_011;
+  [flip1] env_id=8 : c1_111;
+
+  [flip2] env_id=1 : c2_000;
+  [flip2] env_id=2 : c2_100;
+  [flip2] env_id=3 : c2_010;
+  [flip2] env_id=4 : c2_110;
+  [flip2] env_id=5 : c2_001;
+  [flip2] env_id=6 : c2_101;
+  [flip2] env_id=7 : c2_011;
+  [flip2] env_id=8 : c2_111;
+endrewards
+
+label "agreed" = agreed;

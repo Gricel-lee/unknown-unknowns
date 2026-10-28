@@ -1,0 +1,94 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Server Hardware Variations",
+    "description": "Different server hardware configurations (CPU, memory, network) can introduce subtle variations in the timing of the coin flips, leading to multimodal latency.",
+    "relatedTo": ["Server Hardware"]
+  },
+  {
+    "id": 2
+    "name": "Network Latency",
+    "description": "High latency between the servers and the monitoring systems can significantly impact the timing of the coin flips.",
+    "relatedTo": ["Network"]
+  },
+  {
+    "id": 3
+    "name": "Data Packet Size & Flow",
+    "description": "The size and rate of data packets being exchanged between the servers can influence the randomness of the coin flips and the time it takes for the counter to stabilize.",
+    "relatedTo": ["Data Flow"]
+  },
+  {
+    "id": 4
+    "name": "Server Cooldown/Synchronization",
+    "description": "Server cooldown periods or synchronization mechanisms can introduce delays that affect the arrival of the coin flip results, affecting the multimodal behavior.",
+    "relatedTo": ["Server Synchronization"]
+  },
+  {
+    "id": 5
+    "name": "Cache States",
+    "description": "Cache state impacts how frequently the servers are reading their data.  More frequent reads could lead to more variability.",
+    "relatedTo": ["Cache State"]
+  },
+  {
+    "id": 6
+    "name": "System Load",
+    "description": "High system load can introduce delays and inconsistencies across the system, potentially affecting the randomness of the coin flips.",
+    "relatedTo": ["System Load"]
+  },
+  {
+    "id": 7
+    "name": "Operating System Tuning",
+    "description": "Differences in OS tuning can subtly alter the timing of the coin flips.",
+    "relatedTo": ["Operating System"]
+  },
+  {
+    "id": 8
+    "name": "Memory Allocation & Usage",
+    "description": "Allocation patterns can affect the arrival of data, influencing the coin flip results.",
+    "relatedTo": ["Memory Allocation"]
+  },
+  {
+    "id": 9
+    "name": "DNS Latency",
+    "description": "Latency during DNS resolution can impact the timing of the coin flip results.",
+    "relatedTo": ["DNS"]
+  },
+  {
+    "id": 10
+    "name": "Protocol Rounding Errors",
+    "description": "Even small rounding errors in the protocol can manifest as multimodal behavior.",
+    "relatedTo": ["Protocol"]
+  },
+  {
+    "id": 11
+    "name": "Server Resource Contention",
+    "description": "If one server is experiencing significant resource contention, it can introduce variations that complicate the analysis.",
+    "relatedTo": ["Resource Contention"]
+  },
+  {
+    "id": 12
+    "name": "Sequential Updates",
+    "description": "The way the server updates their counters (e.g., sequentially vs. concurrently) can influence the multimodal behavior.",
+    "relatedTo": ["Sequential Updates"]
+  },
+  {
+    "id": 13
+    "name": "Timing of the Agreement",
+    "description": "The specific timing of the servers agreeing on a value could be a factor, though it's likely minor.",
+    "relatedTo": ["Agreement Timing"]
+  },
+  {
+    "id": 14
+    "name": "Temperature Variation",
+    "description": "Variations in server temperatures can affect hardware performance.",
+    "relatedTo": ["Hardware"]
+  },
+  {
+    "id": 15
+    "name": "Network Topology",
+    "description": "The structure of the network connecting the servers can influence the propagation of the coin flip results.",
+    "relatedTo": ["Network Topology"]
+  }
+]
+```

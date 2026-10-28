@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Network Bandwidth",
+    "description": "The speed at which data is transferred between the trading system and external data sources. A decrease in bandwidth can cause delays in analysis times.",
+    "relatedTo": [
+      "Data Transfer Time",
+      "Internet Connectivity"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Processor Load",
+    "description": "The amount of computational resources available to the system. High load can cause delays in analysis times.",
+    "relatedTo": [
+      "CPU Utilization",
+      "Memory Usage"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Database Latency",
+    "description": "The time it takes for the system to retrieve and process data from the database. High latency can cause delays in analysis times.",
+    "relatedTo": [
+      "Database Performance",
+      "Data Retrieval Time"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Operating System Updates",
+    "description": "Scheduled updates or maintenance of the operating system can cause delays in analysis times.",
+    "relatedTo": [
+      "System Maintenance",
+      "Update Schedules"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Software Version Inconsistencies",
+    "description": "Inconsistencies in software versions can cause unexpected behavior or delays in analysis times.",
+    "relatedTo": [
+      "Software Updates",
+      "Version Management"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Data Volume",
+    "description": "The amount of data processed during each run. High volume can cause delays in analysis times.",
+    "relatedTo": [
+      "Data Size",
+      "Processing Time"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Data Quality",
+    "description": "The accuracy and consistency of the data used for analysis. Poor quality data can cause delays in analysis times.",
+    "relatedTo": [
+      "Data Cleaning",
+      "Data Validation"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Trader Interactions",
+    "description": "The frequency and type of interactions between the trading system and traders. Frequent interactions can cause delays in analysis times.",
+    "relatedTo": [
+      "Trader Activity",
+      "User Experience"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Market Volatility",
+    "description": "Changes in market conditions can cause fluctuations in analysis times.",
+    "relatedTo": [
+      "Market Trends",
+      "Economic Indicators"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Time Zones",
+    "description": "Differences in time zones between the trading system and traders can cause delays in analysis times.",
+    "relatedTo": [
+      "Geographic Location",
+      "Time Zone Differences"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Network Congestion",
+    "description": "High network traffic or congestion can cause delays in analysis times.",
+    "relatedTo": [
+      "Network Utilization",
+      "Packet Loss"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Firewall Rules",
+    "description": "Complex firewall rules can cause delays in analysis times.",
+    "relatedTo": [
+      "Security Measures",
+      "Network Configuration"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "System Resources",
+    "description": "Insufficient system resources (e.g., memory, disk space) can cause delays in analysis times.",
+    "relatedTo": [
+      "Resource Allocation",
+      "System Configuration"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Database Indexing",
+    "description": "Inefficient database indexing can cause delays in analysis times.",
+    "relatedTo": [
+      "Database Optimization",
+      "Query Performance"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "External Services",
+    "description": "Dependence on external services (e.g., APIs, web services) can cause delays in analysis times.",
+    "relatedTo": [
+      "API Calls",
+      "Service Downtime"
+    ]
+  }
+]

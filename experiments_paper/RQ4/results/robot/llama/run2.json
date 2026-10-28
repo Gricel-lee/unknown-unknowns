@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Weather Conditions",
+    "description": "Weather conditions such as rain, wind, or sunshine can affect the robot's speed and maneuverability.",
+    "relatedTo": [
+      "Moisture levels in the field",
+      "Crop type and growth stage"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Crop Type and Growth Stage",
+    "description": "Different crops and growth stages can affect the robot's speed and maneuverability due to varying densities, heights, and growth patterns.",
+    "relatedTo": [
+      "Weather conditions",
+      "Moisture levels in the field"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Moisture Levels in the Field",
+    "description": "High or low moisture levels in the field can affect the robot's traction and stability.",
+    "relatedTo": [
+      "Crop type and growth stage",
+      "Weather conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Field Topography",
+    "description": "Inclines, slopes, or uneven terrain can affect the robot's speed and maneuverability.",
+    "relatedTo": [
+      "Path 1 vs. Path 2",
+      "Field width and length"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Field Width and Length",
+    "description": "The size of the field can affect the robot's travel time, particularly if it has to make multiple turns or traverse different types of terrain.",
+    "relatedTo": [
+      "Field topography",
+      "Path 1 vs. Path 2"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Path 1 vs. Path 2",
+    "description": "The type of terrain or conditions encountered on each path can affect the robot's travel time.",
+    "relatedTo": [
+      "Field topography",
+      "Field width and length"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Soil Type and Composition",
+    "description": "Different soil types and compositions can affect the robot's traction and stability.",
+    "relatedTo": [
+      "Moisture levels in the field",
+      "Crop type and growth stage"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Robot Load and Payload",
+    "description": "The weight and distribution of the robot's load and payload can affect its speed and maneuverability.",
+    "relatedTo": [
+      "Battery level",
+      "Robot maintenance"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Battery Level",
+    "description": "The robot's battery level can affect its speed and maneuverability, particularly if it is low.",
+    "relatedTo": [
+      "Robot load and payload",
+      "Robot maintenance"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Robot Maintenance",
+    "description": "The robot's maintenance schedule and condition can affect its speed and maneuverability.",
+    "relatedTo": [
+      "Robot load and payload",
+      "Battery level"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Time of Day and Day of Week",
+    "description": "The time of day and day of week can affect the robot's usage and travel time due to varying workload and maintenance schedules.",
+    "relatedTo": [
+      "Weather conditions",
+      "Crop type and growth stage"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Operator Presence and Intervention",
+    "description": "The presence and intervention of the operator can affect the robot's travel time due to manual override or troubleshooting.",
+    "relatedTo": [
+      "Time of day and day of week",
+      "Robot maintenance"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Other Agricultural Equipment and Traffic",
+    "description": "The presence and movement of other agricultural equipment and traffic can affect the robot's travel time and maneuverability.",
+    "relatedTo": [
+      "Field topography",
+      "Crop type and growth stage"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Sensor and Camera Calibration",
+    "description": "The calibration and accuracy of the robot's sensors and cameras can affect its navigation and decision-making.",
+    "relatedTo": [
+      "Robot maintenance",
+      "Software and firmware updates"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Software and Firmware Updates",
+    "description": "The robot's software and firmware updates can affect its navigation and decision-making.",
+    "relatedTo": [
+      "Sensor and camera calibration",
+      "Robot maintenance"
+    ]
+  }
+]

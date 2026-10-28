@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Battery Level",
+    "description": "The UAV's battery level can affect the performance of the onboard image classifier. Lower battery levels can lead to degraded processing speed or accuracy, potentially leading to more failed analyses.",
+    "relatedTo": [
+      "Temperature",
+      "Processing Speed"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Lighting Conditions",
+    "description": "The lighting at each waypoint can significantly impact image quality and the classifier's performance. Poor lighting can result in more failed analyses.",
+    "relatedTo": [
+      "Camera Quality",
+      "Image Resolution"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Camera Quality",
+    "description": "The quality of the camera used by the UAV can affect the image clarity and the ease of analysis. Lower-quality cameras may produce images that are harder to interpret, leading to more failed analyses.",
+    "relatedTo": [
+      "Image Resolution",
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Image Resolution",
+    "description": "The resolution of the images taken can impact the ease of analysis. Higher resolution may provide more detail but also increase the processing time.",
+    "relatedTo": [
+      "Camera Quality",
+      "Lighting Conditions"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Network Connectivity",
+    "description": "The quality of the network connection for sending images to the human operator can affect the time it takes to receive feedback. Poor connectivity can lead to delays or dropped connections, causing the UAV to wait.",
+    "relatedTo": [
+      "Human Operator Availability",
+      "Human Operator Experience"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Human Operator Availability",
+    "description": "The availability of the human operator to review images can impact the time it takes to get feedback. If the operator is busy or unavailable, the UAV may need to wait before receiving instructions.",
+    "relatedTo": [
+      "Human Operator Experience",
+      "Network Connectivity"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Human Operator Experience",
+    "description": "The experience and proficiency of the human operator can influence the speed and accuracy of analysis. Less experienced operators may take longer to analyze images, leading to more failed analyses.",
+    "relatedTo": [
+      "Human Operator Availability",
+      "Network Connectivity"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Waypoint Complexity",
+    "description": "The complexity of the environment at each waypoint can affect the difficulty of image analysis. More complex environments may produce images that are harder to interpret, leading to more failed analyses.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Camera Quality"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Temperature",
+    "description": "Temperature can affect the performance of the UAV's hardware, including the image classifier. Extreme temperatures can degrade processing speed or accuracy.",
+    "relatedTo": [
+      "Battery Level",
+      "Battery Performance"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Battery Performance",
+    "description": "The overall performance of the battery can be affected by temperature and usage. Lower performance can lead to degraded processing speed or accuracy.",
+    "relatedTo": [
+      "Battery Level",
+      "Temperature"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Processing Speed",
+    "description": "The speed at which the onboard image classifier processes images can be affected by the UAV's hardware capabilities. Slower processing speeds can lead to more failed analyses.",
+    "relatedTo": [
+      "Battery Level",
+      "Battery Performance"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Waypoint Order",
+    "description": "The order in which the UAV visits waypoints can influence the type of images taken. Some waypoints may consistently produce images that are harder to analyze than others.",
+    "relatedTo": [
+      "Waypoint Complexity",
+      "Environmental Factors"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Environmental Factors",
+    "description": "General environmental factors such as weather conditions can impact image quality and analysis. Factors like wind, rain, or dust can affect the clarity and detail of images.",
+    "relatedTo": [
+      "Lighting Conditions",
+      "Waypoint Complexity"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Mission Duration",
+    "description": "The length of the mission can affect the number of images taken and analyzed. Longer missions may lead to more instances where images need to be analyzed, increasing the potential for failed analyses.",
+    "relatedTo": [
+      "Human Operator Availability",
+      "Human Operator Experience"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Sensor Data Quality",
+    "description": "The quality of the sensor data, such as GPS and altitude data, can affect the image analysis. Poor sensor data can lead to less accurate images or more complex environments, increasing the likelihood of failed analyses.",
+    "relatedTo": [
+      "Waypoint Complexity",
+      "Lighting Conditions"
+    ]
+  }
+]

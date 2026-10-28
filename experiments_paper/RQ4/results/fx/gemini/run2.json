@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Cache Hit vs. Miss Rate",
+    "description": "Whether historical price ticks (for technical analysis) or economic indicators (for fundamental analysis) are retrieved from an in-memory cache versus a remote database. Cache hits resolve in microseconds, while cache misses require network I/O, creating two very distinct, highly visible execution peaks (bimodality).",
+    "relatedTo": [
+      "Database Lock and Write Contention",
+      "External API Rate Limiting and Throttling"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Trading Session and Market Volatility",
+    "description": "Forex markets operate 24/5 across major sessions (Sydney, Tokyo, London, New York). High-volatility sessions (e.g., London/New York overlap) generate massive tick volumes that require significantly more CPU cycles to process for technical indicators compared to quiet sessions, leading to distinct processing-time bands based on the time of day.",
+    "relatedTo": [
+      "Currency Pair Data Density",
+      "System Load and Queueing Delay",
+      "Economic Calendar Event Intensity"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Serverless Cold Starts vs. Warm Starts",
+    "description": "If the workflow is hosted on serverless infrastructure (e.g., AWS Lambda, Azure Functions), container initialization ('cold starts') can add hundreds of milliseconds or even seconds of latency to the first run in a batch, while subsequent 'warm' runs execute instantly.",
+    "relatedTo": [
+      "Compute Resource Throttling and Burstable CPU"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Dynamic Lookback Window Size",
+    "description": "The controller or the analysis algorithm itself may dynamically adjust the lookback window (e.g., analyzing the last 50 candles vs. 5000 candles) based on market volatility. Calculating indicators like moving averages or Bollinger bands over vastly different dataset sizes results in discrete jumps in execution time.",
+    "relatedTo": [
+      "Trading Session and Market Volatility",
+      "Currency Pair Data Density"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "External API Rate Limiting and Throttling",
+    "description": "Data providers (e.g., Bloomberg, Reuters) enforce rate limits. When limits are exceeded, the API client may execute a backoff/retry strategy (e.g., sleeping for exactly 1, 2, or 5 seconds). This introduces deterministic, stepped delays into the analysis workflow, creating clear secondary peaks in logged time.",
+    "relatedTo": [
+      "Cache Hit vs. Miss Rate",
+      "Data Provider API Choice"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Currency Pair Data Density",
+    "description": "Major currency pairs (e.g., EUR/USD) have a much higher tick frequency and depth of book than exotic pairs (e.g., USD/TRY). Processing technical analysis over a fixed timeframe will naturally group execution times into 'high-density majors' (slow) and 'low-density exotics' (fast) clusters.",
+    "relatedTo": [
+      "Trading Session and Market Volatility",
+      "Dynamic Lookback Window Size"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Economic Calendar Event Intensity",
+    "description": "Fundamental analysis relies on parsing news feeds and macroeconomic data. During high-impact news releases (e.g., US Non-Farm Payrolls, FOMC meetings), there is an explosion of news sentiment data, flash reports, and revisions to process, which drastically increases the fundamental analysis time compared to regular trading days.",
+    "relatedTo": [
+      "Trading Session and Market Volatility",
+      "Sentiment Analysis Source and Depth"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Sentiment Analysis Source and Depth",
+    "description": "For fundamental analysis, the system may dynamically choose between a shallow analysis (e.g., parsing a simple JSON economic calendar API) and a deep analysis (e.g., running Natural Language Processing/LLMs on full-text news articles or central bank PDFs), resulting in discrete runtime profiles.",
+    "relatedTo": [
+      "Economic Calendar Event Intensity"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Compute Resource Throttling and Burstable CPU",
+    "description": "If hosted on burstable cloud instances (e.g., AWS t3 instances), the system's performance will drop dramatically once CPU credit balances are depleted. This shifts execution times from a fast, credit-rich performance band to a throttled, credit-poor performance band.",
+    "relatedTo": [
+      "Serverless Cold Starts vs. Warm Starts",
+      "Garbage Collection Pauses"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Database Lock and Write Contention",
+    "description": "Under high market activity, multiple workflows may try to write logs, audit trails, or analysis results to the database simultaneously. Database lock wait times and transaction queues introduce deterministic delays that aggregate into distinct clusters of longer execution times.",
+    "relatedTo": [
+      "Cache Hit vs. Miss Rate",
+      "System Load and Queueing Delay"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Data Provider API Choice",
+    "description": "If the system queries different data providers or brokers dynamically based on the currency pair or redundant fallback logic, the latency profiles of these third-party APIs (e.g., Broker A with 20ms latency vs. Broker B with 150ms latency) will directly manifest as multimodal peaks.",
+    "relatedTo": [
+      "External API Rate Limiting and Throttling",
+      "Network Routing and Multi-Region Latency"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Network Routing and Multi-Region Latency",
+    "description": "Depending on the location of the broker/exchange servers being queried (e.g., LD4 in London vs. NY4 in New York), data requests will experience distinct round-trip network times (e.g., ~2ms for local servers vs. ~70ms for transatlantic routes), creating geographical latency clusters.",
+    "relatedTo": [
+      "Data Provider API Choice"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "System Load and Queueing Delay",
+    "description": "When the workflow engine is under heavy concurrent load, tasks must wait in thread pools or message queues. If execution times are logged from the moment a run is scheduled rather than when it starts, queueing delays under different load thresholds will introduce multimodality.",
+    "relatedTo": [
+      "Trading Session and Market Volatility",
+      "Database Lock and Write Contention",
+      "Dynamic Execution Strategy"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Garbage Collection Pauses",
+    "description": "For systems built on managed runtimes (like Java, Go, or .NET), periodic Garbage Collection (GC) pauses suspend application execution. Runs that hit a 'stop-the-world' GC phase will show a distinct, repeatable latency penalty compared to runs that execute uninterrupted.",
+    "relatedTo": [
+      "Compute Resource Throttling and Burstable CPU"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Dynamic Execution Strategy (Parallel vs. Sequential)",
+    "description": "Based on system load or data volume, the workflow engine might switch between processing multiple indicators sequentially (to save memory) or in parallel (to save time). Sequential execution creates a peak representing the sum of processing times, while parallel execution groups around the longest single task.",
+    "relatedTo": [
+      "System Load and Queueing Delay"
+    ]
+  }
+]

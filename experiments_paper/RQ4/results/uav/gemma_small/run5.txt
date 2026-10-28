@@ -1,0 +1,88 @@
+```json
+[
+  {
+    "id": 1,
+    "name": "Weather Conditions",
+    "description": "Rain, snow, or extreme lighting can significantly impact image quality, leading to lower classification accuracy for both the UAV and the classifier.",
+    "relatedTo": ["Weather Conditions"]
+  },
+  {
+    "id": 2,
+    "name": "Image Resolution",
+    "description": "Higher resolution images require more processing power and may introduce more noise, negatively impacting classifier performance.",
+    "relatedTo": ["Image Resolution"]
+  },
+  {
+    "id": 3,
+    "name": "Image Complexity",
+    "description": "Complex scenes with many objects or intricate patterns can be more challenging for both the UAV and the classifier, increasing analysis time.",
+    "relatedTo": ["Image Complexity"]
+  },
+  {
+    "id": 4,
+    "name": "UAV Altitude & Motion",
+    "description": "Rapid altitude changes or erratic movements can create unpredictable lighting conditions, affecting classification accuracy.",
+    "relatedTo": ["UAV Altitude & Motion"]
+  },
+  {
+    "id": 5,
+    "name": "Obstacle Density",
+    "description": "The presence of obstacles can confuse the UAV and classifier, leading to missed detections.",
+    "relatedTo": ["Obstacle Density"]
+  },
+  {
+    "id": 6,
+    "name": "Camera Angle & Perspective",
+    "description": "Variations in camera angle can alter the scene's composition and introduce distortions, impacting classification results.",
+    "relatedTo": ["Camera Angle & Perspective"]
+  },
+  {
+    "id": 7,
+    "name": "Lighting Conditions (Direction & Color)",
+    "description": "Consistent or changing lighting conditions (e.g., shadows, glare, color temperature) can significantly impact image quality.",
+    "relatedTo": ["Lighting Conditions"]
+  },
+  {
+    "id": 8,
+    "name": "Sensor Noise",
+    "description": "Sensor noise can be a constant issue, especially in low-light environments or when imaging fine details.",
+    "relatedTo": ["Sensor Noise"]
+  },
+  {
+    "id": 9,
+    "name": "UAV Calibration & Tracking",
+    "description": "Inaccurate calibration or tracking can cause errors in image processing and classification.",
+    "relatedTo": ["UAV Calibration & Tracking"]
+  },
+  {
+    "id": 10,
+    "name": "Background Complexity",
+    "description": "A complex or highly detailed background can overwhelm the classifier.",
+    "relatedTo": ["Background Complexity"]
+  },
+  {
+    "id": 11,
+    "name": "Data Quality of Training Data",
+    "description": "If the classifier's training data doesn't adequately represent the diverse real-world scenarios, it will struggle to generalize.",
+    "relatedTo": ["Data Quality of Training Data"]
+  },
+  {
+    "id": 12,
+    "name": "Algorithm Selection & Tuning",
+    "description": "The specific algorithm used for image classification might be inappropriate for the specific dataset and environment.",
+    "relatedTo": ["Algorithm Selection & Tuning"]
+  },
+  {
+    "id": 13,
+    "name": "Domain Shift",
+    "description": "The UAV operating environment might differ significantly from the training environment.  A model trained on one set of conditions may not generalize well to others.",
+    "relatedTo": ["Domain Shift"]
+  },
+  {
+    "id": 14,
+    "name": "Data Preprocessing Issues",
+    "description": "Issues with preprocessing steps like noise reduction or color correction can negatively impact classification.",
+    "relatedTo": ["Data Preprocessing"]
+  }
+]
+```

@@ -1,0 +1,60 @@
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 47.7 without the unknown unknowns, 41.6 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed0/20261021_112356
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 48.55 without the unknown unknowns, 42.63 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed1/20261021_112402
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 46.17 without the unknown unknowns, 40.99 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed2/20261021_112409
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 44.56 without the unknown unknowns, 39.44 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed3/20261021_112415
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 48.15 without the unknown unknowns, 42.18 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed4/20261021_112422
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 46.11 without the unknown unknowns, 40.54 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed5/20261021_112429
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 47.02 without the unknown unknowns, 41.71 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed6/20261021_112435
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 46.55 without the unknown unknowns, 41.12 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed7/20261021_112442
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 43.87 without the unknown unknowns, 38.42 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed8/20261021_112448
+iteration 1: adding disk_busy (mi)
+iteration 2: adding volatile (mi)
+iteration 3: adding news (mi)
+Known variables: ['disk_busy', 'volatile', 'news'] (the costs are unimodal in every bin of the known variables)
+Expected cost: 46.26 without the unknown unknowns, 40.26 with them
+Results saved to experiments_paper/RQ1/results/end_to_end/fx/seed9/20261021_112455

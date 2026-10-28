@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Network Congestion",
+    "description": "Network congestion could cause delays in data transmission and processing, leading to varying times for analysis.",
+    "relatedTo": [
+      "Network Latency",
+      "Data Transfer Rate"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Server Load",
+    "description": "High server load could slow down the analysis process, leading to varying times.",
+    "relatedTo": [
+      "CPU Utilization",
+      "Memory Availability"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Database Performance",
+    "description": "Poor database performance could slow down data retrieval and processing, leading to varying times.",
+    "relatedTo": [
+      "Database Size",
+      "Query Optimization"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Operating System Updates",
+    "description": "Operating system updates could slow down the system during analysis, leading to varying times.",
+    "relatedTo": [
+      "Patch Management",
+      "System Configuration"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Firmware Issues",
+    "description": "Firmware issues could cause hardware malfunctions, leading to varying times for analysis.",
+    "relatedTo": [
+      "Hardware Configuration",
+      "Driver Updates"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Power Outages",
+    "description": "Power outages could cause system crashes or slow down the analysis process, leading to varying times.",
+    "relatedTo": [
+      "Backup Power",
+      "UPS Configuration"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Disk Space",
+    "description": "Insufficient disk space could slow down the analysis process, leading to varying times.",
+    "relatedTo": [
+      "Storage Capacity",
+      "File System Configuration"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Time Zone Differences",
+    "description": "Time zone differences could cause delays in data transmission and processing, leading to varying times for analysis.",
+    "relatedTo": [
+      "Regional Settings",
+      "Calendar Configuration"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Network Latency",
+    "description": "Network latency could cause delays in data transmission and processing, leading to varying times for analysis.",
+    "relatedTo": [
+      "Network Congestion",
+      "Data Transfer Rate"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Data Transfer Rate",
+    "description": "Low data transfer rate could cause delays in data transmission and processing, leading to varying times for analysis.",
+    "relatedTo": [
+      "Network Congestion",
+      "Network Latency"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Cloud Connectivity Issues",
+    "description": "Cloud connectivity issues could cause delays in data transmission and processing, leading to varying times for analysis.",
+    "relatedTo": [
+      "Cloud Provider",
+      "Cloud Configuration"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Air Gap Disruptions",
+    "description": "Air gap disruptions could cause data corruption or loss, leading to varying times for analysis.",
+    "relatedTo": [
+      "Data Backup",
+      "Disaster Recovery"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Weather-Related Disruptions",
+    "description": "Weather-related disruptions could cause power outages or hardware malfunctions, leading to varying times for analysis.",
+    "relatedTo": [
+      "Backup Power",
+      "UPS Configuration"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Human Error",
+    "description": "Human error could cause data corruption or loss, leading to varying times for analysis.",
+    "relatedTo": [
+      "Training",
+      "Job Rotation"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Configuration Changes",
+    "description": "Configuration changes could cause system malfunctions or slow down the analysis process, leading to varying times.",
+    "relatedTo": [
+      "Change Management",
+      "System Configuration"
+    ]
+  }
+]

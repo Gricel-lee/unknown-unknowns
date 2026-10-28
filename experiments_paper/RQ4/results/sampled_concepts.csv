@@ -1,0 +1,41 @@
+case,group,rank,concept,count,llms,example_names,reference
+robot,most frequent,1,terrain condition,63,6,soil moisture; dynamic field conditions; path 1 surface condition,"Study of wheeled vs tracked fruit-picking robots on slopes of 0-28 deg and soil moisture of 10-35%, Machines 13(7):572, MDPI, 2025. https://www.mdpi.com/2075-1702/13/7/572"
+robot,most frequent,2,crop condition,54,6,crop growth stage; crop type; crop row condition,"R. de Silva, G. Cielniak, J. Gao, Vision based Crop Row Navigation under Varying Field Conditions in Arable Fields, arXiv:2209.14003, 2022."
+robot,most frequent,3,weather,30,6,weather conditions; rainfall; precipitation,"Y. Zhang et al., Perception and Sensing for Autonomous Vehicles Under Adverse Weather Conditions: A Survey, arXiv:2112.08936, 2021."
+robot,most frequent,4,obstacle,26,6,obstacle presence; obstacles; obstacle density,"X. Gao et al., Review of Wheeled Mobile Robots' Navigation Problems and Application Prospects in Agriculture, IEEE Access 6:49248-49268, 2018. doi:10.1109/ACCESS.2018.2868848"
+robot,most frequent,5,season/time day,23,5,time of day; ambient lighting / time of day; daytime,"Sultanov et al., Modeling Sunlight in Gazebo for Vision-Based Applications Under Varying Light Conditions, SciTePress, 2024. https://scitepress.org/PublishedPapers/2024/130687"
+robot,least frequent,1,controller s decision,1,1,controller s decision,
+robot,least frequent,2,journey frequency,1,1,journey frequency,
+robot,least frequent,3,robot capabilities,1,1,robot capabilities,
+robot,least frequent,4,robot operational state,1,1,robot operational state,
+robot,least frequent,5,signal strength,1,1,signal strength,"P. Pandey, R. Parasuraman, Empirical Analysis of Bi-directional Wi-Fi Network Performance on Mobile Robots in Indoor Environments, arXiv:2110.03011, 2021."
+consensus,most frequent,1,server load,67,6,server load; system load; background processes,"SEER: Performance-Aware Leader Election in Single-Leader Consensus, arXiv:2104.01355, 2021."
+consensus,most frequent,2,network congestion,36,6,network congestion; network packet loss; network packet loss/corruption,"Gromit: Benchmarking the Performance and Scalability of Blockchain Systems, arXiv:2208.11254, 2022."
+consensus,most frequent,3,clock synchronisation,27,5,clock synchronization; clock synchronization issues; clock drift,"B. Liskov, Practical Uses of Synchronized Clocks in Distributed Systems, PODC 1991."
+consensus,most frequent,4,communication latency,27,5,network latency; dns latency; network latency fluctuations,"I. Moraru, D. G. Andersen, M. Kaminsky, There Is More Consensus in Egalitarian Parliaments (EPaxos), SOSP 2013."
+consensus,most frequent,5,hardware differences,25,6,hardware differences; random hardware failures; server hardware configuration,"Z. Ou et al., Is the Same Instance Type Created Equal? Exploiting Heterogeneity of Public Clouds, IEEE Transactions on Cloud Computing, 2013."
+consensus,least frequent,1,geographic distribution of servers,1,1,geographic distribution of servers,"S. Tollman, S. J. Park, J. Ousterhout, EPaxos Revisited, NSDI 2021."
+consensus,least frequent,2,load balancer configuration,1,1,load balancer configuration,"QEdgeProxy: QoS-Aware Load Balancing for IoT Services in the Computing Continuum, arXiv:2405.10788, 2024."
+consensus,least frequent,3,monitoring/logging overhead,1,1,monitoring/logging overhead,"R. Ding et al., Log2: A Cost-Aware Logging Mechanism for Performance Diagnosis, USENIX ATC 2015."
+consensus,least frequent,4,software library timing,1,1,software library timing,
+consensus,least frequent,5,system monitoring/logging impact,1,1,system monitoring/logging impact,"R. Ding et al., Log2: A Cost-Aware Logging Mechanism for Performance Diagnosis, USENIX ATC 2015."
+fx,most frequent,1,system load,32,6,system load; resource allocation; server load,"M. Marzolla, R. Mirandola, A Framework for QoS-aware Execution of Workflows over the Cloud, arXiv:1104.5392, 2011."
+fx,most frequent,2,market volatility,28,6,market volatility; market volatility and trading session; market volatility and volume,
+fx,most frequent,3,news,28,5,news events; news event frequency & impact; time since last major event,"A. Chaboud, S. Chernenko, J. Wright, Trading Activity and Exchange Rates in High-Frequency EBS Data, Federal Reserve IFDP 903, 2007."
+fx,most frequent,4,data quality,25,6,data quality; data quality issues; data feed quality,"Garbage In, Garbage Out? The Impact of Data Quality on the Performance of Financial Distress Prediction Models, Forecasting 8(3):35, MDPI. doi:10.3390/forecast8030035"
+fx,most frequent,5,algorithm complexity/version,23,5,algorithm version; algorithmic complexity; algorithm complexity,"Performance evolution of configurable software systems: an empirical study, Empirical Software Engineering, 2023. doi:10.1007/s10664-023-10338-3"
+fx,least frequent,1,database cache state,1,1,database cache state,"C. Phalak, R. Singhal, T. Jhunjhunwala, Database Buffer Cache Simulator to Study and Predict Cache Behavior for Query Execution, DATA 2016, pp. 71-78. doi:10.5220/0005936800710078"
+fx,least frequent,2,error rate of analysis,1,1,error rate of analysis,
+fx,least frequent,3,market depth,1,1,market depth,
+fx,least frequent,4,specific economic indicators,1,1,specific economic indicators,"A. Chaboud, S. Chernenko, J. Wright, Trading Activity and Exchange Rates in High-Frequency EBS Data, Federal Reserve IFDP 903, 2007."
+fx,least frequent,5,system maintenance,1,1,system maintenance,
+uav,most frequent,1,camera calibration,48,6,image resolution; camera calibration issues; sensor calibration,"L. A. Varga, S. Koch, A. Zell, Comprehensive Analysis of the Object Detection Pipeline on UAVs, arXiv:2203.00306, 2022."
+uav,most frequent,2,operator fatigue/experience,29,5,human operator experience; human operator fatigue; operator fatigue,"L. Feng, C. Wiltsche, L. Humphrey, U. Topcu, Synthesis of Human-in-the-Loop Control Protocols for Autonomous Systems, IEEE Transactions on Automation Science and Engineering 13(2), 2016."
+uav,most frequent,3,weather,27,6,weather conditions; atmospheric conditions; weather and atmospheric conditions,"Dependability of UAV-Based Networks and Computing Systems: A Survey, arXiv:2506.16786, 2025."
+uav,most frequent,4,image/scene complexity,26,6,image complexity; image content complexity; object density,"O. Hadar et al., Influence of sensor motion on infrared target acquisition, Infrared Physics & Technology 38(6):373-381, 1997."
+uav,most frequent,5,light,24,6,lighting conditions; environmental lighting and visibility; light conditions,"Deep Learning-Based Object Detection in Maritime Unmanned Aerial Vehicle Imagery: Review and Experimental Comparisons, arXiv:2311.07955, 2023."
+uav,least frequent,1,concurrent onboard compute load,1,1,concurrent onboard compute load,"Hardware- and Vision-in-the-Loop Validation of Deep Monocular Pose Estimation for Autonomous Maritime UAV Flight, arXiv:2606.19176, 2026."
+uav,least frequent,2,data storage,1,1,data storage,
+uav,least frequent,3,humidity,1,1,humidity,
+uav,least frequent,4,image data compression,1,1,image data compression,"L. A. Varga, S. Koch, A. Zell, Comprehensive Analysis of the Object Detection Pipeline on UAVs, arXiv:2203.00306, 2022."
+uav,least frequent,5,target density,1,1,target density,

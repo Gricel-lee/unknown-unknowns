@@ -1,0 +1,2 @@
+// minimum expected time until the workflow finishes (succeeds or fails); the controller's reward
+R{"time"}min=? [ F "done" ]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Battery Life",
+    "description": "The remaining battery life of the UAV can affect the speed of image processing, especially for the onboard classifier. Lower battery life might slow down processing.",
+    "relatedTo": [
+      "Processing Speed"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Light Conditions",
+    "description": "The lighting conditions at the waypoint can affect the quality of the images and the time it takes for the classifier to analyze them. Poor lighting can increase the processing time.",
+    "relatedTo": [
+      "Camera Quality"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Camera Quality",
+    "description": "The quality of the camera used by the UAV can impact the image resolution and clarity, which in turn affects the analysis time. Poorer quality cameras might produce images that take longer to analyze.",
+    "relatedTo": [
+      "Light Conditions"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Temperature",
+    "description": "Temperature can affect the performance of both the UAV and its onboard systems. Extreme temperatures can slow down processing speeds.",
+    "relatedTo": [
+      "Battery Life"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Processing Speed",
+    "description": "The speed at which the onboard classifier can process images. Variations in processing speed can cause differences in analysis times.",
+    "relatedTo": [
+      "Battery Life"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Network Connectivity",
+    "description": "The strength and reliability of the network connection between the UAV and the human operator can impact the speed of image transfer. Poor connectivity can result in delays.",
+    "relatedTo": [
+      "Human Operator Availability"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Human Operator Availability",
+    "description": "The availability and responsiveness of the human operator can affect the speed of analysis. An operator who is busy or unavailable can delay the process.",
+    "relatedTo": [
+      "Network Connectivity"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Image Complexity",
+    "description": "The complexity of the images (e.g., presence of distinct objects, clutter) can affect the time it takes for both the onboard classifier and human operator to analyze them.",
+    "relatedTo": [
+      "Light Conditions"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "UAV Altitude",
+    "description": "The altitude at which the UAV is flying can affect the clarity and quality of the images, thus impacting analysis time. Higher altitudes might reduce the detail in images, increasing analysis time.",
+    "relatedTo": [
+      "Light Conditions"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Sensor Noise",
+    "description": "Noise in the sensors can introduce artifacts in the images, making them harder to analyze. This can be more pronounced in certain lighting or environmental conditions.",
+    "relatedTo": [
+      "Camera Quality"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Wind Conditions",
+    "description": "Strong winds can affect the stability of the UAV, leading to blurry or distorted images, which can increase the time needed for analysis.",
+    "relatedTo": [
+      "Light Conditions"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "UAV Speed",
+    "description": "The speed at which the UAV moves between waypoints can affect the quality and resolution of the images taken. Faster movement can result in less detailed images, increasing analysis time.",
+    "relatedTo": [
+      "Image Complexity"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Image Resolution",
+    "description": "The resolution of the images can affect how quickly they can be processed. Higher resolution images might take longer to analyze.",
+    "relatedTo": [
+      "Camera Quality"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Environmental Interference",
+    "description": "Interference from external sources such as electromagnetic fields or radio signals can affect the performance of the UAV and its onboard systems, potentially impacting analysis times.",
+    "relatedTo": [
+      "Network Connectivity"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Sensor Calibration",
+    "description": "Poorly calibrated sensors can produce images with inconsistencies or errors, which can increase the time needed for analysis.",
+    "relatedTo": [
+      "Camera Quality"
+    ]
+  }
+]

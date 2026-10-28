@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "name": "Network Latency Variations",
+    "description": "Fluctuations in network latency between the controller and the servers can cause delays in coin flip requests and responses. These variations can lead to multimodal latency patterns as the network conditions change.",
+    "relatedTo": []
+  },
+  {
+    "id": 2,
+    "name": "Server Load and CPU Utilization",
+    "description": "The current load on the servers and their CPU utilization can significantly affect the latency of the coin flip operations. High load and CPU utilization can increase the latency, leading to multimodal patterns.",
+    "relatedTo": []
+  },
+  {
+    "id": 3,
+    "name": "Memory Usage and Garbage Collection",
+    "description": "Memory usage and garbage collection activities on the servers can introduce delays. During garbage collection, the servers may experience increased latency, contributing to multimodal patterns.",
+    "relatedTo": []
+  },
+  {
+    "id": 4,
+    "name": "Disk I/O Operations",
+    "description": "Disk I/O operations for logging or other operations can introduce variable delays, leading to multimodal latency patterns. The frequency and intensity of disk I/O operations can vary, causing different latencies.",
+    "relatedTo": []
+  },
+  {
+    "id": 5,
+    "name": "Cache Hit Rate and Cache Invalidation",
+    "description": "Cache hit rates and the process of cache invalidation can affect the latency of coin flip operations. Misses or invalidations can lead to higher latencies, contributing to multimodal patterns.",
+    "relatedTo": []
+  },
+  {
+    "id": 6,
+    "name": "Power Management Settings",
+    "description": "Power management settings on the servers can cause variations in performance, leading to different latencies. For example, dynamic voltage and frequency scaling can cause fluctuations in execution times.",
+    "relatedTo": []
+  },
+  {
+    "id": 7,
+    "name": "Temperature and Cooling Systems",
+    "description": "Temperature changes and the effectiveness of cooling systems can affect server performance. Higher temperatures can lead to reduced performance and increased latencies, contributing to multimodal patterns.",
+    "relatedTo": []
+  },
+  {
+    "id": 8,
+    "name": "External Interference from Other Systems",
+    "description": "Interference from other systems running on the same hardware or in the same environment can introduce latency variations. This interference can be due to resource contention or electromagnetic interference.",
+    "relatedTo": []
+  },
+  {
+    "id": 9,
+    "name": "Software Updates or Patches",
+    "description": "Periodic software updates or patches can affect system performance, introducing latency variations. The timing and size of these updates can lead to different latencies in the coin flip operations.",
+    "relatedTo": []
+  },
+  {
+    "id": 10,
+    "name": "System Load Balancing",
+    "description": "Load balancing mechanisms can cause variations in the workload distribution, leading to different latencies in the coin flip operations. This is especially true if the load balancing is not perfectly balanced.",
+    "relatedTo": []
+  },
+  {
+    "id": 11,
+    "name": "Operating System Scheduling Algorithms",
+    "description": "The specific scheduling algorithms used by the operating system can affect the timing and latency of processes. Different scheduling policies can result in different latencies for the coin flip operations.",
+    "relatedTo": []
+  },
+  {
+    "id": 12,
+    "name": "Hardware Component Variability",
+    "description": "Variations in hardware components, such as CPUs or memory modules, can cause different latencies. These variations can be due to manufacturing differences or wear and tear over time.",
+    "relatedTo": []
+  },
+  {
+    "id": 13,
+    "name": "Random Hardware Failures",
+    "description": "Occasional hardware failures or component malfunctions can introduce irregular latency patterns. These failures are rare but can contribute to multimodal latency distributions.",
+    "relatedTo": []
+  },
+  {
+    "id": 14,
+    "name": "Power Supply Fluctuations",
+    "description": "Fluctuations in power supply can affect system performance. Voltage drops or surges can cause delays in the coin flip operations, leading to multimodal latency patterns.",
+    "relatedTo": []
+  },
+  {
+    "id": 15,
+    "name": "Network Congestion and Packet Loss",
+    "description": "Network congestion and packet loss can cause significant delays in communication between the controller and the servers. These issues can introduce multimodal latency patterns due to varying levels of congestion.",
+    "relatedTo": [
+      "Network Latency Variations"
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+You are assisting the engineers of a self-adaptive system.
+System: an agricultural robot travels from its charging station to an inspection point in a field. It navigates with on-board cameras and can take one of two routes: Path 1, a track along the outer edge of the field, or Path 2, a grass path between two planted crop rows. Before each journey, a controller chooses the route that minimises the expected travel time.
+Observation: the logged travel times of Path 1 and Path 2 are multimodal, i.e., they form several distinct groups that the current model cannot explain.
+No environmental or operational factor is currently part of the model.
+Task: list up to 15 environmental or operational factors that could explain this, ranked by how likely they are.
+Return JSON: [{"id": <rank>, "name": "...", "description": "what it is and why it has this rank", "relatedTo": ["names of other listed factors it may be correlated with"]}]

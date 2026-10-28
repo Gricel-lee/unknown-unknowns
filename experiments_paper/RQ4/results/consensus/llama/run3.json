@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Network Latency",
+    "description": "Variation in network latency between the controller and the servers could cause delays in updating the shared counter, resulting in multimodal latencies.",
+    "relatedTo": [
+      "Server load",
+      "Controller load"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Server Load",
+    "description": "Asymmetric server loads could cause delays in processing coin flip requests, leading to multimodal latencies.",
+    "relatedTo": [
+      "Network latency",
+      "Controller load"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Controller Load",
+    "description": "The controller's processing power and load could impact the time it takes to make decisions on which server to flip the coin next.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Server Clock Skew",
+    "description": "Differences in server clock times could cause discrepancies in the perceived latency of coin flips between servers.",
+    "relatedTo": [
+      "Network latency",
+      "Server load"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Network Congestion",
+    "description": "Network congestion could cause delays in transmitting coin flip requests and responses between the controller and the servers.",
+    "relatedTo": [
+      "Server load",
+      "Controller load"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Coin Flip Request Queue Length",
+    "description": "The length of the queue of pending coin flip requests could impact the latency of processing these requests.",
+    "relatedTo": [
+      "Server load",
+      "Controller load"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Server Restart or Failover",
+    "description": "Sudden server restarts or failovers could cause temporary delays in processing coin flip requests.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Controller Restart or Failover",
+    "description": "Sudden controller restarts or failovers could impact the system's ability to make timely decisions on which server to flip the coin next.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Power Outage or Intermittent Power",
+    "description": "Power outages or intermittent power could impact the system's ability to process coin flip requests in a timely manner.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Temperature or Environmental Factors",
+    "description": "Extreme temperatures or other environmental factors could impact the system's performance and cause delays in processing coin flip requests.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Clock Synchronization Issues",
+    "description": "Issues with clock synchronization between the controller and the servers could cause discrepancies in the perceived latency of coin flips.",
+    "relatedTo": [
+      "Server clock skew",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Operating System or Software Issues",
+    "description": "Issues with the operating system or software running on the servers or controller could cause delays in processing coin flip requests.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Hardware Issues",
+    "description": "Hardware issues with the servers or controller could cause delays in processing coin flip requests.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Human Error or Interventions",
+    "description": "Human error or interventions could impact the system's performance and cause delays in processing coin flip requests.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Other System Interactions or Dependencies",
+    "description": "Other system interactions or dependencies could impact the system's performance and cause delays in processing coin flip requests.",
+    "relatedTo": [
+      "Server load",
+      "Network latency"
+    ]
+  }
+]
